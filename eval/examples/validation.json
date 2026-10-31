@@ -1,0 +1,100 @@
+{
+  "pipeline_version": "29",
+  "checked_at_utc": "2026-10-31T21:55:12.365896+00:00",
+  "backend": {
+    "command": "RUN_DOCKER_TESTS=1 backend/.venv/bin/python -m pytest -q -p no:warnings",
+    "passed": 124,
+    "skipped": 0
+  },
+  "extension": {
+    "typecheck": "passed",
+    "build": "passed",
+    "panel_checks": {
+      "command": "cd extension && npm test",
+      "passed": 13,
+      "inference_calls": 0
+    }
+  },
+  "public_literal_checks": 4,
+  "public_reproduction_cases": 2,
+  "browser": "Not used for pipeline 22 validation; earlier browser artifact is pipeline 21.",
+  "inference_mode": "cache-only after daily quota exhaustion; no live inference for reproduction demos",
+  "development_cases": 9,
+  "available_cached_baselines": 3,
+  "held_out_cases_run": 0,
+  "limitations": [
+    "Remote CI and installed GitHub App not verified",
+    "Exploratory dev metrics are not a frozen final-pipeline benchmark",
+    "Title fallback used in cache-only reproduction demos; GPT-OSS model assessment saved separately"
+  ],
+  "http_api_checks": {
+    "public_urls": 5,
+    "all_extraction_stages": "ok (cached)",
+    "all_adjudication_stages": "degraded (cache miss)",
+    "terminal_status": "partial",
+    "artifact": "eval/examples/api_checks.json",
+    "live_inference_calls": 0,
+    "existing_reports_on_user_backend": "5/5 explain quota failure and return partial without rerunning",
+    "pipeline_version": "22"
+  },
+  "quota_recovery_checks": {
+    "provider": "mocked OpenAI-compatible responses, no live inference",
+    "retry_after": "seconds, HTTP date, invalid values",
+    "cached_responses_during_cooldown": "passed",
+    "cache_only_without_endpoint": "passed",
+    "model_endpoint_mode_cache_invalidation": "passed",
+    "health_cooldown": "passed",
+    "provider_daily_limit_messages": "Groq, OpenRouter and Google-style messages (mocked responses)"
+  },
+  "google_integration": {
+    "selected_provider": "google",
+    "default_model": "gemma-4-26b-a4b-it",
+    "credential_variable": "GOOGLE_API_KEY",
+    "native_transport_tests": "passed",
+    "public_urls_checked": 5,
+    "latest_successful_attempts": 5,
+    "initial_31b_results": {
+      "complete": 3,
+      "partial_provider_errors": 2
+    },
+    "26b_retry_results": {
+      "complete": 2,
+      "partial": 0
+    },
+    "final_pr_pipeline": "29",
+    "final_pr_result": "main change backed by diff; test count and passing claims inconclusive",
+    "deterministic_retrieval": "tested across three Python hash seeds",
+    "user_backend": "8787; Google/Gemma 26B selected",
+    "artifact": "eval/examples/google_api_checks.json",
+    "accuracy_benchmark": false
+  },
+  "panel_presentation": {
+    "checked_at_utc": "2026-10-31T22:11:01.994257+00:00",
+    "backend_changed": false,
+    "pipeline_version": "29",
+    "targeted_backend_regression_checks": 14,
+    "targeted_backend_command": "backend/.venv/bin/python -m pytest -q -p no:warnings backend/tests/test_generality.py backend/tests/test_deterministic_retrieval.py backend/tests/test_test_claim_scope.py",
+    "api_check": "Read existing run 9269ae0add884ce2 via /api/runs; no new assessment",
+    "saved_api_output": "eval/examples/panel_google_verified_pr.json",
+    "saved_api_outcomes": {
+      "supported": 2,
+      "contradicted": 0,
+      "inconclusive": 3,
+      "execution": "not_attempted"
+    },
+    "browser_checks": [
+      "saved real API output",
+      "outcome filter interaction",
+      "incomplete quota-blocked fixture",
+      "backend error fixture",
+      "360px dark long path and escaped source excerpt",
+      "320px light incomplete run"
+    ],
+    "screenshots": [
+      "eval/examples/panel_hierarchy_google_pr.png",
+      "eval/examples/panel_narrow_layout.png"
+    ],
+    "inference_calls": 0,
+    "accuracy_benchmark": false
+  }
+}

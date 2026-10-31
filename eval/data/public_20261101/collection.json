@@ -1,0 +1,80 @@
+{
+  "since": "2025-07-01",
+  "seed": 7,
+  "per_label": 15,
+  "dev_fraction": 0.4,
+  "audit": [
+    {
+      "repo": "python-semantic-release/python-semantic-release",
+      "github_label": "confirmed",
+      "eval_label": "confirmed",
+      "search_total": 4,
+      "selected": 3,
+      "edited_or_unavailable_skipped": 1
+    },
+    {
+      "repo": "python-semantic-release/python-semantic-release",
+      "github_label": "invalid",
+      "eval_label": "invalid",
+      "search_total": 0,
+      "selected": 0,
+      "edited_or_unavailable_skipped": 0
+    },
+    {
+      "repo": "python-semantic-release/python-semantic-release",
+      "github_label": "cannot reproduce",
+      "eval_label": "cannot_reproduce",
+      "search_total": 0,
+      "selected": 0,
+      "edited_or_unavailable_skipped": 0
+    },
+    {
+      "repo": "marimo-team/marimo",
+      "github_label": "confirmed",
+      "eval_label": "confirmed",
+      "search_total": 0,
+      "selected": 0,
+      "edited_or_unavailable_skipped": 0
+    },
+    {
+      "repo": "marimo-team/marimo",
+      "github_label": "invalid",
+      "eval_label": "invalid",
+      "search_total": 0,
+      "selected": 0,
+      "edited_or_unavailable_skipped": 0
+    },
+    {
+      "repo": "marimo-team/marimo",
+      "github_label": "cannot reproduce",
+      "eval_label": "cannot_reproduce",
+      "search_total": 23,
+      "selected": 15,
+      "edited_or_unavailable_skipped": 4
+    },
+    {
+      "repo": "hiyouga/LlamaFactory",
+      "github_label": "confirmed",
+      "eval_label": "confirmed",
+      "search_total": 0,
+      "selected": 0,
+      "edited_or_unavailable_skipped": 0
+    },
+    {
+      "repo": "hiyouga/LlamaFactory",
+      "github_label": "invalid",
+      "eval_label": "invalid",
+      "search_total": 32,
+      "selected": 15,
+      "edited_or_unavailable_skipped": 10
+    },
+    {
+      "repo": "hiyouga/LlamaFactory",
+      "github_label": "cannot reproduce",
+      "eval_label": "cannot_reproduce",
+      "search_total": 0,
+      "selected": 0,
+      "edited_or_unavailable_skipped": 0
+    }
+  ]
+}

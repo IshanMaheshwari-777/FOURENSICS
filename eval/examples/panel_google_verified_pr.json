@@ -1,0 +1,2940 @@
+{
+  "run_id": "9269ae0add884ce2",
+  "status": "complete",
+  "target": {
+    "owner": "Alamofire",
+    "repo": "Alamofire",
+    "kind": "pr",
+    "number": 4043,
+    "url": "https://github.com/Alamofire/Alamofire/pull/4043"
+  },
+  "report_kind": "pr",
+  "stages": [
+    {
+      "stage": "fetch",
+      "status": "ok",
+      "reason": null,
+      "ms": 1126
+    },
+    {
+      "stage": "anchors",
+      "status": "ok",
+      "reason": null,
+      "ms": 1
+    },
+    {
+      "stage": "snapshot",
+      "status": "ok",
+      "reason": null,
+      "ms": 1583
+    },
+    {
+      "stage": "missing_info",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    },
+    {
+      "stage": "index",
+      "status": "ok",
+      "reason": null,
+      "ms": 168
+    },
+    {
+      "stage": "reference_checks",
+      "status": "ok",
+      "reason": null,
+      "ms": 6559
+    },
+    {
+      "stage": "claims",
+      "status": "ok",
+      "reason": null,
+      "ms": 1
+    },
+    {
+      "stage": "claim_checks",
+      "status": "ok",
+      "reason": null,
+      "ms": 1128
+    },
+    {
+      "stage": "reproduction",
+      "status": "skipped",
+      "reason": "skipped",
+      "ms": 0
+    },
+    {
+      "stage": "adjudication",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    },
+    {
+      "stage": "validation",
+      "status": "ok",
+      "reason": null,
+      "ms": 1
+    }
+  ],
+  "snapshot": {
+    "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+    "method": "pr",
+    "reliability": "exact",
+    "ref_label": "PR #4043 head f7833cd",
+    "base_sha": "903c53c710d1cbbac0b4b9c2527aefb791e1fee3",
+    "head_sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715"
+  },
+  "summary_line": "The diff backs the main claim.",
+  "summary_tone": "supported",
+  "claims": [
+    {
+      "id": "C1",
+      "text": "The goal is for `AFError.url` to return the associated `URL` for every case that actually has one, with no behavior change for `.multipartEncodingFailed`.",
+      "type": "behavior",
+      "is_primary": true,
+      "source_span": "The goal is for `AFError.url` to return the associated `URL` for every case that actually has one, with no behavior change for `.multipartEncodingFailed`.",
+      "inferred": false,
+      "anchors": [
+        {
+          "kind": "literal",
+          "value": "AFError.url",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": ".multipartEncodingFailed",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "URL",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "Error.url",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "AFError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "Error",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "error",
+          "value": "AFError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "error",
+          "value": "URLError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "error",
+          "value": "NSURLError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "error",
+          "value": "NSError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "error",
+          "value": "CocoaError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "AFError.url",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "URL",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "Error.url",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "AFError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": ".sessionTaskFailed",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "URLError.failingURL",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "NSURLErrorKey",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "NSError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "CocoaError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "underlyingError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": ".sessionInvalidated",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": ".requestAdaptationFailed",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": ".createUploadableFailed",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": ".createURLRequestFailed",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "retryError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": ".requestRetryFailed",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "originalError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": ".responseValidationFailed",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": ".dataFileReadFailed",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": ".responseSerializationFailed",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": ".inputFileReadFailed",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "customValidationFailed",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "decodingFailed",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "Note",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "Usage.md",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "public",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "nil",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": ".explicitlyCancelled",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "path",
+          "value": "Usage.md",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "URLError.failingURL",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "NSURLErrorKey",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "NSError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "CocoaError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "underlyingError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "retryError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "originalError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "customValidationFailed",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "decodingFailed",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "Note",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "public",
+          "line": null,
+          "func": null,
+          "context": null
+        }
+      ],
+      "condition": null,
+      "expected": null,
+      "observed": null
+    },
+    {
+      "id": "C2",
+      "text": "Resolves #3965.",
+      "type": "pr_fix",
+      "is_primary": false,
+      "source_span": "Resolves #3965.",
+      "inferred": false,
+      "anchors": [],
+      "condition": null,
+      "expected": null,
+      "observed": null
+    },
+    {
+      "id": "C3",
+      "text": "Added an internal `Error.url` that extracts a `URL` from the Foundation error types that carry one",
+      "type": "implementation",
+      "is_primary": false,
+      "source_span": "Added an internal `Error.url` that extracts a `URL` from the Foundation error types that carry one",
+      "inferred": false,
+      "anchors": [
+        {
+          "kind": "literal",
+          "value": "URL",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "Error.url",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "Error",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "internal",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "AFError.url",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "URL",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "Error.url",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "internal",
+          "line": null,
+          "func": null,
+          "context": null
+        }
+      ],
+      "condition": null,
+      "expected": null,
+      "observed": null
+    },
+    {
+      "id": "C4",
+      "text": "Added `AFErrorURLTests` with 17 unit tests covering each resolving case",
+      "type": "pr_test",
+      "is_primary": false,
+      "source_span": "Added `AFErrorURLTests` with 17 unit tests covering each resolving case",
+      "inferred": false,
+      "anchors": [
+        {
+          "kind": "literal",
+          "value": "URL",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "AFError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "Error",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "AFErrorURLTests",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "error",
+          "value": "AFError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "AFError.url",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "URL",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "Error.url",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "AFError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "AFErrorURLTests",
+          "line": null,
+          "func": null,
+          "context": null
+        }
+      ],
+      "condition": null,
+      "expected": null,
+      "observed": null
+    },
+    {
+      "id": "C5",
+      "text": "The existing multipart `.url` assertions in `MultipartFormDataFailureTestCase` still pass, confirming no regression.",
+      "type": "pr_test",
+      "is_primary": false,
+      "source_span": "The existing multipart `.url` assertions in `MultipartFormDataFailureTestCase` still pass, confirming no regression.",
+      "inferred": false,
+      "anchors": [
+        {
+          "kind": "literal",
+          "value": "URL",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "AFError.url",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "URL",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "Error.url",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "MultipartFormDataFailureTestCase",
+          "line": null,
+          "func": null,
+          "context": null
+        }
+      ],
+      "condition": null,
+      "expected": null,
+      "observed": null
+    }
+  ],
+  "assessments": [
+    {
+      "claim_id": "C1",
+      "technical": "supported",
+      "verification": "not_attempted",
+      "evidence_ids": [
+        "E108",
+        "E008"
+      ],
+      "relations": {
+        "E108": "supports",
+        "E008": "supports"
+      },
+      "explanation": "The implementation of `AFError.url` now includes cases for `.multipartEncodingFailed`, `.responseValidationFailed`, and `.responseSerializationFailed`, and falls back to `underlyingError?.url`. Additionally, an extension on `Error` is provided to extract URLs from `URLError` and `NSError` via `NSURLErrorKey`.",
+      "limitations": [
+        "Static analysis cannot guarantee that all possible error types that might carry a URL are covered by the switch statement."
+      ],
+      "strength": "medium",
+      "lean": null,
+      "decided_by": "model",
+      "downgraded_reason": null,
+      "unconfirmed_reasoning": null
+    },
+    {
+      "claim_id": "C2",
+      "technical": "inconclusive",
+      "verification": "not_attempted",
+      "evidence_ids": [
+        "E108"
+      ],
+      "relations": {
+        "E108": "context"
+      },
+      "explanation": "The evidence shows changes to `AFError.swift` that address URL extraction, but there is no direct evidence in the provided items linking these changes to the resolution of issue #3965.",
+      "limitations": [
+        "The content of issue #3965 is not provided."
+      ],
+      "strength": "none",
+      "lean": null,
+      "decided_by": "model",
+      "downgraded_reason": null,
+      "unconfirmed_reasoning": null
+    },
+    {
+      "claim_id": "C3",
+      "technical": "supported",
+      "verification": "not_attempted",
+      "evidence_ids": [
+        "E108",
+        "E008"
+      ],
+      "relations": {
+        "E108": "supports",
+        "E008": "supports"
+      },
+      "explanation": "The diff shows the addition of an extension on `Error` that attempts to extract a `URL` from `AFError`, `URLError`, and `NSError` (via `NSURLErrorKey`).",
+      "limitations": [],
+      "strength": "medium",
+      "lean": null,
+      "decided_by": "model",
+      "downgraded_reason": null,
+      "unconfirmed_reasoning": null
+    },
+    {
+      "claim_id": "C4",
+      "technical": "inconclusive",
+      "verification": "not_attempted",
+      "evidence_ids": [
+        "E109",
+        "E114"
+      ],
+      "relations": {
+        "E109": "context",
+        "E114": "context"
+      },
+      "explanation": "The evidence found doesn't settle this claim either way.",
+      "limitations": [],
+      "strength": "none",
+      "lean": "supported",
+      "decided_by": "model",
+      "downgraded_reason": "no measured test count verifies the numerical claim; test changes alone are insufficient",
+      "unconfirmed_reasoning": "The diff shows the addition of a new test class `AFErrorURLTests` in `Tests/AFError+AlamofireTests.swift` containing multiple test cases for URL extraction. (Noted limit: The exact number of tests (17) cannot be verified as the diff is truncated.)"
+    },
+    {
+      "claim_id": "C5",
+      "technical": "inconclusive",
+      "verification": "not_attempted",
+      "evidence_ids": [
+        "E115"
+      ],
+      "relations": {
+        "E115": "context"
+      },
+      "explanation": "The evidence found doesn't settle this claim either way.",
+      "limitations": [],
+      "strength": "none",
+      "lean": "supported",
+      "decided_by": "model",
+      "downgraded_reason": "test changes do not establish test outcomes; no execution evidence verifies this claim",
+      "unconfirmed_reasoning": "The evidence indicates that the diff does not change `MultipartFormDataFailureTestCase`, which supports the claim that existing assertions in that class were not modified. (Noted limit: While the file was not changed, we cannot verify if the tests actually pass without running them.)"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E001",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Extensions/URLRequest+Alamofire.swift",
+      "start": 33,
+      "end": 39,
+      "excerpt": "\n    public func validate() throws {\n        if method == .get, let bodyData = httpBody {\n            throw AFError.urlRequestValidationFailed(reason: .bodyDataInGETRequest(bodyData))\n        }\n    }\n}",
+      "content_hash": "9a6a8907a016290ee98fbb270a609a89abbad301e7d1efd5b0374d84eac8cb2e",
+      "result": "Exact report text 'AFError.url' occurs in Source/Extensions/URLRequest+Alamofire.swift:36; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Extensions/URLRequest+Alamofire.swift#L33-L39",
+      "absence": false
+    },
+    {
+      "id": "E002",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 31,
+      "end": 39,
+      "excerpt": "/// `AFError` is the error type returned by Alamofire. It encompasses a few different types of errors, each with\n/// their own associated reasons.\npublic enum AFError: Error, Sendable {\n    /// The underlying reason the `.multipartEncodingFailed` error occurred.\n    public enum MultipartEncodingFailureReason: Sendable {\n        /// The `fileURL` provided for reading an encodable body part isn't a file `URL`.\n        case bodyPartURLInvalid(url: URL)\n        /// The filename of the `fileURL` provided has either an empty `lastPathComponent` or `pathExtension`.\n        case bodyPartFilenameInvalid(in: URL)",
+      "content_hash": "ab852d75188df657eb78f9045df4ae2295ee436df103f6297e25eaefd92711cc",
+      "result": "Exact report text '.multipartEncodingFailed' occurs in Source/Core/AFError.swift:34; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L31-L39",
+      "absence": false
+    },
+    {
+      "id": "E003",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 62,
+      "end": 70,
+      "excerpt": "    }\n\n    /// Represents unexpected input stream length that occur when encoding the `MultipartFormData`. Instances will be\n    /// embedded within an `AFError.multipartEncodingFailed` `.inputStreamReadFailed` case.\n    public struct UnexpectedInputStreamLength: Error {\n        /// The expected byte count to read.\n        public var bytesExpected: UInt64\n        /// The actual byte count read.\n        public var bytesRead: UInt64",
+      "content_hash": "c0fffa7eb365fc09f730dff216cad87ccc357a4f8ab303c3fc157a66be376797",
+      "result": "Exact report text '.multipartEncodingFailed' occurs in Source/Core/AFError.swift:65; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L62-L70",
+      "absence": false
+    },
+    {
+      "id": "E004",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 358,
+      "end": 366,
+      "excerpt": "    /// Returns whether the instance is `createURLRequestFailed`. When `true`, the `underlyingError` property will\n    /// contain the associated value.\n    public var isSessionTaskError: Bool {\n        if case .sessionTaskFailed = self { return true }\n        return false\n    }\n}\n\n// MARK: - Convenience Properties",
+      "content_hash": "5286a37063caefc874f0edc924cb706b01dd4fa019de99a1bc29fcac70d38ad1",
+      "result": "Exact report text '.sessionTaskFailed' occurs in Source/Core/AFError.swift:361; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L358-L366",
+      "absence": false
+    },
+    {
+      "id": "E005",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 375,
+      "end": 383,
+      "excerpt": "    /// The `URL` associated with the error, if any.\n    ///\n    /// For `.multipartEncodingFailed` errors, this is the body part `URL` that triggered the failure. For errors that\n    /// wrap an underlying error, such as `.sessionTaskFailed`, this is the `URL` extracted from that error, like the\n    /// `failingURL` of an underlying `URLError`. For `.requestRetryFailed`, only the `retryError` is consulted.\n    ///\n    /// - Note: Cases that carry no associated `URL`, such as `.explicitlyCancelled` and `.invalidURL`, return `nil`.\n    ///         Use `urlConvertible` to recover the value of an `.invalidURL` error.\n    public var url: URL? {",
+      "content_hash": "3d21c5e52214e6af93da79637a9e175d81e83a815606136dec87d4f38679cf89",
+      "result": "Exact report text '.sessionTaskFailed' occurs in Source/Core/AFError.swift:378; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L375-L383",
+      "absence": false
+    },
+    {
+      "id": "E006",
+      "claim_ids": [
+        "C1",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Example/Source/DetailViewController.swift",
+      "start": 35,
+      "end": 43,
+      "excerpt": "            oldValue?.cancel()\n\n            title = request?.description\n            request?.onURLRequestCreation { [weak self] _ in\n                self?.title = self?.request?.description\n            }\n\n            refreshControl?.endRefreshing()\n            headers.removeAll()",
+      "content_hash": "a7523b09c882be08b99c694ab109bece5e4777264029672520ea2f5182de9a40",
+      "result": "Exact report text 'URL' occurs in Example/Source/DetailViewController.swift:38; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Example/Source/DetailViewController.swift#L35-L43",
+      "absence": false
+    },
+    {
+      "id": "E007",
+      "claim_ids": [
+        "C1",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Example/Source/DetailViewController.swift",
+      "start": 81,
+      "end": 89,
+      "excerpt": "\n        let start = CACurrentMediaTime()\n\n        let requestComplete: (HTTPURLResponse?, Result<String, AFError>) -> Void = { response, result in\n            let end = CACurrentMediaTime()\n            self.elapsedTime = end - start\n\n            if let response {\n                for (field, value) in response.allHeaderFields {",
+      "content_hash": "3d43b7ffd5b7e2c2baf0928f2db43c479dcd801cf9663a637602bb933489947a",
+      "result": "Exact report text 'URL' occurs in Example/Source/DetailViewController.swift:84; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Example/Source/DetailViewController.swift#L81-L89",
+      "absence": false
+    },
+    {
+      "id": "E008",
+      "claim_ids": [
+        "C1",
+        "C3"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 486,
+      "end": 494,
+      "excerpt": "    var url: URL? {\n        switch self {\n        case let afError as AFError:\n            afError.url\n        case let urlError as URLError:\n            urlError.failingURL\n        default:\n            (self as NSError).userInfo[NSURLErrorKey] as? URL\n        }",
+      "content_hash": "2819d09e7f7b6056092b35564f1f35a81ae889a266b94a9c511ef7634a4447b6",
+      "result": "Exact report text 'Error.url' occurs in Source/Core/AFError.swift:489; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L486-L494",
+      "absence": false
+    },
+    {
+      "id": "E009",
+      "claim_ids": [
+        "C1",
+        "C3"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Extensions/URLRequest+Alamofire.swift",
+      "start": 33,
+      "end": 39,
+      "excerpt": "\n    public func validate() throws {\n        if method == .get, let bodyData = httpBody {\n            throw AFError.urlRequestValidationFailed(reason: .bodyDataInGETRequest(bodyData))\n        }\n    }\n}",
+      "content_hash": "9a6a8907a016290ee98fbb270a609a89abbad301e7d1efd5b0374d84eac8cb2e",
+      "result": "Exact report text 'Error.url' occurs in Source/Extensions/URLRequest+Alamofire.swift:36; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Extensions/URLRequest+Alamofire.swift#L33-L39",
+      "absence": false
+    },
+    {
+      "id": "E010",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 481,
+      "end": 489,
+      "excerpt": "extension Error {\n    /// The `URL` associated with the error, extracted from well-known Foundation error types.\n    ///\n    /// Returns the `failingURL` of a `URLError`, the `NSURLErrorKey` value of any other bridged `NSError`, or, when the\n    /// error is an `AFError`, that error's own `url`, so nested errors resolve transparently.\n    var url: URL? {\n        switch self {\n        case let afError as AFError:\n            afError.url",
+      "content_hash": "895f8fabc0ed731edd32f8847740bff8ea79c5ff83a2f4149a5cbe5aa5843487",
+      "result": "Exact report text 'NSURLErrorKey' occurs in Source/Core/AFError.swift:484; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L481-L489",
+      "absence": false
+    },
+    {
+      "id": "E011",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 490,
+      "end": 498,
+      "excerpt": "        case let urlError as URLError:\n            urlError.failingURL\n        default:\n            (self as NSError).userInfo[NSURLErrorKey] as? URL\n        }\n    }\n}\n\nextension AFError.ParameterEncodingFailureReason {",
+      "content_hash": "2830cdb3712cad2ef43c127c62f06433e74917fe5c8146c1ccd72cf7db228e2f",
+      "result": "Exact report text 'NSURLErrorKey' occurs in Source/Core/AFError.swift:493; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L490-L498",
+      "absence": false
+    },
+    {
+      "id": "E012",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 481,
+      "end": 489,
+      "excerpt": "extension Error {\n    /// The `URL` associated with the error, extracted from well-known Foundation error types.\n    ///\n    /// Returns the `failingURL` of a `URLError`, the `NSURLErrorKey` value of any other bridged `NSError`, or, when the\n    /// error is an `AFError`, that error's own `url`, so nested errors resolve transparently.\n    var url: URL? {\n        switch self {\n        case let afError as AFError:\n            afError.url",
+      "content_hash": "895f8fabc0ed731edd32f8847740bff8ea79c5ff83a2f4149a5cbe5aa5843487",
+      "result": "Exact report text 'NSError' occurs in Source/Core/AFError.swift:484; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L481-L489",
+      "absence": false
+    },
+    {
+      "id": "E013",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 490,
+      "end": 498,
+      "excerpt": "        case let urlError as URLError:\n            urlError.failingURL\n        default:\n            (self as NSError).userInfo[NSURLErrorKey] as? URL\n        }\n    }\n}\n\nextension AFError.ParameterEncodingFailureReason {",
+      "content_hash": "2830cdb3712cad2ef43c127c62f06433e74917fe5c8146c1ccd72cf7db228e2f",
+      "result": "Exact report text 'NSError' occurs in Source/Core/AFError.swift:493; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L490-L498",
+      "absence": false
+    },
+    {
+      "id": "E014",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_in_docs",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "CHANGELOG.md",
+      "start": 2093,
+      "end": 2101,
+      "excerpt": "\n#### Added\n\n- Status code and content type values into validation `NSError` userInfo dictionaries.\n  - Added by [Ce\u0301dric Luthi](https://github.com/0xced) in Pull Request\n    [#1166](https://github.com/Alamofire/Alamofire/pull/1166).\n- New `authorizationHeader` API to generate base64 encoded authorization header.\n  - Added by [Ce\u0301dric Luthi](https://github.com/0xced) in Pull Request\n    [#1187](https://github.com/Alamofire/Alamofire/pull/1187).",
+      "content_hash": "5317b4903bdeee625565521121e6bb0d364445019e342dd4759210979b28677f",
+      "result": "Exact report text 'NSError' occurs in CHANGELOG.md:2096; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/CHANGELOG.md#L2093-L2101",
+      "absence": false
+    },
+    {
+      "id": "E015",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_in_docs",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "CHANGELOG.md",
+      "start": 2564,
+      "end": 2572,
+      "excerpt": "- All response serializers to now return the original server data as `NSData?`.\n  - Updated by [Christian Noon](https://github.com/cnoon) in Pull Request\n    [#791](https://github.com/Alamofire/Alamofire/pull/791).\n- The `TaskDelegate` to store an error as an `NSError` instead of `ErrorType`.\n  - Updated by [Christian Noon](https://github.com/cnoon) in Pull Request\n    [#791](https://github.com/Alamofire/Alamofire/pull/791).\n- The `ValidationResult` failure case to require an `NSError` instead of `ErrorType`.\n  - Updated by [Christian Noon](https://github.com/cnoon) in Pull Request\n    [#791](https://github.com/Alamofire/Alamofire/pull/791).",
+      "content_hash": "689f4543120645f9f18c4b7145b5a02b687d941bbcfb47cc252ed1ab824f4ad3",
+      "result": "Exact report text 'NSError' occurs in CHANGELOG.md:2567; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/CHANGELOG.md#L2564-L2572",
+      "absence": false
+    },
+    {
+      "id": "E016",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Tests/AFError+AlamofireTests.swift",
+      "start": 490,
+      "end": 498,
+      "excerpt": "\n    func testThatURLIsExtractedFromNSErrorURLErrorKey() {\n        // Given\n        let underlying = NSError(domain: NSCocoaErrorDomain,\n                                 code: NSFileReadNoSuchFileError,\n                                 userInfo: [NSURLErrorKey: url])\n        let error = AFError.createURLRequestFailed(error: underlying)\n\n        // When, Then",
+      "content_hash": "0bda53ff13720882162f55bc17fd6a04b40f5c287063bb8cfafc76e14676e31c",
+      "result": "Exact report text 'CocoaError' occurs in Tests/AFError+AlamofireTests.swift:493; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Tests/AFError+AlamofireTests.swift#L490-L498",
+      "absence": false
+    },
+    {
+      "id": "E017",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Tests/DownloadTests.swift",
+      "start": 317,
+      "end": 325,
+      "excerpt": "        XCTAssertNil(response?.fileURL)\n        XCTAssertNil(response?.resumeData)\n        XCTAssertNotNil(response?.error)\n        XCTAssertEqual((response?.error?.underlyingError as? CocoaError)?.code, .fileNoSuchFile)\n    }\n\n    @MainActor\n    func testThatDownloadOptionsCanCreateIntermediateDirectoriesPriorToMovingFile() {\n        // Given",
+      "content_hash": "3ba121b9a8a82c78eed3432bb6abf58ebd6be7a17ff88c311e1cc64c73b21217",
+      "result": "Exact report text 'CocoaError' occurs in Tests/DownloadTests.swift:320; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Tests/DownloadTests.swift#L317-L325",
+      "absence": false
+    },
+    {
+      "id": "E018",
+      "claim_ids": [
+        "C1",
+        "C4"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Example/Source/DetailViewController.swift",
+      "start": 81,
+      "end": 89,
+      "excerpt": "\n        let start = CACurrentMediaTime()\n\n        let requestComplete: (HTTPURLResponse?, Result<String, AFError>) -> Void = { response, result in\n            let end = CACurrentMediaTime()\n            self.elapsedTime = end - start\n\n            if let response {\n                for (field, value) in response.allHeaderFields {",
+      "content_hash": "3d43b7ffd5b7e2c2baf0928f2db43c479dcd801cf9663a637602bb933489947a",
+      "result": "Exact report text 'AFError' occurs in Example/Source/DetailViewController.swift:84; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Example/Source/DetailViewController.swift#L81-L89",
+      "absence": false
+    },
+    {
+      "id": "E019",
+      "claim_ids": [
+        "C1",
+        "C4"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 1,
+      "end": 7,
+      "excerpt": "//\n//  AFError.swift\n//\n//  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)\n//\n//  Permission is hereby granted, free of charge, to any person obtaining a copy\n//  of this software and associated documentation files (the \"Software\"), to deal",
+      "content_hash": "baf5d0dcc65114036e83062362db2cf8a8085fc580e7e4b1ea64072c3df05816",
+      "result": "Exact report text 'AFError' occurs in Source/Core/AFError.swift:2; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L1-L7",
+      "absence": false
+    },
+    {
+      "id": "E020",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 276,
+      "end": 284,
+      "excerpt": "        return false\n    }\n\n    /// Returns whether the instance is `.parameterEncodingFailed`. When `true`, the `underlyingError` property will\n    /// contain the associated value.\n    public var isParameterEncodingError: Bool {\n        if case .parameterEncodingFailed = self { return true }\n        return false\n    }",
+      "content_hash": "34d50694b82e80f07f6e69a46dcde5874630ae18b4ceba2a60c738877e52d185",
+      "result": "Exact report text 'underlyingError' occurs in Source/Core/AFError.swift:279; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L276-L284",
+      "absence": false
+    },
+    {
+      "id": "E021",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 283,
+      "end": 291,
+      "excerpt": "        return false\n    }\n\n    /// Returns whether the instance is `.parameterEncoderFailed`. When `true`, the `underlyingError` property will\n    /// contain the associated value.\n    public var isParameterEncoderError: Bool {\n        if case .parameterEncoderFailed = self { return true }\n        return false\n    }",
+      "content_hash": "aa2038f19ecabca59a168a32bab0db6fdf8f4d3a836b683aab9228e93aafec6c",
+      "result": "Exact report text 'underlyingError' occurs in Source/Core/AFError.swift:286; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L283-L291",
+      "absence": false
+    },
+    {
+      "id": "E022",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 258,
+      "end": 266,
+      "excerpt": "        return false\n    }\n\n    /// Returns whether the instance is `.sessionInvalidated`.\n    public var isSessionInvalidatedError: Bool {\n        if case .sessionInvalidated = self { return true }\n        return false\n    }\n",
+      "content_hash": "ad758005d5b29baa7cb2135f2987d34dc20960922d443b3dd22fb3f32744313f",
+      "result": "Exact report text '.sessionInvalidated' occurs in Source/Core/AFError.swift:261; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L258-L266",
+      "absence": false
+    },
+    {
+      "id": "E023",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 260,
+      "end": 268,
+      "excerpt": "\n    /// Returns whether the instance is `.sessionInvalidated`.\n    public var isSessionInvalidatedError: Bool {\n        if case .sessionInvalidated = self { return true }\n        return false\n    }\n\n    /// Returns whether the instance is `.explicitlyCancelled`.\n    public var isExplicitlyCancelledError: Bool {",
+      "content_hash": "30e45901cc4963f3b30a0e3d0955c81ff79ec416fc6902fb0ff78a3644be1a9f",
+      "result": "Exact report text '.sessionInvalidated' occurs in Source/Core/AFError.swift:263; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L260-L268",
+      "absence": false
+    },
+    {
+      "id": "E024",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 297,
+      "end": 305,
+      "excerpt": "        return false\n    }\n\n    /// Returns whether the instance is `.requestAdaptationFailed`. When `true`, the `underlyingError` property will\n    /// contain the associated value.\n    public var isRequestAdaptationError: Bool {\n        if case .requestAdaptationFailed = self { return true }\n        return false\n    }",
+      "content_hash": "be49b2599fd86462873c530f033de544592ced3f019a9fc552e5454c36ea8f08",
+      "result": "Exact report text '.requestAdaptationFailed' occurs in Source/Core/AFError.swift:300; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L297-L305",
+      "absence": false
+    },
+    {
+      "id": "E025",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 300,
+      "end": 308,
+      "excerpt": "    /// Returns whether the instance is `.requestAdaptationFailed`. When `true`, the `underlyingError` property will\n    /// contain the associated value.\n    public var isRequestAdaptationError: Bool {\n        if case .requestAdaptationFailed = self { return true }\n        return false\n    }\n\n    /// Returns whether the instance is `.responseValidationFailed`. When `true`, the `acceptableContentTypes`,\n    /// `responseContentType`,  `responseCode`, and `underlyingError` properties will contain the associated values.",
+      "content_hash": "9133ca114923f312f1320d13233a1481034e16ef5ad85eefb86d2a02f33e6040",
+      "result": "Exact report text '.requestAdaptationFailed' occurs in Source/Core/AFError.swift:303; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L300-L308",
+      "absence": false
+    },
+    {
+      "id": "E026",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 337,
+      "end": 345,
+      "excerpt": "    /// Returns whether the instance is `createUploadableFailed`. When `true`, the `underlyingError` property will\n    /// contain the associated value.\n    public var isCreateUploadableError: Bool {\n        if case .createUploadableFailed = self { return true }\n        return false\n    }\n\n    /// Returns whether the instance is `createURLRequestFailed`. When `true`, the `underlyingError` property will\n    /// contain the associated value.",
+      "content_hash": "94ca5e9d2aee319ba2bc74ba3b8ccb3c9487d231859f5d6788e19fd370d1b606",
+      "result": "Exact report text '.createUploadableFailed' occurs in Source/Core/AFError.swift:340; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L337-L345",
+      "absence": false
+    },
+    {
+      "id": "E027",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 418,
+      "end": 426,
+      "excerpt": "        #endif\n        case let .sessionInvalidated(error):\n            return error\n        case let .createUploadableFailed(error):\n            return error\n        case let .createURLRequestFailed(error):\n            return error\n        case let .downloadedFileMoveFailed(error, _, _):\n            return error",
+      "content_hash": "70f4d43d5ebf10d54a7ceee893198049c98879765a08a5f98e4e099420a93003",
+      "result": "Exact report text '.createUploadableFailed' occurs in Source/Core/AFError.swift:421; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L418-L426",
+      "absence": false
+    },
+    {
+      "id": "E028",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 344,
+      "end": 352,
+      "excerpt": "    /// Returns whether the instance is `createURLRequestFailed`. When `true`, the `underlyingError` property will\n    /// contain the associated value.\n    public var isCreateURLRequestError: Bool {\n        if case .createURLRequestFailed = self { return true }\n        return false\n    }\n\n    /// Returns whether the instance is `downloadedFileMoveFailed`. When `true`, the `destination` and `underlyingError` properties will\n    /// contain the associated values.",
+      "content_hash": "4c8064e478993f0ad526848d31a7f8c1e515cbe1ae9a250f7ac907306d849c0b",
+      "result": "Exact report text '.createURLRequestFailed' occurs in Source/Core/AFError.swift:347; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L344-L352",
+      "absence": false
+    },
+    {
+      "id": "E029",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 420,
+      "end": 428,
+      "excerpt": "            return error\n        case let .createUploadableFailed(error):\n            return error\n        case let .createURLRequestFailed(error):\n            return error\n        case let .downloadedFileMoveFailed(error, _, _):\n            return error\n        case let .sessionTaskFailed(error):\n            return error",
+      "content_hash": "af34e07ca93fdf9f326f37028a0ee2a6fd6eefe33c0486cde1c4333baf5aaf37",
+      "result": "Exact report text '.createURLRequestFailed' occurs in Source/Core/AFError.swift:423; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L420-L428",
+      "absence": false
+    },
+    {
+      "id": "E030",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 210,
+      "end": 218,
+      "excerpt": "    /// `RequestAdapter` threw an error during adaptation.\n    case requestAdaptationFailed(error: any Error)\n    /// `RequestRetrier` threw an error during the request retry process.\n    case requestRetryFailed(retryError: any Error, originalError: any Error)\n    /// Response validation failed.\n    case responseValidationFailed(reason: ResponseValidationFailureReason)\n    /// Response serialization failed.\n    case responseSerializationFailed(reason: ResponseSerializationFailureReason)\n    #if canImport(Security)",
+      "content_hash": "03256ae5c10b83fa1448cbd5058d1752b0e29e692dc63759cc5aace6d4ee421b",
+      "result": "Exact report text 'retryError' occurs in Source/Core/AFError.swift:213; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L210-L218",
+      "absence": false
+    },
+    {
+      "id": "E031",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 376,
+      "end": 384,
+      "excerpt": "    ///\n    /// For `.multipartEncodingFailed` errors, this is the body part `URL` that triggered the failure. For errors that\n    /// wrap an underlying error, such as `.sessionTaskFailed`, this is the `URL` extracted from that error, like the\n    /// `failingURL` of an underlying `URLError`. For `.requestRetryFailed`, only the `retryError` is consulted.\n    ///\n    /// - Note: Cases that carry no associated `URL`, such as `.explicitlyCancelled` and `.invalidURL`, return `nil`.\n    ///         Use `urlConvertible` to recover the value of an `.invalidURL` error.\n    public var url: URL? {\n        switch self {",
+      "content_hash": "5492cdfbf681e43205495da7408dfd3029490902249ae8715405742f93433b57",
+      "result": "Exact report text 'retryError' occurs in Source/Core/AFError.swift:379; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L376-L384",
+      "absence": false
+    },
+    {
+      "id": "E032",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 330,
+      "end": 338,
+      "excerpt": "    /// Returns whether the instance is `requestRetryFailed`. When `true`, the `underlyingError` property will\n    /// contain the associated value.\n    public var isRequestRetryError: Bool {\n        if case .requestRetryFailed = self { return true }\n        return false\n    }\n\n    /// Returns whether the instance is `createUploadableFailed`. When `true`, the `underlyingError` property will\n    /// contain the associated value.",
+      "content_hash": "cb6983447a9ed100ff58d39383156ec76c10f32435835f3822726eac9760e294",
+      "result": "Exact report text '.requestRetryFailed' occurs in Source/Core/AFError.swift:333; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L330-L338",
+      "absence": false
+    },
+    {
+      "id": "E033",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 376,
+      "end": 384,
+      "excerpt": "    ///\n    /// For `.multipartEncodingFailed` errors, this is the body part `URL` that triggered the failure. For errors that\n    /// wrap an underlying error, such as `.sessionTaskFailed`, this is the `URL` extracted from that error, like the\n    /// `failingURL` of an underlying `URLError`. For `.requestRetryFailed`, only the `retryError` is consulted.\n    ///\n    /// - Note: Cases that carry no associated `URL`, such as `.explicitlyCancelled` and `.invalidURL`, return `nil`.\n    ///         Use `urlConvertible` to recover the value of an `.invalidURL` error.\n    public var url: URL? {\n        switch self {",
+      "content_hash": "5492cdfbf681e43205495da7408dfd3029490902249ae8715405742f93433b57",
+      "result": "Exact report text '.requestRetryFailed' occurs in Source/Core/AFError.swift:379; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L376-L384",
+      "absence": false
+    },
+    {
+      "id": "E034",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 210,
+      "end": 218,
+      "excerpt": "    /// `RequestAdapter` threw an error during adaptation.\n    case requestAdaptationFailed(error: any Error)\n    /// `RequestRetrier` threw an error during the request retry process.\n    case requestRetryFailed(retryError: any Error, originalError: any Error)\n    /// Response validation failed.\n    case responseValidationFailed(reason: ResponseValidationFailureReason)\n    /// Response serialization failed.\n    case responseSerializationFailed(reason: ResponseSerializationFailureReason)\n    #if canImport(Security)",
+      "content_hash": "03256ae5c10b83fa1448cbd5058d1752b0e29e692dc63759cc5aace6d4ee421b",
+      "result": "Exact report text 'originalError' occurs in Source/Core/AFError.swift:213; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L210-L218",
+      "absence": false
+    },
+    {
+      "id": "E035",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 742,
+      "end": 750,
+      "excerpt": "            return reason.localizedDescription\n        case let .responseSerializationFailed(reason):\n            return reason.localizedDescription\n        case let .requestRetryFailed(retryError, originalError):\n            return \"\"\"\n            Request retry failed with retry error: \\(retryError.localizedDescription), \\\n            original error: \\(originalError.localizedDescription)\n            \"\"\"\n        case .sessionDeinitialized:",
+      "content_hash": "6ba1e255b4cb76775cc233683c121171e7e79430833686e19d8ee6ce4272c491",
+      "result": "Exact report text 'originalError' occurs in Source/Core/AFError.swift:745; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L742-L750",
+      "absence": false
+    },
+    {
+      "id": "E036",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 96,
+      "end": 104,
+      "excerpt": "        case encoderFailed(error: any Error)\n    }\n\n    /// The underlying reason the `.responseValidationFailed` error occurred.\n    public enum ResponseValidationFailureReason: Sendable {\n        /// The data file containing the server response did not exist.\n        case dataFileNil\n        /// The data file containing the server response at the associated `URL` could not be read.\n        case dataFileReadFailed(at: URL)",
+      "content_hash": "a593fc8b9d3fdcf98ca20d95a470b940c87b07a1fe8aa220f526cc18753d7d96",
+      "result": "Exact report text '.responseValidationFailed' occurs in Source/Core/AFError.swift:99; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L96-L104",
+      "absence": false
+    },
+    {
+      "id": "E037",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 304,
+      "end": 312,
+      "excerpt": "        return false\n    }\n\n    /// Returns whether the instance is `.responseValidationFailed`. When `true`, the `acceptableContentTypes`,\n    /// `responseContentType`,  `responseCode`, and `underlyingError` properties will contain the associated values.\n    public var isResponseValidationError: Bool {\n        if case .responseValidationFailed = self { return true }\n        return false\n    }",
+      "content_hash": "578d77da22d39f8f19dcf48d311a2fb37678ba72b121e7431fcbb9729ddec63f",
+      "result": "Exact report text '.responseValidationFailed' occurs in Source/Core/AFError.swift:307; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L304-L312",
+      "absence": false
+    },
+    {
+      "id": "E038",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_in_docs",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Documentation/Alamofire 4.0 Migration Guide.md",
+      "start": 462,
+      "end": 470,
+      "excerpt": "- `.invalidURL(url: URLConvertible)` - Returned when a `URLConvertible` type fails to create a valid `URL`.\n- `.parameterEncodingFailed(reason: ParameterEncodingFailureReason)` - Returned when a parameter encoding object throws an error during the encoding process.\n- `.multipartEncodingFailed(reason: MultipartEncodingFailureReason)` - Returned when some step in the multipart encoding process fails. \n- `.responseValidationFailed(reason: ResponseValidationFailureReason)` - Returned when a `validate()` call fails.\n- `.responseSerializationFailed(reason: ResponseSerializationFailureReason)` - Returned when a response serializer encounters an error in the serialization process.\n\nEach case contains a specific failure reason which is another nested enumeration with multiple cases that contain additional information about the exact type of error that occurred. What this ultimately means is that is is much easier in Alamofire to identify where an error came from and what to do about it.\n\n```swift",
+      "content_hash": "627a03497bd18add1295aca9bce92fa3b99209382474b492a231e0a6fb5a49e0",
+      "result": "Exact report text '.responseValidationFailed' occurs in Documentation/Alamofire 4.0 Migration Guide.md:465; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Documentation/Alamofire 4.0 Migration Guide.md#L462-L470",
+      "absence": false
+    },
+    {
+      "id": "E039",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_in_docs",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Documentation/Alamofire 4.0 Migration Guide.md",
+      "start": 481,
+      "end": 489,
+      "excerpt": "        case .multipartEncodingFailed(let reason):\n            print(\"Multipart encoding failed: \\(error.localizedDescription)\")\n            print(\"Failure Reason: \\(reason)\")\n        case .responseValidationFailed(let reason):\n            print(\"Response validation failed: \\(error.localizedDescription)\")\n            print(\"Failure Reason: \\(reason)\")\n\n            switch reason {\n            case .dataFileNil, .dataFileReadFailed:",
+      "content_hash": "e720260837ab357bf911ff84234bd60f45835b37e29b43355a95d4681d301719",
+      "result": "Exact report text '.responseValidationFailed' occurs in Documentation/Alamofire 4.0 Migration Guide.md:484; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Documentation/Alamofire 4.0 Migration Guide.md#L481-L489",
+      "absence": false
+    },
+    {
+      "id": "E040",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 567,
+      "end": 575,
+      "excerpt": "             let .unacceptableContentType(types, _):\n            types\n        case .dataFileNil,\n             .dataFileReadFailed,\n             .unacceptableStatusCode,\n             .customValidationFailed:\n            nil\n        }\n    }",
+      "content_hash": "3270908a1350550523212947160487568bc4bf21d82e9a1633c8fb8815c3d44c",
+      "result": "Exact report text '.dataFileReadFailed' occurs in Source/Core/AFError.swift:570; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L567-L575",
+      "absence": false
+    },
+    {
+      "id": "E041",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 579,
+      "end": 587,
+      "excerpt": "        case let .unacceptableContentType(_, responseType):\n            responseType\n        case .dataFileNil,\n             .dataFileReadFailed,\n             .missingContentType,\n             .unacceptableStatusCode,\n             .customValidationFailed:\n            nil\n        }",
+      "content_hash": "bcc61ba415f7f6c6f0241c14d220c4c0a8ebc0563563498237bb1abbb2689153",
+      "result": "Exact report text '.dataFileReadFailed' occurs in Source/Core/AFError.swift:582; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L579-L587",
+      "absence": false
+    },
+    {
+      "id": "E042",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_in_docs",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Documentation/Alamofire 4.0 Migration Guide.md",
+      "start": 486,
+      "end": 494,
+      "excerpt": "            print(\"Failure Reason: \\(reason)\")\n\n            switch reason {\n            case .dataFileNil, .dataFileReadFailed:\n                print(\"Downloaded file could not be read\")\n            case .missingContentType(let acceptableContentTypes):\n                print(\"Content Type Missing: \\(acceptableContentTypes)\")\n            case .unacceptableContentType(let acceptableContentTypes, let responseContentType):\n                print(\"Response content type: \\(responseContentType) was unacceptable: \\(acceptableContentTypes)\")",
+      "content_hash": "ab608d7181b5cfac990c5f07b6cc6cf59b439b229ae91ad6672f505eb497912a",
+      "result": "Exact report text '.dataFileReadFailed' occurs in Documentation/Alamofire 4.0 Migration Guide.md:489; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Documentation/Alamofire 4.0 Migration Guide.md#L486-L494",
+      "absence": false
+    },
+    {
+      "id": "E043",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 311,
+      "end": 319,
+      "excerpt": "        return false\n    }\n\n    /// Returns whether the instance is `.responseSerializationFailed`. When `true`, the `failedStringEncoding` and\n    /// `underlyingError` properties will contain the associated values.\n    public var isResponseSerializationError: Bool {\n        if case .responseSerializationFailed = self { return true }\n        return false\n    }",
+      "content_hash": "76ef5ae3783a182efb4cfabcd0924c81a0a6918c8563010ff2a2c154d18644bb",
+      "result": "Exact report text '.responseSerializationFailed' occurs in Source/Core/AFError.swift:314; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L311-L319",
+      "absence": false
+    },
+    {
+      "id": "E044",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 314,
+      "end": 322,
+      "excerpt": "    /// Returns whether the instance is `.responseSerializationFailed`. When `true`, the `failedStringEncoding` and\n    /// `underlyingError` properties will contain the associated values.\n    public var isResponseSerializationError: Bool {\n        if case .responseSerializationFailed = self { return true }\n        return false\n    }\n\n    #if canImport(Security)\n    /// Returns whether the instance is `.serverTrustEvaluationFailed`. When `true`, the `underlyingError` property will",
+      "content_hash": "cd040ed0be45350061ed09a33713156e4f8d190ad3d3c57ddc11f5a3bceac7d5",
+      "result": "Exact report text '.responseSerializationFailed' occurs in Source/Core/AFError.swift:317; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L314-L322",
+      "absence": false
+    },
+    {
+      "id": "E045",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 635,
+      "end": 643,
+      "excerpt": "            encoding\n        case .inputDataNilOrZeroLength,\n             .inputFileNil,\n             .inputFileReadFailed(_),\n             .jsonSerializationFailed(_),\n             .decodingFailed(_),\n             .customSerializationFailed(_),\n             .invalidEmptyResponse:\n            nil",
+      "content_hash": "0231c8aa94aba2cdf38d9d1d60cd2a18376dc51fc23d667f4589c2234a45b54e",
+      "result": "Exact report text '.inputFileReadFailed' occurs in Source/Core/AFError.swift:638; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L635-L643",
+      "absence": false
+    },
+    {
+      "id": "E046",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 652,
+      "end": 660,
+      "excerpt": "            error\n        case .inputDataNilOrZeroLength,\n             .inputFileNil,\n             .inputFileReadFailed,\n             .stringSerializationFailed,\n             .invalidEmptyResponse:\n            nil\n        }\n    }",
+      "content_hash": "83dd5af365693e1161add731dafac4587be318e1f27b43705c33962b0f7da09c",
+      "result": "Exact report text '.inputFileReadFailed' occurs in Source/Core/AFError.swift:655; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L652-L660",
+      "absence": false
+    },
+    {
+      "id": "E047",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 110,
+      "end": 118,
+      "excerpt": "        /// The response status code was not acceptable.\n        case unacceptableStatusCode(code: Int)\n        /// Custom response validation failed due to the associated `Error`.\n        case customValidationFailed(error: any Error)\n    }\n\n    /// The underlying reason the response serialization error occurred.\n    public enum ResponseSerializationFailureReason: Sendable {\n        /// The server response contained no data or the data was zero length.",
+      "content_hash": "236e98a1f93e0573551c0f7092ab810e48142e0a17f8cc0228bc5f0ad7916667",
+      "result": "Exact report text 'customValidationFailed' occurs in Source/Core/AFError.swift:113; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L110-L118",
+      "absence": false
+    },
+    {
+      "id": "E048",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 569,
+      "end": 577,
+      "excerpt": "        case .dataFileNil,\n             .dataFileReadFailed,\n             .unacceptableStatusCode,\n             .customValidationFailed:\n            nil\n        }\n    }\n\n    var responseContentType: String? {",
+      "content_hash": "437947775a709e6a9f7dde14b6217bc8cc7e38b7573ea127093dca3f2ef56e44",
+      "result": "Exact report text 'customValidationFailed' occurs in Source/Core/AFError.swift:572; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L569-L577",
+      "absence": false
+    },
+    {
+      "id": "E049",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 126,
+      "end": 134,
+      "excerpt": "        /// JSON serialization failed with an underlying system error.\n        case jsonSerializationFailed(error: any Error)\n        /// A `DataDecoder` failed to decode the response due to the associated `Error`.\n        case decodingFailed(error: any Error)\n        /// A custom response serializer failed due to the associated `Error`.\n        case customSerializationFailed(error: any Error)\n        /// Generic serialization failed for an empty response that wasn't type `Empty` but instead the associated type.\n        case invalidEmptyResponse(type: String)\n    }",
+      "content_hash": "8294579b97c3b68f908f39a8232ca13c27a5d8b143c141d6519ede78a52b1969",
+      "result": "Exact report text 'decodingFailed' occurs in Source/Core/AFError.swift:129; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L126-L134",
+      "absence": false
+    },
+    {
+      "id": "E050",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 637,
+      "end": 645,
+      "excerpt": "             .inputFileNil,\n             .inputFileReadFailed(_),\n             .jsonSerializationFailed(_),\n             .decodingFailed(_),\n             .customSerializationFailed(_),\n             .invalidEmptyResponse:\n            nil\n        }\n    }",
+      "content_hash": "6be2e0042b8862bd39fe0583e813a7d5e6ee9f2b090a640e8548446dec51d429",
+      "result": "Exact report text 'decodingFailed' occurs in Source/Core/AFError.swift:640; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L637-L645",
+      "absence": false
+    },
+    {
+      "id": "E051",
+      "claim_ids": [
+        "C1",
+        "C3",
+        "C4"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Example/Source/DetailViewController.swift",
+      "start": 81,
+      "end": 89,
+      "excerpt": "\n        let start = CACurrentMediaTime()\n\n        let requestComplete: (HTTPURLResponse?, Result<String, AFError>) -> Void = { response, result in\n            let end = CACurrentMediaTime()\n            self.elapsedTime = end - start\n\n            if let response {\n                for (field, value) in response.allHeaderFields {",
+      "content_hash": "3d43b7ffd5b7e2c2baf0928f2db43c479dcd801cf9663a637602bb933489947a",
+      "result": "Exact report text 'Error' occurs in Example/Source/DetailViewController.swift:84; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Example/Source/DetailViewController.swift#L81-L89",
+      "absence": false
+    },
+    {
+      "id": "E052",
+      "claim_ids": [
+        "C1",
+        "C3",
+        "C4"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 1,
+      "end": 7,
+      "excerpt": "//\n//  AFError.swift\n//\n//  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)\n//\n//  Permission is hereby granted, free of charge, to any person obtaining a copy\n//  of this software and associated documentation files (the \"Software\"), to deal",
+      "content_hash": "baf5d0dcc65114036e83062362db2cf8a8085fc580e7e4b1ea64072c3df05816",
+      "result": "Exact report text 'Error' occurs in Source/Core/AFError.swift:2; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L1-L7",
+      "absence": false
+    },
+    {
+      "id": "E053",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 378,
+      "end": 386,
+      "excerpt": "    /// wrap an underlying error, such as `.sessionTaskFailed`, this is the `URL` extracted from that error, like the\n    /// `failingURL` of an underlying `URLError`. For `.requestRetryFailed`, only the `retryError` is consulted.\n    ///\n    /// - Note: Cases that carry no associated `URL`, such as `.explicitlyCancelled` and `.invalidURL`, return `nil`.\n    ///         Use `urlConvertible` to recover the value of an `.invalidURL` error.\n    public var url: URL? {\n        switch self {\n        case let .multipartEncodingFailed(reason):\n            reason.url",
+      "content_hash": "5b713fa0e187ebedf2fbdd22fdc5ce5298c10c94645d5bb433d54b4299274903",
+      "result": "Exact report text 'Note' occurs in Source/Core/AFError.swift:381; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L378-L386",
+      "absence": false
+    },
+    {
+      "id": "E054",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/DataRequest.swift",
+      "start": 80,
+      "end": 88,
+      "excerpt": "\n    /// Called when `Data` is received by this instance.\n    ///\n    /// - Note: Also calls `updateDownloadProgress`.\n    ///\n    /// - Parameter data: The `Data` received.\n    func didReceive(data: Data) {\n        dataMutableState.write { mutableState in\n            if mutableState.data == nil {",
+      "content_hash": "e1453c62cb427f08d1642a97944d3c714cfcb0a191971a63400dd04acbb0fd03",
+      "result": "Exact report text 'Note' occurs in Source/Core/DataRequest.swift:83; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/DataRequest.swift#L80-L88",
+      "absence": false
+    },
+    {
+      "id": "E055",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Alamofire.xcodeproj/project.pbxproj",
+      "start": 679,
+      "end": 687,
+      "excerpt": "\t\t31181E2F2794FF9600E88600 /* expired.badssl.com-leaf.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = \"expired.badssl.com-leaf.cer\"; sourceTree = \"<group>\"; };\n\t\t311B198F20B0D3B40036823B /* MultipartUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartUpload.swift; sourceTree = \"<group>\"; };\n\t\t31293065263E17D600473CEA /* Alamofire watchOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = \"Alamofire watchOS Tests.xctest\"; sourceTree = BUILT_PRODUCTS_DIR; };\n\t\t312D1E0B1FC2551400E51FF1 /* Usage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Usage.md; path = Documentation/Usage.md; sourceTree = \"<group>\"; };\n\t\t312D1E0C1FC2551400E51FF1 /* AdvancedUsage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = AdvancedUsage.md; path = Documentation/AdvancedUsage.md; sourceTree = \"<group>\"; };\n\t\t312EDCEC2FA4FF8000EEB257 /* MIMETypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIMETypeTests.swift; sourceTree = \"<group>\"; };\n\t\t312FC4FE2CB079E400E48EAB /* InternalHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalHelpers.swift; sourceTree = \"<group>\"; };\n\t\t31303CC22EF64B2A00EEB257 /* DispatchQueue+AlamofireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = \"DispatchQueue+AlamofireTests.swift\"; sourceTree = \"<group>\"; };\n\t\t31425AC0241F098000EE3CCC /* InternalRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalRequestTests.swift; sourceTree = \"<group>\"; };",
+      "content_hash": "005f39130eb94c78c2a5d30e49c01dc7e3938c07515f8640fcebfba06e8fefe2",
+      "result": "Exact report text 'Usage.md' occurs in Alamofire.xcodeproj/project.pbxproj:682; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Alamofire.xcodeproj/project.pbxproj#L679-L687",
+      "absence": false
+    },
+    {
+      "id": "E056",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Alamofire.xcodeproj/project.pbxproj",
+      "start": 680,
+      "end": 688,
+      "excerpt": "\t\t311B198F20B0D3B40036823B /* MultipartUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartUpload.swift; sourceTree = \"<group>\"; };\n\t\t31293065263E17D600473CEA /* Alamofire watchOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = \"Alamofire watchOS Tests.xctest\"; sourceTree = BUILT_PRODUCTS_DIR; };\n\t\t312D1E0B1FC2551400E51FF1 /* Usage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Usage.md; path = Documentation/Usage.md; sourceTree = \"<group>\"; };\n\t\t312D1E0C1FC2551400E51FF1 /* AdvancedUsage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = AdvancedUsage.md; path = Documentation/AdvancedUsage.md; sourceTree = \"<group>\"; };\n\t\t312EDCEC2FA4FF8000EEB257 /* MIMETypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIMETypeTests.swift; sourceTree = \"<group>\"; };\n\t\t312FC4FE2CB079E400E48EAB /* InternalHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalHelpers.swift; sourceTree = \"<group>\"; };\n\t\t31303CC22EF64B2A00EEB257 /* DispatchQueue+AlamofireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = \"DispatchQueue+AlamofireTests.swift\"; sourceTree = \"<group>\"; };\n\t\t31425AC0241F098000EE3CCC /* InternalRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalRequestTests.swift; sourceTree = \"<group>\"; };\n\t\t3145E0E42797A8EF00949557 /* tvOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = tvOS.xctestplan; sourceTree = \"<group>\"; };",
+      "content_hash": "13854b927a21d11a8565c2decfba3f62cc04bea82a051cfedc217766ac7c6bad",
+      "result": "Exact report text 'Usage.md' occurs in Alamofire.xcodeproj/project.pbxproj:683; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Alamofire.xcodeproj/project.pbxproj#L680-L688",
+      "absence": false
+    },
+    {
+      "id": "E057",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_in_docs",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "CHANGELOG.md",
+      "start": 162,
+      "end": 170,
+      "excerpt": "### Fixed\n- Missing `@Sendable` in `RetryPolicy`.\n  - Fixed by [Colin Willson](https://github.com/CWftw) in Pull Request [#3994](https://github.com/Alamofire/Alamofire/pull/3994).\n- Example in Usage.md.\n  - Fixed by [\uae40\uc601\ube48 (Rei)](https://github.com/kybeen) in Pull Request [#3955](https://github.com/Alamofire/Alamofire/pull/3955).\n- Deleted `.swiftpm` folder from repo to prevent Xcode from creating Alamofire schemes when used as a package.\n  - Fixed by [Jon Shier](https://github.com/jshier) in Pull Request [#3947](https://github.com/Alamofire/Alamofire/pull/3947).\n\n---",
+      "content_hash": "b8bdc3b10b431110a8fd83014c15825da481147ecde3d039dd2cc4d65cbe2f02",
+      "result": "Exact report text 'Usage.md' occurs in CHANGELOG.md:165; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/CHANGELOG.md#L162-L170",
+      "absence": false
+    },
+    {
+      "id": "E058",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_in_docs",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "CHANGELOG.md",
+      "start": 872,
+      "end": 880,
+      "excerpt": "  - Updated by [philtre](https://github.com/philtre) in Pull Request [#2893](https://github.com/Alamofire/Alamofire/pull/2893).\n- `NetworkReachabilityManager` to simplify and modernize its API.\n  - Updated by [Jon Shier](https://github.com/jshier) in Pull Request [#2915](https://github.com/Alamofire/Alamofire/pull/2915).\n- `Usage.md` documentation to be fully up-to-date with Alamofire 5.\n  - Updated by [Jon Shier](https://github.com/jshier) in Pull Request [#2895](https://github.com/Alamofire/Alamofire/pull/2895).\n- Bundle identifiers to include the platform name, fixing ITMS-90806.\n  - Updated by [Jonathan](https://github.com/JonMo) in Pull Request [#2928](https://github.com/Alamofire/Alamofire/pull/2928).\n\n#### Fixed",
+      "content_hash": "02ef23f81b70e462cf3b1e087ee5f8606068d62a12e0cc3a8099d3fad5debd0c",
+      "result": "Exact report text 'Usage.md' occurs in CHANGELOG.md:875; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/CHANGELOG.md#L872-L880",
+      "absence": false
+    },
+    {
+      "id": "E059",
+      "claim_ids": [
+        "C3"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Alamofire.xcodeproj/xcshareddata/xcschemes/Alamofire iOS.xcscheme",
+      "start": 96,
+      "end": 104,
+      "excerpt": "      useCustomWorkingDirectory = \"NO\"\n      ignoresPersistentStateOnLaunch = \"NO\"\n      debugDocumentVersioning = \"YES\"\n      debugServiceExtension = \"internal\"\n      enableGPUValidationMode = \"1\"\n      allowLocationSimulation = \"YES\">\n      <MacroExpansion>\n         <BuildableReference\n            BuildableIdentifier = \"primary\"",
+      "content_hash": "bde35305368764c70ed26855b3c3a6436279d3dc591850fee94cea75a1d32b93",
+      "result": "Exact report text 'internal' occurs in Alamofire.xcodeproj/xcshareddata/xcschemes/Alamofire iOS.xcscheme:99; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Alamofire.xcodeproj/xcshareddata/xcschemes/Alamofire iOS.xcscheme#L96-L104",
+      "absence": false
+    },
+    {
+      "id": "E060",
+      "claim_ids": [
+        "C3"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Alamofire.xcodeproj/xcshareddata/xcschemes/Alamofire macOS.xcscheme",
+      "start": 97,
+      "end": 105,
+      "excerpt": "      useCustomWorkingDirectory = \"NO\"\n      ignoresPersistentStateOnLaunch = \"NO\"\n      debugDocumentVersioning = \"YES\"\n      debugServiceExtension = \"internal\"\n      enableGPUValidationMode = \"1\"\n      allowLocationSimulation = \"YES\">\n      <MacroExpansion>\n         <BuildableReference\n            BuildableIdentifier = \"primary\"",
+      "content_hash": "bde35305368764c70ed26855b3c3a6436279d3dc591850fee94cea75a1d32b93",
+      "result": "Exact report text 'internal' occurs in Alamofire.xcodeproj/xcshareddata/xcschemes/Alamofire macOS.xcscheme:100; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Alamofire.xcodeproj/xcshareddata/xcschemes/Alamofire macOS.xcscheme#L97-L105",
+      "absence": false
+    },
+    {
+      "id": "E061",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Alamofire.swift",
+      "start": 34,
+      "end": 42,
+      "excerpt": "#endif\n\n/// Reference to `Session.default` for quick bootstrapping and examples.\npublic let AF = Session.default\n\n/// Namespace for informational Alamofire values.\npublic enum AFInfo {\n    /// Current Alamofire version.\n    public static let version = \"5.12.0\"",
+      "content_hash": "ac5b1e8d390ae7f892c70458b12f4a655409f01a79ff06d46b5ac2c5423c5421",
+      "result": "Exact report text 'public' occurs in Source/Alamofire.swift:37; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Alamofire.swift#L34-L42",
+      "absence": false
+    },
+    {
+      "id": "E062",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Alamofire.swift",
+      "start": 37,
+      "end": 43,
+      "excerpt": "public let AF = Session.default\n\n/// Namespace for informational Alamofire values.\npublic enum AFInfo {\n    /// Current Alamofire version.\n    public static let version = \"5.12.0\"\n}",
+      "content_hash": "660c8ec7e24936d60cb26b475e18cc3ce896bb615e071fb94516a78e5e094184",
+      "result": "Exact report text 'public' occurs in Source/Alamofire.swift:40; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Alamofire.swift#L37-L43",
+      "absence": false
+    },
+    {
+      "id": "E063",
+      "claim_ids": [
+        "C4"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Tests/AFError+AlamofireTests.swift",
+      "start": 404,
+      "end": 412,
+      "excerpt": "\n// MARK: -\n\nfinal class AFErrorURLTests: BaseTestCase {\n    private let url = URL(string: \"https://example.com/path\")!\n    private let otherURL = URL(string: \"https://example.com/other\")!\n\n    // MARK: Underlying Network Errors\n",
+      "content_hash": "7a7e0a92cdd48f4df0a0023cb3666a50e37377bf6abbda4c4054449a5935a4cb",
+      "result": "Exact report text 'AFErrorURLTests' occurs in Tests/AFError+AlamofireTests.swift:407; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Tests/AFError+AlamofireTests.swift#L404-L412",
+      "absence": false
+    },
+    {
+      "id": "E064",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Example/Source/AppDelegate.swift",
+      "start": 33,
+      "end": 41,
+      "excerpt": "    // MARK: - UIApplicationDelegate\n\n    func application(_ application: UIApplication,\n                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {\n        let splitViewController = window!.rootViewController as! UISplitViewController\n        let navigationController = splitViewController.viewControllers.last as! UINavigationController\n        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem\n        splitViewController.delegate = self\n",
+      "content_hash": "9890e9ba078e7879944d3e7a723a9442cf2a386f763b5fb37cb212bd922138f7",
+      "result": "Exact report text 'nil' occurs in Example/Source/AppDelegate.swift:36; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Example/Source/AppDelegate.swift#L33-L41",
+      "absence": false
+    },
+    {
+      "id": "E065",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Example/Source/AppDelegate.swift",
+      "start": 51,
+      "end": 59,
+      "excerpt": "        if\n            let secondaryAsNavController = secondaryViewController as? UINavigationController,\n            let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController {\n            return topAsDetailController.request == nil\n        }\n\n        return false\n    }\n}",
+      "content_hash": "8b9c2c0f0c2eda05736d2d302874ac417b9ea8ed19637d0dd65b764f0e54060b",
+      "result": "Exact report text 'nil' occurs in Example/Source/AppDelegate.swift:54; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Example/Source/AppDelegate.swift#L51-L59",
+      "absence": false
+    },
+    {
+      "id": "E066",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 264,
+      "end": 272,
+      "excerpt": "        return false\n    }\n\n    /// Returns whether the instance is `.explicitlyCancelled`.\n    public var isExplicitlyCancelledError: Bool {\n        if case .explicitlyCancelled = self { return true }\n        return false\n    }\n",
+      "content_hash": "4144eaa086075fd6ed9d0757b1783522f39e20d21486f5d64427360f2a8b6043",
+      "result": "Exact report text '.explicitlyCancelled' occurs in Source/Core/AFError.swift:267; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L264-L272",
+      "absence": false
+    },
+    {
+      "id": "E067",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 266,
+      "end": 274,
+      "excerpt": "\n    /// Returns whether the instance is `.explicitlyCancelled`.\n    public var isExplicitlyCancelledError: Bool {\n        if case .explicitlyCancelled = self { return true }\n        return false\n    }\n\n    /// Returns whether the instance is `.invalidURL`.\n    public var isInvalidURLError: Bool {",
+      "content_hash": "feb8cc1803705ee4bbc6be1e3160e0786ac38d3a840a1deedec9bb33b552d961",
+      "result": "Exact report text '.explicitlyCancelled' occurs in Source/Core/AFError.swift:269; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L266-L274",
+      "absence": false
+    },
+    {
+      "id": "E068",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_in_docs",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Documentation/AdvancedUsage.md",
+      "start": 313,
+      "end": 321,
+      "excerpt": "\n- `resume()` resumes, or starts, a `Request`\u2019s network traffic. If `Session.startRequestsImmediately` or `Request.shouldAutomaticallyResume` are `true`, this is called automatically once a response handler has been added to the `Request`.\n- `suspend()` suspends, or pauses the `Request` and its network traffic. `Request`s in this state can be resumed, but only `DownloadRequests` may be able continue transferring data. Other `Request`s will start over.\n- `cancel()` cancels a `Request`. Once in this state, a `Request` cannot be resumed or suspended. When `cancel()` is called, the `Request`\u2019s `error` property will be set with an `AFError.explicitlyCancelled` instance.\n  If a `Request` is resumed and isn\u2019t later cancelled, it will reach the `.finished` state once all response validators and response serializers have been run. However, if additional response serializers are added to the `Request` after it has reached the `.finished` state, it will transition back to the `.resumed` state and perform the network request again.\n\n#### Progress\n\nIn order to track the progress of a request, `Request` offers a both `uploadProgress` and `downloadProgress` properties as well as closure-based `uploadProgress` and `downloadProgress` methods. Like all closure-based `Request` APIs, the progress APIs can be chained off of the `Request` with other methods. Also like the other closure-based APIs, they should be added to a request _before_ adding any response handlers, like `responseDecodable`.",
+      "content_hash": "d38708c7df6ce17ad1b52cd1dce2b88db4d9a80dc303d1bf6fe9dda7ed0ab86e",
+      "result": "Exact report text '.explicitlyCancelled' occurs in Documentation/AdvancedUsage.md:316; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Documentation/AdvancedUsage.md#L313-L321",
+      "absence": false
+    },
+    {
+      "id": "E069",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_in_docs",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Documentation/AdvancedUsage.md",
+      "start": 1374,
+      "end": 1382,
+      "excerpt": "\nOnce subscribed, this chain of transformations will make the first request and then create a publisher for a second, finishing when the second request has finished.\n\n> As with all Combine usage, care must be taken to ensure that subscriptions are not cancelled early by maintaining the lifetime of the `AnyCancellable` tokens returned by functions like `sink`. If a request is cancelled prematurely, the response's error will be set to `AFError.explicitlyCancelled`.\n\n#### `DownloadResponsePublisher`\n\nAlamofire also offers a `Publisher` for `DownloadRequest`s, `DownloadResponsePublisher`. Its behavior and capabilities are the same as `DataResponsePublisher`.\n",
+      "content_hash": "6c2afab1793d93ace40258434a749fdda6e61b82b058caad4134f03c045f2f70",
+      "result": "Exact report text '.explicitlyCancelled' occurs in Documentation/AdvancedUsage.md:1377; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Documentation/AdvancedUsage.md#L1374-L1382",
+      "absence": false
+    },
+    {
+      "id": "E070",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "path_found",
+      "tier": "E2",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Documentation/Usage.md",
+      "start": null,
+      "end": null,
+      "excerpt": null,
+      "content_hash": null,
+      "result": "File Documentation/Usage.md exists at this version",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Documentation/Usage.md",
+      "absence": false
+    },
+    {
+      "id": "E071",
+      "claim_ids": [
+        "C1",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "kind": "symbol_defined_text",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 486,
+      "end": 516,
+      "excerpt": "    var url: URL? {\n        switch self {\n        case let afError as AFError:\n            afError.url\n        case let urlError as URLError:\n            urlError.failingURL\n        default:\n            (self as NSError).userInfo[NSURLErrorKey] as? URL\n        }\n    }\n}\n\nextension AFError.ParameterEncodingFailureReason {\n    var underlyingError: (any Error)? {\n        switch self {\n        case let .jsonEncodingFailed(error),\n             let .customEncodingFailed(error):\n            error\n        case .missingURL:\n            nil\n        }\n    }\n}\n\nextension AFError.ParameterEncoderFailureReason {\n    var underlyingError: (any Error)? {\n        switch self {\n        case let .encoderFailed(error):\n            error\n        case .missingRequiredComponent:\n            nil",
+      "content_hash": "c7882bfb16b9b349358798eab8fe9b9b08a7369b3b1875b5daa6f58ebfab7917",
+      "result": "`url` looks defined in Source/Core/AFError.swift at line 486 (+3 more) (text match)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L486-L516",
+      "absence": false
+    },
+    {
+      "id": "E072",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "symbol_mentioned",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 376,
+      "end": 384,
+      "excerpt": "    ///\n    /// For `.multipartEncodingFailed` errors, this is the body part `URL` that triggered the failure. For errors that\n    /// wrap an underlying error, such as `.sessionTaskFailed`, this is the `URL` extracted from that error, like the\n    /// `failingURL` of an underlying `URLError`. For `.requestRetryFailed`, only the `retryError` is consulted.\n    ///\n    /// - Note: Cases that carry no associated `URL`, such as `.explicitlyCancelled` and `.invalidURL`, return `nil`.\n    ///         Use `urlConvertible` to recover the value of an `.invalidURL` error.\n    public var url: URL? {\n        switch self {",
+      "content_hash": "5492cdfbf681e43205495da7408dfd3029490902249ae8715405742f93433b57",
+      "result": "`failingURL` has no definition found, but appears in Source/Core/AFError.swift:379",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L376-L384",
+      "absence": false
+    },
+    {
+      "id": "E073",
+      "claim_ids": [
+        "C1",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "kind": "symbol_mentioned",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 33,
+      "end": 41,
+      "excerpt": "public enum AFError: Error, Sendable {\n    /// The underlying reason the `.multipartEncodingFailed` error occurred.\n    public enum MultipartEncodingFailureReason: Sendable {\n        /// The `fileURL` provided for reading an encodable body part isn't a file `URL`.\n        case bodyPartURLInvalid(url: URL)\n        /// The filename of the `fileURL` provided has either an empty `lastPathComponent` or `pathExtension`.\n        case bodyPartFilenameInvalid(in: URL)\n        /// The file at the `fileURL` provided was not reachable.\n        case bodyPartFileNotReachable(at: URL)",
+      "content_hash": "d2999234e0110dfb98afb4e5dec75408fbf4d9012f7fd60f1201b162897a67d7",
+      "result": "`URL` has no definition found, but appears in Source/Core/AFError.swift:36",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L33-L41",
+      "absence": false
+    },
+    {
+      "id": "E074",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "symbol_mentioned",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 481,
+      "end": 489,
+      "excerpt": "extension Error {\n    /// The `URL` associated with the error, extracted from well-known Foundation error types.\n    ///\n    /// Returns the `failingURL` of a `URLError`, the `NSURLErrorKey` value of any other bridged `NSError`, or, when the\n    /// error is an `AFError`, that error's own `url`, so nested errors resolve transparently.\n    var url: URL? {\n        switch self {\n        case let afError as AFError:\n            afError.url",
+      "content_hash": "895f8fabc0ed731edd32f8847740bff8ea79c5ff83a2f4149a5cbe5aa5843487",
+      "result": "`NSURLErrorKey` has no definition found, but appears in Source/Core/AFError.swift:484",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L481-L489",
+      "absence": false
+    },
+    {
+      "id": "E075",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "symbol_mentioned",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 481,
+      "end": 489,
+      "excerpt": "extension Error {\n    /// The `URL` associated with the error, extracted from well-known Foundation error types.\n    ///\n    /// Returns the `failingURL` of a `URLError`, the `NSURLErrorKey` value of any other bridged `NSError`, or, when the\n    /// error is an `AFError`, that error's own `url`, so nested errors resolve transparently.\n    var url: URL? {\n        switch self {\n        case let afError as AFError:\n            afError.url",
+      "content_hash": "895f8fabc0ed731edd32f8847740bff8ea79c5ff83a2f4149a5cbe5aa5843487",
+      "result": "`NSError` has no definition found, but appears in Source/Core/AFError.swift:484",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L481-L489",
+      "absence": false
+    },
+    {
+      "id": "E076",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "symbol_mentioned",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Tests/DownloadTests.swift",
+      "start": 317,
+      "end": 325,
+      "excerpt": "        XCTAssertNil(response?.fileURL)\n        XCTAssertNil(response?.resumeData)\n        XCTAssertNotNil(response?.error)\n        XCTAssertEqual((response?.error?.underlyingError as? CocoaError)?.code, .fileNoSuchFile)\n    }\n\n    @MainActor\n    func testThatDownloadOptionsCanCreateIntermediateDirectoriesPriorToMovingFile() {\n        // Given",
+      "content_hash": "3ba121b9a8a82c78eed3432bb6abf58ebd6be7a17ff88c311e1cc64c73b21217",
+      "result": "`CocoaError` has no definition found, but appears in Tests/DownloadTests.swift:320",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Tests/DownloadTests.swift#L317-L325",
+      "absence": false
+    },
+    {
+      "id": "E077",
+      "claim_ids": [
+        "C1",
+        "C4"
+      ],
+      "kind": "symbol_defined_text",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 33,
+      "end": 63,
+      "excerpt": "public enum AFError: Error, Sendable {\n    /// The underlying reason the `.multipartEncodingFailed` error occurred.\n    public enum MultipartEncodingFailureReason: Sendable {\n        /// The `fileURL` provided for reading an encodable body part isn't a file `URL`.\n        case bodyPartURLInvalid(url: URL)\n        /// The filename of the `fileURL` provided has either an empty `lastPathComponent` or `pathExtension`.\n        case bodyPartFilenameInvalid(in: URL)\n        /// The file at the `fileURL` provided was not reachable.\n        case bodyPartFileNotReachable(at: URL)\n        /// Attempting to check the reachability of the `fileURL` provided threw an error.\n        case bodyPartFileNotReachableWithError(atURL: URL, error: any Error)\n        /// The file at the `fileURL` provided is actually a directory.\n        case bodyPartFileIsDirectory(at: URL)\n        /// The size of the file at the `fileURL` provided was not returned by the system.\n        case bodyPartFileSizeNotAvailable(at: URL)\n        /// The attempt to find the size of the file at the `fileURL` provided threw an error.\n        case bodyPartFileSizeQueryFailedWithError(forURL: URL, error: any Error)\n        /// An `InputStream` could not be created for the provided `fileURL`.\n        case bodyPartInputStreamCreationFailed(for: URL)\n        /// An `OutputStream` could not be created when attempting to write the encoded data to disk.\n        case outputStreamCreationFailed(for: URL)\n        /// The encoded body data could not be written to disk because a file already exists at the provided `fileURL`.\n        case outputStreamFileAlreadyExists(at: URL)\n        /// The `fileURL` provided for writing the encoded body data to disk is not a file `URL`.\n        case outputStreamURLInvalid(url: URL)\n        /// The attempt to write the encoded body data to disk failed with an underlying error.\n        case outputStreamWriteFailed(error: any Error)\n        /// The attempt to read an encoded body part `InputStream` failed with underlying system error.\n        case inputStreamReadFailed(error: any Error)\n    }\n",
+      "content_hash": "9e7cbe8c0a425a784134a6b0accb08afe41f0a98c1fb6f19a2b87e847ffae192",
+      "result": "`AFError` looks defined in Source/Core/AFError.swift at line 33 (text match)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L33-L63",
+      "absence": false
+    },
+    {
+      "id": "E078",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "symbol_defined_text",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 499,
+      "end": 529,
+      "excerpt": "    var underlyingError: (any Error)? {\n        switch self {\n        case let .jsonEncodingFailed(error),\n             let .customEncodingFailed(error):\n            error\n        case .missingURL:\n            nil\n        }\n    }\n}\n\nextension AFError.ParameterEncoderFailureReason {\n    var underlyingError: (any Error)? {\n        switch self {\n        case let .encoderFailed(error):\n            error\n        case .missingRequiredComponent:\n            nil\n        }\n    }\n}\n\nextension AFError.MultipartEncodingFailureReason {\n    var url: URL? {\n        switch self {\n        case let .bodyPartURLInvalid(url),\n             let .bodyPartFilenameInvalid(url),\n             let .bodyPartFileNotReachable(url),\n             let .bodyPartFileIsDirectory(url),\n             let .bodyPartFileSizeNotAvailable(url),\n             let .bodyPartInputStreamCreationFailed(url),",
+      "content_hash": "3a136ff170560662b651336e9c1a20b8de214efe66cf606201ca5ba94ad23226",
+      "result": "`underlyingError` looks defined in Source/Core/AFError.swift at line 499 (+5 more) (text match)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L499-L529",
+      "absence": false
+    },
+    {
+      "id": "E079",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "symbol_defined_text",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/Session.swift",
+      "start": 1359,
+      "end": 1389,
+      "excerpt": "                let retryError = AFError.requestRetryFailed(retryError: retryResultError, originalError: error)\n                completion(.doNotRetryWithError(retryError))\n            }\n        }\n    }\n\n    public func retryRequest(_ request: Request, withDelay timeDelay: TimeInterval?) {\n        rootQueue.async {\n            let retry: @Sendable () -> Void = {\n                guard !request.isCancelled else { return }\n\n                request.prepareForRetry()\n                self.perform(request, forRetry: true)\n            }\n\n            if let retryDelay = timeDelay {\n                self.rootQueue.after(retryDelay) { retry() }\n            } else {\n                retry()\n            }\n        }\n    }\n}\n\n// MARK: - SessionStateProvider\n\nextension Session: SessionStateProvider {\n    func request(for task: URLSessionTask) -> Request? {\n        dispatchPrecondition(condition: .onQueue(rootQueue))\n\n        return mutableState.read { $0.requestTaskMap[task] }",
+      "content_hash": "096748fe78a0a455a0ac8904f98f4a58b734805dcc28fb013c892a5d91493d37",
+      "result": "`retryError` looks defined in Source/Core/Session.swift at line 1359 (text match)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/Session.swift#L1359-L1389",
+      "absence": false
+    },
+    {
+      "id": "E080",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "symbol_mentioned",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 210,
+      "end": 218,
+      "excerpt": "    /// `RequestAdapter` threw an error during adaptation.\n    case requestAdaptationFailed(error: any Error)\n    /// `RequestRetrier` threw an error during the request retry process.\n    case requestRetryFailed(retryError: any Error, originalError: any Error)\n    /// Response validation failed.\n    case responseValidationFailed(reason: ResponseValidationFailureReason)\n    /// Response serialization failed.\n    case responseSerializationFailed(reason: ResponseSerializationFailureReason)\n    #if canImport(Security)",
+      "content_hash": "03256ae5c10b83fa1448cbd5058d1752b0e29e692dc63759cc5aace6d4ee421b",
+      "result": "`originalError` has no definition found, but appears in Source/Core/AFError.swift:213",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L210-L218",
+      "absence": false
+    },
+    {
+      "id": "E081",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "symbol_mentioned",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 110,
+      "end": 118,
+      "excerpt": "        /// The response status code was not acceptable.\n        case unacceptableStatusCode(code: Int)\n        /// Custom response validation failed due to the associated `Error`.\n        case customValidationFailed(error: any Error)\n    }\n\n    /// The underlying reason the response serialization error occurred.\n    public enum ResponseSerializationFailureReason: Sendable {\n        /// The server response contained no data or the data was zero length.",
+      "content_hash": "236e98a1f93e0573551c0f7092ab810e48142e0a17f8cc0228bc5f0ad7916667",
+      "result": "`customValidationFailed` has no definition found, but appears in Source/Core/AFError.swift:113",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L110-L118",
+      "absence": false
+    },
+    {
+      "id": "E082",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "symbol_mentioned",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 126,
+      "end": 134,
+      "excerpt": "        /// JSON serialization failed with an underlying system error.\n        case jsonSerializationFailed(error: any Error)\n        /// A `DataDecoder` failed to decode the response due to the associated `Error`.\n        case decodingFailed(error: any Error)\n        /// A custom response serializer failed due to the associated `Error`.\n        case customSerializationFailed(error: any Error)\n        /// Generic serialization failed for an empty response that wasn't type `Empty` but instead the associated type.\n        case invalidEmptyResponse(type: String)\n    }",
+      "content_hash": "8294579b97c3b68f908f39a8232ca13c27a5d8b143c141d6519ede78a52b1969",
+      "result": "`decodingFailed` has no definition found, but appears in Source/Core/AFError.swift:129",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L126-L134",
+      "absence": false
+    },
+    {
+      "id": "E083",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "symbol_mentioned",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 378,
+      "end": 386,
+      "excerpt": "    /// wrap an underlying error, such as `.sessionTaskFailed`, this is the `URL` extracted from that error, like the\n    /// `failingURL` of an underlying `URLError`. For `.requestRetryFailed`, only the `retryError` is consulted.\n    ///\n    /// - Note: Cases that carry no associated `URL`, such as `.explicitlyCancelled` and `.invalidURL`, return `nil`.\n    ///         Use `urlConvertible` to recover the value of an `.invalidURL` error.\n    public var url: URL? {\n        switch self {\n        case let .multipartEncodingFailed(reason):\n            reason.url",
+      "content_hash": "5b713fa0e187ebedf2fbdd22fdc5ce5298c10c94645d5bb433d54b4299274903",
+      "result": "`Note` has no definition found, but appears in Source/Core/AFError.swift:381",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L378-L386",
+      "absence": false
+    },
+    {
+      "id": "E084",
+      "claim_ids": [
+        "C3"
+      ],
+      "kind": "symbol_defined_text",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/Request.swift",
+      "start": 169,
+      "end": 199,
+      "excerpt": "    public internal(set) var uploadProgressHandler: (handler: ProgressHandler, queue: DispatchQueue)? {\n        get { mutableState.read(\\.uploadProgressHandler) }\n        set { mutableState.write { $0.uploadProgressHandler = newValue } }\n    }\n\n    /// `ProgressHandler` called when `downloadProgress` is updated, on the provided `DispatchQueue`.\n    public internal(set) var downloadProgressHandler: (handler: ProgressHandler, queue: DispatchQueue)? {\n        get { mutableState.read(\\.downloadProgressHandler) }\n        set { mutableState.write { $0.downloadProgressHandler = newValue } }\n    }\n\n    // MARK: Redirect Handling\n\n    /// `RedirectHandler` set on the instance.\n    public internal(set) var redirectHandler: (any RedirectHandler)? {\n        get { mutableState.read(\\.redirectHandler) }\n        set { mutableState.write { $0.redirectHandler = newValue } }\n    }\n\n    // MARK: Cached Response Handling\n\n    /// `CachedResponseHandler` set on the instance.\n    public internal(set) var cachedResponseHandler: (any CachedResponseHandler)? {\n        get { mutableState.read(\\.cachedResponseHandler) }\n        set { mutableState.write { $0.cachedResponseHandler = newValue } }\n    }\n\n    // MARK: URLCredential\n\n    /// `URLCredential` used for authentication challenges. Created by calling one of the `authenticate` methods.\n    public internal(set) var credential: URLCredential? {",
+      "content_hash": "78be3e86bc89efb2ce9001933db48bf6a37094a22bcb911e16db996258896164",
+      "result": "`internal` looks defined in Source/Core/Request.swift at line 169 (+5 more) (text match)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/Request.swift#L169-L199",
+      "absence": false
+    },
+    {
+      "id": "E085",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "symbol_mentioned",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Alamofire.swift",
+      "start": 34,
+      "end": 42,
+      "excerpt": "#endif\n\n/// Reference to `Session.default` for quick bootstrapping and examples.\npublic let AF = Session.default\n\n/// Namespace for informational Alamofire values.\npublic enum AFInfo {\n    /// Current Alamofire version.\n    public static let version = \"5.12.0\"",
+      "content_hash": "ac5b1e8d390ae7f892c70458b12f4a655409f01a79ff06d46b5ac2c5423c5421",
+      "result": "`public` has no definition found, but appears in Source/Alamofire.swift:37",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Alamofire.swift#L34-L42",
+      "absence": false
+    },
+    {
+      "id": "E086",
+      "claim_ids": [
+        "C4"
+      ],
+      "kind": "symbol_defined_text",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Tests/AFError+AlamofireTests.swift",
+      "start": 407,
+      "end": 437,
+      "excerpt": "final class AFErrorURLTests: BaseTestCase {\n    private let url = URL(string: \"https://example.com/path\")!\n    private let otherURL = URL(string: \"https://example.com/other\")!\n\n    // MARK: Underlying Network Errors\n\n    func testThatURLIsExtractedFromSessionTaskFailedURLError() {\n        // Given\n        let error = AFError.sessionTaskFailed(error: urlError(failingURL: url))\n\n        // When, Then\n        XCTAssertEqual(error.url, url)\n    }\n\n    func testThatSessionTaskFailedReturnsNilURLWhenUnderlyingErrorHasNoURL() {\n        // Given\n        let error = AFError.sessionTaskFailed(error: URLError(.timedOut))\n\n        // When, Then\n        XCTAssertNil(error.url)\n    }\n\n    func testThatURLIsExtractedFromSessionInvalidatedURLError() {\n        // Given\n        let error = AFError.sessionInvalidated(error: urlError(failingURL: url))\n\n        // When, Then\n        XCTAssertEqual(error.url, url)\n    }\n\n    func testThatSessionInvalidatedWithNilErrorReturnsNilURL() {",
+      "content_hash": "3540a304cedb28841d2c46f64ada5f79a04c742a3db710d6e2eccdfee43f4917",
+      "result": "`AFErrorURLTests` looks defined in Tests/AFError+AlamofireTests.swift at line 407 (text match)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Tests/AFError+AlamofireTests.swift#L407-L437",
+      "absence": false
+    },
+    {
+      "id": "E087",
+      "claim_ids": [
+        "C5"
+      ],
+      "kind": "symbol_defined_text",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Tests/MultipartFormDataTests.swift",
+      "start": 800,
+      "end": 830,
+      "excerpt": "class MultipartFormDataFailureTestCase: BaseTestCase {\n    func testThatAppendingFileBodyPartWithInvalidLastPathComponentReturnsError() {\n        // Given\n        let fileURL = NSURL(string: \"\")! as URL\n        let multipartFormData = MultipartFormData()\n        multipartFormData.append(fileURL, withName: \"empty_data\")\n\n        var encodingError: (any Error)?\n\n        // When\n        do {\n            _ = try multipartFormData.encode()\n        } catch {\n            encodingError = error\n        }\n\n        // Then\n        XCTAssertNotNil(encodingError, \"encoding error should not be nil\")\n\n        XCTAssertEqual(encodingError?.asAFError?.isBodyPartFilenameInvalid, true)\n        XCTAssertEqual(encodingError?.asAFError?.url, fileURL)\n    }\n\n    func testThatAppendingFileBodyPartThatIsNotFileURLReturnsError() {\n        // Given\n        let fileURL = URL(string: \"https://example.com/image.jpg\")!\n        let multipartFormData = MultipartFormData()\n        multipartFormData.append(fileURL, withName: \"empty_data\")\n\n        var encodingError: (any Error)?\n",
+      "content_hash": "962126010fbc7d5e7d55e82bff0374b88398ef989a1d683292fafe1db1d46269",
+      "result": "`MultipartFormDataFailureTestCase` looks defined in Tests/MultipartFormDataTests.swift at line 800 (text match)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Tests/MultipartFormDataTests.swift#L800-L830",
+      "absence": false
+    },
+    {
+      "id": "E088",
+      "claim_ids": [
+        "C1",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 486,
+      "end": 516,
+      "excerpt": "    var url: URL? {\n        switch self {\n        case let afError as AFError:\n            afError.url\n        case let urlError as URLError:\n            urlError.failingURL\n        default:\n            (self as NSError).userInfo[NSURLErrorKey] as? URL\n        }\n    }\n}\n\nextension AFError.ParameterEncodingFailureReason {\n    var underlyingError: (any Error)? {\n        switch self {\n        case let .jsonEncodingFailed(error),\n             let .customEncodingFailed(error):\n            error\n        case .missingURL:\n            nil\n        }\n    }\n}\n\nextension AFError.ParameterEncoderFailureReason {\n    var underlyingError: (any Error)? {\n        switch self {\n        case let .encoderFailed(error):\n            error\n        case .missingRequiredComponent:\n            nil",
+      "content_hash": "c7882bfb16b9b349358798eab8fe9b9b08a7369b3b1875b5daa6f58ebfab7917",
+      "result": "Definition of `url` (Source/Core/AFError.swift, found by text match)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L486-L516",
+      "absence": false
+    },
+    {
+      "id": "E089",
+      "claim_ids": [
+        "C1",
+        "C4"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 33,
+      "end": 63,
+      "excerpt": "public enum AFError: Error, Sendable {\n    /// The underlying reason the `.multipartEncodingFailed` error occurred.\n    public enum MultipartEncodingFailureReason: Sendable {\n        /// The `fileURL` provided for reading an encodable body part isn't a file `URL`.\n        case bodyPartURLInvalid(url: URL)\n        /// The filename of the `fileURL` provided has either an empty `lastPathComponent` or `pathExtension`.\n        case bodyPartFilenameInvalid(in: URL)\n        /// The file at the `fileURL` provided was not reachable.\n        case bodyPartFileNotReachable(at: URL)\n        /// Attempting to check the reachability of the `fileURL` provided threw an error.\n        case bodyPartFileNotReachableWithError(atURL: URL, error: any Error)\n        /// The file at the `fileURL` provided is actually a directory.\n        case bodyPartFileIsDirectory(at: URL)\n        /// The size of the file at the `fileURL` provided was not returned by the system.\n        case bodyPartFileSizeNotAvailable(at: URL)\n        /// The attempt to find the size of the file at the `fileURL` provided threw an error.\n        case bodyPartFileSizeQueryFailedWithError(forURL: URL, error: any Error)\n        /// An `InputStream` could not be created for the provided `fileURL`.\n        case bodyPartInputStreamCreationFailed(for: URL)\n        /// An `OutputStream` could not be created when attempting to write the encoded data to disk.\n        case outputStreamCreationFailed(for: URL)\n        /// The encoded body data could not be written to disk because a file already exists at the provided `fileURL`.\n        case outputStreamFileAlreadyExists(at: URL)\n        /// The `fileURL` provided for writing the encoded body data to disk is not a file `URL`.\n        case outputStreamURLInvalid(url: URL)\n        /// The attempt to write the encoded body data to disk failed with an underlying error.\n        case outputStreamWriteFailed(error: any Error)\n        /// The attempt to read an encoded body part `InputStream` failed with underlying system error.\n        case inputStreamReadFailed(error: any Error)\n    }\n",
+      "content_hash": "9e7cbe8c0a425a784134a6b0accb08afe41f0a98c1fb6f19a2b87e847ffae192",
+      "result": "Definition of `AFError` (Source/Core/AFError.swift, found by text match)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L33-L63",
+      "absence": false
+    },
+    {
+      "id": "E090",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E4",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 351,
+      "end": 400,
+      "excerpt": "    /// Returns whether the instance is `downloadedFileMoveFailed`. When `true`, the `destination` and `underlyingError` properties will\n    /// contain the associated values.\n    public var isDownloadedFileMoveError: Bool {\n        if case .downloadedFileMoveFailed = self { return true }\n        return false\n    }\n\n    /// Returns whether the instance is `createURLRequestFailed`. When `true`, the `underlyingError` property will\n    /// contain the associated value.\n    public var isSessionTaskError: Bool {\n        if case .sessionTaskFailed = self { return true }\n        return false\n    }\n}\n\n// MARK: - Convenience Properties\n\nextension AFError {\n    /// The `URLConvertible` associated with the error.\n    public var urlConvertible: (any URLConvertible)? {\n        guard case let .invalidURL(url) = self else { return nil }\n        return url\n    }\n\n    /// The `URL` associated with the error, if any.\n    ///\n    /// For `.multipartEncodingFailed` errors, this is the body part `URL` that triggered the failure. For errors that\n    /// wrap an underlying error, such as `.sessionTaskFailed`, this is the `URL` extracted from that error, like the\n    /// `failingURL` of an underlying `URLError`. For `.requestRetryFailed`, only the `retryError` is consulted.\n    ///\n    /// - Note: Cases that carry no associated `URL`, such as `.explicitlyCancelled` and `.invalidURL`, return `nil`.\n    ///         Use `urlConvertible` to recover the value of an `.invalidURL` error.\n    public var url: URL? {\n        switch self {\n        case let .multipartEncodingFailed(reason):\n            reason.url\n        case let .responseValidationFailed(reason):\n            reason.url\n        case let .responseSerializationFailed(reason):\n            reason.url\n        default:\n            underlyingError?.url\n        }\n    }\n\n    /// The underlying `Error` responsible for generating the failure associated with `.sessionInvalidated`,\n    /// `.parameterEncodingFailed`, `.parameterEncoderFailed`, `.multipartEncodingFailed`, `.requestAdaptationFailed`,\n    /// `.responseSerializationFailed`, `.requestRetryFailed` errors.\n    public var underlyingError: (any Error)? {\n        switch self {",
+      "content_hash": "710ca3fa6cad4f29c01a8bb69f1fc507cd566df13495c98b29d5d2ad155b517d",
+      "result": "Possibly related code (Source/Core/AFError.swift, by similarity)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L351-L400",
+      "absence": false
+    },
+    {
+      "id": "E091",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E4",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 1,
+      "end": 50,
+      "excerpt": "//\n//  AFError.swift\n//\n//  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)\n//\n//  Permission is hereby granted, free of charge, to any person obtaining a copy\n//  of this software and associated documentation files (the \"Software\"), to deal\n//  in the Software without restriction, including without limitation the rights\n//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n//  copies of the Software, and to permit persons to whom the Software is\n//  furnished to do so, subject to the following conditions:\n//\n//  The above copyright notice and this permission notice shall be included in\n//  all copies or substantial portions of the Software.\n//\n//  THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n//  THE SOFTWARE.\n//\n\nimport Foundation\n\n#if canImport(Security)\n@preconcurrency import Security\n#endif\n\n/// `AFError` is the error type returned by Alamofire. It encompasses a few different types of errors, each with\n/// their own associated reasons.\npublic enum AFError: Error, Sendable {\n    /// The underlying reason the `.multipartEncodingFailed` error occurred.\n    public enum MultipartEncodingFailureReason: Sendable {\n        /// The `fileURL` provided for reading an encodable body part isn't a file `URL`.\n        case bodyPartURLInvalid(url: URL)\n        /// The filename of the `fileURL` provided has either an empty `lastPathComponent` or `pathExtension`.\n        case bodyPartFilenameInvalid(in: URL)\n        /// The file at the `fileURL` provided was not reachable.\n        case bodyPartFileNotReachable(at: URL)\n        /// Attempting to check the reachability of the `fileURL` provided threw an error.\n        case bodyPartFileNotReachableWithError(atURL: URL, error: any Error)\n        /// The file at the `fileURL` provided is actually a directory.\n        case bodyPartFileIsDirectory(at: URL)\n        /// The size of the file at the `fileURL` provided was not returned by the system.\n        case bodyPartFileSizeNotAvailable(at: URL)\n        /// The attempt to find the size of the file at the `fileURL` provided threw an error.\n        case bodyPartFileSizeQueryFailedWithError(forURL: URL, error: any Error)\n        /// An `InputStream` could not be created for the provided `fileURL`.",
+      "content_hash": "1e3126780e32e861a7f934c419a49a759ccba0c234f0d05fee455202f5384378",
+      "result": "Possibly related code (Source/Core/AFError.swift, by similarity)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L1-L50",
+      "absence": false
+    },
+    {
+      "id": "E092",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "doc_excerpt",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Documentation/Alamofire 4.0 Migration Guide.md",
+      "start": 474,
+      "end": 486,
+      "excerpt": "    if let error = error as? AFError {\n        switch error {\n        case .invalidURL(let url):\n            print(\"Invalid URL: \\(url) - \\(error.localizedDescription)\")\n        case .parameterEncodingFailed(let reason):\n            print(\"Parameter encoding failed: \\(error.localizedDescription)\")\n            print(\"Failure Reason: \\(reason)\")\n        case .multipartEncodingFailed(let reason):\n            print(\"Multipart encoding failed: \\(error.localizedDescription)\")\n            print(\"Failure Reason: \\(reason)\")\n        case .responseValidationFailed(let reason):\n            print(\"Response validation failed: \\(error.localizedDescription)\")\n            print(\"Failure Reason: \\(reason)\")",
+      "content_hash": "a86a6398bca5fa3ab8470d8e0ec87a9d32ad7ff61500eb0dbc8d1b65dffa2ce6",
+      "result": "Documentation in Documentation/Alamofire 4.0 Migration Guide.md",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Documentation/Alamofire 4.0 Migration Guide.md#L474-L486",
+      "absence": false
+    },
+    {
+      "id": "E093",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "doc_excerpt",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Documentation/Alamofire 4.0 Migration Guide.md",
+      "start": 520,
+      "end": 523,
+      "excerpt": "- The `.url` case has always been a bit confusing since it selects a destination based on the HTTP method.\n- The `.urlEncodedInURL` case has always been an eye sore to work around the behavior of the `.url` case.\n- `.JSON` and `.PropertyList` encoding could not accept formatting or writing options.\n- The `.Custom` encoding was a bit difficult for users to get the hang of.",
+      "content_hash": "c09526b47b063ccad017abfd3e10b84efcde2029128700be1c33ec2a680b2d2c",
+      "result": "Documentation in Documentation/Alamofire 4.0 Migration Guide.md",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Documentation/Alamofire 4.0 Migration Guide.md#L520-L523",
+      "absence": false
+    },
+    {
+      "id": "E094",
+      "claim_ids": [
+        "C3"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/Request.swift",
+      "start": 169,
+      "end": 199,
+      "excerpt": "    public internal(set) var uploadProgressHandler: (handler: ProgressHandler, queue: DispatchQueue)? {\n        get { mutableState.read(\\.uploadProgressHandler) }\n        set { mutableState.write { $0.uploadProgressHandler = newValue } }\n    }\n\n    /// `ProgressHandler` called when `downloadProgress` is updated, on the provided `DispatchQueue`.\n    public internal(set) var downloadProgressHandler: (handler: ProgressHandler, queue: DispatchQueue)? {\n        get { mutableState.read(\\.downloadProgressHandler) }\n        set { mutableState.write { $0.downloadProgressHandler = newValue } }\n    }\n\n    // MARK: Redirect Handling\n\n    /// `RedirectHandler` set on the instance.\n    public internal(set) var redirectHandler: (any RedirectHandler)? {\n        get { mutableState.read(\\.redirectHandler) }\n        set { mutableState.write { $0.redirectHandler = newValue } }\n    }\n\n    // MARK: Cached Response Handling\n\n    /// `CachedResponseHandler` set on the instance.\n    public internal(set) var cachedResponseHandler: (any CachedResponseHandler)? {\n        get { mutableState.read(\\.cachedResponseHandler) }\n        set { mutableState.write { $0.cachedResponseHandler = newValue } }\n    }\n\n    // MARK: URLCredential\n\n    /// `URLCredential` used for authentication challenges. Created by calling one of the `authenticate` methods.\n    public internal(set) var credential: URLCredential? {",
+      "content_hash": "78be3e86bc89efb2ce9001933db48bf6a37094a22bcb911e16db996258896164",
+      "result": "Definition of `internal` (Source/Core/Request.swift, found by text match)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/Request.swift#L169-L199",
+      "absence": false
+    },
+    {
+      "id": "E095",
+      "claim_ids": [
+        "C3"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E4",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/Request.swift",
+      "start": 251,
+      "end": 300,
+      "excerpt": "\n    // MARK: Retry Count\n\n    /// Number of times the `Request` has been retried.\n    public var retryCount: Int { mutableState.read(\\.retryCount) }\n\n    // MARK: Error\n\n    /// `Error` returned from Alamofire internally, from the network request directly, or any validators executed.\n    public internal(set) var error: AFError? {\n        get { mutableState.read(\\.error) }\n        set { mutableState.write { $0.error = newValue } }\n    }\n\n    /// Default initializer for the `Request` superclass.\n    ///\n    /// - Parameters:\n    ///   - id:                        `UUID` used for the `Hashable` and `Equatable` implementations. `UUID()` by default.\n    ///   - underlyingQueue:           `DispatchQueue` on which all internal `Request` work is performed.\n    ///   - serializationQueue:        `DispatchQueue` on which all serialization work is performed. By default targets\n    ///                                `underlyingQueue`, but can be passed another queue from a `Session`.\n    ///   - eventMonitor:              `EventMonitor` called for event callbacks from internal `Request` actions.\n    ///   - interceptor:               `RequestInterceptor` used throughout the request lifecycle.\n    ///   - shouldAutomaticallyResume: Whether the instance should resume after the first response handler is added.\n    ///   - delegate:                  `RequestDelegate` that provides an interface to actions not performed by the `Request`.\n    init(id: UUID = UUID(),\n         underlyingQueue: DispatchQueue,\n         serializationQueue: DispatchQueue,\n         eventMonitor: (any EventMonitor)?,\n         interceptor: (any RequestInterceptor)?,\n         shouldAutomaticallyResume: Bool?,\n         delegate: any RequestDelegate) {\n        self.id = id\n        self.underlyingQueue = underlyingQueue\n        self.serializationQueue = serializationQueue\n        mutableState = Protected(MutableState(eventMonitor: eventMonitor,\n                                              interceptor: interceptor))\n        self.shouldAutomaticallyResume = shouldAutomaticallyResume\n        self.delegate = delegate\n    }\n\n    // MARK: - Internal Event API\n\n    // All API must be called from underlyingQueue.\n\n    /// Called when an initial `URLRequest` has been created on behalf of the instance. If a `RequestAdapter` is active,\n    /// the `URLRequest` will be adapted before being issued.\n    ///\n    /// - Parameter request: The `URLRequest` created.\n    func didCreateInitialURLRequest(_ request: URLRequest) {",
+      "content_hash": "e67e99a5f2527443f6530a28227a11a023b5d3471ee2843f9d8946807ec2bd6d",
+      "result": "Possibly related code (Source/Core/Request.swift, by similarity)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/Request.swift#L251-L300",
+      "absence": false
+    },
+    {
+      "id": "E096",
+      "claim_ids": [
+        "C3"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E4",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/DataStreamRequest.swift",
+      "start": 101,
+      "end": 150,
+      "excerpt": "                                  handler: @Sendable (_ response: HTTPURLResponse,\n                                                      _ completionHandler: @escaping @Sendable (ResponseDisposition) -> Void) -> Void)?\n    }\n\n    let streamMutableState = Protected(StreamMutableState())\n\n    /// Creates a `DataStreamRequest` using the provided parameters.\n    ///\n    /// - Parameters:\n    ///   - id:                               `UUID` used for the `Hashable` and `Equatable` implementations. `UUID()`\n    ///                                        by default.\n    ///   - convertible:                      `URLRequestConvertible` value used to create `URLRequest`s for this\n    ///                                        instance.\n    ///   - automaticallyCancelOnStreamError: `Bool` indicating whether the instance will be cancelled when an `Error`\n    ///                                       is thrown while serializing stream `Data`.\n    ///   - underlyingQueue:                  `DispatchQueue` on which all internal `Request` work is performed.\n    ///   - serializationQueue:               `DispatchQueue` on which all serialization work is performed. By default\n    ///                                       targets\n    ///                                       `underlyingQueue`, but can be passed another queue from a `Session`.\n    ///   - eventMonitor:                     `EventMonitor` called for event callbacks from internal `Request` actions.\n    ///   - interceptor:                      `RequestInterceptor` used throughout the request lifecycle.\n    ///   - shouldAutomaticallyResume:        Whether the instance should resume after the first response handler is added.\n    ///   - delegate:                         `RequestDelegate` that provides an interface to actions not performed by\n    ///                                       the `Request`.\n    init(id: UUID = UUID(),\n         convertible: any URLRequestConvertible,\n         automaticallyCancelOnStreamError: Bool,\n         underlyingQueue: DispatchQueue,\n         serializationQueue: DispatchQueue,\n         eventMonitor: (any EventMonitor)?,\n         interceptor: (any RequestInterceptor)?,\n         shouldAutomaticallyResume: Bool?,\n         delegate: any RequestDelegate) {\n        self.convertible = convertible\n        self.automaticallyCancelOnStreamError = automaticallyCancelOnStreamError\n\n        super.init(id: id,\n                   underlyingQueue: underlyingQueue,\n                   serializationQueue: serializationQueue,\n                   eventMonitor: eventMonitor,\n                   interceptor: interceptor,\n                   shouldAutomaticallyResume: shouldAutomaticallyResume,\n                   delegate: delegate)\n    }\n\n    override func task(for request: URLRequest, using session: URLSession) -> URLSessionTask {\n        let copiedRequest = request\n        return session.dataTask(with: copiedRequest)\n    }\n",
+      "content_hash": "5a2c7d3a3a5611e75c17920a9b1be3256489f21d63b6f282f65792811b22ca8f",
+      "result": "Possibly related code (Source/Core/DataStreamRequest.swift, by similarity)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/DataStreamRequest.swift#L101-L150",
+      "absence": false
+    },
+    {
+      "id": "E097",
+      "claim_ids": [
+        "C3"
+      ],
+      "kind": "doc_excerpt",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Documentation/Alamofire 4.0 Migration Guide.md",
+      "start": 342,
+      "end": 342,
+      "excerpt": "As you can see, the `URLRequest` property has been replaced by an `asURLRequest` method that throws when encountering an error generating the `URLRequest`.",
+      "content_hash": "7e144c1fbf48ab43ccf1186e2ba47757dcc1415e45548e45000a1200148daed3",
+      "result": "Documentation in Documentation/Alamofire 4.0 Migration Guide.md",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Documentation/Alamofire 4.0 Migration Guide.md#L342",
+      "absence": false
+    },
+    {
+      "id": "E098",
+      "claim_ids": [
+        "C3"
+      ],
+      "kind": "doc_excerpt",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Documentation/Alamofire 3.0 Migration Guide.md",
+      "start": 129,
+      "end": 129,
+      "excerpt": "The `ValidationResult` enumeration in Alamofire 3.0 has been updated to take an `NSError` in the `.Failure` case. The reasoning for this change is that all Alamofire errors generated need to be `NSError` types. If not, it introduces the need to cast all error objects coming from Alamofire at the response serializer level.",
+      "content_hash": "eb37b9bbac9f40a93845e50729953f0e5eaa4d4011956edee1c3138ef9a86c70",
+      "result": "Documentation in Documentation/Alamofire 3.0 Migration Guide.md",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Documentation/Alamofire 3.0 Migration Guide.md#L129",
+      "absence": false
+    },
+    {
+      "id": "E099",
+      "claim_ids": [
+        "C4"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E4",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Tests/AuthenticationInterceptorTests.swift",
+      "start": 101,
+      "end": 150,
+      "excerpt": "                completion(result)\n            }\n        }\n\n        func didRequest(_ urlRequest: URLRequest,\n                        with response: HTTPURLResponse,\n                        failDueToAuthenticationError error: any Error)\n            -> Bool {\n            lock.lock(); defer { lock.unlock() }\n\n            didRequestFailDueToAuthErrorCount += 1\n\n            return response.statusCode == 401\n        }\n\n        func isRequest(_ urlRequest: URLRequest, authenticatedWith credential: TestCredential) -> Bool {\n            lock.lock(); defer { lock.unlock() }\n\n            isRequestAuthenticatedWithCredentialCount += 1\n\n            return urlRequest.headers[\"Authorization\"] == credential.accessToken\n        }\n    }\n\n    final class PathAdapter: RequestAdapter {\n        var paths: [String]\n\n        init(paths: [String]) {\n            self.paths = paths\n        }\n\n        func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, any Error>) -> Void) {\n            var request = urlRequest\n\n            var urlComponents = URLComponents(url: request.url!, resolvingAgainstBaseURL: false)!\n            urlComponents.path = paths.removeFirst()\n\n            request.url = urlComponents.url\n\n            completion(.success(request))\n        }\n    }\n\n    // MARK: - Tests - Adapt\n\n    @MainActor\n    func testThatInterceptorCanAdaptURLRequest() {\n        // Given\n        let credential = TestCredential()\n        let authenticator = TestAuthenticator()",
+      "content_hash": "87097b771f89f863157324131f8aceb4cef94fecb3ae0b82a5bc2963a0e23277",
+      "result": "Possibly related code (Tests/AuthenticationInterceptorTests.swift, by similarity)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Tests/AuthenticationInterceptorTests.swift#L101-L150",
+      "absence": false
+    },
+    {
+      "id": "E100",
+      "claim_ids": [
+        "C4"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E4",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Tests/ParameterEncoderTests.swift",
+      "start": 151,
+      "end": 200,
+      "excerpt": "        XCTAssertEqual(newRequest.httpBody?.asString, \"property=property\")\n    }\n\n    func testThatEncoderCanBeCustomized() throws {\n        // Given\n        let urlEncoder = URLEncodedFormEncoder(boolEncoding: .literal)\n        let encoder = URLEncodedFormParameterEncoder(encoder: urlEncoder)\n        let request = Endpoint().urlRequest\n\n        // When\n        let newRequest = try encoder.encode([\"bool\": true], into: request)\n\n        // Then\n        let components = URLComponents(url: newRequest.url!, resolvingAgainstBaseURL: false)\n        XCTAssertEqual(components?.percentEncodedQuery, \"bool=true\")\n    }\n\n    func testThatQueryIsInURLWhenDestinationIsURLAndMethodIsPOST() throws {\n        // Given\n        let encoder = URLEncodedFormParameterEncoder(destination: .queryString)\n        let request = Endpoint(method: .post).urlRequest\n\n        // When\n        let newRequest = try encoder.encode(TestParameters.default, into: request)\n\n        // Then\n        let components = URLComponents(url: newRequest.url!, resolvingAgainstBaseURL: false)\n        XCTAssertEqual(components?.percentEncodedQuery, \"property=property\")\n    }\n\n    func testThatQueryIsNilWhenEncodableResultsInAnEmptyString() throws {\n        // Given\n        let encoder = URLEncodedFormParameterEncoder(destination: .queryString)\n        let request = Endpoint().urlRequest\n\n        // When\n        let newRequest = try encoder.encode([String: String](), into: request)\n\n        // Then\n        let components = URLComponents(url: newRequest.url!, resolvingAgainstBaseURL: false)\n        XCTAssertNil(components?.percentEncodedQuery)\n    }\n}\n\nfinal class URLEncodedFormEncoderTests: BaseTestCase {\n    func testEncoderCanEncodeDictionary() {\n        // Given\n        let encoder = URLEncodedFormEncoder()\n        let parameters = [\"a\": \"a\"]\n",
+      "content_hash": "24f78b7e14d2dbf5c4aa9fc8aa0fa37e4bd7edb5d7028c6d229fc1434832957b",
+      "result": "Possibly related code (Tests/ParameterEncoderTests.swift, by similarity)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Tests/ParameterEncoderTests.swift#L151-L200",
+      "absence": false
+    },
+    {
+      "id": "E101",
+      "claim_ids": [
+        "C4"
+      ],
+      "kind": "doc_excerpt",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Documentation/AdvancedUsage.md",
+      "start": 1033,
+      "end": 1035,
+      "excerpt": "let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)!\nAF.request(urlComponents)\n```",
+      "content_hash": "25ac6a9dcf0cd6362c6868b27bf9fc1520c83c919f89d5854cfc45eb198e6222",
+      "result": "Documentation in Documentation/AdvancedUsage.md",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Documentation/AdvancedUsage.md#L1033-L1035",
+      "absence": false
+    },
+    {
+      "id": "E102",
+      "claim_ids": [
+        "C4"
+      ],
+      "kind": "doc_excerpt",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "CHANGELOG.md",
+      "start": 2462,
+      "end": 2463,
+      "excerpt": "- Tests around content type validation with accept parameters.\n  - Added by [Christian Noon](https://github.com/cnoon).",
+      "content_hash": "e24e9e74a992aae9c06a82ec25eae9573ff1ca58e8fbe82badcf17a982f28291",
+      "result": "Documentation in CHANGELOG.md",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/CHANGELOG.md#L2462-L2463",
+      "absence": false
+    },
+    {
+      "id": "E103",
+      "claim_ids": [
+        "C5"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Tests/MultipartFormDataTests.swift",
+      "start": 800,
+      "end": 830,
+      "excerpt": "class MultipartFormDataFailureTestCase: BaseTestCase {\n    func testThatAppendingFileBodyPartWithInvalidLastPathComponentReturnsError() {\n        // Given\n        let fileURL = NSURL(string: \"\")! as URL\n        let multipartFormData = MultipartFormData()\n        multipartFormData.append(fileURL, withName: \"empty_data\")\n\n        var encodingError: (any Error)?\n\n        // When\n        do {\n            _ = try multipartFormData.encode()\n        } catch {\n            encodingError = error\n        }\n\n        // Then\n        XCTAssertNotNil(encodingError, \"encoding error should not be nil\")\n\n        XCTAssertEqual(encodingError?.asAFError?.isBodyPartFilenameInvalid, true)\n        XCTAssertEqual(encodingError?.asAFError?.url, fileURL)\n    }\n\n    func testThatAppendingFileBodyPartThatIsNotFileURLReturnsError() {\n        // Given\n        let fileURL = URL(string: \"https://example.com/image.jpg\")!\n        let multipartFormData = MultipartFormData()\n        multipartFormData.append(fileURL, withName: \"empty_data\")\n\n        var encodingError: (any Error)?\n",
+      "content_hash": "962126010fbc7d5e7d55e82bff0374b88398ef989a1d683292fafe1db1d46269",
+      "result": "Definition of `MultipartFormDataFailureTestCase` (Tests/MultipartFormDataTests.swift, found by text match)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Tests/MultipartFormDataTests.swift#L800-L830",
+      "absence": false
+    },
+    {
+      "id": "E104",
+      "claim_ids": [
+        "C5"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E4",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Tests/MultipartFormDataTests.swift",
+      "start": 851,
+      "end": 900,
+      "excerpt": "        var encodingError: (any Error)?\n\n        // When\n        do {\n            _ = try multipartFormData.encode()\n        } catch {\n            encodingError = error\n        }\n\n        // Then\n        XCTAssertNotNil(encodingError, \"encoding error should not be nil\")\n\n        XCTAssertEqual(encodingError?.asAFError?.isBodyPartFileNotReachableWithError, true)\n        XCTAssertEqual(encodingError?.asAFError?.url, fileURL)\n    }\n\n    func testThatAppendingFileBodyPartThatIsDirectoryReturnsError() {\n        // Given\n        let directoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)\n        let multipartFormData = MultipartFormData()\n        multipartFormData.append(directoryURL, withName: \"empty_data\", fileName: \"empty\", mimeType: \"application/octet\")\n\n        var encodingError: (any Error)?\n\n        // When\n        do {\n            _ = try multipartFormData.encode()\n        } catch {\n            encodingError = error\n        }\n\n        // Then\n        XCTAssertNotNil(encodingError, \"encoding error should not be nil\")\n        XCTAssertEqual(encodingError?.asAFError?.isBodyPartFileIsDirectory, true)\n        XCTAssertEqual(encodingError?.asAFError?.url, directoryURL)\n    }\n\n    func testThatWritingEncodedDataToExistingFileURLFails() {\n        // Given\n        let fileURL = temporaryFileURL\n\n        var writerError: (any Error)?\n\n        do {\n            try \"dummy data\".write(to: fileURL, atomically: true, encoding: .utf8)\n        } catch {\n            writerError = error\n        }\n\n        let multipartFormData = MultipartFormData()",
+      "content_hash": "9b15271febc75ec0ac1a45d41ab19ba172ca6a54b5492c209711cfacb987b595",
+      "result": "Possibly related code (Tests/MultipartFormDataTests.swift, by similarity)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Tests/MultipartFormDataTests.swift#L851-L900",
+      "absence": false
+    },
+    {
+      "id": "E105",
+      "claim_ids": [
+        "C5"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E4",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Tests/UploadTests.swift",
+      "start": 551,
+      "end": 600,
+      "excerpt": "        // Given\n        let session = stored(Session())\n        let uploadData = Data(\"upload_data\".utf8)\n\n        let expectation = expectation(description: \"multipart form data upload should succeed\")\n        var response: DataResponse<Data?, AFError>?\n        var formData: MultipartFormData?\n\n        // When\n        let request = session.upload(multipartFormData: { multipartFormData in\n                                         multipartFormData.append(uploadData, withName: \"upload_data\")\n                                         formData = multipartFormData\n                                     },\n                                     to: Endpoint.method(.post),\n                                     usingThreshold: 0).response { resp in\n            response = resp\n            expectation.fulfill()\n        }\n\n        waitForExpectations(timeout: timeout)\n\n        // Then\n        guard let uploadable = request.uploadable, case .file = uploadable else {\n            XCTFail(\"Uploadable is not .file\")\n            return\n        }\n\n        XCTAssertTrue(response?.result.isSuccess == true)\n\n        if\n            let request = response?.request,\n            let multipartFormData = formData,\n            let contentType = request.value(forHTTPHeaderField: \"Content-Type\") {\n            XCTAssertEqual(contentType, multipartFormData.contentType, \"Content-Type header value should match\")\n        } else {\n            XCTFail(\"Content-Type header value should not be nil\")\n        }\n    }\n\n    @MainActor\n    func testThatUploadingMultipartFormDataWithNonexistentFileThrowsAnError() {\n        // Given\n        let session = stored(Session())\n        let imageURL = URL(fileURLWithPath: \"does_not_exist.jpg\")\n\n        let expectation = expectation(description: \"multipart form data upload from nonexistent file should fail\")\n        var response: DataResponse<Data?, AFError>?\n\n        // When\n        let request = session.upload(multipartFormData: { multipartFormData in",
+      "content_hash": "5c0490d66182067b6a1dbf7267dc3825f44ed8c0bb71528b201c6fe6a32193f2",
+      "result": "Possibly related code (Tests/UploadTests.swift, by similarity)",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Tests/UploadTests.swift#L551-L600",
+      "absence": false
+    },
+    {
+      "id": "E106",
+      "claim_ids": [
+        "C5"
+      ],
+      "kind": "doc_excerpt",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Documentation/Usage.md",
+      "start": 840,
+      "end": 848,
+      "excerpt": "```swift\nAF.upload(multipartFormData: { multipartFormData in\n    multipartFormData.append(Data(\"one\".utf8), withName: \"one\")\n    multipartFormData.append(Data(\"two\".utf8), withName: \"two\")\n}, to: \"https://httpbin.org/post\")\n    .responseDecodable(of: DecodableType.self) { response in\n        debugPrint(response)\n    }\n```",
+      "content_hash": "90e8ceadd0bb27ad0da14ebbe71af4d36dd227fb364e00e0ba5c1846d851b4c4",
+      "result": "Documentation in Documentation/Usage.md",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Documentation/Usage.md#L840-L848",
+      "absence": false
+    },
+    {
+      "id": "E107",
+      "claim_ids": [
+        "C5"
+      ],
+      "kind": "doc_excerpt",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Documentation/Alamofire 2.0 Migration Guide.md",
+      "start": 141,
+      "end": 141,
+      "excerpt": "### Multipart Form Data",
+      "content_hash": "cc64aff0b1e0f8990bbf972f6389eb4b7eb631c42081321679994a598259f171",
+      "result": "Documentation in Documentation/Alamofire 2.0 Migration Guide.md",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Documentation/Alamofire 2.0 Migration Guide.md#L141",
+      "absence": false
+    },
+    {
+      "id": "E108",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "kind": "pr_diff",
+      "tier": "E2",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Source/Core/AFError.swift",
+      "start": 375,
+      "end": 382,
+      "excerpt": "    /// The `URL` associated with the error, if any.\n    ///\n    /// For `.multipartEncodingFailed` errors, this is the body part `URL` that triggered the failure. For errors that\n    /// wrap an underlying error, such as `.sessionTaskFailed`, this is the `URL` extracted from that error, like the\n    /// `failingURL` of an underlying `URLError`. For `.requestRetryFailed`, only the `retryError` is consulted.\n    ///\n    /// - Note: Cases that carry no associated `URL`, such as `.explicitlyCancelled` and `.invalidURL`, return `nil`.\n    ///         Use `urlConvertible` to recover the value of an `.invalidURL` error.",
+      "content_hash": "24b29c90770943d4e2948d2aa2e0387b1cab722056df159c1476ab262648c06c",
+      "result": "Diff: Source/Core/AFError.swift (changed)",
+      "raw": "@@ -373,8 +373,23 @@ extension AFError {\n     }\n \n-    /// The `URL` associated with the error.\n+    /// The `URL` associated with the error, if any.\n+    ///\n+    /// For `.multipartEncodingFailed` errors, this is the body part `URL` that triggered the failure. For errors that\n+    /// wrap an underlying error, such as `.sessionTaskFailed`, this is the `URL` extracted from that error, like the\n+    /// `failingURL` of an underlying `URLError`. For `.requestRetryFailed`, only the `retryError` is consulted.\n+    ///\n+    /// - Note: Cases that carry no associated `URL`, such as `.explicitlyCancelled` and `.invalidURL`, return `nil`.\n+    ///         Use `urlConvertible` to recover the value of an `.invalidURL` error.\n     public var url: URL? {\n-        guard case let .multipartEncodingFailed(reason) = self else { return nil }\n-        return reason.url\n+        switch self {\n+        case let .multipartEncodingFailed(reason):\n+            reason.url\n+        case let .responseValidationFailed(reason):\n+            reason.url\n+        case let .responseSerializationFailed(reason):\n+            reason.url\n+        default:\n+            underlyingError?.url\n+        }\n     }\n \n@@ -464,4 +479,21 @@ extension AFError {\n }\n \n+extension Error {\n+    /// The `URL` associated with the error, extracted from well-known Foundation error types.\n+    ///\n+    /// Returns the `failingURL` of a `URLError`, the `NSURLErrorKey` value of any other bridged `NSError`, or, when the\n+    /// error is an `AFError`, that error's own `url`, so nested errors resolve transparently.\n+    var url: URL? {\n+        switch self {\n+        case let afError as AFError:\n+            afError.url\n+        case let urlError as URLError:\n+            urlError.failingURL\n+        default:\n+            (self as\n[... diff truncated ...]",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L375-L382",
+      "absence": false
+    },
+    {
+      "id": "E109",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "kind": "pr_diff",
+      "tier": "E2",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Tests/AFError+AlamofireTests.swift",
+      "start": 27,
+      "end": 27,
+      "excerpt": "import XCTest",
+      "content_hash": "13ca29dd2e2ef9ee1fa3a3bf1ba8c058df0c79f8b256084659b2512f811127f3",
+      "result": "Diff: Tests/AFError+AlamofireTests.swift (changed)",
+      "raw": "@@ -25,4 +25,5 @@\n import Alamofire\n import Foundation\n+import XCTest\n \n extension AFError {\n@@ -401,2 +402,172 @@ extension AFError.URLRequestValidationFailureReason {\n     }\n }\n+\n+// MARK: -\n+\n+final class AFErrorURLTests: BaseTestCase {\n+    private let url = URL(string: \"https://example.com/path\")!\n+    private let otherURL = URL(string: \"https://example.com/other\")!\n+\n+    // MARK: Underlying Network Errors\n+\n+    func testThatURLIsExtractedFromSessionTaskFailedURLError() {\n+        // Given\n+        let error = AFError.sessionTaskFailed(error: urlError(failingURL: url))\n+\n+        // When, Then\n+        XCTAssertEqual(error.url, url)\n+    }\n+\n+    func testThatSessionTaskFailedReturnsNilURLWhenUnderlyingErrorHasNoURL() {\n+        // Given\n+        let error = AFError.sessionTaskFailed(error: URLError(.timedOut))\n+\n+        // When, Then\n+        XCTAssertNil(error.url)\n+    }\n+\n+    func testThatURLIsExtractedFromSessionInvalidatedURLError() {\n+        // Given\n+        let error = AFError.sessionInvalidated(error: urlError(failingURL: url))\n+\n+        // When, Then\n+        XCTAssertEqual(error.url, url)\n+    }\n+\n+    func testThatSessionInvalidatedWithNilErrorReturnsNilURL() {\n+        // Given\n+        let error = AFError.sessionInvalidated(error: nil)\n+\n+        // When, Then\n+        XCTAssertNil(error.url)\n+    }\n+\n+    func testThatURLIsExtractedFromRequestAdaptationFailed() {\n+        // Given\n+        let error = AFError.requestAdaptationFailed(error: urlError(failingURL: url))\n+\n+        // When, Then\n+        XCTAssertEqual(error.url, url)\n+    }\n+\n+    func testThatURLIsExtractedFromCreateUploadableFailed() {\n+        // Given\n+        let error = AFError.createUploadableFailed(error: urlError(failingURL: url))\n+\n+        // When, Then\n+        XCTAsse\n[... diff truncated ...]",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Tests/AFError+AlamofireTests.swift#L27",
+      "absence": false
+    },
+    {
+      "id": "E110",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "pr_diff_touches_claim",
+      "tier": "E2",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": null,
+      "start": null,
+      "end": null,
+      "excerpt": null,
+      "content_hash": null,
+      "result": "The diff changes `AFError`, `NSError`, `NSURLErrorKey`, `Note`, `URL`, `customValidationFailed`, `decodingFailed`, `failingURL`, `originalError`, `retryError`, `underlyingError`, `url`",
+      "raw": "",
+      "permalink": null,
+      "absence": false
+    },
+    {
+      "id": "E111",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "pr_diff_misses_claim",
+      "tier": "E2",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": null,
+      "start": null,
+      "end": null,
+      "excerpt": null,
+      "content_hash": null,
+      "result": "The diff does not change `CocoaError`, `Usage.md`, `public`",
+      "raw": "",
+      "permalink": null,
+      "absence": false
+    },
+    {
+      "id": "E112",
+      "claim_ids": [
+        "C3",
+        "C5"
+      ],
+      "kind": "pr_diff_touches_claim",
+      "tier": "E2",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": null,
+      "start": null,
+      "end": null,
+      "excerpt": null,
+      "content_hash": null,
+      "result": "The diff changes `URL`, `url`",
+      "raw": "",
+      "permalink": null,
+      "absence": false
+    },
+    {
+      "id": "E113",
+      "claim_ids": [
+        "C3"
+      ],
+      "kind": "pr_diff_misses_claim",
+      "tier": "E2",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": null,
+      "start": null,
+      "end": null,
+      "excerpt": null,
+      "content_hash": null,
+      "result": "The diff does not change `internal`",
+      "raw": "",
+      "permalink": null,
+      "absence": false
+    },
+    {
+      "id": "E114",
+      "claim_ids": [
+        "C4"
+      ],
+      "kind": "pr_diff_touches_claim",
+      "tier": "E2",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": null,
+      "start": null,
+      "end": null,
+      "excerpt": null,
+      "content_hash": null,
+      "result": "The diff changes `AFError`, `AFErrorURLTests`, `URL`, `url`",
+      "raw": "",
+      "permalink": null,
+      "absence": false
+    },
+    {
+      "id": "E115",
+      "claim_ids": [
+        "C5"
+      ],
+      "kind": "pr_diff_misses_claim",
+      "tier": "E2",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": null,
+      "start": null,
+      "end": null,
+      "excerpt": null,
+      "content_hash": null,
+      "result": "The diff does not change `MultipartFormDataFailureTestCase`",
+      "raw": "",
+      "permalink": null,
+      "absence": false
+    },
+    {
+      "id": "E116",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C4",
+        "C5"
+      ],
+      "kind": "pr_tests_changed",
+      "tier": "E2",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": "Tests/AFError+AlamofireTests.swift",
+      "start": null,
+      "end": null,
+      "excerpt": null,
+      "content_hash": null,
+      "result": "Test code changed: Tests/AFError+AlamofireTests.swift",
+      "raw": "",
+      "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Tests/AFError+AlamofireTests.swift",
+      "absence": false
+    },
+    {
+      "id": "E117",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "kind": "pr_ci_unavailable",
+      "tier": "E3",
+      "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+      "path": null,
+      "start": null,
+      "end": null,
+      "excerpt": null,
+      "content_hash": null,
+      "result": "No CI results are visible for the head commit (common for fork PRs)",
+      "raw": "",
+      "permalink": null,
+      "absence": true
+    }
+  ],
+  "missing_info": [],
+  "reply_draft": null,
+  "not_checked": [
+    "PR code was not run; CI results are reported as GitHub shows them."
+  ],
+  "notes": [
+    "Literal retrieval is capped at 32 distinct quoted strings, annotations and log messages; additional literals may not have been searched.",
+    "Mostly non-Python code: structural checks are limited; evidence comes from text search."
+  ],
+  "blockers": [],
+  "pipeline_version": "29",
+  "models": {
+    "reasoning": "gemma-4-26b-a4b-it"
+  },
+  "error": null
+}

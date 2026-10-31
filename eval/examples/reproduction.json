@@ -1,0 +1,70 @@
+[
+  {
+    "url": "https://github.com/pallets/flask/issues/6177",
+    "title": "[rejected AI] Config.from_prefixed_env raises TypeError when scalar and nested environment variables share a prefix",
+    "entry": {
+      "url": "https://github.com/pallets/flask/issues/6177",
+      "package": "Flask",
+      "version": "3.1.2",
+      "python": "3.11",
+      "snippet_index": 0,
+      "notes": "The report describes a local development checkout. This demonstration checks the published Flask 3.1.2 package, not that unpinned checkout. Reproducing the exception does not establish a defect."
+    },
+    "status": "reproduced",
+    "detail": "Both runs raised TypeError: 'str' object does not support item assignment (Flask==3.1.2; python:3.11-slim; reporter snippet 0)",
+    "observations": {
+      "package": "Flask",
+      "version": "3.1.2",
+      "image": "python:3.11-slim",
+      "snippet_index": 0,
+      "runs": [
+        {
+          "exception": "TypeError",
+          "message": "'str' object does not support item assignment",
+          "stdout": ""
+        },
+        {
+          "exception": "TypeError",
+          "message": "'str' object does not support item assignment",
+          "stdout": ""
+        }
+      ]
+    },
+    "pipeline_version": "18",
+    "limitations": "Reproducing a reported exception does not establish that it is an unintended defect."
+  },
+  {
+    "url": "https://github.com/pydantic/pydantic/issues/12072",
+    "title": "error when calling model_dump on model with frozenset[SomeDataclass] or set[SomeDataClass]",
+    "entry": {
+      "url": "https://github.com/pydantic/pydantic/issues/12072",
+      "package": "pydantic",
+      "version": "2.11.7",
+      "python": "3.11",
+      "snippet_index": 2,
+      "notes": "Uses the complete Example Code block, unchanged, and the Python/package versions named in the report."
+    },
+    "status": "reproduced",
+    "detail": "Both runs raised TypeError: unhashable type: 'dict' (pydantic==2.11.7; python:3.11-slim; reporter snippet 2)",
+    "observations": {
+      "package": "pydantic",
+      "version": "2.11.7",
+      "image": "python:3.11-slim",
+      "snippet_index": 2,
+      "runs": [
+        {
+          "exception": "TypeError",
+          "message": "unhashable type: 'dict'",
+          "stdout": "values=frozenset({MyDataclass(x='2'), MyDataclass(x='1')})\nmodel_dump(mode='json')\n{'values': [{'x': '2'}, {'x': '1'}]}\nmodel_dump(mode='python')\n"
+        },
+        {
+          "exception": "TypeError",
+          "message": "unhashable type: 'dict'",
+          "stdout": "values=frozenset({MyDataclass(x='1'), MyDataclass(x='2')})\nmodel_dump(mode='json')\n{'values': [{'x': '1'}, {'x': '2'}]}\nmodel_dump(mode='python')\n"
+        }
+      ]
+    },
+    "pipeline_version": "18",
+    "limitations": "Reproducing a reported exception does not establish that it is an unintended defect."
+  }
+]

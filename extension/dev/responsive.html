@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FOURENSICS narrow viewport checks</title>
+  <style>
+    body { margin: 20px; font: 14px/1.5 system-ui, sans-serif; background: #e9edf2; color: #1f2328; }
+    h1 { font-size: 20px; } .frames { display: flex; gap: 24px; flex-wrap: wrap; }
+    iframe { display: block; height: 640px; border: 1px solid #b5bec9; border-radius: 8px; background: white; }
+  </style>
+</head>
+<body>
+  <h1>Offline narrow viewport checks</h1>
+  <p>Synthetic fixtures. No analysis requests. Long paths may wrap; source code scrolls within its excerpt.</p>
+  <div class="frames">
+    <div><p>360px · long report · dark</p><iframe width="360" title="Long report at 360 pixels" src="./preview.html?scenario=long&amp;theme=dark"></iframe></div>
+    <div><p>320px · blocked run · light</p><iframe width="320" title="Blocked run at 320 pixels" src="./preview.html?scenario=partial"></iframe></div>
+  </div>
+</body>
+</html>

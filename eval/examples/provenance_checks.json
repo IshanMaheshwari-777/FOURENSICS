@@ -1,0 +1,272 @@
+[
+  {
+    "url": "https://github.com/marimo-team/marimo/issues/5743",
+    "original_pipeline": "16",
+    "probe_pipeline": "20",
+    "tier_changes": [
+      {
+        "id": "E007",
+        "kind": "caller",
+        "path": "marimo/_plugins/ui/_impl/altair_chart.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E008",
+        "kind": "caller",
+        "path": "marimo/_plugins/ui/_impl/altair_chart.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E009",
+        "kind": "callee",
+        "path": "marimo/_plugins/ui/_impl/altair_chart.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E010",
+        "kind": "callee",
+        "path": "marimo/_plugins/ui/_impl/altair_chart.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E011",
+        "kind": "callee",
+        "path": "marimo/_smoke_tests/raise_exception_on_change.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E012",
+        "kind": "callee",
+        "path": "marimo/_utils/requests.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E013",
+        "kind": "caller",
+        "path": "frontend/e2e-tests/py/components.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E014",
+        "kind": "caller",
+        "path": "frontend/e2e-tests/py/components.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E015",
+        "kind": "test_found",
+        "path": "tests/_plugins/ui/_impl/test_altair_chart.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E016",
+        "kind": "test_found",
+        "path": "tests/_plugins/ui/_impl/test_altair_chart.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E017",
+        "kind": "test_found",
+        "path": "tests/_plugins/ui/_impl/test_altair_chart.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E018",
+        "kind": "test_found",
+        "path": "tests/_plugins/ui/_impl/test_altair_chart.py",
+        "before": "E3",
+        "after": "E4"
+      }
+    ],
+    "assessments": [
+      {
+        "claim_id": "C1",
+        "original": "supported",
+        "revalidated": "inconclusive",
+        "reason": "no cited evidence supports the claim"
+      }
+    ],
+    "limitation": "Probe/validator replay only; the model was not rerun and this is not a new full assessment."
+  },
+  {
+    "url": "https://github.com/pallets/flask/issues/6177",
+    "original_pipeline": "7",
+    "probe_pipeline": "20",
+    "tier_changes": [
+      {
+        "id": "E017",
+        "kind": "test_found",
+        "path": "tests/test_config.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E018",
+        "kind": "test_found",
+        "path": "tests/test_config.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E028",
+        "kind": "test_found",
+        "path": "tests/test_basic.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E029",
+        "kind": "test_found",
+        "path": "tests/test_basic.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E037",
+        "kind": "caller",
+        "path": "src/flask/sansio/app.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E038",
+        "kind": "callee",
+        "path": "src/flask/sansio/scaffold.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E039",
+        "kind": "test_found",
+        "path": "tests/test_config.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E040",
+        "kind": "test_found",
+        "path": "tests/test_config.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E043",
+        "kind": "docstring",
+        "path": "src/flask/sansio/scaffold.py",
+        "before": "E3",
+        "after": "E4"
+      },
+      {
+        "id": "E044",
+        "kind": "docstring",
+        "path": "src/flask/sansio/scaffold.py",
+        "before": "E3",
+        "after": "E4"
+      }
+    ],
+    "assessments": [
+      {
+        "claim_id": "C1",
+        "original": "inconclusive",
+        "revalidated": "inconclusive",
+        "reason": null
+      },
+      {
+        "claim_id": "C2",
+        "original": "inconclusive",
+        "revalidated": "inconclusive",
+        "reason": null
+      },
+      {
+        "claim_id": "C3",
+        "original": "inconclusive",
+        "revalidated": "inconclusive",
+        "reason": null
+      },
+      {
+        "claim_id": "C4",
+        "original": "supported",
+        "revalidated": "supported",
+        "reason": null
+      },
+      {
+        "claim_id": "C5",
+        "original": "inconclusive",
+        "revalidated": "inconclusive",
+        "reason": null
+      }
+    ],
+    "limitation": "Probe/validator replay only; the model was not rerun and this is not a new full assessment."
+  },
+  {
+    "url": "https://github.com/expressjs/express/pull/7574",
+    "original_pipeline": "7",
+    "probe_pipeline": "20",
+    "tier_changes": [],
+    "assessments": [
+      {
+        "claim_id": "C1",
+        "original": "inconclusive",
+        "revalidated": "inconclusive",
+        "reason": "no cited evidence supports the claim"
+      },
+      {
+        "claim_id": "C2",
+        "original": "inconclusive",
+        "revalidated": "inconclusive",
+        "reason": "no cited evidence supports the claim"
+      },
+      {
+        "claim_id": "C3",
+        "original": "supported",
+        "revalidated": "supported",
+        "reason": null
+      },
+      {
+        "claim_id": "C4",
+        "original": "supported",
+        "revalidated": "supported",
+        "reason": null
+      },
+      {
+        "claim_id": "C5",
+        "original": "supported",
+        "revalidated": "supported",
+        "reason": null
+      }
+    ],
+    "limitation": "Probe/validator replay only; the model was not rerun and this is not a new full assessment."
+  },
+  {
+    "url": "https://github.com/spf13/cobra/pull/2557",
+    "original_pipeline": "7",
+    "probe_pipeline": "20",
+    "tier_changes": [],
+    "assessments": [
+      {
+        "claim_id": "C1",
+        "original": "inconclusive",
+        "revalidated": "inconclusive",
+        "reason": null
+      },
+      {
+        "claim_id": "C2",
+        "original": "inconclusive",
+        "revalidated": "inconclusive",
+        "reason": null
+      }
+    ],
+    "limitation": "Probe/validator replay only; the model was not rerun and this is not a new full assessment."
+  }
+]

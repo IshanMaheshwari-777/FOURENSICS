@@ -1,0 +1,937 @@
+{
+  "run_id": "30ab7b062b054ab6",
+  "status": "complete",
+  "target": {
+    "owner": "pallets",
+    "repo": "flask",
+    "kind": "issue",
+    "number": 6177,
+    "url": "https://github.com/pallets/flask/issues/6177"
+  },
+  "report_kind": null,
+  "stages": [
+    {
+      "stage": "fetch",
+      "status": "ok",
+      "reason": null,
+      "ms": 1331
+    },
+    {
+      "stage": "anchors",
+      "status": "ok",
+      "reason": null,
+      "ms": 1
+    },
+    {
+      "stage": "snapshot",
+      "status": "ok",
+      "reason": null,
+      "ms": 974
+    },
+    {
+      "stage": "missing_info",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    },
+    {
+      "stage": "index",
+      "status": "ok",
+      "reason": null,
+      "ms": 283
+    },
+    {
+      "stage": "reference_checks",
+      "status": "ok",
+      "reason": null,
+      "ms": 432
+    },
+    {
+      "stage": "claims",
+      "status": "degraded",
+      "reason": "model unavailable (LLMUnavailable); using the title",
+      "ms": 2
+    },
+    {
+      "stage": "claim_checks",
+      "status": "ok",
+      "reason": null,
+      "ms": 186
+    },
+    {
+      "stage": "reproduction",
+      "status": "ok",
+      "reason": null,
+      "ms": 8604
+    },
+    {
+      "stage": "adjudication",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    },
+    {
+      "stage": "validation",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    }
+  ],
+  "snapshot": {
+    "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+    "method": "date",
+    "reliability": "inferred",
+    "ref_label": "main as of 2026-10-31",
+    "base_sha": null,
+    "head_sha": null
+  },
+  "summary_line": "Reported behaviour reproduced in the sandbox.",
+  "summary_tone": "supported",
+  "claims": [
+    {
+      "id": "C1",
+      "text": "[rejected AI] Config.from_prefixed_env raises TypeError when scalar and nested environment variables share a prefix",
+      "type": "behavior",
+      "is_primary": true,
+      "source_span": "[rejected AI] Config.from_prefixed_env raises TypeError when scalar and nested environment variables share a prefix",
+      "inferred": false,
+      "anchors": [
+        {
+          "kind": "literal",
+          "value": "TypeError",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": ".",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "error",
+          "value": "TypeError: 'str' object does not support item assignment",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "version",
+          "value": "3.12.10",
+          "line": null,
+          "func": null,
+          "context": " (local development checkout) - Python: "
+        },
+        {
+          "kind": "symbol",
+          "value": "Config.from_prefixed_env",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "Config.from_prefixed_env()",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "__",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "src/flask/config.py",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "FLASK_TEST",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "hello",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "FLASK_TEST__INNER",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "world",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "FLASK",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "str",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "path",
+          "value": "src/flask/config.py",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "symbol",
+          "value": "__",
+          "line": null,
+          "func": null,
+          "context": null
+        }
+      ],
+      "condition": null,
+      "expected": null,
+      "observed": null
+    }
+  ],
+  "assessments": [
+    {
+      "claim_id": "C1",
+      "technical": "supported",
+      "verification": "reproduced",
+      "evidence_ids": [
+        "E038"
+      ],
+      "relations": {
+        "E038": "supports"
+      },
+      "explanation": "Running the reporter's snippet in an isolated sandbox produced the reported behaviour.",
+      "limitations": [],
+      "strength": "medium",
+      "lean": null,
+      "decided_by": "rule",
+      "downgraded_reason": null,
+      "unconfirmed_reasoning": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E001",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_in_docs",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "CHANGES.rst",
+      "start": 480,
+      "end": 488,
+      "excerpt": "-   From Werkzeug, for redirect responses the ``Location`` header URL\n    will remain relative, and exclude the scheme and domain, by default.\n    :pr:`4496`\n-   Add ``Config.from_prefixed_env()`` to load config values from\n    environment variables that start with ``FLASK_`` or another prefix.\n    This parses values as JSON by default, and allows setting keys in\n    nested dicts. :pr:`4479`\n\n",
+      "content_hash": "371540377715e3d98c44d18f1004f60011a75abadc14b9a0bed40b537d37d070",
+      "result": "Exact report text 'Config.from_prefixed_env()' occurs in CHANGES.rst:483; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/CHANGES.rst#L480-L488",
+      "absence": false
+    },
+    {
+      "id": "E002",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/app.py",
+      "start": 1339,
+      "end": 1347,
+      "excerpt": "                    rv, status = rv  # type: ignore[assignment,misc]\n            # other sized tuples are not allowed\n            else:\n                raise TypeError(\n                    \"The view function did not return a valid response tuple.\"\n                    \" The tuple must have the form (body, status, headers),\"\n                    \" (body, status), or (body, headers).\"\n                )\n",
+      "content_hash": "0d5ba4f9120c4c67c4224d19e007402f445b95e2106e48b7857d2f46ed58857c",
+      "result": "Exact report text 'TypeError' occurs in src/flask/app.py:1342; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/app.py#L1339-L1347",
+      "absence": false
+    },
+    {
+      "id": "E003",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/app.py",
+      "start": 1347,
+      "end": 1355,
+      "excerpt": "\n        # the body must not be None\n        if rv is None:\n            raise TypeError(\n                f\"The view function for {request.endpoint!r} did not\"\n                \" return a valid response. The function either returned\"\n                \" None or ended without a return statement.\"\n            )\n",
+      "content_hash": "3d17cb3b71b83809c739f96f30a8bee15de75587f29e88abb72754e5abfa2de6",
+      "result": "Exact report text 'TypeError' occurs in src/flask/app.py:1350; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/app.py#L1347-L1355",
+      "absence": false
+    },
+    {
+      "id": "E004",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/app.py",
+      "start": 1,
+      "end": 6,
+      "excerpt": "from __future__ import annotations\n\nimport collections.abc as cabc\nimport inspect\nimport os\nimport sys",
+      "content_hash": "7b316cab91afd14bd8c8a7347b8500de7abc7cb2d005c6f8d0066a9f927d5b06",
+      "result": "Exact report text '__' occurs in src/flask/app.py:1; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/app.py#L1-L6",
+      "absence": false
+    },
+    {
+      "id": "E005",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/app.py",
+      "start": 114,
+      "end": 122,
+      "excerpt": "    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the\n    package parameter resolves to an actual python package (a folder with\n    an :file:`__init__.py` file inside) or a standard module (just a ``.py`` file).\n\n    For more information about resource loading, see :func:`open_resource`.\n\n    Usually you create a :class:`Flask` instance in your main module or\n    in the :file:`__init__.py` file of your package like this::",
+      "content_hash": "1facddd32c6084bce23adac4e31e8465ac22114a26774e7fc502814aeb42896e",
+      "result": "Exact report text '__' occurs in src/flask/app.py:117; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/app.py#L114-L122",
+      "absence": false
+    },
+    {
+      "id": "E006",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": ".devcontainer/on-create-command.sh",
+      "start": 1,
+      "end": 7,
+      "excerpt": "#!/bin/bash\nset -e\npython3 -m venv --upgrade-deps .venv\n. .venv/bin/activate\npip install -r requirements/dev.txt\npip install -e .\npre-commit install --install-hooks",
+      "content_hash": "4b553141add6211b708da406a93ecd97688eb8e27a12a0fba4350c78f4ed0f73",
+      "result": "Exact report text '.' occurs in .devcontainer/on-create-command.sh:3; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/.devcontainer/on-create-command.sh#L1-L7",
+      "absence": false
+    },
+    {
+      "id": "E007",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": ".devcontainer/on-create-command.sh",
+      "start": 1,
+      "end": 7,
+      "excerpt": "#!/bin/bash\nset -e\npython3 -m venv --upgrade-deps .venv\n. .venv/bin/activate\npip install -r requirements/dev.txt\npip install -e .\npre-commit install --install-hooks",
+      "content_hash": "4b553141add6211b708da406a93ecd97688eb8e27a12a0fba4350c78f4ed0f73",
+      "result": "Exact report text '.' occurs in .devcontainer/on-create-command.sh:4; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/.devcontainer/on-create-command.sh#L1-L7",
+      "absence": false
+    },
+    {
+      "id": "E008",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/app.py",
+      "start": 1165,
+      "end": 1173,
+      "excerpt": "        endpoint.\n\n        In some cases, such as email messages, you want URLs to include\n        the scheme and domain, like ``https://example.com/hello``. When\n        not in an active request, URLs will be external by default, but\n        this requires setting :data:`SERVER_NAME` so Flask knows what\n        domain to use. :data:`APPLICATION_ROOT` and\n        :data:`PREFERRED_URL_SCHEME` should also be configured as\n        needed. This config is only used when not in an active request.",
+      "content_hash": "8112a2e3169d98cf979cc60cb0c7480f79f38840383052083c6bd28deaec67d5",
+      "result": "Exact report text 'hello' occurs in src/flask/app.py:1168; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/app.py#L1165-L1173",
+      "absence": false
+    },
+    {
+      "id": "E009",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/helpers.py",
+      "start": 308,
+      "end": 316,
+      "excerpt": "\n    .. sourcecode:: html+jinja\n\n       {% macro hello(name) %}Hello {{ name }}!{% endmacro %}\n\n    You can access this from Python code like this::\n\n        hello = get_template_attribute('_cider.html', 'hello')\n        return hello('World')",
+      "content_hash": "5d6c3ba78165fe68829cc6a7a0d98a72b5fe529c7d2e85688257431d4b5d1f5a",
+      "result": "Exact report text 'hello' occurs in src/flask/helpers.py:311; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/helpers.py#L308-L316",
+      "absence": false
+    },
+    {
+      "id": "E010",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "tests/test_appctx.py",
+      "start": 144,
+      "end": 152,
+      "excerpt": "    assert \"foo\" in flask.g\n    # setdefault\n    flask.g.setdefault(\"bar\", \"the cake is a lie\")\n    flask.g.setdefault(\"bar\", \"hello world\")\n    assert flask.g.bar == \"the cake is a lie\"\n    # pop\n    assert flask.g.pop(\"bar\") == \"the cake is a lie\"\n    with pytest.raises(KeyError):\n        flask.g.pop(\"bar\")",
+      "content_hash": "bebbcbbc75579a8e87680705685fad20775df257b95830f116fa97543e7d1799",
+      "result": "Exact report text 'world' occurs in tests/test_appctx.py:147; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/tests/test_appctx.py#L144-L152",
+      "absence": false
+    },
+    {
+      "id": "E011",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "tests/test_basic.py",
+      "start": 1170,
+      "end": 1178,
+      "excerpt": "    def from_response_headers():\n        return (\n            flask.Response(\n                \"Hello world\", 404, {\"Content-Type\": \"text/html\", \"X-Foo\": \"Baz\"}\n            ),\n            {\"Content-Type\": \"text/plain\", \"X-Foo\": \"Bar\", \"X-Bar\": \"Foo\"},\n        )\n\n    @app.route(\"/response_status\")",
+      "content_hash": "c707ed00d57d3d9fd86767ce66b611801b8e81c63980329c30b89a93bb0eba4a",
+      "result": "Exact report text 'world' occurs in tests/test_basic.py:1173; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/tests/test_basic.py#L1170-L1178",
+      "absence": false
+    },
+    {
+      "id": "E012",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_in_docs",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "docs/config.rst",
+      "start": 673,
+      "end": 681,
+      "excerpt": "there are alternative ways as well.  For example you could use imports or\nsubclassing.\n\nWhat is very popular in the Django world is to make the import explicit in\nthe config file by adding ``from yourapplication.default_settings\nimport *`` to the top of the file and then overriding the changes by hand.\nYou could also inspect an environment variable like\n``YOURAPPLICATION_MODE`` and set that to `production`, `development` etc\nand import different hard-coded files based on that.",
+      "content_hash": "b71cbf7113fa93aa6619045729a91f5e6f60bfd198f071ab6d82ca064529d7b7",
+      "result": "Exact report text 'world' occurs in docs/config.rst:676; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/docs/config.rst#L673-L681",
+      "absence": false
+    },
+    {
+      "id": "E013",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_in_docs",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "docs/patterns/appdispatch.rst",
+      "start": 29,
+      "end": 37,
+      "excerpt": "    app = Flask(__name__)\n\n    @app.route('/')\n    def hello_world():\n        return 'Hello World!'\n\n\nCombining Applications\n----------------------",
+      "content_hash": "b874c2c8dcd610be700088215d162d4ab5dc1c1299caabd21f94803f80327d1d",
+      "result": "Exact report text 'world' occurs in docs/patterns/appdispatch.rst:32; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/docs/patterns/appdispatch.rst#L29-L37",
+      "absence": false
+    },
+    {
+      "id": "E014",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/app.py",
+      "start": 693,
+      "end": 701,
+      "excerpt": "            If installed, python-dotenv will be used to load environment\n            variables from :file:`.env` and :file:`.flaskenv` files.\n\n            The :envvar:`FLASK_DEBUG` environment variable will override :attr:`debug`.\n\n            Threaded mode is enabled by default.\n\n        .. versionchanged:: 0.10\n            The default port is now picked from the ``SERVER_NAME``",
+      "content_hash": "eb1408d48d0d771b807b0a7dc93c1fe88296e1bc90d527cd3e1f7c7fd1c53483",
+      "result": "Exact report text 'FLASK' occurs in src/flask/app.py:696; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/app.py#L693-L701",
+      "absence": false
+    },
+    {
+      "id": "E015",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/app.py",
+      "start": 703,
+      "end": 711,
+      "excerpt": "        \"\"\"\n        # Ignore this call so that it doesn't start another server if\n        # the 'flask run' command is used.\n        if os.environ.get(\"FLASK_RUN_FROM_CLI\") == \"true\":\n            if not is_running_from_reloader():\n                click.secho(\n                    \" * Ignoring a call to 'app.run()' that would block\"\n                    \" the current 'flask' CLI command.\\n\"\n                    \"   Only call 'app.run()' in an 'if __name__ ==\"",
+      "content_hash": "de46dc2fab6814b574c57d9429cf3437dddd8e61cc845a45c8debb7caf9569bb",
+      "result": "Exact report text 'FLASK' occurs in src/flask/app.py:706; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/app.py#L703-L711",
+      "absence": false
+    },
+    {
+      "id": "E016",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/__init__.py",
+      "start": 18,
+      "end": 26,
+      "excerpt": "from .helpers import redirect as redirect\nfrom .helpers import send_file as send_file\nfrom .helpers import send_from_directory as send_from_directory\nfrom .helpers import stream_with_context as stream_with_context\nfrom .helpers import url_for as url_for\nfrom .json import jsonify as jsonify\nfrom .signals import appcontext_popped as appcontext_popped\nfrom .signals import appcontext_pushed as appcontext_pushed\nfrom .signals import appcontext_tearing_down as appcontext_tearing_down",
+      "content_hash": "8832c2922d7c885680ba09af4f7460b287dc4c727782664880df2b41fdd5de5e",
+      "result": "Exact report text 'str' occurs in src/flask/__init__.py:21; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/__init__.py#L18-L26",
+      "absence": false
+    },
+    {
+      "id": "E017",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/__init__.py",
+      "start": 32,
+      "end": 39,
+      "excerpt": "from .signals import request_tearing_down as request_tearing_down\nfrom .signals import template_rendered as template_rendered\nfrom .templating import render_template as render_template\nfrom .templating import render_template_string as render_template_string\nfrom .templating import stream_template as stream_template\nfrom .templating import stream_template_string as stream_template_string\nfrom .wrappers import Request as Request\nfrom .wrappers import Response as Response",
+      "content_hash": "ba6cc822b7c1cb09238ffebeb0685d30c2549c8c67261f02f89f5873edacb690",
+      "result": "Exact report text 'str' occurs in src/flask/__init__.py:35; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/__init__.py#L32-L39",
+      "absence": false
+    },
+    {
+      "id": "E018",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "raise_site",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/app.py",
+      "start": 1342,
+      "end": 1342,
+      "excerpt": "                raise TypeError(",
+      "content_hash": "f352fddc44f5aa6e9b74748e0c71fcd9d2dbcc1efb04848339d0f97cd80fc41f",
+      "result": "`make_response` explicitly raises TypeError at src/flask/app.py:1342",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/app.py#L1342",
+      "absence": false
+    },
+    {
+      "id": "E019",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "raise_site",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/app.py",
+      "start": 1350,
+      "end": 1350,
+      "excerpt": "            raise TypeError(",
+      "content_hash": "635b8959b84727f2075d219fb34cdf40072d1a5f2d23ba9f321d5c1ac761ef5d",
+      "result": "`make_response` explicitly raises TypeError at src/flask/app.py:1350",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/app.py#L1350",
+      "absence": false
+    },
+    {
+      "id": "E020",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "path_found",
+      "tier": "E2",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/config.py",
+      "start": null,
+      "end": null,
+      "excerpt": null,
+      "content_hash": null,
+      "result": "File src/flask/config.py exists at this version",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/config.py",
+      "absence": false
+    },
+    {
+      "id": "E021",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "symbol_found",
+      "tier": "E2",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/config.py",
+      "start": 126,
+      "end": 185,
+      "excerpt": "    def from_prefixed_env(\n        self, prefix: str = \"FLASK\", *, loads: t.Callable[[str], t.Any] = json.loads\n    ) -> bool:\n        \"\"\"Load any environment variables that start with ``FLASK_``,\n        dropping the prefix from the env key for the config key. Values\n        are passed through a loading function to attempt to convert them\n        to more specific types than strings.\n\n        Keys are loaded in :func:`sorted` order.\n\n        The default loading function attempts to parse values as any\n        valid JSON type, including dicts and lists.\n\n        Specific items in nested dicts can be set by separating the\n        keys with double underscores (``__``). If an intermediate key\n        doesn't exist, it will be initialized to an empty dict.\n\n        :param prefix: Load env vars that start with this prefix,\n            separated with an underscore (``_``).\n        :param loads: Pass each string value to this function and use\n            the returned value as the config value. If any error is\n            raised it is ignored and the value remains a string. The\n            default is :func:`json.loads`.\n\n        .. versionadded:: 2.1\n        \"\"\"\n        prefix = f\"{prefix}_\"\n\n        for key in sorted(os.environ):\n            if not key.startswith(prefix):\n                continue\n\n            value = os.environ[key]\n            key = key.removeprefix(prefix)\n\n            try:\n                value = loads(value)\n            except Exception:\n                # Keep the value as a string if loading failed.\n                pass\n\n            if \"__\" not in key:\n                # A non-nested key, set directly.\n                self[key] = value\n                continue\n\n            # Traverse nested dictionaries with keys separated by \"__\".\n            current = self\n            *parts, tail = key.split(\"__\")\n\n            for part in parts:\n                # If an intermediate dict does not exist, create it.\n                if part not in current:\n                    current[part] = {}\n\n                current = current[part]\n\n            current[tail] = value\n\n        return True",
+      "content_hash": "1a79d93e57a3fddef6dbd4d73a0fe74822f48982363ffc6f80a9d92919972c1b",
+      "result": "`from_prefixed_env` is defined in src/flask/config.py at line 126",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/config.py#L126-L185",
+      "absence": false
+    },
+    {
+      "id": "E022",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "symbol_mentioned",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/config.py",
+      "start": 137,
+      "end": 145,
+      "excerpt": "        valid JSON type, including dicts and lists.\n\n        Specific items in nested dicts can be set by separating the\n        keys with double underscores (``__``). If an intermediate key\n        doesn't exist, it will be initialized to an empty dict.\n\n        :param prefix: Load env vars that start with this prefix,\n            separated with an underscore (``_``).\n        :param loads: Pass each string value to this function and use",
+      "content_hash": "366b2c9cc74550d5ea9bb65c467ab8ffce105e81f421540514897cb95bf73ae9",
+      "result": "`__` has no definition found, but appears in src/flask/config.py:140",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/config.py#L137-L145",
+      "absence": false
+    },
+    {
+      "id": "E023",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/config.py",
+      "start": 126,
+      "end": 185,
+      "excerpt": "    def from_prefixed_env(\n        self, prefix: str = \"FLASK\", *, loads: t.Callable[[str], t.Any] = json.loads\n    ) -> bool:\n        \"\"\"Load any environment variables that start with ``FLASK_``,\n        dropping the prefix from the env key for the config key. Values\n        are passed through a loading function to attempt to convert them\n        to more specific types than strings.\n\n        Keys are loaded in :func:`sorted` order.\n\n        The default loading function attempts to parse values as any\n        valid JSON type, including dicts and lists.\n\n        Specific items in nested dicts can be set by separating the\n        keys with double underscores (``__``). If an intermediate key\n        doesn't exist, it will be initialized to an empty dict.\n\n        :param prefix: Load env vars that start with this prefix,\n            separated with an underscore (``_``).\n        :param loads: Pass each string value to this function and use\n            the returned value as the config value. If any error is\n            raised it is ignored and the value remains a string. The\n            default is :func:`json.loads`.\n\n        .. versionadded:: 2.1\n        \"\"\"\n        prefix = f\"{prefix}_\"\n\n        for key in sorted(os.environ):\n            if not key.startswith(prefix):\n                continue\n\n            value = os.environ[key]\n            key = key.removeprefix(prefix)\n\n            try:\n                value = loads(value)\n            except Exception:\n                # Keep the value as a string if loading failed.\n                pass\n\n            if \"__\" not in key:\n                # A non-nested key, set directly.\n                self[key] = value\n                continue\n\n            # Traverse nested dictionaries with keys separated by \"__\".\n            current = self\n            *parts, tail = key.split(\"__\")\n\n            for part in parts:\n                # If an intermediate dict does not exist, create it.\n                if part not in current:\n                    current[part] = {}\n\n                current = current[part]\n\n            current[tail] = value\n\n        return True",
+      "content_hash": "1a79d93e57a3fddef6dbd4d73a0fe74822f48982363ffc6f80a9d92919972c1b",
+      "result": "Implementation of `Config.from_prefixed_env` (src/flask/config.py)",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/config.py#L126-L185",
+      "absence": false
+    },
+    {
+      "id": "E024",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "examples/celery/src/task_app/__init__.py",
+      "start": 7,
+      "end": 26,
+      "excerpt": "def create_app() -> Flask:\n    app = Flask(__name__)\n    app.config.from_mapping(\n        CELERY={\n            \"broker_url\": \"redis://localhost\",\n            \"result_backend\": \"redis://localhost\",\n            \"task_ignore_result\": True,\n        },\n    )\n    app.config.from_prefixed_env()\n    celery_init_app(app)\n\n    @app.route(\"/\")\n    def index() -> str:\n        return render_template(\"index.html\")\n\n    from . import views\n\n    app.register_blueprint(views.bp)\n    return app",
+      "content_hash": "d1751ac42593f20e8f38dcc7aff09c16e0b86840323a5a24463b718b4ae10fb0",
+      "result": "Implementation of `create_app` (examples/celery/src/task_app/__init__.py)",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/examples/celery/src/task_app/__init__.py#L7-L26",
+      "absence": false
+    },
+    {
+      "id": "E025",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/views.py",
+      "start": 86,
+      "end": 135,
+      "excerpt": "    def as_view(\n        cls, name: str, *class_args: t.Any, **class_kwargs: t.Any\n    ) -> ft.RouteCallable:\n        \"\"\"Convert the class into a view function that can be registered\n        for a route.\n\n        By default, the generated view will create a new instance of the\n        view class for every request and call its\n        :meth:`dispatch_request` method. If the view class sets\n        :attr:`init_every_request` to ``False``, the same instance will\n        be used for every request.\n\n        Except for ``name``, all other arguments passed to this method\n        are forwarded to the view class ``__init__`` method.\n\n        .. versionchanged:: 2.2\n            Added the ``init_every_request`` class attribute.\n        \"\"\"\n        if cls.init_every_request:\n\n            def view(**kwargs: t.Any) -> ft.ResponseReturnValue:\n                self = view.view_class(  # type: ignore[attr-defined]\n                    *class_args, **class_kwargs\n                )\n                return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]\n\n        else:\n            self = cls(*class_args, **class_kwargs)  # pyright: ignore\n\n            def view(**kwargs: t.Any) -> ft.ResponseReturnValue:\n                return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]\n\n        if cls.decorators:\n            view.__name__ = name\n            view.__module__ = cls.__module__\n            for decorator in cls.decorators:\n                view = decorator(view)\n\n        # We attach the view class to the view function for two reasons:\n        # first of all it allows us to easily figure out what class-based\n        # view this thing came from, secondly it's also used for instantiating\n        # the view class so you can actually replace it with something else\n        # for testing purposes and debugging.\n        view.view_class = cls  # type: ignore\n        view.__name__ = name\n        view.__doc__ = cls.__doc__\n        view.__module__ = cls.__module__\n        view.methods = cls.methods  # type: ignore\n        view.provide_automatic_options = cls.provide_automatic_options  # type: ignore\n        return view",
+      "content_hash": "cb44df7c02e824f2054f2621b2f67e4c1cab6683f145fd7a549a02da65359dde",
+      "result": "Implementation of `View.as_view` (src/flask/views.py)",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/views.py#L86-L135",
+      "absence": false
+    },
+    {
+      "id": "E026",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E4",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/sansio/blueprints.py",
+      "start": 87,
+      "end": 116,
+      "excerpt": "    def add_url_rule(\n        self,\n        rule: str,\n        endpoint: str | None = None,\n        view_func: ft.RouteCallable | None = None,\n        **options: t.Any,\n    ) -> None:\n        \"\"\"A helper method to register a rule (and optionally a view function)\n        to the application.  The endpoint is automatically prefixed with the\n        blueprint's name.\n        \"\"\"\n        if self.url_prefix is not None:\n            if rule:\n                rule = \"/\".join((self.url_prefix.rstrip(\"/\"), rule.lstrip(\"/\")))\n            else:\n                rule = self.url_prefix\n        options.setdefault(\"subdomain\", self.subdomain)\n        if endpoint is None:\n            endpoint = _endpoint_from_view_func(view_func)  # type: ignore\n        defaults = self.url_defaults\n        if \"defaults\" in options:\n            defaults = dict(defaults, **options.pop(\"defaults\"))\n\n        self.app.add_url_rule(\n            rule,\n            f\"{self.name_prefix}.{self.name}.{endpoint}\".lstrip(\".\"),\n            view_func,\n            defaults=defaults,\n            **options,\n        )",
+      "content_hash": "d54914f7e3b24295ead4dbb7eab8371722a7b5d78566abc8a093f777bee9e690",
+      "result": "Implementation of `BlueprintSetupState.add_url_rule` (src/flask/sansio/blueprints.py)",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/sansio/blueprints.py#L87-L116",
+      "absence": false
+    },
+    {
+      "id": "E027",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "callee",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/json/__init__.py",
+      "start": 77,
+      "end": 105,
+      "excerpt": "def loads(s: str | bytes, **kwargs: t.Any) -> t.Any:\n    \"\"\"Deserialize data as JSON.\n\n    If :data:`~flask.current_app` is available, it will use its\n    :meth:`app.json.loads() <flask.json.provider.JSONProvider.loads>`\n    method, otherwise it will use :func:`json.loads`.\n\n    :param s: Text or UTF-8 bytes.\n    :param kwargs: Arguments passed to the ``loads`` implementation.\n\n    .. versionchanged:: 2.3\n        The ``app`` parameter was removed.\n\n    .. versionchanged:: 2.2\n        Calls ``current_app.json.loads``, allowing an app to override\n        the behavior.\n\n    .. versionchanged:: 2.0\n        ``encoding`` will be removed in Flask 2.1. The data must be a\n        string or UTF-8 bytes.\n\n    .. versionchanged:: 1.0.3\n        ``app`` can be passed directly, rather than requiring an app\n        context for configuration.\n    \"\"\"\n    if current_app:\n        return current_app.json.loads(s, **kwargs)\n\n    return _json.loads(s, **kwargs)",
+      "content_hash": "5e25c01fffc75f48bf446d44344b44b9d8d6c958401c772d33fd16345ed8db75",
+      "result": "`from_prefixed_env` calls `loads`",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/json/__init__.py#L77-L105",
+      "absence": false
+    },
+    {
+      "id": "E028",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "caller",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/cli.py",
+      "start": 333,
+      "end": 372,
+      "excerpt": "    def load_app(self) -> Flask:\n        \"\"\"Loads the Flask app (if not yet loaded) and returns it.  Calling\n        this multiple times will just result in the already loaded app to\n        be returned.\n        \"\"\"\n        if self._loaded_app is not None:\n            return self._loaded_app\n        app: Flask | None = None\n        if self.create_app is not None:\n            app = self.create_app()\n        else:\n            if self.app_import_path:\n                path, name = (\n                    re.split(r\":(?![\\\\/])\", self.app_import_path, maxsplit=1) + [None]\n                )[:2]\n                import_name = prepare_import(path)\n                app = locate_app(import_name, name)\n            else:\n                for path in (\"wsgi.py\", \"app.py\"):\n                    import_name = prepare_import(path)\n                    app = locate_app(import_name, None, raise_if_not_found=False)\n\n                    if app is not None:\n                        break\n\n        if app is None:\n            raise NoAppException(\n                \"Could not locate a Flask application. Use the\"\n                \" 'flask --app' option, 'FLASK_APP' environment\"\n                \" variable, or a 'wsgi.py' or 'app.py' file in the\"\n                \" current directory.\"\n            )\n\n        if self.set_debug_flag:\n            # Update the app's debug flag through the descriptor so that\n            # other values repopulate as well.\n            app.debug = get_debug_flag()\n\n        self._loaded_app = app\n        return app",
+      "content_hash": "d4db68ccc54afce6341edd2a5a397b096517272710ec18135b56bc7285a4df20",
+      "result": "`ScriptInfo.load_app` calls `create_app`",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/cli.py#L333-L372",
+      "absence": false
+    },
+    {
+      "id": "E029",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "callee",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "examples/celery/src/task_app/__init__.py",
+      "start": 29,
+      "end": 39,
+      "excerpt": "def celery_init_app(app: Flask) -> Celery:\n    class FlaskTask(Task):\n        def __call__(self, *args: object, **kwargs: object) -> object:\n            with app.app_context():\n                return self.run(*args, **kwargs)\n\n    celery_app = Celery(app.name, task_cls=FlaskTask)\n    celery_app.config_from_object(app.config[\"CELERY\"])\n    celery_app.set_default()\n    app.extensions[\"celery\"] = celery_app\n    return celery_app",
+      "content_hash": "e3d36d4ed5d7f1673c70996ae458210f28ed85828fe70261fcde8000c17573b0",
+      "result": "`create_app` calls `celery_init_app`",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/examples/celery/src/task_app/__init__.py#L29-L39",
+      "absence": false
+    },
+    {
+      "id": "E030",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "test_found",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "tests/test_config.py",
+      "start": 48,
+      "end": 66,
+      "excerpt": "def test_from_prefixed_env(monkeypatch):\n    monkeypatch.setenv(\"FLASK_STRING\", \"value\")\n    monkeypatch.setenv(\"FLASK_BOOL\", \"true\")\n    monkeypatch.setenv(\"FLASK_INT\", \"1\")\n    monkeypatch.setenv(\"FLASK_FLOAT\", \"1.2\")\n    monkeypatch.setenv(\"FLASK_LIST\", \"[1, 2]\")\n    monkeypatch.setenv(\"FLASK_DICT\", '{\"k\": \"v\"}')\n    monkeypatch.setenv(\"NOT_FLASK_OTHER\", \"other\")\n\n    app = flask.Flask(__name__)\n    app.config.from_prefixed_env()\n\n    assert app.config[\"STRING\"] == \"value\"\n    assert app.config[\"BOOL\"] is True\n    assert app.config[\"INT\"] == 1\n    assert app.config[\"FLOAT\"] == 1.2\n    assert app.config[\"LIST\"] == [1, 2]\n    assert app.config[\"DICT\"] == {\"k\": \"v\"}\n    assert \"OTHER\" not in app.config",
+      "content_hash": "d8183e06ed9bb5f9a152b2e0c8959667de05c750f2aa574fa2c4bf56c867514a",
+      "result": "Test `test_from_prefixed_env` calls `from_prefixed_env`",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/tests/test_config.py#L48-L66",
+      "absence": false
+    },
+    {
+      "id": "E031",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "test_found",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "tests/test_config.py",
+      "start": 69,
+      "end": 76,
+      "excerpt": "def test_from_prefixed_env_custom_prefix(monkeypatch):\n    monkeypatch.setenv(\"FLASK_A\", \"a\")\n    monkeypatch.setenv(\"NOT_FLASK_A\", \"b\")\n\n    app = flask.Flask(__name__)\n    app.config.from_prefixed_env(\"NOT_FLASK\")\n\n    assert app.config[\"A\"] == \"b\"",
+      "content_hash": "621e49c09f5b6df611610c8a619f5299c2615a430d11b29e5e2e73417d7ff615",
+      "result": "Test `test_from_prefixed_env_custom_prefix` calls `from_prefixed_env`",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/tests/test_config.py#L69-L76",
+      "absence": false
+    },
+    {
+      "id": "E032",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "test_found",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "examples/tutorial/tests/test_factory.py",
+      "start": 4,
+      "end": 7,
+      "excerpt": "def test_config():\n    \"\"\"Test create_app without passing test config.\"\"\"\n    assert not create_app().testing\n    assert create_app({\"TESTING\": True}).testing",
+      "content_hash": "0b4f60ad80af5548d8d1cc46fdfdfdd6a993c524cf5c7b26440de9c0595e1171",
+      "result": "Test `test_config` calls `create_app`",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/examples/tutorial/tests/test_factory.py#L4-L7",
+      "absence": false
+    },
+    {
+      "id": "E033",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "test_found",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "tests/test_helpers.py",
+      "start": 135,
+      "end": 154,
+      "excerpt": "    def test_url_with_method(self, app, req_ctx):\n        from flask.views import MethodView\n\n        class MyView(MethodView):\n            def get(self, id=None):\n                if id is None:\n                    return \"List\"\n                return f\"Get {id:d}\"\n\n            def post(self):\n                return \"Create\"\n\n        myview = MyView.as_view(\"myview\")\n        app.add_url_rule(\"/myview/\", methods=[\"GET\"], view_func=myview)\n        app.add_url_rule(\"/myview/<int:id>\", methods=[\"GET\"], view_func=myview)\n        app.add_url_rule(\"/myview/create\", methods=[\"POST\"], view_func=myview)\n\n        assert flask.url_for(\"myview\", _method=\"GET\") == \"/myview/\"\n        assert flask.url_for(\"myview\", id=42, _method=\"GET\") == \"/myview/42\"\n        assert flask.url_for(\"myview\", _method=\"POST\") == \"/myview/create\"",
+      "content_hash": "347397c9c0cf12bf7ed6e8eb03e6e8bf1c0856ad33f216a91d4825435508031f",
+      "result": "Test `TestUrlFor.test_url_with_method` calls `as_view`",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/tests/test_helpers.py#L135-L154",
+      "absence": false
+    },
+    {
+      "id": "E034",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "test_found",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "tests/test_views.py",
+      "start": 17,
+      "end": 25,
+      "excerpt": "def test_basic_view(app):\n    class Index(flask.views.View):\n        methods = [\"GET\", \"POST\"]\n\n        def dispatch_request(self):\n            return flask.request.method\n\n    app.add_url_rule(\"/\", view_func=Index.as_view(\"index\"))\n    common_test(app)",
+      "content_hash": "87344237ab41c986624c4b9c41b0b32393570e7ae95b71ca167ff8a07f9e9fb1",
+      "result": "Test `test_basic_view` calls `as_view`",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/tests/test_views.py#L17-L25",
+      "absence": false
+    },
+    {
+      "id": "E035",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "doc_excerpt",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "docs/config.rst",
+      "start": 545,
+      "end": 549,
+      "excerpt": "In addition to pointing to configuration files using environment\nvariables, you may find it useful (or necessary) to control your\nconfiguration values directly from the environment. Flask can be\ninstructed to load all environment variables starting with a specific\nprefix into the config using :meth:`~flask.Config.from_prefixed_env`.",
+      "content_hash": "6aa752f48c5e35551b9f9c19f657e493339242a8c80d1d45cd22fdc41c6ea453",
+      "result": "Documentation in docs/config.rst",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/docs/config.rst#L545-L549",
+      "absence": false
+    },
+    {
+      "id": "E036",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "doc_excerpt",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "docs/config.rst",
+      "start": 600,
+      "end": 601,
+      "excerpt": "The prefix is ``FLASK_`` by default. This is configurable via the\n``prefix`` argument of :meth:`~flask.Config.from_prefixed_env`.",
+      "content_hash": "dffe896e22f2818d63903a0bc92a77d3b6bee12a01fd8480e96589a49cd0681b",
+      "result": "Documentation in docs/config.rst",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/docs/config.rst#L600-L601",
+      "absence": false
+    },
+    {
+      "id": "E037",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "docstring",
+      "tier": "E3",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": "src/flask/config.py",
+      "start": 126,
+      "end": 126,
+      "excerpt": "    def from_prefixed_env(",
+      "content_hash": "afa87e3ed6b32e6d685307c0eb66ffaf00eefef79db90ab2cd3064eb1384ce3a",
+      "result": "Docstring of `from_prefixed_env`: Load any environment variables that start with ``FLASK_``,\ndropping the prefix from the env key for the config key. Values\nare passed through a loading function to attempt to convert them\nto more spec",
+      "raw": "",
+      "permalink": "https://github.com/pallets/flask/blob/49943b5a94413a530761350f04e896f76e8d620e/src/flask/config.py#L126",
+      "absence": false
+    },
+    {
+      "id": "E038",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "sandbox_run",
+      "tier": "E1",
+      "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "path": null,
+      "start": null,
+      "end": null,
+      "excerpt": null,
+      "content_hash": null,
+      "result": "Both runs raised TypeError: 'str' object does not support item assignment (Flask==3.1.2; python:3.11-slim; reporter snippet 0)",
+      "raw": "{\"package\": \"Flask\", \"version\": \"3.1.2\", \"image\": \"python:3.11-slim\", \"snippet_index\": 0, \"runs\": [{\"exception\": \"TypeError\", \"message\": \"'str' object does not support item assignment\", \"stdout\": \"\"}, {\"exception\": \"TypeError\", \"message\": \"'str' object does not support item assignment\", \"stdout\": \"\"}]}",
+      "permalink": null,
+      "absence": false
+    }
+  ],
+  "missing_info": [],
+  "reply_draft": null,
+  "not_checked": [
+    "The code version is approximate (main as of 2026-10-31); the reporter may have used another release."
+  ],
+  "notes": [
+    "Inference is restricted to cached GPT-OSS responses. Cache misses are shown as degraded model stages; no new model calls were made.",
+    "Sandbox scope: The report describes a local development checkout. This demonstration checks the published Flask 3.1.2 package, not that unpinned checkout. Reproducing the exception does not establish a defect."
+  ],
+  "pipeline_version": "21",
+  "models": {
+    "reasoning": "openai/gpt-oss-20b"
+  },
+  "error": null
+}

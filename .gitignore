@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+backend/.venv/
+backend/.env
+backend/.data/
+backend/sandbox_allowlist.json
+*.egg-info/
+.pytest_cache/
+
+# Extension
+extension/node_modules/
+extension/dist/
+
+# Evaluation outputs (questions/answers are data; keep or ignore as the team decides)
+eval/out/
+
+# Secrets
+*.pem
+
+.DS_Store

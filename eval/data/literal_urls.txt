@@ -1,0 +1,4 @@
+https://github.com/pallets/flask/issues/6177
+https://github.com/vitejs/vite/issues/23958
+https://github.com/colinhacks/zod/issues/5095
+https://github.com/spf13/cobra/issues/2547
