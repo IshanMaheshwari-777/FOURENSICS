@@ -1,0 +1,1844 @@
+{
+  "checked_at_utc": "2026-10-31T21:11:49.972387+00:00",
+  "method": "HTTP GET /api/health, /api/assessment?url=..., /api/runs/{id}; isolated cache-only service on 8792",
+  "live_model_calls": 0,
+  "limitations": [
+    "All five main technical claims remain unverified.",
+    "No matching cached adjudication responses exist.",
+    "No new reproduction was attempted for these five reports.",
+    "Evidence counts measure retrieval, not correctness."
+  ],
+  "checks": [
+    {
+      "url": "https://github.com/colinhacks/zod/issues/6712",
+      "before": {
+        "run_id": "6af234cf1d7640b5",
+        "pipeline_version": "21",
+        "status": "complete",
+        "summary": "Not enough information to check.",
+        "evidence_count": 55,
+        "model_stage": [
+          {
+            "stage": "adjudication",
+            "status": "degraded",
+            "reason": "AI interpretation unavailable (Model daily quota exhausted; only cached responses are available); showing tool results only.",
+            "ms": 2
+          }
+        ]
+      },
+      "after": {
+        "run_id": "1a35792ff0474b4a",
+        "pipeline_version": "22",
+        "status": "partial",
+        "summary": "Analysis incomplete: model interpretation unavailable. 55 evidence items collected; main claim unverified.",
+        "evidence_count": 55,
+        "primary_claim": "Rollup warns on every Vite build",
+        "blockers": [
+          {
+            "code": "model_cache_miss",
+            "stage": "adjudication",
+            "reason": "No cached model response matched this request.",
+            "next_step": "Use an available inference endpoint to assess this evidence; cache-only mode cannot create new responses."
+          }
+        ],
+        "model_stages": [
+          {
+            "stage": "claims",
+            "status": "ok",
+            "reason": null,
+            "ms": 3
+          },
+          {
+            "stage": "adjudication",
+            "status": "degraded",
+            "reason": "AI interpretation unavailable (Live inference disabled; no cached response matches this prompt); showing tool results only.",
+            "ms": 2
+          }
+        ],
+        "assessments": [
+          {
+            "claim_id": "C1",
+            "technical": "inconclusive",
+            "verification": "not_attempted",
+            "evidence_ids": [
+              "E039",
+              "E040",
+              "E041",
+              "E003",
+              "E004"
+            ],
+            "relations": {
+              "E039": "context",
+              "E040": "context",
+              "E041": "context",
+              "E003": "context",
+              "E004": "context"
+            },
+            "explanation": "Not assessed: No cached model response matched this request. Retrieved source context is not a verified verdict.",
+            "limitations": [
+              "Not interpreted by the model."
+            ],
+            "strength": "none",
+            "lean": null,
+            "decided_by": "none",
+            "downgraded_reason": null,
+            "unconfirmed_reasoning": null
+          },
+          {
+            "claim_id": "C2",
+            "technical": "inconclusive",
+            "verification": "not_attempted",
+            "evidence_ids": [
+              "E039",
+              "E041",
+              "E001",
+              "E002",
+              "E045"
+            ],
+            "relations": {
+              "E039": "context",
+              "E041": "context",
+              "E001": "context",
+              "E002": "context",
+              "E045": "context"
+            },
+            "explanation": "Not assessed: No cached model response matched this request. Retrieved source context is not a verified verdict.",
+            "limitations": [
+              "Not interpreted by the model."
+            ],
+            "strength": "none",
+            "lean": null,
+            "decided_by": "none",
+            "downgraded_reason": null,
+            "unconfirmed_reasoning": null
+          },
+          {
+            "claim_id": "C3",
+            "technical": "inconclusive",
+            "verification": "not_attempted",
+            "evidence_ids": [
+              "E030",
+              "E031",
+              "E039",
+              "E041",
+              "E008"
+            ],
+            "relations": {
+              "E030": "context",
+              "E031": "context",
+              "E039": "context",
+              "E041": "context",
+              "E008": "context"
+            },
+            "explanation": "Not assessed: No cached model response matched this request. Retrieved source context is not a verified verdict.",
+            "limitations": [
+              "Not interpreted by the model."
+            ],
+            "strength": "none",
+            "lean": null,
+            "decided_by": "none",
+            "downgraded_reason": null,
+            "unconfirmed_reasoning": null
+          },
+          {
+            "claim_id": "C4",
+            "technical": "inconclusive",
+            "verification": "not_attempted",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E054",
+              "E055",
+              "E052"
+            ],
+            "relations": {
+              "E001": "context",
+              "E002": "context",
+              "E054": "context",
+              "E055": "context",
+              "E052": "context"
+            },
+            "explanation": "Not assessed: No cached model response matched this request. Retrieved source context is not a verified verdict.",
+            "limitations": [
+              "Not interpreted by the model."
+            ],
+            "strength": "none",
+            "lean": null,
+            "decided_by": "none",
+            "downgraded_reason": null,
+            "unconfirmed_reasoning": null
+          }
+        ],
+        "context_evidence": [
+          {
+            "id": "E001",
+            "claim_ids": [
+              "C2",
+              "C4"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "b500a2ee95134f81d74da7911d7378dd2853d042",
+            "path": "packages/zod/src/v4/classic/errors.ts",
+            "start": 25,
+            "end": 33,
+            "excerpt": "/* Prototypes that already carry the lazy helper methods. Seeded with the\n * intrinsics so that `init` on a foreign object \u2014 it accepts any object \u2014\n * can never install an accessor onto a prototype we do not own. */\nconst _installedErrorProtos = /* @__PURE__ */ new WeakSet<object>([Object.prototype, Error.prototype]);\n\n/* Helper methods live as non-enumerable lazy getters on the shared\n * prototype instead of own properties on every instance. On first\n * access the getter allocates the per-instance closure and caches it\n * as a non-enumerable own property, so detached usage still works and",
+            "content_hash": "0df83c0d69e73a1c9e07a255d47ddf52d9b3aac95f3a0fad6459ffc46be3d186",
+            "result": "Exact report text '@__PURE__' occurs in packages/zod/src/v4/classic/errors.ts:28; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/colinhacks/zod/blob/b500a2ee95134f81d74da7911d7378dd2853d042/packages/zod/src/v4/classic/errors.ts#L25-L33",
+            "absence": false
+          },
+          {
+            "id": "E002",
+            "claim_ids": [
+              "C2",
+              "C4"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "b500a2ee95134f81d74da7911d7378dd2853d042",
+            "path": "packages/zod/src/v4/classic/errors.ts",
+            "start": 73,
+            "end": 81,
+            "excerpt": "    },\n  });\n};\nexport const ZodError: core.$constructor<ZodError> = /*@__PURE__*/ core.$constructor(\"ZodError\", initializer);\nexport const ZodRealError: core.$constructor<ZodError> = /*@__PURE__*/ core.$constructor(\n  \"ZodError\",\n  initializer,\n  undefined,\n  {",
+            "content_hash": "e8c35fa142562b729c386bb6504656e48d04dd8e643faba278bd2a86aeff2b27",
+            "result": "Exact report text '@__PURE__' occurs in packages/zod/src/v4/classic/errors.ts:76; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/colinhacks/zod/blob/b500a2ee95134f81d74da7911d7378dd2853d042/packages/zod/src/v4/classic/errors.ts#L73-L81",
+            "absence": false
+          },
+          {
+            "id": "E003",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "b500a2ee95134f81d74da7911d7378dd2853d042",
+            "path": "pnpm-lock.yaml",
+            "start": 240,
+            "end": 248,
+            "excerpt": "    devDependencies:\n      '@ai-sdk/openai':\n        specifier: ^3.0.2\n        version: 3.0.2(zod@4.6.7)\n      '@types/node':\n        specifier: ^22.13.13\n        version: 22.13.13\n      ai:\n        specifier: ^6.0.5",
+            "content_hash": "d00b3c695a816f98aed1619cc5fc01697f3cc1b091337622fda3f12bac03c0d8",
+            "result": "Exact report text 'zod@4.6.7' occurs in pnpm-lock.yaml:243; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/colinhacks/zod/blob/b500a2ee95134f81d74da7911d7378dd2853d042/pnpm-lock.yaml#L240-L248",
+            "absence": false
+          },
+          {
+            "id": "E004",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "b500a2ee95134f81d74da7911d7378dd2853d042",
+            "path": "pnpm-lock.yaml",
+            "start": 246,
+            "end": 254,
+            "excerpt": "        version: 22.13.13\n      ai:\n        specifier: ^6.0.5\n        version: 6.0.5(zod@4.6.7)\n      drizzle-orm:\n        specifier: ^0.45.2\n        version: 0.45.2(@opentelemetry/api@1.9.0)\n      drizzle-zod:\n        specifier: ^0.8.3",
+            "content_hash": "5f175032a12ac71068a2d211bcd8a20d9d90eb153b5bcccf4b0c5ee793dd0d31",
+            "result": "Exact report text 'zod@4.6.7' occurs in pnpm-lock.yaml:249; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/colinhacks/zod/blob/b500a2ee95134f81d74da7911d7378dd2853d042/pnpm-lock.yaml#L246-L254",
+            "absence": false
+          },
+          {
+            "id": "E008",
+            "claim_ids": [
+              "C3"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "b500a2ee95134f81d74da7911d7378dd2853d042",
+            "path": "packages/bench/memory/retainers.ts",
+            "start": 2,
+            "end": 10,
+            "excerpt": " * Walks a V8 heap snapshot and reports, for every node kind that scales with\n * the live schema population, the exact edge path that retains it.\n *\n * The population is anchored under a single global array so the walk has a\n * known root; paths are reported relative to one sample instance.\n */\nimport * as fs from \"node:fs\";\nimport * as os from \"node:os\";\nimport * as path from \"node:path\";",
+            "content_hash": "2bd1a287aef5f32191dbe43a6cc4a27b956a38365139a2862c93048bb7f6d09b",
+            "result": "Exact report text 'anchor' occurs in packages/bench/memory/retainers.ts:5; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/colinhacks/zod/blob/b500a2ee95134f81d74da7911d7378dd2853d042/packages/bench/memory/retainers.ts#L2-L10",
+            "absence": false
+          },
+          {
+            "id": "E030",
+            "claim_ids": [
+              "C3"
+            ],
+            "kind": "path_found",
+            "tier": "E2",
+            "sha": "b500a2ee95134f81d74da7911d7378dd2853d042",
+            "path": "packages/zod/src/v4/core/regexes.ts",
+            "start": null,
+            "end": null,
+            "excerpt": null,
+            "content_hash": null,
+            "result": "File packages/zod/src/v4/core/regexes.ts exists at this version",
+            "raw": "",
+            "permalink": "https://github.com/colinhacks/zod/blob/b500a2ee95134f81d74da7911d7378dd2853d042/packages/zod/src/v4/core/regexes.ts",
+            "absence": false
+          },
+          {
+            "id": "E031",
+            "claim_ids": [
+              "C3"
+            ],
+            "kind": "path_found",
+            "tier": "E2",
+            "sha": "b500a2ee95134f81d74da7911d7378dd2853d042",
+            "path": "packages/zod/src/v4/core/util.ts",
+            "start": null,
+            "end": null,
+            "excerpt": null,
+            "content_hash": null,
+            "result": "File packages/zod/src/v4/core/util.ts exists at this version",
+            "raw": "",
+            "permalink": "https://github.com/colinhacks/zod/blob/b500a2ee95134f81d74da7911d7378dd2853d042/packages/zod/src/v4/core/util.ts",
+            "absence": false
+          },
+          {
+            "id": "E039",
+            "claim_ids": [
+              "C1",
+              "C2",
+              "C3"
+            ],
+            "kind": "dependency_declared",
+            "tier": "E2",
+            "sha": "b500a2ee95134f81d74da7911d7378dd2853d042",
+            "path": "package.json",
+            "start": 42,
+            "end": 42,
+            "excerpt": "    \"rollup\": \"^4.60.2\",",
+            "content_hash": "ef1b3f363749b7d6bca0724b2d12f0a04893908a8ccff11c5ebbd66a8d050308",
+            "result": "package.json declares \"rollup\": \"^4.60.2\",",
+            "raw": "",
+            "permalink": "https://github.com/colinhacks/zod/blob/b500a2ee95134f81d74da7911d7378dd2853d042/package.json#L42",
+            "absence": false
+          },
+          {
+            "id": "E040",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "dependency_declared",
+            "tier": "E2",
+            "sha": "b500a2ee95134f81d74da7911d7378dd2853d042",
+            "path": "package.json",
+            "start": 50,
+            "end": 50,
+            "excerpt": "    \"vite\": \"^7.3.6\",",
+            "content_hash": "c0f08d58da44bc6351f96b0988d453fba9b918d64e8638f9293c60400098ddb8",
+            "result": "package.json declares \"vite\": \"^7.3.6\",",
+            "raw": "",
+            "permalink": "https://github.com/colinhacks/zod/blob/b500a2ee95134f81d74da7911d7378dd2853d042/package.json#L50",
+            "absence": false
+          },
+          {
+            "id": "E041",
+            "claim_ids": [
+              "C1",
+              "C2",
+              "C3"
+            ],
+            "kind": "dependency_declared",
+            "tier": "E2",
+            "sha": "b500a2ee95134f81d74da7911d7378dd2853d042",
+            "path": "packages/treeshake/package.json",
+            "start": 17,
+            "end": 17,
+            "excerpt": "    \"rollup\": \"^4.60.2\",",
+            "content_hash": "ef1b3f363749b7d6bca0724b2d12f0a04893908a8ccff11c5ebbd66a8d050308",
+            "result": "packages/treeshake/package.json declares \"rollup\": \"^4.60.2\",",
+            "raw": "",
+            "permalink": "https://github.com/colinhacks/zod/blob/b500a2ee95134f81d74da7911d7378dd2853d042/packages/treeshake/package.json#L17",
+            "absence": false
+          },
+          {
+            "id": "E045",
+            "claim_ids": [
+              "C1",
+              "C2"
+            ],
+            "kind": "doc_excerpt",
+            "tier": "E3",
+            "sha": "b500a2ee95134f81d74da7911d7378dd2853d042",
+            "path": "packages/docs-v3/CHANGELOG.md",
+            "start": 130,
+            "end": 130,
+            "excerpt": "- Added Rollup for bundling ESM module",
+            "content_hash": "0de549c14621dde42b327b5b86711a66cb4f16d2704d9090dea7238a3b1e9d97",
+            "result": "Documentation in packages/docs-v3/CHANGELOG.md",
+            "raw": "",
+            "permalink": "https://github.com/colinhacks/zod/blob/b500a2ee95134f81d74da7911d7378dd2853d042/packages/docs-v3/CHANGELOG.md#L130",
+            "absence": false
+          },
+          {
+            "id": "E052",
+            "claim_ids": [
+              "C4"
+            ],
+            "kind": "code_excerpt",
+            "tier": "E4",
+            "sha": "b500a2ee95134f81d74da7911d7378dd2853d042",
+            "path": ".configs/rollup.config.js",
+            "start": 1,
+            "end": 25,
+            "excerpt": "import commonjs from \"@rollup/plugin-commonjs\";\nimport resolve from \"@rollup/plugin-node-resolve\";\nimport typescript from \"@rollup/plugin-typescript\";\nimport filesize from \"rollup-plugin-filesize\";\n\n/** @type {import('rollup').RollupOptions} */\nexport default {\n  input: \"./scratch/input.ts\", // Your TypeScript entry file\n  output: {\n    file: \"./scratch/out_rollup.js\", // Output file\n    format: \"esm\", // ES module format to enable tree-shaking\n    // sourcemap: true, // Generate sourcemaps for easier debugging\n  },\n  plugins: [\n    resolve(), // Resolve node_modules\n    commonjs(), // Convert CommonJS modules to ES6\n    typescript(), // Compile TypeScript\n    filesize(), // Display bundle size\n  ],\n  treeshake: {\n    preset: \"smallest\",\n    // preset: \"recommended\",\n    annotations: true,\n  }, // Enable tree-shaking\n};",
+            "content_hash": "42c9de7d0de318b2a321af8b18db37cc5f4026f9eb3fc6630fcd3116246229a9",
+            "result": "Possibly related code (.configs/rollup.config.js, by similarity)",
+            "raw": "",
+            "permalink": "https://github.com/colinhacks/zod/blob/b500a2ee95134f81d74da7911d7378dd2853d042/.configs/rollup.config.js#L1-L25",
+            "absence": false
+          },
+          {
+            "id": "E054",
+            "claim_ids": [
+              "C4"
+            ],
+            "kind": "doc_excerpt",
+            "tier": "E3",
+            "sha": "b500a2ee95134f81d74da7911d7378dd2853d042",
+            "path": "packages/docs-v3/home.md",
+            "start": 2575,
+            "end": 2575,
+            "excerpt": "This method returns a `ZodReadonly` schema instance that parses the input using the base schema, then calls `Object.freeze()` on the result. The inferred type is also marked as `readonly`.",
+            "content_hash": "42c85484f60ce9b2fb3c7300f9464c254e41adec7ffaf7af49044c24e2293d16",
+            "result": "Documentation in packages/docs-v3/home.md",
+            "raw": "",
+            "permalink": "https://github.com/colinhacks/zod/blob/b500a2ee95134f81d74da7911d7378dd2853d042/packages/docs-v3/home.md#L2575",
+            "absence": false
+          },
+          {
+            "id": "E055",
+            "claim_ids": [
+              "C4"
+            ],
+            "kind": "doc_excerpt",
+            "tier": "E3",
+            "sha": "b500a2ee95134f81d74da7911d7378dd2853d042",
+            "path": "packages/docs-v3/home.md",
+            "start": 2681,
+            "end": 2681,
+            "excerpt": "The Result is now fully and properly typed, and the type system can infer the specific subclass of the schema.",
+            "content_hash": "d9d6235c280a0ebcf6af3e13cb7855264a50a3f10363973ce3123030d357586b",
+            "result": "Documentation in packages/docs-v3/home.md",
+            "raw": "",
+            "permalink": "https://github.com/colinhacks/zod/blob/b500a2ee95134f81d74da7911d7378dd2853d042/packages/docs-v3/home.md#L2681",
+            "absence": false
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://github.com/encode/httpx/issues/3782",
+      "before": {
+        "run_id": "cd23d86743e7488a",
+        "pipeline_version": "21",
+        "status": "complete",
+        "summary": "Not enough information to check.",
+        "evidence_count": 75,
+        "model_stage": [
+          {
+            "stage": "adjudication",
+            "status": "degraded",
+            "reason": "AI interpretation unavailable (Model daily quota exhausted (Rate limit reached for model `openai/gpt-oss-20b` on tokens per day (TPD): Limit 200000, Used 197965, Requested 9852. Please try ag); showing tool results only.",
+            "ms": 240
+          }
+        ]
+      },
+      "after": {
+        "run_id": "3080012fc5404e36",
+        "pipeline_version": "22",
+        "status": "partial",
+        "summary": "Analysis incomplete: model interpretation unavailable. 90 evidence items collected; main claim unverified.",
+        "evidence_count": 90,
+        "primary_claim": "Potential Issue: `AsyncClient.stream` double-cancel may leak active connections",
+        "blockers": [
+          {
+            "code": "model_cache_miss",
+            "stage": "adjudication",
+            "reason": "No cached model response matched this request.",
+            "next_step": "Use an available inference endpoint to assess this evidence; cache-only mode cannot create new responses."
+          }
+        ],
+        "model_stages": [
+          {
+            "stage": "claims",
+            "status": "ok",
+            "reason": null,
+            "ms": 44
+          },
+          {
+            "stage": "adjudication",
+            "status": "degraded",
+            "reason": "AI interpretation unavailable (Live inference disabled; no cached response matches this prompt); showing tool results only.",
+            "ms": 1
+          }
+        ],
+        "assessments": [
+          {
+            "claim_id": "C1",
+            "technical": "inconclusive",
+            "verification": "not_attempted",
+            "evidence_ids": [
+              "E021",
+              "E022",
+              "E026",
+              "E029",
+              "E032"
+            ],
+            "relations": {
+              "E021": "context",
+              "E022": "context",
+              "E026": "context",
+              "E029": "context",
+              "E032": "context"
+            },
+            "explanation": "Not assessed: No cached model response matched this request. Retrieved source context is not a verified verdict.",
+            "limitations": [
+              "Not interpreted by the model."
+            ],
+            "strength": "none",
+            "lean": null,
+            "decided_by": "none",
+            "downgraded_reason": null,
+            "unconfirmed_reasoning": null
+          },
+          {
+            "claim_id": "C2",
+            "technical": "inconclusive",
+            "verification": "not_attempted",
+            "evidence_ids": [
+              "E022",
+              "E056",
+              "E057",
+              "E030",
+              "E031"
+            ],
+            "relations": {
+              "E022": "context",
+              "E056": "context",
+              "E057": "context",
+              "E030": "context",
+              "E031": "context"
+            },
+            "explanation": "Not assessed: No cached model response matched this request. Retrieved source context is not a verified verdict.",
+            "limitations": [
+              "Not interpreted by the model."
+            ],
+            "strength": "none",
+            "lean": null,
+            "decided_by": "none",
+            "downgraded_reason": null,
+            "unconfirmed_reasoning": null
+          },
+          {
+            "claim_id": "C3",
+            "technical": "inconclusive",
+            "verification": "not_attempted",
+            "evidence_ids": [
+              "E027",
+              "E030",
+              "E054",
+              "E065",
+              "E066"
+            ],
+            "relations": {
+              "E027": "context",
+              "E030": "context",
+              "E054": "context",
+              "E065": "context",
+              "E066": "context"
+            },
+            "explanation": "Not assessed: No cached model response matched this request. Retrieved source context is not a verified verdict.",
+            "limitations": [
+              "Not interpreted by the model."
+            ],
+            "strength": "none",
+            "lean": null,
+            "decided_by": "none",
+            "downgraded_reason": null,
+            "unconfirmed_reasoning": null
+          },
+          {
+            "claim_id": "C4",
+            "technical": "inconclusive",
+            "verification": "not_attempted",
+            "evidence_ids": [
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E024"
+            ],
+            "relations": {
+              "E014": "context",
+              "E015": "context",
+              "E016": "context",
+              "E017": "context",
+              "E024": "context"
+            },
+            "explanation": "Not assessed: No cached model response matched this request. Retrieved source context is not a verified verdict.",
+            "limitations": [
+              "Not interpreted by the model."
+            ],
+            "strength": "none",
+            "lean": null,
+            "decided_by": "none",
+            "downgraded_reason": null,
+            "unconfirmed_reasoning": null
+          }
+        ],
+        "context_evidence": [
+          {
+            "id": "E014",
+            "claim_ids": [
+              "C4"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": "httpx/__init__.py",
+            "start": 7,
+            "end": 15,
+            "excerpt": "from ._exceptions import *\nfrom ._models import *\nfrom ._status_codes import *\nfrom ._transports import *\nfrom ._types import *\nfrom ._urls import *\n\ntry:\n    from ._main import main",
+            "content_hash": "2b970a98262b456d03ae4f4a699c2ae69a656f1dce232e8e11a0d2aec2c57ae3",
+            "result": "Exact report text '_transport' occurs in httpx/__init__.py:10; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/__init__.py#L7-L15",
+            "absence": false
+          },
+          {
+            "id": "E015",
+            "claim_ids": [
+              "C4"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": "httpx/_client.py",
+            "start": 28,
+            "end": 36,
+            "excerpt": ")\nfrom ._models import Cookies, Headers, Request, Response\nfrom ._status_codes import codes\nfrom ._transports.base import AsyncBaseTransport, BaseTransport\nfrom ._transports.default import AsyncHTTPTransport, HTTPTransport\nfrom ._types import (\n    AsyncByteStream,\n    AuthTypes,\n    CertTypes,",
+            "content_hash": "bb33ccf934700316891992dbcbe2c14385e89c6c557678863c7fc80210bcfbba",
+            "result": "Exact report text '_transport' occurs in httpx/_client.py:31; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_client.py#L28-L36",
+            "absence": false
+          },
+          {
+            "id": "E016",
+            "claim_ids": [
+              "C4"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": "httpx/_transports/default.py",
+            "start": 153,
+            "end": 161,
+            "excerpt": "        ssl_context = create_ssl_context(verify=verify, cert=cert, trust_env=trust_env)\n\n        if proxy is None:\n            self._pool = httpcore.ConnectionPool(\n                ssl_context=ssl_context,\n                max_connections=limits.max_connections,\n                max_keepalive_connections=limits.max_keepalive_connections,\n                keepalive_expiry=limits.keepalive_expiry,\n                http1=http1,",
+            "content_hash": "97751c3cde507d5ed5492b6b1a7eb7dfde9fd91203c0e9c7fc1c5bd5abf75c12",
+            "result": "Exact report text '_pool' occurs in httpx/_transports/default.py:156; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_transports/default.py#L153-L161",
+            "absence": false
+          },
+          {
+            "id": "E017",
+            "claim_ids": [
+              "C4"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": "httpx/_transports/default.py",
+            "start": 166,
+            "end": 174,
+            "excerpt": "                socket_options=socket_options,\n            )\n        elif proxy.url.scheme in (\"http\", \"https\"):\n            self._pool = httpcore.HTTPProxy(\n                proxy_url=httpcore.URL(\n                    scheme=proxy.url.raw_scheme,\n                    host=proxy.url.raw_host,\n                    port=proxy.url.port,\n                    target=proxy.url.raw_path,",
+            "content_hash": "9288b02cfc12e1e942a8d86148ae95a85eee496682e48b7b3612bdf0e2315631",
+            "result": "Exact report text '_pool' occurs in httpx/_transports/default.py:169; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_transports/default.py#L166-L174",
+            "absence": false
+          },
+          {
+            "id": "E021",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "symbol_found",
+            "tier": "E2",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": "httpx/_client.py",
+            "start": 1543,
+            "end": 1592,
+            "excerpt": "    async def stream(\n        self,\n        method: str,\n        url: URL | str,\n        *,\n        content: RequestContent | None = None,\n        data: RequestData | None = None,\n        files: RequestFiles | None = None,\n        json: typing.Any | None = None,\n        params: QueryParamTypes | None = None,\n        headers: HeaderTypes | None = None,\n        cookies: CookieTypes | None = None,\n        auth: AuthTypes | UseClientDefault | None = USE_CLIENT_DEFAULT,\n        follow_redirects: bool | UseClientDefault = USE_CLIENT_DEFAULT,\n        timeout: TimeoutTypes | UseClientDefault = USE_CLIENT_DEFAULT,\n        extensions: RequestExtensions | None = None,\n    ) -> typing.AsyncIterator[Response]:\n        \"\"\"\n        Alternative to `httpx.request()` that streams the response body\n        instead of loading it into memory at once.\n\n        **Parameters**: See `httpx.request`.\n\n        See also: [Streaming Responses][0]\n\n        [0]: /quickstart#streaming-responses\n        \"\"\"\n        request = self.build_request(\n            method=method,\n            url=url,\n            content=content,\n            data=data,\n            files=files,\n            json=json,\n            params=params,\n            headers=headers,\n            cookies=cookies,\n            timeout=timeout,\n            extensions=extensions,\n        )\n        response = await self.send(\n            request=request,\n            auth=auth,\n            follow_redirects=follow_redirects,\n            stream=True,\n        )\n        try:\n            yield response\n        finally:\n            await response.aclose()",
+            "content_hash": "da3bccd4e040316e71454947796f424e68741c9eb1b85e4c20b9c9594726f77e",
+            "result": "`stream` is defined in httpx/_client.py at line 1543",
+            "raw": "",
+            "permalink": "https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_client.py#L1543-L1592",
+            "absence": false
+          },
+          {
+            "id": "E022",
+            "claim_ids": [
+              "C1",
+              "C2"
+            ],
+            "kind": "symbol_absent",
+            "tier": "E2",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": null,
+            "start": null,
+            "end": null,
+            "excerpt": null,
+            "content_hash": null,
+            "result": "`cancel` does not appear anywhere in the repository at this version",
+            "raw": "",
+            "permalink": null,
+            "absence": false
+          },
+          {
+            "id": "E024",
+            "claim_ids": [
+              "C4"
+            ],
+            "kind": "symbol_mentioned",
+            "tier": "E3",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": "httpx/_transports/default.py",
+            "start": 153,
+            "end": 161,
+            "excerpt": "        ssl_context = create_ssl_context(verify=verify, cert=cert, trust_env=trust_env)\n\n        if proxy is None:\n            self._pool = httpcore.ConnectionPool(\n                ssl_context=ssl_context,\n                max_connections=limits.max_connections,\n                max_keepalive_connections=limits.max_keepalive_connections,\n                keepalive_expiry=limits.keepalive_expiry,\n                http1=http1,",
+            "content_hash": "97751c3cde507d5ed5492b6b1a7eb7dfde9fd91203c0e9c7fc1c5bd5abf75c12",
+            "result": "`_pool` has no definition found, but appears in httpx/_transports/default.py:156",
+            "raw": "",
+            "permalink": "https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_transports/default.py#L153-L161",
+            "absence": false
+          },
+          {
+            "id": "E026",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "symbol_found",
+            "tier": "E2",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": "httpx/_models.py",
+            "start": 1028,
+            "end": 1035,
+            "excerpt": "    async def aiter_lines(self) -> typing.AsyncIterator[str]:\n        decoder = LineDecoder()\n        with request_context(request=self._request):\n            async for text in self.aiter_text():\n                for line in decoder.decode(text):\n                    yield line\n            for line in decoder.flush():\n                yield line",
+            "content_hash": "890bb591cb5f4dc2a9e7f4a740c78c445cf007cfc455084d2ab46bdff4f74268",
+            "result": "`aiter_lines` is defined in httpx/_models.py at line 1028",
+            "raw": "",
+            "permalink": "https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_models.py#L1028-L1035",
+            "absence": false
+          },
+          {
+            "id": "E027",
+            "claim_ids": [
+              "C3"
+            ],
+            "kind": "symbol_found",
+            "tier": "E2",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": "httpx/_client.py",
+            "start": 179,
+            "end": 182,
+            "excerpt": "    async def aclose(self) -> None:\n        elapsed = time.perf_counter() - self._start\n        self._response.elapsed = datetime.timedelta(seconds=elapsed)\n        await self._stream.aclose()",
+            "content_hash": "fe16a88c2808dc92a8939b7a723c781eaac1a0c8e22e9393325eb41091496999",
+            "result": "`aclose` is defined in httpx/_client.py at line 179 (+6 more)",
+            "raw": "",
+            "permalink": "https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_client.py#L179-L182",
+            "absence": false
+          },
+          {
+            "id": "E029",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "symbol_found",
+            "tier": "E2",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": "httpx/_models.py",
+            "start": 1117,
+            "end": 1141,
+            "excerpt": "    def set(self, name: str, value: str, domain: str = \"\", path: str = \"/\") -> None:\n        \"\"\"\n        Set a cookie value by name. May optionally include domain and path.\n        \"\"\"\n        kwargs = {\n            \"version\": 0,\n            \"name\": name,\n            \"value\": value,\n            \"port\": None,\n            \"port_specified\": False,\n            \"domain\": domain,\n            \"domain_specified\": bool(domain),\n            \"domain_initial_dot\": domain.startswith(\".\"),\n            \"path\": path,\n            \"path_specified\": bool(path),\n            \"secure\": False,\n            \"expires\": None,\n            \"discard\": True,\n            \"comment\": None,\n            \"comment_url\": None,\n            \"rest\": {\"HttpOnly\": None},\n            \"rfc2109\": False,\n        }\n        cookie = Cookie(**kwargs)  # type: ignore\n        self.jar.set_cookie(cookie)",
+            "content_hash": "590852f5d2a8ef501931910c144e1bdf1b0f153ca704fd11cc8c9143ffbac736",
+            "result": "`set` is defined in httpx/_models.py at line 1117 (+1 more)",
+            "raw": "",
+            "permalink": "https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_models.py#L1117-L1141",
+            "absence": false
+          },
+          {
+            "id": "E030",
+            "claim_ids": [
+              "C2",
+              "C3"
+            ],
+            "kind": "symbol_mentioned",
+            "tier": "E3",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": "httpx/_transports/asgi.py",
+            "start": 135,
+            "end": 143,
+            "excerpt": "            nonlocal request_complete\n\n            if request_complete:\n                await response_complete.wait()\n                return {\"type\": \"http.disconnect\"}\n\n            try:\n                body = await request_body_chunks.__anext__()\n            except StopAsyncIteration:",
+            "content_hash": "07ca011a8caad36251c419d0949560378a9e05da6d306af734579a7bd67a80d0",
+            "result": "`wait` has no definition found, but appears in httpx/_transports/asgi.py:138",
+            "raw": "",
+            "permalink": "https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_transports/asgi.py#L135-L143",
+            "absence": false
+          },
+          {
+            "id": "E031",
+            "claim_ids": [
+              "C1",
+              "C2"
+            ],
+            "kind": "symbol_external",
+            "tier": "E3",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": null,
+            "start": null,
+            "end": null,
+            "excerpt": null,
+            "content_hash": null,
+            "result": "`bg_task.cancel` isn't defined in this repository (likely another library's API)",
+            "raw": "",
+            "permalink": null,
+            "absence": true
+          },
+          {
+            "id": "E032",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "changed_between_versions",
+            "tier": "E2",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": null,
+            "start": null,
+            "end": null,
+            "excerpt": null,
+            "content_hash": null,
+            "result": "Python files changed between 0.28.1 and 0.16.0: 58",
+            "raw": " httpx/__init__.py                 |   78 +-\n httpx/__version__.py              |    2 +-\n httpx/_api.py                     |  337 ++++----\n httpx/_auth.py                    |  102 +--\n httpx/_client.py                  | 1603 +++++++++++++++++--------------------\n httpx/_config.py                  |  302 ++++---\n httpx/_content.py                 |  212 ++---\n httpx/_decoders.py                |  327 +++-----\n httpx/_exceptions.py              |  155 ++--\n httpx/_main.py                    |  506 ------------\n httpx/_models.py                  | 1236 ++++++++++++++++------------\n httpx/_multipart.py               |  228 ++----\n httpx/_status_codes.py            |   78 +-\n httpx/_transports/__init__.py     |   15 -\n httpx/_transports/asgi.py         |  127 ++-\n httpx/_transports/base.py         |   86 --\n httpx/_transports/default.py      |  406 ----------\n httpx/_transports/mock.py         |   43 -\n httpx/_transports/wsgi.py         |   97 +--\n httpx/_types.py                   |   68 +-\n httpx/_urlparse.py                |  527 ------------\n httpx/_urls.py                    |  641 ---------------\n httpx/_utils.py                   |  425 ++++++++--\n setup.py                          |   83 ++\n tests/client/test_async_client.py |  219 +----\n tests/client/test_auth.py         |  362 ++++-----\n tests/client/test_client.py       |  212 +----\n tests/client/test_cookies.py      |   44 +-\n tests/client/test_event_hooks.py  |   71 +-\n tests/client/test_headers.py      |  138 +---\n tests/client/test_properties.py   |   10 +-\n tests/client/test_proxies.py      |  109 +--\n tests/client/test_queryparams.py  |    3 +-\n tests/client/test_redirects.py    |  184 ++---\n tests/concurrency.py              |    2 +-\n tests/conftest.py                 |  143 ++--\n tests/models/test_cookies.py      |   11 -\n tests/models/test_headers.py      |   43 -\n tests/models/test_queryparams.py  |   78 +-\n tests/models/test_requests.py     |  114 +--\n tests/models/test_responses.py    |  495 +",
+            "permalink": null,
+            "absence": false
+          },
+          {
+            "id": "E054",
+            "claim_ids": [
+              "C2",
+              "C3"
+            ],
+            "kind": "code_excerpt",
+            "tier": "E3",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": "httpx/_models.py",
+            "start": 1065,
+            "end": 1076,
+            "excerpt": "    async def aclose(self) -> None:\n        \"\"\"\n        Close the response and release the connection.\n        Automatically called if the response body is read to completion.\n        \"\"\"\n        if not isinstance(self.stream, AsyncByteStream):\n            raise RuntimeError(\"Attempted to call an async close on an sync stream.\")\n\n        if not self.is_closed:\n            self.is_closed = True\n            with request_context(request=self._request):\n                await self.stream.aclose()",
+            "content_hash": "f4ae77ce282a7d487befe71cda062132a93b090581f2f3ea40c142388139b8ea",
+            "result": "Implementation of `Response.aclose` (httpx/_models.py)",
+            "raw": "",
+            "permalink": "https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_models.py#L1065-L1076",
+            "absence": false
+          },
+          {
+            "id": "E056",
+            "claim_ids": [
+              "C2"
+            ],
+            "kind": "guards_present",
+            "tier": "E2",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": "httpx/_models.py",
+            "start": 1047,
+            "end": 1047,
+            "excerpt": "        if not isinstance(self.stream, AsyncByteStream):",
+            "content_hash": "7c897e980c365693756dcf3dcc090d6d9d056c98b72fc1df989c7d610970ad5f",
+            "result": "`aiter_raw` contains input checks: line 1047: falsy check (if not ...); line 1047: isinstance() check",
+            "raw": "",
+            "permalink": "https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_models.py#L1047",
+            "absence": false
+          },
+          {
+            "id": "E057",
+            "claim_ids": [
+              "C2"
+            ],
+            "kind": "guards_present",
+            "tier": "E2",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": "httpx/_models.py",
+            "start": 1070,
+            "end": 1073,
+            "excerpt": "        if not isinstance(self.stream, AsyncByteStream):\n            raise RuntimeError(\"Attempted to call an async close on an sync stream.\")\n\n        if not self.is_closed:",
+            "content_hash": "808f30a2c79e5f3ac3a842360c273562f5540fae76c9d1663e8c68e4c30fe534",
+            "result": "`aclose` contains input checks: line 1070: falsy check (if not ...); line 1070: isinstance() check; line 1073: falsy check (if not ...)",
+            "raw": "",
+            "permalink": "https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_models.py#L1070-L1073",
+            "absence": false
+          },
+          {
+            "id": "E065",
+            "claim_ids": [
+              "C2",
+              "C3"
+            ],
+            "kind": "test_found",
+            "tier": "E3",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": "tests/client/test_async_client.py",
+            "start": 260,
+            "end": 277,
+            "excerpt": "async def test_client_closed_state_using_implicit_open():\n    client = httpx.AsyncClient(transport=httpx.MockTransport(hello_world))\n\n    assert not client.is_closed\n    await client.get(\"http://example.com\")\n\n    assert not client.is_closed\n    await client.aclose()\n\n    assert client.is_closed\n    # Once we're close we cannot make any more requests.\n    with pytest.raises(RuntimeError):\n        await client.get(\"http://example.com\")\n\n    # Once we're closed we cannot reopen the client.\n    with pytest.raises(RuntimeError):\n        async with client:\n            pass  # pragma: no cover",
+            "content_hash": "d95c9e1419c04e5fe70a33e7e8d0459a789fde9630da1d797065b6613b459574",
+            "result": "Test `test_client_closed_state_using_implicit_open` calls `aclose`",
+            "raw": "",
+            "permalink": "https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/tests/client/test_async_client.py#L260-L277",
+            "absence": false
+          },
+          {
+            "id": "E066",
+            "claim_ids": [
+              "C2",
+              "C3"
+            ],
+            "kind": "test_found",
+            "tier": "E3",
+            "sha": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+            "path": "tests/client/test_proxies.py",
+            "start": 104,
+            "end": 110,
+            "excerpt": "async def test_async_proxy_close():\n    try:\n        transport = httpx.AsyncHTTPTransport(proxy=PROXY_URL)\n        client = httpx.AsyncClient(mounts={\"https://\": transport})\n        await client.get(\"http://example.com\")\n    finally:\n        await client.aclose()",
+            "content_hash": "48d8dda98600c1b7137d9eb25e9f3f82ac7844a98c8933cf368e49b86af4b68c",
+            "result": "Test `test_async_proxy_close` calls `aclose`",
+            "raw": "",
+            "permalink": "https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/tests/client/test_proxies.py#L104-L110",
+            "absence": false
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://github.com/junegunn/fzf/issues/4947",
+      "before": {
+        "run_id": "863781f47dde4d5a",
+        "pipeline_version": "21",
+        "status": "complete",
+        "summary": "Not enough information to check.",
+        "evidence_count": 61,
+        "model_stage": [
+          {
+            "stage": "adjudication",
+            "status": "degraded",
+            "reason": "AI interpretation unavailable (Model daily quota exhausted; only cached responses are available); showing tool results only.",
+            "ms": 1
+          }
+        ]
+      },
+      "after": {
+        "run_id": "a33e70d72b184886",
+        "pipeline_version": "22",
+        "status": "partial",
+        "summary": "Analysis incomplete: model interpretation unavailable. 61 evidence items collected; main claim unverified.",
+        "evidence_count": 61,
+        "primary_claim": "the race detector reports two data races as soon as a query is typed",
+        "blockers": [
+          {
+            "code": "model_cache_miss",
+            "stage": "adjudication",
+            "reason": "No cached model response matched this request.",
+            "next_step": "Use an available inference endpoint to assess this evidence; cache-only mode cannot create new responses."
+          }
+        ],
+        "model_stages": [
+          {
+            "stage": "claims",
+            "status": "ok",
+            "reason": null,
+            "ms": 11
+          },
+          {
+            "stage": "adjudication",
+            "status": "degraded",
+            "reason": "AI interpretation unavailable (Live inference disabled; no cached response matches this prompt); showing tool results only.",
+            "ms": 11
+          }
+        ],
+        "assessments": [
+          {
+            "claim_id": "C1",
+            "technical": "inconclusive",
+            "verification": "not_attempted",
+            "evidence_ids": [
+              "E019",
+              "E020",
+              "E021",
+              "E022",
+              "E023"
+            ],
+            "relations": {
+              "E019": "context",
+              "E020": "context",
+              "E021": "context",
+              "E022": "context",
+              "E023": "context"
+            },
+            "explanation": "Not assessed: No cached model response matched this request. Retrieved source context is not a verified verdict.",
+            "limitations": [
+              "Not interpreted by the model."
+            ],
+            "strength": "none",
+            "lean": null,
+            "decided_by": "none",
+            "downgraded_reason": null,
+            "unconfirmed_reasoning": null
+          }
+        ],
+        "context_evidence": [
+          {
+            "id": "E019",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "frame_match",
+            "tier": "E2",
+            "sha": "c0a193e031f01fb50bf6f7be4381990a3753f7cf",
+            "path": "src/terminal.go",
+            "start": 8539,
+            "end": 8539,
+            "excerpt": "\t\t\t\tt.lastAction = a.t",
+            "content_hash": "5f8f67a65d0291155a1d009c2a6d86a986650c93c09bacd7dad0d5ece3dcdad5",
+            "result": "Traceback frame src/terminal.go:8539 matches the code at this version",
+            "raw": "",
+            "permalink": "https://github.com/junegunn/fzf/blob/c0a193e031f01fb50bf6f7be4381990a3753f7cf/src/terminal.go#L8539",
+            "absence": false
+          },
+          {
+            "id": "E020",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "frame_match",
+            "tier": "E2",
+            "sha": "c0a193e031f01fb50bf6f7be4381990a3753f7cf",
+            "path": "src/terminal.go",
+            "start": 5536,
+            "end": 5536,
+            "excerpt": "\t\tlastAction: t.lastAction,",
+            "content_hash": "f9c6bc4496d5c9d8276430f99c73aa2311dd890fb2a2595a5bceef19854a7dd2",
+            "result": "Traceback frame src/terminal.go:5536 matches the code at this version",
+            "raw": "",
+            "permalink": "https://github.com/junegunn/fzf/blob/c0a193e031f01fb50bf6f7be4381990a3753f7cf/src/terminal.go#L5536",
+            "absence": false
+          },
+          {
+            "id": "E021",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "frame_match",
+            "tier": "E2",
+            "sha": "c0a193e031f01fb50bf6f7be4381990a3753f7cf",
+            "path": "src/terminal.go",
+            "start": 6446,
+            "end": 6446,
+            "excerpt": "\t\t\t\t\tcommand, tempFiles := t.replacePlaceholder(commandTemplate, false, query, items)",
+            "content_hash": "f54d874859196280dd2db7a5635c2de16f5ab637409834545ea4a09ae6f1809b",
+            "result": "Traceback frame src/terminal.go:6446 matches the code at this version",
+            "raw": "",
+            "permalink": "https://github.com/junegunn/fzf/blob/c0a193e031f01fb50bf6f7be4381990a3753f7cf/src/terminal.go#L6446",
+            "absence": false
+          },
+          {
+            "id": "E022",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "frame_match",
+            "tier": "E2",
+            "sha": "c0a193e031f01fb50bf6f7be4381990a3753f7cf",
+            "path": "src/matcher.go",
+            "start": 146,
+            "end": 146,
+            "excerpt": "\t\t\tresult.merger.final = request.final",
+            "content_hash": "c7f96e503f2b9275015cfcfc8911fcd20d262bf19c794c3ffebb7d76dc626e32",
+            "result": "Traceback frame src/matcher.go:146 matches the code at this version",
+            "raw": "",
+            "permalink": "https://github.com/junegunn/fzf/blob/c0a193e031f01fb50bf6f7be4381990a3753f7cf/src/matcher.go#L146",
+            "absence": false
+          },
+          {
+            "id": "E023",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "frame_match",
+            "tier": "E2",
+            "sha": "c0a193e031f01fb50bf6f7be4381990a3753f7cf",
+            "path": "src/matcher.go",
+            "start": 33,
+            "end": 33,
+            "excerpt": "\treturn mr.merger != nil && mr.merger.final",
+            "content_hash": "51f060f5512a7c665914c27fa3ea9a8c73aec6e92d3a35c27be5df2b6ae7a695",
+            "result": "Traceback frame src/matcher.go:33 matches the code at this version",
+            "raw": "",
+            "permalink": "https://github.com/junegunn/fzf/blob/c0a193e031f01fb50bf6f7be4381990a3753f7cf/src/matcher.go#L33",
+            "absence": false
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://github.com/Alamofire/Alamofire/issues/3998",
+      "before": {
+        "run_id": "d52c36df8dda4128",
+        "pipeline_version": "21",
+        "status": "complete",
+        "summary": "Looks like a feature request, not a bug report.",
+        "evidence_count": 38,
+        "model_stage": [
+          {
+            "stage": "adjudication",
+            "status": "degraded",
+            "reason": "AI interpretation unavailable (Model daily quota exhausted; only cached responses are available); showing tool results only.",
+            "ms": 4
+          }
+        ]
+      },
+      "after": {
+        "run_id": "8bda318be25d48ba",
+        "pipeline_version": "22",
+        "status": "partial",
+        "summary": "Feature request; technical verification is incomplete.",
+        "evidence_count": 38,
+        "primary_claim": "Current API requires developers to manually unwrap nested enumerations (Event -> Result -> Data) inside every for await loop",
+        "blockers": [
+          {
+            "code": "model_cache_miss",
+            "stage": "adjudication",
+            "reason": "No cached model response matched this request.",
+            "next_step": "Use an available inference endpoint to assess this evidence; cache-only mode cannot create new responses."
+          }
+        ],
+        "model_stages": [
+          {
+            "stage": "claims",
+            "status": "ok",
+            "reason": null,
+            "ms": 12
+          },
+          {
+            "stage": "adjudication",
+            "status": "degraded",
+            "reason": "AI interpretation unavailable (Live inference disabled; no cached response matches this prompt); showing tool results only.",
+            "ms": 15
+          }
+        ],
+        "assessments": [
+          {
+            "claim_id": "C1",
+            "technical": "inconclusive",
+            "verification": "not_attempted",
+            "evidence_ids": [
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007"
+            ],
+            "relations": {
+              "E003": "context",
+              "E004": "context",
+              "E005": "context",
+              "E006": "context",
+              "E007": "context"
+            },
+            "explanation": "Not assessed: No cached model response matched this request. Retrieved source context is not a verified verdict.",
+            "limitations": [
+              "Not interpreted by the model."
+            ],
+            "strength": "none",
+            "lean": null,
+            "decided_by": "none",
+            "downgraded_reason": null,
+            "unconfirmed_reasoning": null
+          },
+          {
+            "claim_id": "C2",
+            "technical": "inconclusive",
+            "verification": "not_attempted",
+            "evidence_ids": [
+              "E024",
+              "E001",
+              "E002",
+              "E008",
+              "E009"
+            ],
+            "relations": {
+              "E024": "context",
+              "E001": "context",
+              "E002": "context",
+              "E008": "context",
+              "E009": "context"
+            },
+            "explanation": "Not assessed: No cached model response matched this request. Retrieved source context is not a verified verdict.",
+            "limitations": [
+              "Not interpreted by the model."
+            ],
+            "strength": "none",
+            "lean": null,
+            "decided_by": "none",
+            "downgraded_reason": null,
+            "unconfirmed_reasoning": null
+          },
+          {
+            "claim_id": "C3",
+            "technical": "inconclusive",
+            "verification": "not_attempted",
+            "evidence_ids": [
+              "E037",
+              "E038",
+              "E035",
+              "E036"
+            ],
+            "relations": {
+              "E037": "context",
+              "E038": "context",
+              "E035": "context",
+              "E036": "context"
+            },
+            "explanation": "Not assessed: No cached model response matched this request. Retrieved source context is not a verified verdict.",
+            "limitations": [
+              "Not interpreted by the model."
+            ],
+            "strength": "none",
+            "lean": null,
+            "decided_by": "none",
+            "downgraded_reason": null,
+            "unconfirmed_reasoning": null
+          }
+        ],
+        "context_evidence": [
+          {
+            "id": "E001",
+            "claim_ids": [
+              "C2"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88",
+            "path": "Example/Source/AppDelegate.swift",
+            "start": 1,
+            "end": 9,
+            "excerpt": "//\n//  AppDelegate.swift\n//\n//  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)\n//\n//  Permission is hereby granted, free of charge, to any person obtaining a copy\n//  of this software and associated documentation files (the \"Software\"), to deal\n//  in the Software without restriction, including without limitation the rights\n//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell",
+            "content_hash": "bb5dc807c5696075539fc9563d42e4ff0e30211dc495462fb4f590056c462bae",
+            "result": "Exact report text 'alamofire' occurs in Example/Source/AppDelegate.swift:4; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88/Example/Source/AppDelegate.swift#L1-L9",
+            "absence": false
+          },
+          {
+            "id": "E002",
+            "claim_ids": [
+              "C2"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88",
+            "path": "Example/Source/DetailViewController.swift",
+            "start": 1,
+            "end": 9,
+            "excerpt": "//\n//  DetailViewController.swift\n//\n//  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)\n//\n//  Permission is hereby granted, free of charge, to any person obtaining a copy\n//  of this software and associated documentation files (the \"Software\"), to deal\n//  in the Software without restriction, including without limitation the rights\n//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell",
+            "content_hash": "12ab95e5afb2314e8fca6ef7cd3ff4a15009bc9327ed13aff8b5f39b29ab4944",
+            "result": "Exact report text 'alamofire' occurs in Example/Source/DetailViewController.swift:4; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88/Example/Source/DetailViewController.swift#L1-L9",
+            "absence": false
+          },
+          {
+            "id": "E003",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88",
+            "path": "Source/Core/Session.swift",
+            "start": 418,
+            "end": 426,
+            "excerpt": "    ///                                       the provided parameters. `nil` by default.\n    ///\n    /// - Returns:                            The created `DataStream` request.\n    open func streamRequest<Parameters: Encodable & Sendable>(_ convertible: any URLConvertible,\n                                                              method: HTTPMethod = .get,\n                                                              parameters: Parameters? = nil,\n                                                              encoder: any ParameterEncoder = URLEncodedFormParameterEncoder.default,\n                                                              headers: HTTPHeaders? = nil,\n                                                              automaticallyCancelOnStreamError: Bool = false,",
+            "content_hash": "e128f4c991c2aa8d8c54c417c30e413abfd4a205209381ea0172e3cfb758695b",
+            "result": "Exact report text 'streamRequest' occurs in Source/Core/Session.swift:421; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88/Source/Core/Session.swift#L418-L426",
+            "absence": false
+          },
+          {
+            "id": "E004",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88",
+            "path": "Source/Core/Session.swift",
+            "start": 434,
+            "end": 442,
+            "excerpt": "                                                      headers: headers,\n                                                      requestModifier: requestModifier)\n\n        return streamRequest(convertible,\n                             automaticallyCancelOnStreamError: automaticallyCancelOnStreamError,\n                             interceptor: interceptor,\n                             shouldAutomaticallyResume: shouldAutomaticallyResume)\n    }\n",
+            "content_hash": "e914e5111abfb2bc19657e1e0739c4fae9e1faf6b8bcf929bd30f41c89e915c4",
+            "result": "Exact report text 'streamRequest' occurs in Source/Core/Session.swift:437; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88/Source/Core/Session.swift#L434-L442",
+            "absence": false
+          },
+          {
+            "id": "E005",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88",
+            "path": "Source/Features/Concurrency.swift",
+            "start": 902,
+            "end": 910,
+            "excerpt": "\n/// An asynchronous sequence generated from an underlying `AsyncStream`. Only produced by Alamofire.\n@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)\npublic struct StreamOf<Element>: AsyncSequence {\n    public typealias AsyncIterator = Iterator\n    public typealias BufferingPolicy = AsyncStream<Element>.Continuation.BufferingPolicy\n    fileprivate typealias Continuation = AsyncStream<Element>.Continuation\n\n    private let bufferingPolicy: BufferingPolicy",
+            "content_hash": "149c86c2525772b89c7862c68e4bf6ab6f80f913821e464a0cc6e0ef95e88681",
+            "result": "Exact report text 'AsyncSequence' occurs in Source/Features/Concurrency.swift:905; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88/Source/Features/Concurrency.swift#L902-L910",
+            "absence": false
+          },
+          {
+            "id": "E006",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88",
+            "path": "Tests/ConcurrencyTests.swift",
+            "start": 831,
+            "end": 839,
+            "excerpt": "}\n\n@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)\nextension AsyncSequence {\n    func collect() async rethrows -> [Element] {\n        var elements: [Element] = []\n        for try await element in self {\n            elements.append(element)\n        }",
+            "content_hash": "92dd8f114e91dae494d2cc5bb0743b67d16b89a27f59ace5b09e7e289e4b5602",
+            "result": "Exact report text 'AsyncSequence' occurs in Tests/ConcurrencyTests.swift:834; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88/Tests/ConcurrencyTests.swift#L831-L839",
+            "absence": false
+          },
+          {
+            "id": "E007",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "literal_in_docs",
+            "tier": "E3",
+            "sha": "7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88",
+            "path": "Documentation/AdvancedUsage.md",
+            "start": 1482,
+            "end": 1490,
+            "excerpt": "\n### `DataStreamRequest` Support\n\n`DataStreamRequest`, unlike the other request types, does not read a single value and complete. Instead, it continuously streams `Data` from the server to be processed through a handler. With Swift Concurrency, this callback API has been replaced with `StreamOf` values vended by `DataStreamTask`. `StreamOf` conforms to `AsyncSequence`, allowing the use of `for await` syntax to observe values as they're received by the stream. Unlike `DataTask` and `DownloadTask`, `DataStreamTask` doesn't vend asynchronous properties itself. Instead, it vends the streams that can be observed.\n\n```swift\nlet streamTask = AF.dataStreamRequest(...).streamTask()\n\n// Later...",
+            "content_hash": "daca28f4aecec84d70b945046d1a79187191efa5fc5a51a74a11340fe73b35d2",
+            "result": "Exact report text 'AsyncSequence' occurs in Documentation/AdvancedUsage.md:1485; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88/Documentation/AdvancedUsage.md#L1482-L1490",
+            "absence": false
+          },
+          {
+            "id": "E008",
+            "claim_ids": [
+              "C1",
+              "C2"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88",
+            "path": "Source/Core/DataRequest.swift",
+            "start": 48,
+            "end": 56,
+            "excerpt": "    ///   - underlyingQueue:    `DispatchQueue` on which all internal `Request` work is performed.\n    ///   - serializationQueue: `DispatchQueue` on which all serialization work is performed. By default targets\n    ///                         `underlyingQueue`, but can be passed another queue from a `Session`.\n    ///   - eventMonitor:       `EventMonitor` called for event callbacks from internal `Request` actions.\n    ///   - interceptor:        `RequestInterceptor` used throughout the request lifecycle.\n    ///   - delegate:           `RequestDelegate` that provides an interface to actions not performed by the `Request`.\n    init(id: UUID = UUID(),\n         convertible: any URLRequestConvertible,\n         underlyingQueue: DispatchQueue,",
+            "content_hash": "cda70fa9ac27b829cb772e87e1527c761810e15fca73d7b69646b0dac4e22c94",
+            "result": "Exact report text 'Event' occurs in Source/Core/DataRequest.swift:51; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88/Source/Core/DataRequest.swift#L48-L56",
+            "absence": false
+          },
+          {
+            "id": "E009",
+            "claim_ids": [
+              "C1",
+              "C2"
+            ],
+            "kind": "literal_match",
+            "tier": "E3",
+            "sha": "7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88",
+            "path": "Source/Core/DataRequest.swift",
+            "start": 55,
+            "end": 63,
+            "excerpt": "         convertible: any URLRequestConvertible,\n         underlyingQueue: DispatchQueue,\n         serializationQueue: DispatchQueue,\n         eventMonitor: (any EventMonitor)?,\n         interceptor: (any RequestInterceptor)?,\n         shouldAutomaticallyResume: Bool?,\n         delegate: any RequestDelegate) {\n        self.convertible = convertible\n",
+            "content_hash": "8ee82379ede534614178072d8c04eb87454f41149a4febc6d0ef681e1a26ffe7",
+            "result": "Exact report text 'Event' occurs in Source/Core/DataRequest.swift:58; a text match alone does not establish the reported behaviour",
+            "raw": "",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88/Source/Core/DataRequest.swift#L55-L63",
+            "absence": false
+          },
+          {
+            "id": "E024",
+            "claim_ids": [
+              "C2"
+            ],
+            "kind": "symbol_absent",
+            "tier": "E2",
+            "sha": "7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88",
+            "path": null,
+            "start": null,
+            "end": null,
+            "excerpt": null,
+            "content_hash": null,
+            "result": "`AsyncThrowingStream` does not appear anywhere in the repository at this version",
+            "raw": "",
+            "permalink": null,
+            "absence": false
+          },
+          {
+            "id": "E035",
+            "claim_ids": [
+              "C3"
+            ],
+            "kind": "code_excerpt",
+            "tier": "E4",
+            "sha": "7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88",
+            "path": "Source/Core/DataRequest.swift",
+            "start": 101,
+            "end": 150,
+            "excerpt": "                underlyingQueue.async { completionHandler(.allow) }\n                return\n            }\n\n            httpResponseHandler.queue.async {\n                httpResponseHandler.handler(response) { disposition in\n                    if disposition == .cancel {\n                        self.mutableState.write { mutableState in\n                            mutableState.state = .cancelled\n                            mutableState.error = mutableState.error ?? AFError.explicitlyCancelled\n                        }\n                    }\n\n                    self.underlyingQueue.async {\n                        completionHandler(disposition.sessionDisposition)\n                    }\n                }\n            }\n        }\n    }\n\n    override func task(for request: URLRequest, using session: URLSession) -> URLSessionTask {\n        let copiedRequest = request\n        return session.dataTask(with: copiedRequest)\n    }\n\n    /// Called to update the `downloadProgress` of the instance.\n    func updateDownloadProgress() {\n        let totalBytesReceived = Int64(data?.count ?? 0)\n        let totalBytesExpected = task?.response?.expectedContentLength ?? NSURLSessionTransferSizeUnknown\n\n        downloadProgress.totalUnitCount = totalBytesExpected\n        downloadProgress.completedUnitCount = totalBytesReceived\n\n        downloadProgressHandler?.queue.async { self.downloadProgressHandler?.handler(self.downloadProgress) }\n    }\n\n    /// Validates the request, using the specified closure.\n    ///\n    /// - Note: If validation fails, subsequent calls to response handlers will have an associated error.\n    ///\n    /// - Parameter validation: `Validation` closure used to validate the response.\n    ///\n    /// - Returns:              The instance.\n    @preconcurrency\n    @discardableResult\n    public func validate(_ validation: @escaping Validation) -> Self {\n        let validator: @Sendable () -> Void = { [unowned self] in\n            guard error == nil, let response else { return }\n",
+            "content_hash": "787b5d4a503ba8a72bda5e950b751ba131c2c5c6f50797c5366db5cecee2b8ff",
+            "result": "Possibly related code (Source/Core/DataRequest.swift, by similarity)",
+            "raw": "",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88/Source/Core/DataRequest.swift#L101-L150",
+            "absence": false
+          },
+          {
+            "id": "E036",
+            "claim_ids": [
+              "C3"
+            ],
+            "kind": "code_excerpt",
+            "tier": "E4",
+            "sha": "7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88",
+            "path": "Tests/NSLoggingEventMonitor.swift",
+            "start": 51,
+            "end": 100,
+            "excerpt": "    }\n\n    public func urlSession(_ session: URLSession,\n                           task: URLSessionTask,\n                           willPerformHTTPRedirection response: HTTPURLResponse,\n                           newRequest request: URLRequest) {\n        NSLog(\"%@\", \"URLSession: \\(session), task: \\(task), willPerformHTTPRedirection: \\(response), newRequest: \\(request)\")\n    }\n\n    public func urlSession(_ session: URLSession, task: URLSessionTask, didFinishCollecting metrics: URLSessionTaskMetrics) {\n        NSLog(\"%@\", \"URLSession: \\(session), task: \\(task), didFinishCollecting: \\(metrics)\")\n    }\n\n    public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: (any Error)?) {\n        NSLog(\"%@\", \"URLSession: \\(session), task: \\(task), didCompleteWithError: \\(error?.localizedDescription ?? \"None\")\")\n    }\n\n    public func urlSession(_ session: URLSession, taskIsWaitingForConnectivity task: URLSessionTask) {\n        NSLog(\"%@\", \"URLSession: \\(session), taskIsWaitingForConnectivity: \\(task)\")\n    }\n\n    public func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {\n        NSLog(\"%@\", \"URLSession: \\(session), dataTask: \\(dataTask), didReceiveDataOfLength: \\(data.count)\")\n    }\n\n    public func urlSession(_ session: URLSession,\n                           dataTask: URLSessionDataTask,\n                           willCacheResponse proposedResponse: CachedURLResponse) {\n        NSLog(\"%@\", \"URLSession: \\(session), dataTask: \\(dataTask), willCacheResponse: \\(proposedResponse)\")\n    }\n\n    public func urlSession(_ session: URLSession,\n                           downloadTask: URLSessionDownloadTask,\n                           didResumeAtOffset fileOffset: Int64,\n                           expectedTotalBytes: Int64) {\n        NSLog(\"%@\", \"URLSession: \\(session), downloadTask: \\(downloadTask), didResumeAtOffset: \\(fileOffset), expectedTotalBytes: \\(expectedTotalBytes)\")\n    }\n\n    public func urlSession(_ session: URLSession,\n                           downloadTask: URLSessionDownloadTask,\n                           didWriteData bytesWritten: Int64,\n                           totalBytesWritten: Int64,\n                           totalBytesExpectedToWrite: Int64) {\n        NSLog(\"%@\", \"URLSession: \\(session), downloadTask: \\(downloadTask), didWriteData bytesWritten: \\(bytesWritten), totalBytesWritten: \\(totalBytesWritten), totalBytesExpectedToWrite: \\(totalBytesExpectedToWrite)\")\n    }\n\n    public func urlSession(_ session: URLSession,\n                           downloadTask: URLSessionDownloadTask,\n                           didFinishDownloadingTo location: URL) {\n        NSLog(\"%@\", \"URLSession: \\(session), downloadTask: \\(downloadTask), didFinishDownloadingTo: \\(location)\")",
+            "content_hash": "da0f3dcdf1cd6345eac1ce78dc60717f0401861bd3d727a77abcb0001a5c8a23",
+            "result": "Possibly related code (Tests/NSLoggingEventMonitor.swift, by similarity)",
+            "raw": "",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88/Tests/NSLoggingEventMonitor.swift#L51-L100",
+            "absence": false
+          },
+          {
+            "id": "E037",
+            "claim_ids": [
+              "C3"
+            ],
+            "kind": "doc_excerpt",
+            "tier": "E3",
+            "sha": "7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88",
+            "path": "Documentation/Alamofire 4.0 Migration Guide.md",
+            "start": 240,
+            "end": 253,
+            "excerpt": "```swift\n// Alamofire 3\nAlamofire.upload(.PUT, urlString, file: fileURL)\n\t.progress { bytes, totalBytes, totalBytesExpected in\n\t\t// Are these for upload or for downloading the response?\n\t\tprint(\"Bytes: \\(bytesRead), Total Bytes: \\(totalBytesRead), Total Bytes Expected: \\(totalBytesExpectedToRead)\")\n\t}\n\t.validate { request, response in\n\t\t// Custom evaluation implementation (no access to server data)\n\t    return .success\n\t}\n\t.responseJSON { response in\n\t\tdebugPrint(response)\n\t}",
+            "content_hash": "d8cd308b9ac6c34b9f3c69c8dae053ed1cbb3eab4903592c5b5b35cc98d53846",
+            "result": "Documentation in Documentation/Alamofire 4.0 Migration Guide.md",
+            "raw": "",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88/Documentation/Alamofire 4.0 Migration Guide.md#L240-L253",
+            "absence": false
+          },
+          {
+            "id": "E038",
+            "claim_ids": [
+              "C3"
+            ],
+            "kind": "doc_excerpt",
+            "tier": "E3",
+            "sha": "7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88",
+            "path": "Documentation/Alamofire 4.0 Migration Guide.md",
+            "start": 91,
+            "end": 101,
+            "excerpt": "Alamofire.request(.GET, urlString, parameters: parameters, encoding: .JSON)\n\t.progress { bytesRead, totalBytesRead, totalBytesExpectedToRead in\n\t\tprint(\"Bytes: \\(bytesRead), Total Bytes: \\(totalBytesRead), Total Bytes Expected: \\(totalBytesExpectedToRead)\")\n\t}\n\t.validate { request, response in\n\t\t// Custom evaluation closure (no access to server data)\n\t    return .success\n\t}\n    .responseJSON { response in\n\t\tdebugPrint(response)\n\t}",
+            "content_hash": "154138b9ae30cc8ba114ac321a1524c34f7c602be7e32fb1fd6017264e7313cb",
+            "result": "Documentation in Documentation/Alamofire 4.0 Migration Guide.md",
+            "raw": "",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88/Documentation/Alamofire 4.0 Migration Guide.md#L91-L101",
+            "absence": false
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://github.com/Alamofire/Alamofire/pull/4043",
+      "before": {
+        "run_id": "6228967cf0a04d06",
+        "pipeline_version": "21",
+        "status": "complete",
+        "summary": "Not enough information to check.",
+        "evidence_count": 110,
+        "model_stage": [
+          {
+            "stage": "adjudication",
+            "status": "degraded",
+            "reason": "AI interpretation unavailable (Model daily quota exhausted; only cached responses are available); showing tool results only.",
+            "ms": 2
+          }
+        ]
+      },
+      "after": {
+        "run_id": "d877c87888054a9c",
+        "pipeline_version": "22",
+        "status": "partial",
+        "summary": "Analysis incomplete: model interpretation unavailable. 114 evidence items collected; main claim unverified.",
+        "evidence_count": 114,
+        "primary_claim": "Surface the associated URL for more AFError cases",
+        "blockers": [
+          {
+            "code": "model_cache_miss",
+            "stage": "adjudication",
+            "reason": "No cached model response matched this request.",
+            "next_step": "Use an available inference endpoint to assess this evidence; cache-only mode cannot create new responses."
+          }
+        ],
+        "model_stages": [
+          {
+            "stage": "claims",
+            "status": "ok",
+            "reason": null,
+            "ms": 4
+          },
+          {
+            "stage": "adjudication",
+            "status": "degraded",
+            "reason": "AI interpretation unavailable (Live inference disabled; no cached response matches this prompt); showing tool results only.",
+            "ms": 3
+          }
+        ],
+        "assessments": [
+          {
+            "claim_id": "C1",
+            "technical": "inconclusive",
+            "verification": "not_attempted",
+            "evidence_ids": [
+              "E106",
+              "E107",
+              "E108",
+              "E109",
+              "E113"
+            ],
+            "relations": {
+              "E106": "context",
+              "E107": "context",
+              "E108": "context",
+              "E109": "context",
+              "E113": "context"
+            },
+            "explanation": "Not assessed: No cached model response matched this request. Retrieved source context is not a verified verdict.",
+            "limitations": [
+              "Not interpreted by the model."
+            ],
+            "strength": "none",
+            "lean": null,
+            "decided_by": "none",
+            "downgraded_reason": null,
+            "unconfirmed_reasoning": null
+          },
+          {
+            "claim_id": "C2",
+            "technical": "supported",
+            "verification": "not_attempted",
+            "evidence_ids": [
+              "E113"
+            ],
+            "relations": {
+              "E113": "supports"
+            },
+            "explanation": "The diff adds or changes test code.",
+            "limitations": [],
+            "strength": "high",
+            "lean": null,
+            "decided_by": "rule",
+            "downgraded_reason": null,
+            "unconfirmed_reasoning": null
+          },
+          {
+            "claim_id": "C3",
+            "technical": "inconclusive",
+            "verification": "not_attempted",
+            "evidence_ids": [
+              "E070",
+              "E106",
+              "E107",
+              "E111",
+              "E112"
+            ],
+            "relations": {
+              "E070": "context",
+              "E106": "context",
+              "E107": "context",
+              "E111": "context",
+              "E112": "context"
+            },
+            "explanation": "Not assessed: No cached model response matched this request. Retrieved source context is not a verified verdict.",
+            "limitations": [
+              "Not interpreted by the model."
+            ],
+            "strength": "none",
+            "lean": null,
+            "decided_by": "none",
+            "downgraded_reason": null,
+            "unconfirmed_reasoning": null
+          }
+        ],
+        "context_evidence": [
+          {
+            "id": "E070",
+            "claim_ids": [
+              "C3"
+            ],
+            "kind": "path_found",
+            "tier": "E2",
+            "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+            "path": "Documentation/Usage.md",
+            "start": null,
+            "end": null,
+            "excerpt": null,
+            "content_hash": null,
+            "result": "File Documentation/Usage.md exists at this version",
+            "raw": "",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Documentation/Usage.md",
+            "absence": false
+          },
+          {
+            "id": "E106",
+            "claim_ids": [
+              "C1",
+              "C2",
+              "C3"
+            ],
+            "kind": "pr_diff",
+            "tier": "E2",
+            "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+            "path": "Source/Core/AFError.swift",
+            "start": 375,
+            "end": 382,
+            "excerpt": "    /// The `URL` associated with the error, if any.\n    ///\n    /// For `.multipartEncodingFailed` errors, this is the body part `URL` that triggered the failure. For errors that\n    /// wrap an underlying error, such as `.sessionTaskFailed`, this is the `URL` extracted from that error, like the\n    /// `failingURL` of an underlying `URLError`. For `.requestRetryFailed`, only the `retryError` is consulted.\n    ///\n    /// - Note: Cases that carry no associated `URL`, such as `.explicitlyCancelled` and `.invalidURL`, return `nil`.\n    ///         Use `urlConvertible` to recover the value of an `.invalidURL` error.",
+            "content_hash": "24b29c90770943d4e2948d2aa2e0387b1cab722056df159c1476ab262648c06c",
+            "result": "Diff: Source/Core/AFError.swift (changed)",
+            "raw": "@@ -373,8 +373,23 @@ extension AFError {\n     }\n \n-    /// The `URL` associated with the error.\n+    /// The `URL` associated with the error, if any.\n+    ///\n+    /// For `.multipartEncodingFailed` errors, this is the body part `URL` that triggered the failure. For errors that\n+    /// wrap an underlying error, such as `.sessionTaskFailed`, this is the `URL` extracted from that error, like the\n+    /// `failingURL` of an underlying `URLError`. For `.requestRetryFailed`, only the `retryError` is consulted.\n+    ///\n+    /// - Note: Cases that carry no associated `URL`, such as `.explicitlyCancelled` and `.invalidURL`, return `nil`.\n+    ///         Use `urlConvertible` to recover the value of an `.invalidURL` error.\n     public var url: URL? {\n-        guard case let .multipartEncodingFailed(reason) = self else { return nil }\n-        return reason.url\n+        switch self {\n+        case let .multipartEncodingFailed(reason):\n+            reason.url\n+        case let .responseValidationFailed(reason):\n+            reason.url\n+        case let .responseSerializationFailed(reason):\n+            reason.url\n+        default:\n+            underlyingError?.url\n+        }\n     }\n \n@@ -464,4 +479,21 @@ extension AFError {\n }\n \n+extension Error {\n+    /// The `URL` associated with the error, extracted from well-known Foundation error types.\n+    ///\n+    /// Returns the `failingURL` of a `URLError`, the `NSURLErrorKey` value of any other bridged `NSError`, or, when the\n+    /// error is an `AFError`, that error's own `url`, so nested errors resolve transparently.\n+    var url: URL? {\n+        switch self {\n+        case let afError as AFError:\n+            afError.url\n+        case let urlError as URLError:\n+            urlError.failingURL\n+        default:\n+            (self as\n[... diff truncated ...]",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Source/Core/AFError.swift#L375-L382",
+            "absence": false
+          },
+          {
+            "id": "E107",
+            "claim_ids": [
+              "C1",
+              "C2",
+              "C3"
+            ],
+            "kind": "pr_diff",
+            "tier": "E2",
+            "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+            "path": "Tests/AFError+AlamofireTests.swift",
+            "start": 27,
+            "end": 27,
+            "excerpt": "import XCTest",
+            "content_hash": "13ca29dd2e2ef9ee1fa3a3bf1ba8c058df0c79f8b256084659b2512f811127f3",
+            "result": "Diff: Tests/AFError+AlamofireTests.swift (changed)",
+            "raw": "@@ -25,4 +25,5 @@\n import Alamofire\n import Foundation\n+import XCTest\n \n extension AFError {\n@@ -401,2 +402,172 @@ extension AFError.URLRequestValidationFailureReason {\n     }\n }\n+\n+// MARK: -\n+\n+final class AFErrorURLTests: BaseTestCase {\n+    private let url = URL(string: \"https://example.com/path\")!\n+    private let otherURL = URL(string: \"https://example.com/other\")!\n+\n+    // MARK: Underlying Network Errors\n+\n+    func testThatURLIsExtractedFromSessionTaskFailedURLError() {\n+        // Given\n+        let error = AFError.sessionTaskFailed(error: urlError(failingURL: url))\n+\n+        // When, Then\n+        XCTAssertEqual(error.url, url)\n+    }\n+\n+    func testThatSessionTaskFailedReturnsNilURLWhenUnderlyingErrorHasNoURL() {\n+        // Given\n+        let error = AFError.sessionTaskFailed(error: URLError(.timedOut))\n+\n+        // When, Then\n+        XCTAssertNil(error.url)\n+    }\n+\n+    func testThatURLIsExtractedFromSessionInvalidatedURLError() {\n+        // Given\n+        let error = AFError.sessionInvalidated(error: urlError(failingURL: url))\n+\n+        // When, Then\n+        XCTAssertEqual(error.url, url)\n+    }\n+\n+    func testThatSessionInvalidatedWithNilErrorReturnsNilURL() {\n+        // Given\n+        let error = AFError.sessionInvalidated(error: nil)\n+\n+        // When, Then\n+        XCTAssertNil(error.url)\n+    }\n+\n+    func testThatURLIsExtractedFromRequestAdaptationFailed() {\n+        // Given\n+        let error = AFError.requestAdaptationFailed(error: urlError(failingURL: url))\n+\n+        // When, Then\n+        XCTAssertEqual(error.url, url)\n+    }\n+\n+    func testThatURLIsExtractedFromCreateUploadableFailed() {\n+        // Given\n+        let error = AFError.createUploadableFailed(error: urlError(failingURL: url))\n+\n+        // When, Then\n+        XCTAsse\n[... diff truncated ...]",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Tests/AFError+AlamofireTests.swift#L27",
+            "absence": false
+          },
+          {
+            "id": "E108",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "pr_diff_touches_claim",
+            "tier": "E2",
+            "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+            "path": null,
+            "start": null,
+            "end": null,
+            "excerpt": null,
+            "content_hash": null,
+            "result": "The diff changes `AFError`, `NSError`, `NSURLErrorKey`, `URL`, `customValidationFailed`, `decodingFailed`, `failingURL`, `originalError`, `retryError`, `underlyingError`, `url`",
+            "raw": "",
+            "permalink": null,
+            "absence": false
+          },
+          {
+            "id": "E109",
+            "claim_ids": [
+              "C1"
+            ],
+            "kind": "pr_diff_misses_claim",
+            "tier": "E2",
+            "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+            "path": null,
+            "start": null,
+            "end": null,
+            "excerpt": null,
+            "content_hash": null,
+            "result": "The diff does not change `CocoaError`, `MultipartFormDataFailureTestCase`, `internal`, `public`",
+            "raw": "",
+            "permalink": null,
+            "absence": false
+          },
+          {
+            "id": "E111",
+            "claim_ids": [
+              "C3"
+            ],
+            "kind": "pr_diff_touches_claim",
+            "tier": "E2",
+            "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+            "path": null,
+            "start": null,
+            "end": null,
+            "excerpt": null,
+            "content_hash": null,
+            "result": "The diff changes `Note`",
+            "raw": "",
+            "permalink": null,
+            "absence": false
+          },
+          {
+            "id": "E112",
+            "claim_ids": [
+              "C3"
+            ],
+            "kind": "pr_diff_misses_claim",
+            "tier": "E2",
+            "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+            "path": null,
+            "start": null,
+            "end": null,
+            "excerpt": null,
+            "content_hash": null,
+            "result": "The diff does not change `Usage.md`",
+            "raw": "",
+            "permalink": null,
+            "absence": false
+          },
+          {
+            "id": "E113",
+            "claim_ids": [
+              "C1",
+              "C2"
+            ],
+            "kind": "pr_tests_changed",
+            "tier": "E2",
+            "sha": "f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715",
+            "path": "Tests/AFError+AlamofireTests.swift",
+            "start": null,
+            "end": null,
+            "excerpt": null,
+            "content_hash": null,
+            "result": "Test code changed: Tests/AFError+AlamofireTests.swift",
+            "raw": "",
+            "permalink": "https://github.com/Alamofire/Alamofire/blob/f7833cdaf3cabe4faa8e5034db5d26f7f6e6c715/Tests/AFError+AlamofireTests.swift",
+            "absence": false
+          }
+        ]
+      }
+    }
+  ],
+  "saved_report_api_readback": {
+    "base_url": "http://127.0.0.1:8787",
+    "rerun_analysis": false,
+    "reports": [
+      {
+        "run_id": "6228967cf0a04d06",
+        "url": "https://github.com/Alamofire/Alamofire/pull/4043",
+        "pipeline_version": "21",
+        "status": "partial",
+        "summary": "Analysis incomplete: model quota exhausted. 110 evidence items collected; main claim unverified.",
+        "blockers": [
+          {
+            "code": "model_quota_exhausted",
+            "stage": "adjudication",
+            "reason": "The model's daily quota was exhausted.",
+            "next_step": "Retry after the provider's quota resets, or configure an available open-weight model endpoint."
+          }
+        ]
+      },
+      {
+        "run_id": "d52c36df8dda4128",
+        "url": "https://github.com/Alamofire/Alamofire/issues/3998",
+        "pipeline_version": "21",
+        "status": "partial",
+        "summary": "Feature request; technical verification is incomplete.",
+        "blockers": [
+          {
+            "code": "model_quota_exhausted",
+            "stage": "adjudication",
+            "reason": "The model's daily quota was exhausted.",
+            "next_step": "Retry after the provider's quota resets, or configure an available open-weight model endpoint."
+          }
+        ]
+      },
+      {
+        "run_id": "863781f47dde4d5a",
+        "url": "https://github.com/junegunn/fzf/issues/4947",
+        "pipeline_version": "21",
+        "status": "partial",
+        "summary": "Analysis incomplete: model quota exhausted. 61 evidence items collected; main claim unverified.",
+        "blockers": [
+          {
+            "code": "model_quota_exhausted",
+            "stage": "adjudication",
+            "reason": "The model's daily quota was exhausted.",
+            "next_step": "Retry after the provider's quota resets, or configure an available open-weight model endpoint."
+          }
+        ]
+      },
+      {
+        "run_id": "6af234cf1d7640b5",
+        "url": "https://github.com/colinhacks/zod/issues/6712",
+        "pipeline_version": "21",
+        "status": "partial",
+        "summary": "Analysis incomplete: model quota exhausted. 55 evidence items collected; main claim unverified.",
+        "blockers": [
+          {
+            "code": "model_quota_exhausted",
+            "stage": "adjudication",
+            "reason": "The model's daily quota was exhausted.",
+            "next_step": "Retry after the provider's quota resets, or configure an available open-weight model endpoint."
+          }
+        ]
+      },
+      {
+        "run_id": "cd23d86743e7488a",
+        "url": "https://github.com/encode/httpx/issues/3782",
+        "pipeline_version": "21",
+        "status": "partial",
+        "summary": "Analysis incomplete: model quota exhausted. 75 evidence items collected; main claim unverified.",
+        "blockers": [
+          {
+            "code": "model_quota_exhausted",
+            "stage": "adjudication",
+            "reason": "The model's daily quota was exhausted.",
+            "next_step": "Retry after the provider's quota resets, or configure an available open-weight model endpoint."
+          }
+        ]
+      }
+    ]
+  }
+}

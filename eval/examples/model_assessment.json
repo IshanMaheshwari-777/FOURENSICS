@@ -1,0 +1,950 @@
+{
+ "run_id": "1d72562e504447d2",
+ "status": "complete",
+ "target": {
+  "owner": "hiyouga",
+  "repo": "LlamaFactory",
+  "kind": "issue",
+  "number": 8570,
+  "url": "https://github.com/hiyouga/LlamaFactory/issues/8570"
+ },
+ "report_kind": "defect",
+ "stages": [
+  {
+   "stage": "fetch",
+   "status": "ok",
+   "reason": null,
+   "ms": 0
+  },
+  {
+   "stage": "anchors",
+   "status": "ok",
+   "reason": null,
+   "ms": 0
+  },
+  {
+   "stage": "snapshot",
+   "status": "ok",
+   "reason": null,
+   "ms": 4769
+  },
+  {
+   "stage": "missing_info",
+   "status": "ok",
+   "reason": null,
+   "ms": 0
+  },
+  {
+   "stage": "index",
+   "status": "ok",
+   "reason": null,
+   "ms": 213
+  },
+  {
+   "stage": "reference_checks",
+   "status": "ok",
+   "reason": null,
+   "ms": 349
+  },
+  {
+   "stage": "claims",
+   "status": "ok",
+   "reason": null,
+   "ms": 1096
+  },
+  {
+   "stage": "claim_checks",
+   "status": "ok",
+   "reason": null,
+   "ms": 109
+  },
+  {
+   "stage": "reproduction",
+   "status": "skipped",
+   "reason": "skipped",
+   "ms": 0
+  },
+  {
+   "stage": "adjudication",
+   "status": "ok",
+   "reason": null,
+   "ms": 60100
+  },
+  {
+   "stage": "validation",
+   "status": "ok",
+   "reason": null,
+   "ms": 8
+  }
+ ],
+ "snapshot": {
+  "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+  "method": "date",
+  "reliability": "inferred",
+  "ref_label": "main as of 2025-07-07",
+  "base_sha": null,
+  "head_sha": null
+ },
+ "summary_line": "Not enough information to check.",
+ "summary_tone": "neutral",
+ "claims": [
+  {
+   "id": "C1",
+   "text": "ValueError: The data should contain the fields: {'image_embeds', 'image_grid_thw'}, but only found the following keys: {'images'}",
+   "type": "behavior",
+   "is_primary": true,
+   "source_span": "ValueError: The data should contain the fields: {'image_embeds', 'image_grid_thw'}, but only found the following keys: {'images'}",
+   "inferred": false,
+   "anchors": [
+    {
+     "kind": "literal",
+     "value": "image_embeds",
+     "line": null,
+     "func": null,
+     "context": null
+    },
+    {
+     "kind": "literal",
+     "value": "image_grid_thw",
+     "line": null,
+     "func": null,
+     "context": null
+    },
+    {
+     "kind": "literal",
+     "value": "images",
+     "line": null,
+     "func": null,
+     "context": null
+    },
+    {
+     "kind": "literal",
+     "value": "value",
+     "line": null,
+     "func": null,
+     "context": null
+    },
+    {
+     "kind": "error",
+     "value": "ValueError: The data should contain the fields: {'image_embeds', 'image_grid_thw'}, but only found the following keys: {'images'}",
+     "line": null,
+     "func": null,
+     "context": null
+    },
+    {
+     "kind": "literal",
+     "value": "conversations",
+     "line": null,
+     "func": null,
+     "context": null
+    },
+    {
+     "kind": "literal",
+     "value": "from",
+     "line": null,
+     "func": null,
+     "context": null
+    },
+    {
+     "kind": "literal",
+     "value": "human",
+     "line": null,
+     "func": null,
+     "context": null
+    },
+    {
+     "kind": "literal",
+     "value": "<image>xxx",
+     "line": null,
+     "func": null,
+     "context": null
+    },
+    {
+     "kind": "literal",
+     "value": "gpt",
+     "line": null,
+     "func": null,
+     "context": null
+    },
+    {
+     "kind": "literal",
+     "value": "yyy",
+     "line": null,
+     "func": null,
+     "context": null
+    },
+    {
+     "kind": "literal",
+     "value": "test.jpg",
+     "line": null,
+     "func": null,
+     "context": null
+    },
+    {
+     "kind": "literal",
+     "value": "07-07 20:46:49 multiproc_worker_utils.py:124] Worker VllmWorkerProcess pid 28774 died, exit code: -15",
+     "line": null,
+     "func": null,
+     "context": null
+    },
+    {
+     "kind": "path",
+     "value": "mllm_demo.json",
+     "line": null,
+     "func": null,
+     "context": null
+    },
+    {
+     "kind": "path",
+     "value": "multiproc_worker_utils.py",
+     "line": null,
+     "func": null,
+     "context": null
+    }
+   ],
+   "condition": null,
+   "expected": null,
+   "observed": null
+  }
+ ],
+ "assessments": [
+  {
+   "claim_id": "C1",
+   "technical": "inconclusive",
+   "verification": "not_attempted",
+   "evidence_ids": [
+    "E001",
+    "E002",
+    "E004",
+    "E005",
+    "E006",
+    "E007",
+    "E008",
+    "E009",
+    "E010",
+    "E011",
+    "E012",
+    "E013",
+    "E014",
+    "E015",
+    "E016",
+    "E017",
+    "E018",
+    "E019",
+    "E020"
+   ],
+   "relations": {
+    "E001": "context",
+    "E002": "context",
+    "E004": "context",
+    "E005": "context",
+    "E006": "context",
+    "E007": "context",
+    "E008": "context",
+    "E009": "context",
+    "E010": "context",
+    "E011": "context",
+    "E012": "context",
+    "E013": "context",
+    "E014": "context",
+    "E015": "context",
+    "E016": "context",
+    "E017": "context",
+    "E018": "context",
+    "E019": "context",
+    "E020": "context"
+   },
+   "explanation": "The evidence only contains literal text matches of the words ‘image_grid_thw’ and ‘images’ in documentation and source files; none of the items show the runtime check that would raise the ValueError. Therefore the claim cannot be confirmed or refuted based on the available static evidence.",
+   "limitations": [
+    "No execution or dynamic analysis of the code path that produces the error; no evidence of the specific validation logic that would trigger the ValueError."
+   ],
+   "strength": "none",
+   "lean": null,
+   "decided_by": "model",
+   "downgraded_reason": null,
+   "unconfirmed_reasoning": null
+  }
+ ],
+ "evidence": [
+  {
+   "id": "E001",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_match",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "src/llamafactory/data/collator.py",
+   "start": 185,
+   "end": 193,
+   "excerpt": "        if self.get_rope_func is not None:\n            rope_index_kwargs = {\n                \"input_ids\": features[\"input_ids\"],\n                \"image_grid_thw\": mm_inputs.get(\"image_grid_thw\"),\n                \"video_grid_thw\": mm_inputs.get(\"video_grid_thw\"),\n                \"attention_mask\": (features[\"attention_mask\"] >= 1).float(),\n            }\n            if \"second_per_grid_ts\" in mm_inputs:  # for qwen2vl\n                rope_index_kwargs[\"second_per_grid_ts\"] = mm_inputs.get(\"second_per_grid_ts\")",
+   "content_hash": "6aa8c3ba95594a11ca7277bba9a6f13380dd3833769a55d38374860995122857",
+   "result": "Exact report text 'image_grid_thw' occurs in src/llamafactory/data/collator.py:188; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/src/llamafactory/data/collator.py#L185-L193",
+   "absence": false
+  },
+  {
+   "id": "E002",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_match",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "src/llamafactory/data/mm_plugin.py",
+   "start": 318,
+   "end": 326,
+   "excerpt": "\n        Returns: (qwen2-vl)\n            pixel_values: tensor with shape (num_patches, patch_dim)\n            image_grid_thw: tensor with shape (num_images, 3), where the three numbers are time, width, height\n                            where num_patches == torch.prod(image_grid_thw)\n\n        Returns: (mllama)\n            pixel_values: tensor with shape\n                          (batch_size, max_num_images, max_image_tiles, channels, tile_height, tile_width)",
+   "content_hash": "8822f3e3173754d4b230b3f275bcf1c57823af027d489bb90d5893a2510e7663",
+   "result": "Exact report text 'image_grid_thw' occurs in src/llamafactory/data/mm_plugin.py:321; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/src/llamafactory/data/mm_plugin.py#L318-L326",
+   "absence": false
+  },
+  {
+   "id": "E003",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_match",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": ".github/workflows/docker.yml",
+   "start": 43,
+   "end": 51,
+   "excerpt": "        uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be # v1.3.1\n        with:\n          tool-cache: true\n          docker-images: false\n\n      - name: Checkout\n        uses: actions/checkout@v4\n\n      - name: Set up Python",
+   "content_hash": "39edd26a7b22152cb8d89d78afaa43d07b45589310ad548df47b7c7c6c7c6449",
+   "result": "Exact report text 'images' occurs in .github/workflows/docker.yml:46; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/.github/workflows/docker.yml#L43-L51",
+   "absence": false
+  },
+  {
+   "id": "E004",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_match",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "src/llamafactory/api/chat.py",
+   "start": 96,
+   "end": 104,
+   "excerpt": "        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=\"Only supports u/a/u/a/u...\")\n\n    input_messages = []\n    images, videos, audios = [], [], []\n    for i, message in enumerate(request.messages):\n        if i % 2 == 0 and message.role not in [Role.USER, Role.TOOL]:\n            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=\"Invalid role\")\n        elif i % 2 == 1 and message.role not in [Role.ASSISTANT, Role.FUNCTION]:\n            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=\"Invalid role\")",
+   "content_hash": "857391bb9b9e2be72b7fc8acfcb682c384c5e7298d48d4de7e8974418e627051",
+   "result": "Exact report text 'images' occurs in src/llamafactory/api/chat.py:99; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/src/llamafactory/api/chat.py#L96-L104",
+   "absence": false
+  },
+  {
+   "id": "E005",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_in_docs",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "README.md",
+   "start": 501,
+   "end": 509,
+   "excerpt": "\nThis image is built on Ubuntu 22.04 (x86\\_64), CUDA 12.4, Python 3.11, PyTorch 2.6.0, and Flash-attn 2.7.4.\n\nFind the pre-built images: https://hub.docker.com/r/hiyouga/llamafactory/tags\n\nPlease refer to [build docker](#build-docker) to build the image yourself.\n\n<details><summary>Setting up a virtual environment with <b>uv</b></summary>\n",
+   "content_hash": "b4d15f53fde71fb3b5c74b3e0a7f2e24055afcf0232150863bc2e368985a439e",
+   "result": "Exact report text 'images' occurs in README.md:504; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/README.md#L501-L509",
+   "absence": false
+  },
+  {
+   "id": "E006",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_in_docs",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "README.md",
+   "start": 581,
+   "end": 589,
+   "excerpt": "\nIf you cannot infer model on NPU devices, try setting `do_sample: false` in the configurations.\n\nDownload the pre-built Docker images: [32GB](http://mirrors.cn-central-221.ovaijisuan.com/detail/130.html) | [64GB](http://mirrors.cn-central-221.ovaijisuan.com/detail/131.html)\n\n#### Install BitsAndBytes\n\nTo use QLoRA based on bitsandbytes on Ascend NPU, please follow these 3 steps:\n",
+   "content_hash": "fc9e2bcd0c7ecbda419455c3806dee4dc53a0d2955bf85a3bfd4e9873302081e",
+   "result": "Exact report text 'images' occurs in README.md:584; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/README.md#L581-L589",
+   "absence": false
+  },
+  {
+   "id": "E007",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_in_docs",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "data/README.md",
+   "start": 22,
+   "end": 30,
+   "excerpt": "    \"query\": \"the column name in the dataset containing the queries. (default: input)\",\n    \"response\": \"the column name in the dataset containing the responses. (default: output)\",\n    \"history\": \"the column name in the dataset containing the histories. (default: None)\",\n    \"messages\": \"the column name in the dataset containing the messages. (default: conversations)\",\n    \"system\": \"the column name in the dataset containing the system prompts. (default: None)\",\n    \"tools\": \"the column name in the dataset containing the tool description. (default: None)\",\n    \"images\": \"the column name in the dataset containing the image inputs. (default: None)\",\n    \"videos\": \"the column name in the dataset containing the videos inputs. (default: None)\",\n    \"audios\": \"the column name in the dataset containing the audios inputs. (default: None)\",",
+   "content_hash": "42b0d1ffc2453b0d62c490eefe4be44f6db85813dc796c6417eabc07657bf234",
+   "result": "Exact report text 'conversations' occurs in data/README.md:25; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/data/README.md#L22-L30",
+   "absence": false
+  },
+  {
+   "id": "E008",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_in_docs",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "data/README.md",
+   "start": 171,
+   "end": 179,
+   "excerpt": "\n- [Example dataset](glaive_toolcall_en_demo.json)\n\nCompared to the alpaca format, the sharegpt format allows the datasets have **more roles**, such as human, gpt, observation and function. They are presented in a list of objects in the `conversations` column.\n\nNote that the human and observation should appear in odd positions, while gpt and function should appear in even positions. The gpt and function will be learned by the model.\n\n```json\n[",
+   "content_hash": "8e59ed282b4713099b01647e9e8f11528fcc41541c27df654a900ca25297e94a",
+   "result": "Exact report text 'conversations' occurs in data/README.md:174; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/data/README.md#L171-L179",
+   "absence": false
+  },
+  {
+   "id": "E009",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_match",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": ".gitignore",
+   "start": 27,
+   "end": 35,
+   "excerpt": "MANIFEST\n\n# PyInstaller\n#  Usually these files are written by a python script from a template\n#  before PyInstaller builds the exe, so as to inject date/other infos into it.\n*.manifest\n*.spec\n\n# Installer logs",
+   "content_hash": "15845bf54daf0f8a5f6134f6012cf83e3d18efc249fd788ebb7449a0fbbcb92f",
+   "result": "Exact report text 'from' occurs in .gitignore:30; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/.gitignore#L27-L35",
+   "absence": false
+  },
+  {
+   "id": "E010",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_match",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "LICENSE",
+   "start": 27,
+   "end": 35,
+   "excerpt": "      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or",
+   "content_hash": "e2efae7224b1b9f0ae94dd081b87664a2ee2cfea0c1dc43bc7924be0ec33b29e",
+   "result": "Exact report text 'from' occurs in LICENSE:30; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/LICENSE#L27-L35",
+   "absence": false
+  },
+  {
+   "id": "E011",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_in_docs",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "README.md",
+   "start": 19,
+   "end": 27,
+   "excerpt": "[![Open in Studios](https://img.shields.io/badge/ModelScope-Open%20in%20Studios-blue)](https://modelscope.cn/studios/hiyouga/LLaMA-Board)\n[![Open in Novita](https://img.shields.io/badge/Novita-Deploy%20Template-blue)](https://novita.ai/templates-library/105981?sharer=88115474-394e-4bda-968e-b88e123d0c47)\n\n### Used by [Amazon](https://aws.amazon.com/cn/blogs/machine-learning/how-apoidea-group-enhances-visual-information-extraction-from-banking-documents-with-multimodal-models-using-llama-factory-on-amazon-sagemaker-hyperpod/), [NVIDIA](https://developer.nvidia.com/rtx/ai-toolkit), [Aliyun](https://help.aliyun.com/zh/pai/use-cases/fine-tune-a-llama-3-model-with-llama-factory), etc.\n\n<div align=\"center\" markdown=\"1\">\n\n### Supporters ❤️\n",
+   "content_hash": "7e1fd4c571d2c443c56d3b3750a5d780ac6d112db31dadbaddffe23e49a65c6e",
+   "result": "Exact report text 'from' occurs in README.md:22; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/README.md#L19-L27",
+   "absence": false
+  },
+  {
+   "id": "E012",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_in_docs",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "README.md",
+   "start": 77,
+   "end": 85,
+   "excerpt": "  - [Fine-Tuning with LLaMA Board GUI](#fine-tuning-with-llama-board-gui-powered-by-gradio)\n  - [Build Docker](#build-docker)\n  - [Deploy with OpenAI-style API and vLLM](#deploy-with-openai-style-api-and-vllm)\n  - [Download from ModelScope Hub](#download-from-modelscope-hub)\n  - [Download from Modelers Hub](#download-from-modelers-hub)\n  - [Use W&B Logger](#use-wb-logger)\n  - [Use SwanLab Logger](#use-swanlab-logger)\n- [Projects using LLaMA Factory](#projects-using-llama-factory)\n- [License](#license)",
+   "content_hash": "cb1de92eb47697bb267b80faf77aba25fc08f1ae7293991c1c74171b90f4e392",
+   "result": "Exact report text 'from' occurs in README.md:80; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/README.md#L77-L85",
+   "absence": false
+  },
+  {
+   "id": "E013",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_match",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "data/belle_multiturn/belle_multiturn.py",
+   "start": 61,
+   "end": 69,
+   "excerpt": "                response = data[\"output\"].strip()\n\n                assist_idx = prompt.rfind(\"Assistant:\")\n                human_idx = prompt.rfind(\"Human:\")\n                query = prompt[human_idx + 6 : assist_idx].strip()\n                prompt = prompt[:human_idx].strip()\n                conversations.insert(0, {\"from\": \"gpt\", \"value\": response})\n                conversations.insert(0, {\"from\": \"human\", \"value\": query})\n",
+   "content_hash": "f53d5a7c897460c5dd7f12235b903c1c42b0fefe0ffe14cd5136f9cc19943636",
+   "result": "Exact report text 'human' occurs in data/belle_multiturn/belle_multiturn.py:64; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/data/belle_multiturn/belle_multiturn.py#L61-L69",
+   "absence": false
+  },
+  {
+   "id": "E014",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_match",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "data/belle_multiturn/belle_multiturn.py",
+   "start": 62,
+   "end": 70,
+   "excerpt": "\n                assist_idx = prompt.rfind(\"Assistant:\")\n                human_idx = prompt.rfind(\"Human:\")\n                query = prompt[human_idx + 6 : assist_idx].strip()\n                prompt = prompt[:human_idx].strip()\n                conversations.insert(0, {\"from\": \"gpt\", \"value\": response})\n                conversations.insert(0, {\"from\": \"human\", \"value\": query})\n\n                while prompt.rfind(\"Assistant:\") != -1:",
+   "content_hash": "74ee0ff988bea379efcc4a0c281775a319a095ebfb5670416e07ae0d2c6f816e",
+   "result": "Exact report text 'human' occurs in data/belle_multiturn/belle_multiturn.py:65; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/data/belle_multiturn/belle_multiturn.py#L62-L70",
+   "absence": false
+  },
+  {
+   "id": "E015",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_in_docs",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "data/README.md",
+   "start": 35,
+   "end": 43,
+   "excerpt": "  \"tags (optional, used for the sharegpt format)\": {\n    \"role_tag\": \"the key in the message represents the identity. (default: from)\",\n    \"content_tag\": \"the key in the message represents the content. (default: value)\",\n    \"user_tag\": \"the value of the role_tag represents the user. (default: human)\",\n    \"assistant_tag\": \"the value of the role_tag represents the assistant. (default: gpt)\",\n    \"observation_tag\": \"the value of the role_tag represents the tool results. (default: observation)\",\n    \"function_tag\": \"the value of the role_tag represents the function call. (default: function_call)\",\n    \"system_tag\": \"the value of the role_tag represents the system prompt. (default: system, can override system column)\"\n  }",
+   "content_hash": "64d7680aa790a4bca2989696501f936d638466031f87c883739dd3bfb416c2de",
+   "result": "Exact report text 'human' occurs in data/README.md:38; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/data/README.md#L35-L43",
+   "absence": false
+  },
+  {
+   "id": "E016",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_in_docs",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "data/README.md",
+   "start": 171,
+   "end": 179,
+   "excerpt": "\n- [Example dataset](glaive_toolcall_en_demo.json)\n\nCompared to the alpaca format, the sharegpt format allows the datasets have **more roles**, such as human, gpt, observation and function. They are presented in a list of objects in the `conversations` column.\n\nNote that the human and observation should appear in odd positions, while gpt and function should appear in even positions. The gpt and function will be learned by the model.\n\n```json\n[",
+   "content_hash": "8e59ed282b4713099b01647e9e8f11528fcc41541c27df654a900ca25297e94a",
+   "result": "Exact report text 'human' occurs in data/README.md:174; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/data/README.md#L171-L179",
+   "absence": false
+  },
+  {
+   "id": "E017",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_match",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": ".github/ISSUE_TEMPLATE/1-bug-report.yml",
+   "start": 4,
+   "end": 12,
+   "excerpt": "body:\n  - type: markdown\n    attributes:\n      value: |\n        Issues included in **[FAQs](https://github.com/hiyouga/LLaMA-Factory/issues/4614)** or those with **insufficient** information may be closed without a response.\n        已经包含在 **[常见问题](https://github.com/hiyouga/LLaMA-Factory/issues/4614)** 内或提供信息**不完整**的 issues 可能不会被回复。\n\n  - type: markdown\n    attributes:",
+   "content_hash": "5fab17044731f997fe7c2aeee745c30dc0d67d0af794cb8e40a3eedf6fbe597e",
+   "result": "Exact report text 'value' occurs in .github/ISSUE_TEMPLATE/1-bug-report.yml:7; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/.github/ISSUE_TEMPLATE/1-bug-report.yml#L4-L12",
+   "absence": false
+  },
+  {
+   "id": "E018",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_match",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": ".github/ISSUE_TEMPLATE/1-bug-report.yml",
+   "start": 10,
+   "end": 18,
+   "excerpt": "\n  - type: markdown\n    attributes:\n      value: |\n        Please do not create issues that are not related to framework bugs under this category, use **[Discussions](https://github.com/hiyouga/LLaMA-Factory/discussions/categories/q-a)** instead.\n        请勿在此分类下创建和框架 bug 无关的 issues，训练问题求助请使用 **[讨论区](https://github.com/hiyouga/LLaMA-Factory/discussions/categories/q-a)**。\n\n  - type: checkboxes\n    id: reminder",
+   "content_hash": "d4cc14f83f8a83714a7c54430a77d2b6b72cbebcd607d10592530f32e181db2f",
+   "result": "Exact report text 'value' occurs in .github/ISSUE_TEMPLATE/1-bug-report.yml:13; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/.github/ISSUE_TEMPLATE/1-bug-report.yml#L10-L18",
+   "absence": false
+  },
+  {
+   "id": "E019",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_in_docs",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": ".github/CONTRIBUTING.md",
+   "start": 1,
+   "end": 8,
+   "excerpt": "# Contributing to LLaMA Factory\n\nEveryone is welcome to contribute, and we value everybody's contribution. Code contributions are not the only way to help the community. Answering questions, helping others, and improving the documentation are also immensely valuable.\n\nIt also helps us if you spread the word! Reference the library in blog posts about the awesome projects it made possible, shout out on Twitter every time it has helped you, or simply ⭐️ the repository to say thank you.\n\nHowever you choose to contribute, please be mindful and respect our [code of conduct](CODE_OF_CONDUCT.md).\n",
+   "content_hash": "a05ad9dce1578c6eb34fbaed699fb0d2c816f3d6b97a76b1ee3b6f4a33236245",
+   "result": "Exact report text 'value' occurs in .github/CONTRIBUTING.md:3; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/.github/CONTRIBUTING.md#L1-L8",
+   "absence": false
+  },
+  {
+   "id": "E020",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_in_docs",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "data/README.md",
+   "start": 1,
+   "end": 8,
+   "excerpt": "The [dataset_info.json](dataset_info.json) contains all available datasets. If you are using a custom dataset, please **make sure** to add a *dataset description* in `dataset_info.json` and specify `dataset: dataset_name` before training to use it.\n\nThe `dataset_info.json` file should be put in the `dataset_dir` directory. You can change `dataset_dir` to use another directory. The default value is `./data`.\n\nCurrently we support datasets in **alpaca** and **sharegpt** format. Allowed file types include json, jsonl, csv, parquet, arrow.\n\n```json\n\"dataset_name\": {",
+   "content_hash": "4104c2270a23905b7a85b670f3c21ac619a3ce7e05845c7f51ee50d0e7158016",
+   "result": "Exact report text 'value' occurs in data/README.md:3; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/data/README.md#L1-L8",
+   "absence": false
+  },
+  {
+   "id": "E021",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_match",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "setup.py",
+   "start": 50,
+   "end": 58,
+   "excerpt": "    \"bitsandbytes\": [\"bitsandbytes>=0.39.0\"],\n    \"hqq\": [\"hqq\"],\n    \"eetq\": [\"eetq\"],\n    \"gptq\": [\"optimum>=1.24.0\", \"gptqmodel>=2.0.0\"],\n    \"aqlm\": [\"aqlm[gpu]>=1.1.0\"],\n    \"vllm\": [\"vllm>=0.4.3,<=0.9.1\"],\n    \"sglang\": [\"sglang[srt]>=0.4.5\", \"transformers==4.51.1\"],\n    \"galore\": [\"galore-torch\"],\n    \"apollo\": [\"apollo-torch\"],",
+   "content_hash": "6141d1144d3dceabb074ee470d85736dbc80ee60c7506246b1f6ced801eef166",
+   "result": "Exact report text 'gpt' occurs in setup.py:53; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/setup.py#L50-L58",
+   "absence": false
+  },
+  {
+   "id": "E022",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_in_docs",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "README.md",
+   "start": 388,
+   "end": 396,
+   "excerpt": "- [Nectar (en)](https://huggingface.co/datasets/berkeley-nest/Nectar)\n- [deepctrl (en&zh)](https://www.modelscope.cn/datasets/deepctrl/deepctrl-sft-data)\n- [Advertise Generating (zh)](https://huggingface.co/datasets/HasturOfficial/adgen)\n- [ShareGPT Hyperfiltered (en)](https://huggingface.co/datasets/totally-not-an-llm/sharegpt-hyperfiltered-3k)\n- [ShareGPT4 (en&zh)](https://huggingface.co/datasets/shibing624/sharegpt_gpt4)\n- [UltraChat 200k (en)](https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k)\n- [AgentInstruct (en)](https://huggingface.co/datasets/THUDM/AgentInstruct)\n- [LMSYS Chat 1M (en)](https://huggingface.co/datasets/lmsys/lmsys-chat-1m)\n- [Evol Instruct V2 (en)](https://huggingface.co/datasets/WizardLM/WizardLM_evol_instruct_V2_196k)",
+   "content_hash": "88aa5ff33d2301046172dd147052297ec5d056ac5d99ccddbb3fb30013e5fd7e",
+   "result": "Exact report text 'gpt' occurs in README.md:391; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/README.md#L388-L396",
+   "absence": false
+  },
+  {
+   "id": "E023",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_in_docs",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "README.md",
+   "start": 389,
+   "end": 397,
+   "excerpt": "- [deepctrl (en&zh)](https://www.modelscope.cn/datasets/deepctrl/deepctrl-sft-data)\n- [Advertise Generating (zh)](https://huggingface.co/datasets/HasturOfficial/adgen)\n- [ShareGPT Hyperfiltered (en)](https://huggingface.co/datasets/totally-not-an-llm/sharegpt-hyperfiltered-3k)\n- [ShareGPT4 (en&zh)](https://huggingface.co/datasets/shibing624/sharegpt_gpt4)\n- [UltraChat 200k (en)](https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k)\n- [AgentInstruct (en)](https://huggingface.co/datasets/THUDM/AgentInstruct)\n- [LMSYS Chat 1M (en)](https://huggingface.co/datasets/lmsys/lmsys-chat-1m)\n- [Evol Instruct V2 (en)](https://huggingface.co/datasets/WizardLM/WizardLM_evol_instruct_V2_196k)\n- [Cosmopedia (en)](https://huggingface.co/datasets/HuggingFaceTB/cosmopedia)",
+   "content_hash": "0dd050ce1a1715b262026054e4bf40a960cc204cc96e38da274977f20bbb71df",
+   "result": "Exact report text 'gpt' occurs in README.md:392; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/README.md#L389-L397",
+   "absence": false
+  },
+  {
+   "id": "E024",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "literal_match",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "LICENSE",
+   "start": 186,
+   "end": 194,
+   "excerpt": "      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n",
+   "content_hash": "1302f50c6fa1988d2830bcff17bb64c8519bc9960e9f8d0af1f5f4b5b5cde0fd",
+   "result": "Exact report text 'yyy' occurs in LICENSE:189; a text match alone does not establish the reported behaviour",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/LICENSE#L186-L194",
+   "absence": false
+  },
+  {
+   "id": "E025",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "raise_site",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "scripts/llama_pro.py",
+   "start": 54,
+   "end": 54,
+   "excerpt": "        raise ValueError(f\"`num_layers` {num_layers} should be divisible by `num_expand` {num_expand}.\")",
+   "content_hash": "ff034056acbdf1e87328a884bf378f8077056b0270e67faa5dc16d2416f27b16",
+   "result": "`block_expansion` explicitly raises ValueError at scripts/llama_pro.py:54",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/scripts/llama_pro.py#L54",
+   "absence": false
+  },
+  {
+   "id": "E026",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "raise_site",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "scripts/vllm_infer.py",
+   "start": 67,
+   "end": 67,
+   "excerpt": "        raise ValueError(\"Pipeline parallel size should be smaller than the number of gpus.\")",
+   "content_hash": "cdfb910c0e097196df2feb3dafbb7b2ce29f6443241fb06774c40ad5a2d23b88",
+   "result": "`vllm_infer` explicitly raises ValueError at scripts/vllm_infer.py:67",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/scripts/vllm_infer.py#L67",
+   "absence": false
+  },
+  {
+   "id": "E027",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "code_excerpt",
+   "tier": "E4",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "src/llamafactory/data/mm_plugin.py",
+   "start": 1484,
+   "end": 1525,
+   "excerpt": "    def process_messages(\n        self,\n        messages: list[dict[str, str]],\n        images: list[\"ImageInput\"],\n        videos: list[\"VideoInput\"],\n        audios: list[\"AudioInput\"],\n        processor: Optional[\"MMProcessor\"],\n    ) -> list[dict[str, str]]:\n        self._validate_input(processor, images, videos, audios)\n        self._validate_messages(messages, images, videos, audios)\n        num_image_tokens, num_video_tokens = 0, 0\n        messages = deepcopy(messages)\n        image_processor: BaseImageProcessor = getattr(processor, \"image_processor\")\n\n        merge_length: int = getattr(image_processor, \"merge_size\") ** 2\n        if self.expand_mm_tokens:\n            mm_inputs = self._get_mm_inputs(images, videos, audios, processor)\n            image_grid_thw = mm_inputs.get(\"image_grid_thw\", [])\n            video_grid_thw = mm_inputs.get(\"video_grid_thw\", [])\n        else:\n            image_grid_thw = [None] * len(images)\n            video_grid_thw = [None] * len(videos)\n\n        for message in messages:\n            content = message[\"content\"]\n            while IMAGE_PLACEHOLDER in content:\n                image_seqlen = image_grid_thw[num_image_tokens].prod() // merge_length if self.expand_mm_tokens else 1\n                content = content.replace(\n                    IMAGE_PLACEHOLDER, f\"<|vision_start|>{self.image_token * image_seqlen}<|vision_end|>\", 1\n                )\n                num_image_tokens += 1\n\n            while VIDEO_PLACEHOLDER in content:\n                video_seqlen = video_grid_thw[num_video_tokens].prod() // merge_length if self.expand_mm_tokens else 1\n                content = content.replace(\n                    VIDEO_PLACEHOLDER, f\"<|vision_start|>{self.video_token * video_seqlen}<|vision_end|>\", 1\n                )\n                num_video_tokens += 1\n\n            message[\"content\"] = content\n\n        return messages",
+   "content_hash": "2cf14695d9cc40943a4604633c9b61de766c4cc0c51f8fb979de63148f352a9f",
+   "result": "Implementation of `Qwen2VLPlugin.process_messages` (src/llamafactory/data/mm_plugin.py)",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/src/llamafactory/data/mm_plugin.py#L1484-L1525",
+   "absence": false
+  },
+  {
+   "id": "E028",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "code_excerpt",
+   "tier": "E4",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "src/llamafactory/data/mm_plugin.py",
+   "start": 1710,
+   "end": 1769,
+   "excerpt": "    def process_messages(\n        self,\n        messages: list[dict[str, str]],\n        images: list[\"ImageInput\"],\n        videos: list[\"VideoInput\"],\n        audios: list[\"AudioInput\"],\n        processor: Optional[\"MMProcessor\"],\n    ) -> list[dict[str, str]]:\n        self._validate_input(processor, images, videos, audios)\n        self._validate_messages(messages, images, videos, audios)\n        num_image_tokens, num_video_tokens, num_audio_tokens = 0, 0, 0\n        messages = deepcopy(messages)\n        image_processor: BaseImageProcessor = getattr(processor, \"image_processor\", None)\n\n        merge_length = processor.image_processor.merge_size**2\n        use_audio_in_video = getattr(processor, \"use_audio_in_video\", False)\n        if self.expand_mm_tokens:\n            mm_inputs = self._get_mm_inputs(images, videos, audios, processor)\n            image_grid_thw = mm_inputs.get(\"image_grid_thw\", [])\n            video_grid_thw = mm_inputs.get(\"video_grid_thw\", [])\n            if \"feature_attention_mask\" in mm_inputs:\n                input_lengths = (mm_inputs[\"feature_attention_mask\"].sum(-1).numpy() - 1) // 2 + 1\n                audio_lengths = (input_lengths - 2) // 2 + 1\n        else:\n            mm_inputs = {}\n            image_grid_thw = [None] * len(images)\n            video_grid_thw = [None] * len(videos)\n            audio_lengths = [None] * len(audios)\n\n        for message in messages:\n            content = message[\"content\"]\n            while IMAGE_PLACEHOLDER in content:\n                image_seqlen = image_grid_thw[num_image_tokens].prod() // merge_length if self.expand_mm_tokens else 1\n                content = content.replace(\n                    IMAGE_PLACEHOLDER, f\"<|vision_bos|>{self.image_token * image_seqlen}<|vision_eos|>\", 1\n                )\n                num_image_tokens += 1\n\n            if (\n                use_audio_in_video and len(audios) and len(videos)\n            ):  # if use the audio of video # deal video token and audio token togather\n                if len(videos) != len(audios):\n                    raise ValueError(\n                        f\"Number of videos ({len(videos)}) must match number of audios ({len(audios)}) when using audio in video.\"\n                    )\n\n                while VIDEO_PLACEHOLDER in content:\n                    video_pos = content.find(VIDEO_PLACEHOLDER)\n                    audio_pos = content.find(AUDIO_PLACEHOLDER, video_pos)\n                    if audio_pos == -1 or audio_pos < video_pos:\n                        raise ValueError(\n                            f\"Each {VIDEO_PLACEHOLDER} must be followed by an {AUDIO_PLACEHOLDER} when using audio in video.\"\n                        )\n\n                    audio_t_index = torch.arange(audio_lengths[num_audio_tokens])\n                    video_t_index = (\n                        torch.arange(video_grid_thw[num_video_tokens][0])\n                        .view(-1, 1, 1)\n                        .expand(\n                            -1,",
+   "content_hash": "7d1db89f89c3d1c3afcd9ac173eb99cf76f91e81c3543380963cb461cc3c186f",
+   "result": "Implementation of `Qwen2OmniPlugin.process_messages` (src/llamafactory/data/mm_plugin.py)",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/src/llamafactory/data/mm_plugin.py#L1710-L1769",
+   "absence": false
+  },
+  {
+   "id": "E029",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "code_excerpt",
+   "tier": "E4",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "src/llamafactory/data/mm_plugin.py",
+   "start": 1570,
+   "end": 1629,
+   "excerpt": "    def process_messages(\n        self,\n        messages: list[dict[str, str]],\n        images: list[\"ImageInput\"],\n        videos: list[\"VideoInput\"],\n        audios: list[\"AudioInput\"],\n        processor: Optional[\"MMProcessor\"],\n    ) -> list[dict[str, str]]:\n        self._validate_input(processor, images, videos, audios)\n        self._validate_messages(messages, images, videos, audios)\n        num_image_tokens, num_video_tokens = 0, 0\n        messages = deepcopy(messages)\n        image_processor: BaseImageProcessor = getattr(processor, \"image_processor\")\n\n        merge_length: int = getattr(image_processor, \"merge_size\") ** 2\n        if self.expand_mm_tokens:\n            mm_inputs = self._get_mm_inputs(images, videos, audios, processor)\n            image_grid_thw = mm_inputs.get(\"image_grid_thw\", [])\n            video_grid_thw = mm_inputs.get(\"video_grid_thw\", [])\n            num_frames = len(video_grid_thw)\n            timestamps = mm_inputs.get(\"timestamps\", [])\n            if hasattr(timestamps, \"tolist\"):\n                timestamps = timestamps.tolist()\n\n            if not timestamps:\n                timestamps_list = []\n            elif isinstance(timestamps[0], list):\n                timestamps_list = timestamps[0]\n            else:\n                timestamps_list = timestamps\n\n            unique_timestamps = timestamps_list.copy()\n            selected_timestamps = unique_timestamps[:num_frames]\n            while len(selected_timestamps) < num_frames:\n                selected_timestamps.append(selected_timestamps[-1] if selected_timestamps else 0)\n\n        else:\n            image_grid_thw = [None] * len(images)\n            video_grid_thw = [None] * len(videos)\n            num_frames = 0\n            selected_timestamps = [0]\n\n        for message in messages:\n            content = message[\"content\"]\n            while IMAGE_PLACEHOLDER in content:\n                image_seqlen = image_grid_thw[num_image_tokens].prod() // merge_length if self.expand_mm_tokens else 1\n                content = content.replace(\n                    IMAGE_PLACEHOLDER, f\"<|begin_of_image|>{self.image_token * image_seqlen}<|end_of_image|>\", 1\n                )\n                num_image_tokens += 1\n\n            # TODO: DO NOT SUPPORT VIDEO UNTIL NEXT PR\n            while VIDEO_PLACEHOLDER in content:\n                video_structure = \"\"\n                for frame_index in range(num_frames):\n                    video_seqlen = video_grid_thw[frame_index].prod() // merge_length if self.expand_mm_tokens else 1\n                    timestamp_sec = selected_timestamps[frame_index]\n                    frame_structure = (\n                        f\"<|begin_of_image|>{self.image_token * video_seqlen}<|end_of_image|>{timestamp_sec}\"\n                    )",
+   "content_hash": "aa7a3e8f49cf8eaffc44159cc0aa767a004f52a6b3721c85695e69d771f39eff",
+   "result": "Implementation of `GLM4VPlugin.process_messages` (src/llamafactory/data/mm_plugin.py)",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/src/llamafactory/data/mm_plugin.py#L1570-L1629",
+   "absence": false
+  },
+  {
+   "id": "E030",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "code_excerpt",
+   "tier": "E4",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "src/llamafactory/data/mm_plugin.py",
+   "start": 306,
+   "end": 365,
+   "excerpt": "    def _get_mm_inputs(\n        self,\n        images: list[\"ImageInput\"],\n        videos: list[\"VideoInput\"],\n        audios: list[\"AudioInput\"],\n        processor: \"MMProcessor\",\n        imglens: Optional[list[int]] = None,\n    ) -> dict[str, \"torch.Tensor\"]:\n        r\"\"\"Process visual inputs.\n\n        Returns: (llava and paligemma)\n            pixel_values: tensor with shape (B, C, H, W)\n\n        Returns: (qwen2-vl)\n            pixel_values: tensor with shape (num_patches, patch_dim)\n            image_grid_thw: tensor with shape (num_images, 3), where the three numbers are time, width, height\n                            where num_patches == torch.prod(image_grid_thw)\n\n        Returns: (mllama)\n            pixel_values: tensor with shape\n                          (batch_size, max_num_images, max_image_tiles, channels, tile_height, tile_width)\n                          For example, (2, 1, 4, 3, 560, 560).\n            aspect_ratio_ids: tensor with shape (batch_size, max_num_images). For example, (2, 1).\n            aspect_ratio_mask: tensor with shape (batch_size, max_num_images, max_image_tiles). For example, (2, 1, 4).\n            num_tiles: List[List[int]] with shape (batch_size, num_images_in_batch). For example, (2, 1).\n\n        \"\"\"\n        mm_inputs = {}\n        if len(images) != 0:\n            image_processor: BaseImageProcessor = getattr(processor, \"image_processor\", None)\n            images = self._regularize_images(\n                images,\n                image_max_pixels=getattr(processor, \"image_max_pixels\", 768 * 768),\n                image_min_pixels=getattr(processor, \"image_min_pixels\", 32 * 32),\n            )[\"images\"]\n            if imglens is not None:  # if imglens are provided, make batched images\n                images = _make_batched_images(images, imglens)\n\n            image_processor_kwargs = {}\n            if getattr(processor, \"image_do_pan_and_scan\", False):  # gemma3 image processor\n                image_processor_kwargs.update(\n                    {\n                        \"do_pan_and_scan\": True,\n                        \"pan_and_scan_min_crop_size\": 256,\n                        \"pan_and_scan_max_num_crops\": 4,\n                        \"pan_and_scan_min_ratio_to_activate\": 1.2,\n                    }\n                )\n\n            mm_inputs.update(image_processor(images, return_tensors=\"pt\", **image_processor_kwargs))\n\n        if len(videos) != 0:\n            video_processor: BaseImageProcessor = getattr(\n                processor, \"video_processor\", getattr(processor, \"image_processor\", None)\n            )\n            videos = self._regularize_videos(\n                videos,\n                image_max_pixels=getattr(processor, \"video_max_pixels\", 256 * 256),\n                image_min_pixels=getattr(processor, \"video_min_pixels\", 16 * 16),\n                video_fps=getattr(processor, \"video_fps\", 2.0),",
+   "content_hash": "272e2ca825370a5586a3c1ad65a29a3c5aaee8765f96a843aaf719b862ecf87c",
+   "result": "Implementation of `MMPluginMixin._get_mm_inputs` (src/llamafactory/data/mm_plugin.py)",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/src/llamafactory/data/mm_plugin.py#L306-L365",
+   "absence": false
+  },
+  {
+   "id": "E031",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "caller",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "src/llamafactory/chat/hf_engine.py",
+   "start": 73,
+   "end": 132,
+   "excerpt": "    def _process_args(\n        model: \"PreTrainedModel\",\n        tokenizer: \"PreTrainedTokenizer\",\n        processor: Optional[\"ProcessorMixin\"],\n        template: \"Template\",\n        generating_args: dict[str, Any],\n        messages: list[dict[str, str]],\n        system: Optional[str] = None,\n        tools: Optional[str] = None,\n        images: Optional[list[\"ImageInput\"]] = None,\n        videos: Optional[list[\"VideoInput\"]] = None,\n        audios: Optional[list[\"AudioInput\"]] = None,\n        input_kwargs: Optional[dict[str, Any]] = {},\n    ) -> tuple[dict[str, Any], int]:\n        mm_input_dict = {\"images\": [], \"videos\": [], \"audios\": [], \"imglens\": [0], \"vidlens\": [0], \"audlens\": [0]}\n        if images is not None:\n            mm_input_dict.update({\"images\": images, \"imglens\": [len(images)]})\n            if not any(IMAGE_PLACEHOLDER in message[\"content\"] for message in messages):\n                messages[0][\"content\"] = IMAGE_PLACEHOLDER * len(images) + messages[0][\"content\"]\n\n        if videos is not None:\n            mm_input_dict.update({\"videos\": videos, \"vidlens\": [len(videos)]})\n            if not any(VIDEO_PLACEHOLDER in message[\"content\"] for message in messages):\n                messages[0][\"content\"] = VIDEO_PLACEHOLDER * len(videos) + messages[0][\"content\"]\n\n        if audios is not None:\n            mm_input_dict.update({\"audios\": audios, \"audlens\": [len(audios)]})\n            if not any(AUDIO_PLACEHOLDER in message[\"content\"] for message in messages):\n                messages[0][\"content\"] = AUDIO_PLACEHOLDER * len(audios) + messages[0][\"content\"]\n\n        messages = template.mm_plugin.process_messages(\n            messages, mm_input_dict[\"images\"], mm_input_dict[\"videos\"], mm_input_dict[\"audios\"], processor\n        )\n        paired_messages = messages + [{\"role\": \"assistant\", \"content\": \"\"}]\n        prompt_ids, _ = template.encode_oneturn(tokenizer, paired_messages, system, tools)\n        prompt_ids, _ = template.mm_plugin.process_token_ids(\n            prompt_ids,\n            None,\n            mm_input_dict[\"images\"],\n            mm_input_dict[\"videos\"],\n            mm_input_dict[\"audios\"],\n            tokenizer,\n            processor,\n        )\n        prompt_length = len(prompt_ids)\n        inputs = torch.tensor([prompt_ids], device=model.device)\n        attention_mask = torch.ones_like(inputs, dtype=torch.long)\n\n        do_sample: Optional[bool] = input_kwargs.pop(\"do_sample\", None)\n        temperature: Optional[float] = input_kwargs.pop(\"temperature\", None)\n        top_p: Optional[float] = input_kwargs.pop(\"top_p\", None)\n        top_k: Optional[float] = input_kwargs.pop(\"top_k\", None)\n        num_return_sequences: int = input_kwargs.pop(\"num_return_sequences\", 1)\n        repetition_penalty: Optional[float] = input_kwargs.pop(\"repetition_penalty\", None)\n        length_penalty: Optional[float] = input_kwargs.pop(\"length_penalty\", None)\n        skip_special_tokens: Optional[bool] = input_kwargs.pop(\"skip_special_tokens\", None)\n        max_length: Optional[int] = input_kwargs.pop(\"max_length\", None)\n        max_new_tokens: Optional[int] = input_kwargs.pop(\"max_new_tokens\", None)\n        stop: Optional[Union[str, list[str]]] = input_kwargs.pop(\"stop\", None)\n",
+   "content_hash": "55dd8f566eb443d05efc2ffdf3ae96d05a352f0f7fc72b4d09292d49c2ae2bdb",
+   "result": "`HuggingfaceEngine._process_args` calls `process_messages`",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/src/llamafactory/chat/hf_engine.py#L73-L132",
+   "absence": false
+  },
+  {
+   "id": "E032",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "caller",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "src/llamafactory/chat/sglang_engine.py",
+   "start": 140,
+   "end": 199,
+   "excerpt": "    async def _generate(\n        self,\n        messages: list[dict[str, str]],\n        system: Optional[str] = None,\n        tools: Optional[str] = None,\n        images: Optional[list[\"ImageInput\"]] = None,\n        videos: Optional[list[\"VideoInput\"]] = None,\n        audios: Optional[list[\"AudioInput\"]] = None,\n        **input_kwargs,\n    ) -> AsyncIterator[dict[str, Any]]:\n        if images is not None and not any(IMAGE_PLACEHOLDER in message[\"content\"] for message in messages):\n            messages[0][\"content\"] = IMAGE_PLACEHOLDER * len(images) + messages[0][\"content\"]\n\n        if videos is not None and not any(VIDEO_PLACEHOLDER in message[\"content\"] for message in messages):\n            messages[0][\"content\"] = VIDEO_PLACEHOLDER * len(videos) + messages[0][\"content\"]\n\n        if audios is not None and not any(AUDIO_PLACEHOLDER in message[\"content\"] for message in messages):\n            messages[0][\"content\"] = AUDIO_PLACEHOLDER * len(audios) + messages[0][\"content\"]\n\n        messages = self.template.mm_plugin.process_messages(\n            messages, images or [], videos or [], audios or [], self.processor\n        )\n        paired_messages = messages + [{\"role\": \"assistant\", \"content\": \"\"}]\n        prompt_ids, _ = self.template.encode_oneturn(self.tokenizer, paired_messages, system, tools)\n        prompt_length = len(prompt_ids)\n\n        temperature: Optional[float] = input_kwargs.pop(\"temperature\", None)\n        top_p: Optional[float] = input_kwargs.pop(\"top_p\", None)\n        top_k: Optional[float] = input_kwargs.pop(\"top_k\", None)\n        num_return_sequences: int = input_kwargs.pop(\"num_return_sequences\", 1)\n        repetition_penalty: Optional[float] = input_kwargs.pop(\"repetition_penalty\", None)\n        skip_special_tokens: Optional[bool] = input_kwargs.pop(\"skip_special_tokens\", None)\n        max_length: Optional[int] = input_kwargs.pop(\"max_length\", None)\n        max_new_tokens: Optional[int] = input_kwargs.pop(\"max_new_tokens\", None)\n        stop: Optional[Union[str, list[str]]] = input_kwargs.pop(\"stop\", None)\n\n        if num_return_sequences != 1:\n            raise NotImplementedError(\"SGLang only supports n=1.\")\n\n        if \"max_new_tokens\" in self.generating_args:\n            max_tokens = self.generating_args[\"max_new_tokens\"]\n        elif \"max_length\" in self.generating_args:\n            if self.generating_args[\"max_length\"] > prompt_length:\n                max_tokens = self.generating_args[\"max_length\"] - prompt_length\n            else:\n                max_tokens = 1\n\n        if max_length:\n            max_tokens = max_length - prompt_length if max_length > prompt_length else 1\n\n        if max_new_tokens:\n            max_tokens = max_new_tokens\n\n        sampling_params = {\n            \"temperature\": temperature if temperature is not None else self.generating_args[\"temperature\"],\n            \"top_p\": (top_p if top_p is not None else self.generating_args[\"top_p\"]) or 1.0,  # top_p must > 0\n            \"top_k\": (top_k if top_k is not None else self.generating_args[\"top_k\"]) or -1,  # top_k must > 0\n            \"stop\": stop,\n            \"stop_token_ids\": self.template.get_stop_token_ids(self.tokenizer),\n            \"max_new_tokens\": max_tokens,",
+   "content_hash": "bbb20ce41b2cfe4d314672a94e2ddb843287d88ff816dc11ab7d84e450c0dde3",
+   "result": "`SGLangEngine._generate` calls `process_messages`",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/src/llamafactory/chat/sglang_engine.py#L140-L199",
+   "absence": false
+  },
+  {
+   "id": "E033",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "callee",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "src/llamafactory/data/mm_plugin.py",
+   "start": 147,
+   "end": 185,
+   "excerpt": "    def _validate_input(\n        self,\n        processor: Optional[\"MMProcessor\"],\n        images: list[\"ImageInput\"],\n        videos: list[\"VideoInput\"],\n        audios: list[\"AudioInput\"],\n    ) -> None:\n        r\"\"\"Validate if this model accepts the input modalities.\"\"\"\n        image_processor: BaseImageProcessor = getattr(processor, \"image_processor\", None)\n        video_processor: BaseImageProcessor = getattr(\n            processor, \"video_processor\", getattr(processor, \"image_processor\", None)\n        )\n        feature_extractor: SequenceFeatureExtractor = getattr(processor, \"feature_extractor\", None)\n        if len(images) != 0 and self.image_token is None:\n            raise ValueError(\n                \"This model does not support image input. Please check whether the correct `template` is used.\"\n            )\n\n        if len(videos) != 0 and self.video_token is None:\n            raise ValueError(\n                \"This model does not support video input. Please check whether the correct `template` is used.\"\n            )\n\n        if len(audios) != 0 and self.audio_token is None:\n            raise ValueError(\n                \"This model does not support audio input. Please check whether the correct `template` is used.\"\n            )\n\n        if self.image_token is not None and processor is None:\n            raise ValueError(\"Processor was not found, please check and update your model file.\")\n\n        if self.image_token is not None and image_processor is None:\n            raise ValueError(\"Image processor was not found, please check and update your model file.\")\n\n        if self.video_token is not None and video_processor is None:\n            raise ValueError(\"Video processor was not found, please check and update your model file.\")\n\n        if self.audio_token is not None and feature_extractor is None:\n            raise ValueError(\"Audio feature extractor was not found, please check and update your model file.\")",
+   "content_hash": "9cfc0490949d4387598c71451b2c75fbe8c16114b952931cd75c531f91b430e1",
+   "result": "`process_messages` calls `MMPluginMixin._validate_input`",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/src/llamafactory/data/mm_plugin.py#L147-L185",
+   "absence": false
+  },
+  {
+   "id": "E034",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "callee",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "src/llamafactory/data/mm_plugin.py",
+   "start": 187,
+   "end": 214,
+   "excerpt": "    def _validate_messages(\n        self,\n        messages: list[dict[str, str]],\n        images: list[\"ImageInput\"],\n        videos: list[\"VideoInput\"],\n        audios: list[\"AudioInput\"],\n    ):\n        r\"\"\"Validate if the number of images, videos and audios match the number of placeholders in messages.\"\"\"\n        num_image_tokens, num_video_tokens, num_audio_tokens = 0, 0, 0\n        for message in messages:\n            num_image_tokens += message[\"content\"].count(IMAGE_PLACEHOLDER)\n            num_video_tokens += message[\"content\"].count(VIDEO_PLACEHOLDER)\n            num_audio_tokens += message[\"content\"].count(AUDIO_PLACEHOLDER)\n\n        if len(images) != num_image_tokens:\n            raise ValueError(\n                f\"The number of images does not match the number of {IMAGE_PLACEHOLDER} tokens in {messages}.\"\n            )\n\n        if len(videos) != num_video_tokens:\n            raise ValueError(\n                f\"The number of videos does not match the number of {VIDEO_PLACEHOLDER} tokens in {messages}.\"\n            )\n\n        if len(audios) != num_audio_tokens:\n            raise ValueError(\n                f\"The number of audios does not match the number of {AUDIO_PLACEHOLDER} tokens in {messages}.\"\n            )",
+   "content_hash": "2e34fb4dcb0cbc3d2ae24d85e8a072e50ffd5dceadeab47cfbd2d7b4e9c2caca",
+   "result": "`process_messages` calls `MMPluginMixin._validate_messages`",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/src/llamafactory/data/mm_plugin.py#L187-L214",
+   "absence": false
+  },
+  {
+   "id": "E035",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "no_test_found",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": null,
+   "start": null,
+   "end": null,
+   "excerpt": null,
+   "content_hash": null,
+   "result": "No test calling `process_messages`, `process_messages`, `process_messages` was found",
+   "raw": "",
+   "permalink": null,
+   "absence": true
+  },
+  {
+   "id": "E036",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "doc_excerpt",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "data/README.md",
+   "start": 316,
+   "end": 316,
+   "excerpt": "The number of images should be identical to the `<image>` tokens in the conversations.",
+   "content_hash": "44993d7f42d10166bfdf80d73b6dfc6a408b2ce2792b682bc4d153c38e0b80cb",
+   "result": "Documentation in data/README.md",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/data/README.md#L316",
+   "absence": false
+  },
+  {
+   "id": "E037",
+   "claim_ids": [
+    "C1"
+   ],
+   "kind": "doc_excerpt",
+   "tier": "E3",
+   "sha": "12ed792db96f0fc2be75f5ac6eea3532bb91ce11",
+   "path": "data/README_zh.md",
+   "start": 317,
+   "end": 336,
+   "excerpt": "```json\n[\n  {\n    \"conversations\": [\n      {\n        \"from\": \"human\",\n        \"value\": \"<image><image>用户指令\"\n      },\n      {\n        \"from\": \"gpt\",\n        \"value\": \"模型回答\"\n      }\n    ],\n    \"images\": [\n      \"图像路径（必填）\",\n      \"图像路径（必填）\"\n    ]\n  }\n]\n```",
+   "content_hash": "736522086abd8e5c89a54de6661325e755f6c9222106a8e9264d80d7bcfd702f",
+   "result": "Documentation in data/README_zh.md",
+   "raw": "",
+   "permalink": "https://github.com/hiyouga/LlamaFactory/blob/12ed792db96f0fc2be75f5ac6eea3532bb91ce11/data/README_zh.md#L317-L336",
+   "absence": false
+  }
+ ],
+ "missing_info": [
+  "the version or commit being used"
+ ],
+ "reply_draft": "Thanks for the report! To help us look into this, could you share:\n\n- the version or commit being used\n\nWith these details we can check the behaviour against the exact version you are using.",
+ "not_checked": [
+  "The code was not run (static check only).",
+  "The code version is approximate (main as of 2025-07-07); the reporter may have used another release."
+ ],
+ "notes": [],
+ "pipeline_version": "16",
+ "models": {
+  "reasoning": "openai/gpt-oss-20b"
+ },
+ "error": null
+}

@@ -1,0 +1,877 @@
+{
+  "run_id": "520993080d0d4001",
+  "status": "complete",
+  "target": {
+    "owner": "pydantic",
+    "repo": "pydantic",
+    "kind": "issue",
+    "number": 12072,
+    "url": "https://github.com/pydantic/pydantic/issues/12072"
+  },
+  "report_kind": null,
+  "stages": [
+    {
+      "stage": "fetch",
+      "status": "ok",
+      "reason": null,
+      "ms": 1306
+    },
+    {
+      "stage": "anchors",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    },
+    {
+      "stage": "snapshot",
+      "status": "ok",
+      "reason": null,
+      "ms": 2599
+    },
+    {
+      "stage": "missing_info",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    },
+    {
+      "stage": "index",
+      "status": "ok",
+      "reason": null,
+      "ms": 759
+    },
+    {
+      "stage": "reference_checks",
+      "status": "ok",
+      "reason": null,
+      "ms": 1016
+    },
+    {
+      "stage": "claims",
+      "status": "degraded",
+      "reason": "model unavailable (LLMUnavailable); using the title",
+      "ms": 1
+    },
+    {
+      "stage": "claim_checks",
+      "status": "ok",
+      "reason": null,
+      "ms": 1138
+    },
+    {
+      "stage": "reproduction",
+      "status": "ok",
+      "reason": null,
+      "ms": 5364
+    },
+    {
+      "stage": "adjudication",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    },
+    {
+      "stage": "validation",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    }
+  ],
+  "snapshot": {
+    "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+    "method": "release",
+    "reliability": "release-matched",
+    "ref_label": "v2.11.7",
+    "base_sha": null,
+    "head_sha": null
+  },
+  "summary_line": "Reported behaviour reproduced in the sandbox.",
+  "summary_tone": "supported",
+  "claims": [
+    {
+      "id": "C1",
+      "text": "error when calling model_dump on model with frozenset[SomeDataclass] or set[SomeDataClass]",
+      "type": "behavior",
+      "is_primary": true,
+      "source_span": "error when calling model_dump on model with frozenset[SomeDataclass] or set[SomeDataClass]",
+      "inferred": false,
+      "anchors": [
+        {
+          "kind": "traceback_frame",
+          "value": "/Users/xxx/myproject/a.py",
+          "line": 19,
+          "func": "<module>",
+          "context": null
+        },
+        {
+          "kind": "traceback_frame",
+          "value": "/Users/xxx/myproject/.venv/lib/python3.11/site-packages/pydantic/main.py",
+          "line": 463,
+          "func": "model_dump",
+          "context": null
+        },
+        {
+          "kind": "error",
+          "value": "TypeError: unhashable type: 'dict'",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "version",
+          "value": "2.11.7",
+          "line": null,
+          "func": null,
+          "context": "Pydantic & OS Version  ```Text pydantic version: "
+        },
+        {
+          "kind": "version",
+          "value": "2.33.2",
+          "line": null,
+          "func": null,
+          "context": "c version: 2.11.7         pydantic-core version: "
+        },
+        {
+          "kind": "version",
+          "value": "3.11.11",
+          "line": null,
+          "func": null,
+          "context": "release pgo=false                python version: "
+        },
+        {
+          "kind": "version",
+          "value": "19.1.6",
+          "line": null,
+          "func": null,
+          "context": "11 (main, Feb  5 2025, 18:58:27) [Clang "
+        },
+        {
+          "kind": "version",
+          "value": "14.7.2",
+          "line": null,
+          "func": null,
+          "context": " ]                      platform: macOS-"
+        },
+        {
+          "kind": "version",
+          "value": "4.14.0",
+          "line": null,
+          "func": null,
+          "context": "    related packages: typing_extensions-"
+        },
+        {
+          "kind": "version",
+          "value": "1.16.0",
+          "line": null,
+          "func": null,
+          "context": "packages: typing_extensions-4.14.0 mypy-"
+        },
+        {
+          "kind": "literal",
+          "value": ".model_dump()",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": ".model_dump(mode=\"json\")",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "set[MyDataClass]",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "list[MyDataClass]",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "/Users/xxx/myproject/a.py",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "python",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "/Users/xxx/myproject/.venv/lib/python3.11/site-packages/pydantic/main.py",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "dict",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "json",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "1",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "2",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "model_dump(mode='json')",
+          "line": null,
+          "func": null,
+          "context": null
+        },
+        {
+          "kind": "literal",
+          "value": "model_dump(mode='python')",
+          "line": null,
+          "func": null,
+          "context": null
+        }
+      ],
+      "condition": null,
+      "expected": null,
+      "observed": null
+    }
+  ],
+  "assessments": [
+    {
+      "claim_id": "C1",
+      "technical": "supported",
+      "verification": "reproduced",
+      "evidence_ids": [
+        "E032"
+      ],
+      "relations": {
+        "E032": "supports"
+      },
+      "explanation": "Running the reporter's snippet in an isolated sandbox produced the reported behaviour.",
+      "limitations": [],
+      "strength": "high",
+      "lean": null,
+      "decided_by": "rule",
+      "downgraded_reason": null,
+      "unconfirmed_reasoning": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E001",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "pydantic/config.py",
+      "start": 147,
+      "end": 155,
+      "excerpt": "      m = Model(x=1, y='2')\n      assert m.x == 1\n      assert m.y == 2\n      assert m.model_dump() == {'x': 1, 'y': 2}\n      assert m.__pydantic_extra__ == {'y': 2}\n      ```\n\n        1. The `= Field(init=False)` does not have any effect at runtime, but prevents the `__pydantic_extra__` field from\n           being included as a parameter to the model's `__init__` method by type checkers.",
+      "content_hash": "6b5d491826be41f4dc48e6ac15655c057438b1ac05070e1e9c04f8c605faa4ce",
+      "result": "Exact report text '.model_dump()' occurs in pydantic/config.py:150; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/pydantic/config.py#L147-L155",
+      "absence": false
+    },
+    {
+      "id": "E002",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "pydantic/config.py",
+      "start": 207,
+      "end": 215,
+      "excerpt": "    use_enum_values: bool\n    \"\"\"\n    Whether to populate models with the `value` property of enums, rather than the raw enum.\n    This may be useful if you want to serialize `model.model_dump()` later. Defaults to `False`.\n\n    !!! note\n        If you have an `Optional[Enum]` value that you set a default for, you need to use `validate_default=True`\n        for said Field to ensure that the `use_enum_values` flag takes effect on the default, as extracting an\n        enum's value occurs during validation, not serialization.",
+      "content_hash": "c033dda6047a92b7a7d2f9aefb08b4772a39633494562698fcaffd1a5710238e",
+      "result": "Exact report text '.model_dump()' occurs in pydantic/config.py:210; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/pydantic/config.py#L207-L215",
+      "absence": false
+    },
+    {
+      "id": "E003",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "build-docs.sh",
+      "start": 6,
+      "end": 14,
+      "excerpt": "set -e\nset -x\n\npython3 -V\n\npython3 -m pip install --user uv\npython3 -m uv sync --python 3.12 --group docs --frozen\npython3 -m uv run python -c 'import docs.plugins.main'\n",
+      "content_hash": "5186e268fecf6d6da1f8f2a67f839e52df33ec83918fc1b90ba752bb213de3a4",
+      "result": "Exact report text 'python' occurs in build-docs.sh:9; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/build-docs.sh#L6-L14",
+      "absence": false
+    },
+    {
+      "id": "E004",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "build-docs.sh",
+      "start": 8,
+      "end": 16,
+      "excerpt": "\npython3 -V\n\npython3 -m pip install --user uv\npython3 -m uv sync --python 3.12 --group docs --frozen\npython3 -m uv run python -c 'import docs.plugins.main'\n\n# Adding local symlinks gets nice source locations like\n#   pydantic_core/core_schema.py",
+      "content_hash": "383f71e538a80b30fe39a802082ddbb3fa15a2035e5d584f8fc1abfb49dbacdc",
+      "result": "Exact report text 'python' occurs in build-docs.sh:11; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/build-docs.sh#L8-L16",
+      "absence": false
+    },
+    {
+      "id": "E005",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": ".github/actions/people/people.py",
+      "start": 303,
+      "end": 311,
+      "excerpt": "    settings: Settings,\n    query: str,\n    after: Union[str, None] = None,\n) -> dict[str, Any]:\n    headers = {'Authorization': f'token {settings.input_token.get_secret_value()}'}\n    variables = {'after': after}\n    response = requests.post(\n        github_graphql_url,\n        headers=headers,",
+      "content_hash": "d79a7c40428311a4604bfcfe1d05818a4ea7d4e4771dfcc7031fae5146e4bea2",
+      "result": "Exact report text 'dict' occurs in .github/actions/people/people.py:306; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/.github/actions/people/people.py#L303-L311",
+      "absence": false
+    },
+    {
+      "id": "E006",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": ".github/actions/people/people.py",
+      "start": 363,
+      "end": 371,
+      "excerpt": "\n    commentors = Counter()\n    last_month_commentors = Counter()\n    authors: dict[str, Author] = {}\n\n    now = datetime.now(tz=timezone.utc)\n    one_month_ago = now - timedelta(days=30)\n\n    for issue in issue_nodes:",
+      "content_hash": "e305e30f2218464e07adecf111ef8a2ab3a81889d913fef830d29c7f2bd21a5b",
+      "result": "Exact report text 'dict' occurs in .github/actions/people/people.py:366; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/.github/actions/people/people.py#L363-L371",
+      "absence": false
+    },
+    {
+      "id": "E007",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": ".github/actions/people/people.py",
+      "start": 310,
+      "end": 318,
+      "excerpt": "        github_graphql_url,\n        headers=headers,\n        timeout=settings.request_timeout,\n        json={'query': query, 'variables': variables, 'operationName': 'Q'},\n    )\n    if response.status_code != 200:\n        logging.error(f'Response was not 200, after: {after}')\n        logging.error(response.text)\n        raise RuntimeError(response.text)",
+      "content_hash": "07eb5be88ca6aa1360d423b498e841f1f8e7392aed8072394b400549b33898a5",
+      "result": "Exact report text 'json' occurs in .github/actions/people/people.py:313; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/.github/actions/people/people.py#L310-L318",
+      "absence": false
+    },
+    {
+      "id": "E008",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": ".github/actions/people/people.py",
+      "start": 316,
+      "end": 324,
+      "excerpt": "        logging.error(f'Response was not 200, after: {after}')\n        logging.error(response.text)\n        raise RuntimeError(response.text)\n    data = response.json()\n    if 'errors' in data:\n        logging.error(f'Errors in response, after: {after}')\n        logging.error(data['errors'])\n        logging.error(response.text)\n        raise RuntimeError(response.text)",
+      "content_hash": "86b1100bd5bb0a1c9f1731029947b50e6174634e1510ce920bea7d8ecf3169ce",
+      "result": "Exact report text 'json' occurs in .github/actions/people/people.py:319; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/.github/actions/people/people.py#L316-L324",
+      "absence": false
+    },
+    {
+      "id": "E009",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": ".github/actions/people/people.py",
+      "start": 5,
+      "end": 13,
+      "excerpt": "\"\"\"\n\n# TODO: add docstrings to classes and functions (good first issue)\n# ruff: noqa: D101\n# ruff: noqa: D103\n\nimport logging\nimport subprocess\nimport sys",
+      "content_hash": "7bd5cc60c46b51c9d420533802768dfd276f7d81db9717d30b79563239063d24",
+      "result": "Exact report text '1' occurs in .github/actions/people/people.py:8; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/.github/actions/people/people.py#L5-L13",
+      "absence": false
+    },
+    {
+      "id": "E010",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": ".github/actions/people/people.py",
+      "start": 6,
+      "end": 14,
+      "excerpt": "\n# TODO: add docstrings to classes and functions (good first issue)\n# ruff: noqa: D101\n# ruff: noqa: D103\n\nimport logging\nimport subprocess\nimport sys\nfrom collections import Counter",
+      "content_hash": "fab58ecc591b3c63d1a109e453b675d9d709bd6c1d016b86f6569e7b851ec08a",
+      "result": "Exact report text '1' occurs in .github/actions/people/people.py:9; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/.github/actions/people/people.py#L6-L14",
+      "absence": false
+    },
+    {
+      "id": "E011",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": ".github/actions/people/people.py",
+      "start": 312,
+      "end": 320,
+      "excerpt": "        timeout=settings.request_timeout,\n        json={'query': query, 'variables': variables, 'operationName': 'Q'},\n    )\n    if response.status_code != 200:\n        logging.error(f'Response was not 200, after: {after}')\n        logging.error(response.text)\n        raise RuntimeError(response.text)\n    data = response.json()\n    if 'errors' in data:",
+      "content_hash": "79d57e951217028136973993bbfbcf45cac86e7eb9530b50e613bb51d5e2c905",
+      "result": "Exact report text '2' occurs in .github/actions/people/people.py:315; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/.github/actions/people/people.py#L312-L320",
+      "absence": false
+    },
+    {
+      "id": "E012",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": ".github/actions/people/people.py",
+      "start": 313,
+      "end": 321,
+      "excerpt": "        json={'query': query, 'variables': variables, 'operationName': 'Q'},\n    )\n    if response.status_code != 200:\n        logging.error(f'Response was not 200, after: {after}')\n        logging.error(response.text)\n        raise RuntimeError(response.text)\n    data = response.json()\n    if 'errors' in data:\n        logging.error(f'Errors in response, after: {after}')",
+      "content_hash": "db0ce529dc2a3f342988bfb70826727457d1ae7774461b8d77cbdcbe55eef2bd",
+      "result": "Exact report text '2' occurs in .github/actions/people/people.py:316; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/.github/actions/people/people.py#L313-L321",
+      "absence": false
+    },
+    {
+      "id": "E013",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "tests/test_computed_fields.py",
+      "start": 340,
+      "end": 348,
+      "excerpt": "\n    m = Model(x=1, y=2)\n    assert m.model_dump() == {'x': 1, 'y': 2, 'x_list': [1, 2], 'y_str': b'y=2'}\n    assert m.model_dump(mode='json') == {'x': 1, 'y': 2, 'x_list': [1, 2], 'y_str': 'y=2'}\n    assert m.model_dump_json() == '{\"x\":1,\"y\":2,\"x_list\":[1,2],\"y_str\":\"y=2\"}'\n\n\ndef test_expected_type_wrong():\n    class Model(BaseModel):",
+      "content_hash": "1f21e13ffaa3944d3dea7d00b3ccacf9d4010a5095ac6e64f2daad0c1e42f459",
+      "result": "Exact report text \"model_dump(mode='json')\" occurs in tests/test_computed_fields.py:343; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/tests/test_computed_fields.py#L340-L348",
+      "absence": false
+    },
+    {
+      "id": "E014",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_match",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "tests/test_computed_fields.py",
+      "start": 362,
+      "end": 370,
+      "excerpt": "        UserWarning,\n        match=r\"Expected `list\\[int\\]` - serialized value may not be as expected \\[input_value='not a list', input_type=str\\]\",\n    ):\n        m.model_dump(mode='json')\n    with pytest.warns(\n        UserWarning,\n        match=r\"Expected `list\\[int\\]` - serialized value may not be as expected \\[input_value='not a list', input_type=str\\]\",\n    ):\n        m.model_dump_json()",
+      "content_hash": "7547cd0d38963f2a55dacd3869b9edeaf0ce9e4511a2507eb0aed382939c037a",
+      "result": "Exact report text \"model_dump(mode='json')\" occurs in tests/test_computed_fields.py:365; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/tests/test_computed_fields.py#L362-L370",
+      "absence": false
+    },
+    {
+      "id": "E015",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_in_docs",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "docs/api/standard_library_types.md",
+      "start": 205,
+      "end": 213,
+      "excerpt": "\nprint(my_model.model_dump())  # (1)!\n#> {'x': Decimal('1.1'), 'y': Decimal('2.1')}\nprint(my_model.model_dump(mode='json'))  # (2)!\n#> {'x': '1.1', 'y': 2.1}\nprint(my_model.model_dump_json())  # (3)!\n#> {\"x\":\"1.1\",\"y\":2.1}\n```\n",
+      "content_hash": "7aff08f1bc11061c47347f3365552f32714c3aa2a078ee3b78d4027a00596b0b",
+      "result": "Exact report text \"model_dump(mode='json')\" occurs in docs/api/standard_library_types.md:208; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/docs/api/standard_library_types.md#L205-L213",
+      "absence": false
+    },
+    {
+      "id": "E016",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "literal_in_docs",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "docs/concepts/json_schema.md",
+      "start": 799,
+      "end": 807,
+      "excerpt": "value = CompressedString(dictionary={0: 'fox', 1: 'dog'}, text=[0, 0, 0, 1, 0])\n\"\"\"\n\nprint(MyModel(value='fox fox fox dog fox').model_dump(mode='json'))\n#> {'value': 'fox fox fox dog fox'}\n```\n\nSince Pydantic would not know how to generate a schema for `CompressedString`, if you call `handler(source)` in its\n`__get_pydantic_core_schema__` method you would get a `pydantic.errors.PydanticSchemaGenerationError` error.",
+      "content_hash": "9902ddfdb41664c102654d8f56392df2add48ee9b382df50d29a970746c71c8b",
+      "result": "Exact report text \"model_dump(mode='json')\" occurs in docs/concepts/json_schema.md:802; a text match alone does not establish the reported behaviour",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/docs/concepts/json_schema.md#L799-L807",
+      "absence": false
+    },
+    {
+      "id": "E017",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "frame_match",
+      "tier": "E2",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "pydantic/main.py",
+      "start": 463,
+      "end": 463,
+      "excerpt": "        return self.__pydantic_serializer__.to_python(",
+      "content_hash": "5ce7e6be72f17acdafc4cf9b36ab77b4888fc4cb4d03c2874c48f9260c3cf97a",
+      "result": "Traceback frame pydantic/main.py:463 matches the code at this version (in `model_dump`)",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/pydantic/main.py#L463",
+      "absence": false
+    },
+    {
+      "id": "E018",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "raise_site",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "pydantic/aliases.py",
+      "start": 120,
+      "end": 120,
+      "excerpt": "                raise TypeError(",
+      "content_hash": "f352fddc44f5aa6e9b74748e0c71fcd9d2dbcc1efb04848339d0f97cd80fc41f",
+      "result": "`_generate_alias` explicitly raises TypeError at pydantic/aliases.py:120",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/pydantic/aliases.py#L120",
+      "absence": false
+    },
+    {
+      "id": "E019",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "raise_site",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "pydantic/dataclasses.py",
+      "start": 305,
+      "end": 305,
+      "excerpt": "        raise TypeError(\"'InitVar' object is not callable\")",
+      "content_hash": "3c50629462a3768a36b35901b63185fd10bb24d52cc2f58ad57279f81642a2e2",
+      "result": "`_call_initvar` explicitly raises TypeError at pydantic/dataclasses.py:305",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/pydantic/dataclasses.py#L305",
+      "absence": false
+    },
+    {
+      "id": "E020",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "pydantic/main.py",
+      "start": 421,
+      "end": 477,
+      "excerpt": "    def model_dump(\n        self,\n        *,\n        mode: Literal['json', 'python'] | str = 'python',\n        include: IncEx | None = None,\n        exclude: IncEx | None = None,\n        context: Any | None = None,\n        by_alias: bool | None = None,\n        exclude_unset: bool = False,\n        exclude_defaults: bool = False,\n        exclude_none: bool = False,\n        round_trip: bool = False,\n        warnings: bool | Literal['none', 'warn', 'error'] = True,\n        fallback: Callable[[Any], Any] | None = None,\n        serialize_as_any: bool = False,\n    ) -> dict[str, Any]:\n        \"\"\"!!! abstract \"Usage Documentation\"\n            [`model_dump`](../concepts/serialization.md#modelmodel_dump)\n\n        Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.\n\n        Args:\n            mode: The mode in which `to_python` should run.\n                If mode is 'json', the output will only contain JSON serializable types.\n                If mode is 'python', the output may contain non-JSON-serializable Python objects.\n            include: A set of fields to include in the output.\n            exclude: A set of fields to exclude from the output.\n            context: Additional context to pass to the serializer.\n            by_alias: Whether to use the field's alias in the dictionary key if defined.\n            exclude_unset: Whether to exclude fields that have not been explicitly set.\n            exclude_defaults: Whether to exclude fields that are set to their default value.\n            exclude_none: Whether to exclude fields that have a value of `None`.\n            round_trip: If True, dumped values should be valid as input for non-idempotent types such as Json[T].\n            warnings: How to handle serialization errors. False/\"none\" ignores them, True/\"warn\" logs errors,\n                \"error\" raises a [`PydanticSerializationError`][pydantic_core.PydanticSerializationError].\n            fallback: A function to call when an unknown value is encountered. If not provided,\n                a [`PydanticSerializationError`][pydantic_core.PydanticSerializationError] error is raised.\n            serialize_as_any: Whether to serialize fields with duck-typing serialization behavior.\n\n        Returns:\n            A dictionary representation of the model.\n        \"\"\"\n        return self.__pydantic_serializer__.to_python(\n            self,\n            mode=mode,\n            by_alias=by_alias,\n            include=include,\n            exclude=exclude,\n            context=context,\n            exclude_unset=exclude_unset,\n            exclude_defaults=exclude_defaults,\n            exclude_none=exclude_none,\n            round_trip=round_trip,\n            warnings=warnings,\n            fallback=fallback,\n            serialize_as_any=serialize_as_any,\n        )",
+      "content_hash": "1592b992b29d9736ac709d56107722196312decd558ab7871369feb4a2f39d3e",
+      "result": "Implementation of `BaseModel.model_dump` (pydantic/main.py)",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/pydantic/main.py#L421-L477",
+      "absence": false
+    },
+    {
+      "id": "E021",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E4",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "pydantic/_internal/_generate_schema.py",
+      "start": 638,
+      "end": 647,
+      "excerpt": "    def _unknown_type_schema(self, obj: Any) -> CoreSchema:\n        raise PydanticSchemaGenerationError(\n            f'Unable to generate pydantic-core schema for {obj!r}. '\n            'Set `arbitrary_types_allowed=True` in the model_config to ignore this error'\n            ' or implement `__get_pydantic_core_schema__` on your type to fully support it.'\n            '\\n\\nIf you got this error by calling handler(<some type>) within'\n            ' `__get_pydantic_core_schema__` then you likely need to call'\n            ' `handler.generate_schema(<some type>)` since we do not call'\n            ' `__get_pydantic_core_schema__` on `<some type>` otherwise to avoid infinite recursion.'\n        )",
+      "content_hash": "005f08a4927af4fe2f80befb9150da0b0de746ad6738eee74cc149fe5c88ecf1",
+      "result": "Implementation of `GenerateSchema._unknown_type_schema` (pydantic/_internal/_generate_schema.py)",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/pydantic/_internal/_generate_schema.py#L638-L647",
+      "absence": false
+    },
+    {
+      "id": "E022",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E4",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "pydantic/fields.py",
+      "start": 630,
+      "end": 658,
+      "excerpt": "    def get_default(self, *, call_default_factory: bool = False, validated_data: dict[str, Any] | None = None) -> Any:\n        \"\"\"Get the default value.\n\n        We expose an option for whether to call the default_factory (if present), as calling it may\n        result in side effects that we want to avoid. However, there are times when it really should\n        be called (namely, when instantiating a model via `model_construct`).\n\n        Args:\n            call_default_factory: Whether to call the default factory or not.\n            validated_data: The already validated data to be passed to the default factory.\n\n        Returns:\n            The default value, calling the default factory if requested or `None` if not set.\n        \"\"\"\n        if self.default_factory is None:\n            return _utils.smart_deepcopy(self.default)\n        elif call_default_factory:\n            if self.default_factory_takes_validated_data:\n                fac = cast('Callable[[dict[str, Any]], Any]', self.default_factory)\n                if validated_data is None:\n                    raise ValueError(\n                        \"The default factory requires the 'validated_data' argument, which was not provided when calling 'get_default'.\"\n                    )\n                return fac(validated_data)\n            else:\n                fac = cast('Callable[[], Any]', self.default_factory)\n                return fac()\n        else:\n            return None",
+      "content_hash": "284e1d6ba6ce05bf7f74a97473981a1a4d098f1ca881c2fe0d371c0bf83895b7",
+      "result": "Implementation of `FieldInfo.get_default` (pydantic/fields.py)",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/pydantic/fields.py#L630-L658",
+      "absence": false
+    },
+    {
+      "id": "E023",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "caller",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "pydantic/main.py",
+      "start": 1269,
+      "end": 1291,
+      "excerpt": "    def dict(  # noqa: D102\n        self,\n        *,\n        include: IncEx | None = None,\n        exclude: IncEx | None = None,\n        by_alias: bool = False,\n        exclude_unset: bool = False,\n        exclude_defaults: bool = False,\n        exclude_none: bool = False,\n    ) -> Dict[str, Any]:  # noqa UP006\n        warnings.warn(\n            'The `dict` method is deprecated; use `model_dump` instead.',\n            category=PydanticDeprecatedSince20,\n            stacklevel=2,\n        )\n        return self.model_dump(\n            include=include,\n            exclude=exclude,\n            by_alias=by_alias,\n            exclude_unset=exclude_unset,\n            exclude_defaults=exclude_defaults,\n            exclude_none=exclude_none,\n        )",
+      "content_hash": "d335823daa1cf3958216878c6619306b41c6cfe4e60512f67c1691a2241af020",
+      "result": "`BaseModel.dict` calls `model_dump`",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/pydantic/main.py#L1269-L1291",
+      "absence": false
+    },
+    {
+      "id": "E024",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "caller",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "pydantic/deprecated/copy_internals.py",
+      "start": 124,
+      "end": 183,
+      "excerpt": "def _get_value(\n    cls: type[BaseModel],\n    v: Any,\n    to_dict: bool,\n    by_alias: bool,\n    include: AbstractSetIntStr | MappingIntStrAny | None,\n    exclude: AbstractSetIntStr | MappingIntStrAny | None,\n    exclude_unset: bool,\n    exclude_defaults: bool,\n    exclude_none: bool,\n) -> Any:\n    from .. import BaseModel\n\n    if isinstance(v, BaseModel):\n        if to_dict:\n            return v.model_dump(\n                by_alias=by_alias,\n                exclude_unset=exclude_unset,\n                exclude_defaults=exclude_defaults,\n                include=include,  # type: ignore\n                exclude=exclude,  # type: ignore\n                exclude_none=exclude_none,\n            )\n        else:\n            return v.copy(include=include, exclude=exclude)\n\n    value_exclude = _utils.ValueItems(v, exclude) if exclude else None\n    value_include = _utils.ValueItems(v, include) if include else None\n\n    if isinstance(v, dict):\n        return {\n            k_: _get_value(\n                cls,\n                v_,\n                to_dict=to_dict,\n                by_alias=by_alias,\n                exclude_unset=exclude_unset,\n                exclude_defaults=exclude_defaults,\n                include=value_include and value_include.for_element(k_),\n                exclude=value_exclude and value_exclude.for_element(k_),\n                exclude_none=exclude_none,\n            )\n            for k_, v_ in v.items()\n            if (not value_exclude or not value_exclude.is_excluded(k_))\n            and (not value_include or value_include.is_included(k_))\n        }\n\n    elif _utils.sequence_like(v):\n        seq_args = (\n            _get_value(\n                cls,\n                v_,\n                to_dict=to_dict,\n                by_alias=by_alias,\n                exclude_unset=exclude_unset,\n                exclude_defaults=exclude_defaults,\n                include=value_include and value_include.for_element(i),\n                exclude=value_exclude and value_exclude.for_element(i),\n                exclude_none=exclude_none,\n            )",
+      "content_hash": "e4b886e6e932915b35a037968cee5998ecfe6c10631d02ecaf64ea483b7456db",
+      "result": "`_get_value` calls `model_dump`",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/pydantic/deprecated/copy_internals.py#L124-L183",
+      "absence": false
+    },
+    {
+      "id": "E025",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "caller",
+      "tier": "E4",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "pydantic/_internal/_generate_schema.py",
+      "start": 1011,
+      "end": 1070,
+      "excerpt": "    def match_type(self, obj: Any) -> core_schema.CoreSchema:  # noqa: C901\n        \"\"\"Main mapping of types to schemas.\n\n        The general structure is a series of if statements starting with the simple cases\n        (non-generic primitive types) and then handling generics and other more complex cases.\n\n        Each case either generates a schema directly, calls into a public user-overridable method\n        (like `GenerateSchema.tuple_variable_schema`) or calls into a private method that handles some\n        boilerplate before calling into the user-facing method (e.g. `GenerateSchema._tuple_schema`).\n\n        The idea is that we'll evolve this into adding more and more user facing methods over time\n        as they get requested and we figure out what the right API for them is.\n        \"\"\"\n        if obj is str:\n            return core_schema.str_schema()\n        elif obj is bytes:\n            return core_schema.bytes_schema()\n        elif obj is int:\n            return core_schema.int_schema()\n        elif obj is float:\n            return core_schema.float_schema()\n        elif obj is bool:\n            return core_schema.bool_schema()\n        elif obj is complex:\n            return core_schema.complex_schema()\n        elif typing_objects.is_any(obj) or obj is object:\n            return core_schema.any_schema()\n        elif obj is datetime.date:\n            return core_schema.date_schema()\n        elif obj is datetime.datetime:\n            return core_schema.datetime_schema()\n        elif obj is datetime.time:\n            return core_schema.time_schema()\n        elif obj is datetime.timedelta:\n            return core_schema.timedelta_schema()\n        elif obj is Decimal:\n            return core_schema.decimal_schema()\n        elif obj is UUID:\n            return core_schema.uuid_schema()\n        elif obj is Url:\n            return core_schema.url_schema()\n        elif obj is Fraction:\n            return self._fraction_schema()\n        elif obj is MultiHostUrl:\n            return core_schema.multi_host_url_schema()\n        elif obj is None or obj is _typing_extra.NoneType:\n            return core_schema.none_schema()\n        elif obj in IP_TYPES:\n            return self._ip_schema(obj)\n        elif obj in TUPLE_TYPES:\n            return self._tuple_schema(obj)\n        elif obj in LIST_TYPES:\n            return self._list_schema(Any)\n        elif obj in SET_TYPES:\n            return self._set_schema(Any)\n        elif obj in FROZEN_SET_TYPES:\n            return self._frozenset_schema(Any)\n        elif obj in SEQUENCE_TYPES:\n            return self._sequence_schema(Any)\n        elif obj in ITERABLE_TYPES:",
+      "content_hash": "452b8b5f12f7ce84275749613065463895b1b5a3d66b42c74c7b14d554c3531c",
+      "result": "`GenerateSchema.match_type` calls `_unknown_type_schema`",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/pydantic/_internal/_generate_schema.py#L1011-L1070",
+      "absence": false
+    },
+    {
+      "id": "E026",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "caller",
+      "tier": "E4",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "pydantic/_internal/_generate_schema.py",
+      "start": 1129,
+      "end": 1178,
+      "excerpt": "    def _match_generic_type(self, obj: Any, origin: Any) -> CoreSchema:  # noqa: C901\n        # Need to handle generic dataclasses before looking for the schema properties because attribute accesses\n        # on _GenericAlias delegate to the origin type, so lose the information about the concrete parametrization\n        # As a result, currently, there is no way to cache the schema for generic dataclasses. This may be possible\n        # to resolve by modifying the value returned by `Generic.__class_getitem__`, but that is a dangerous game.\n        if dataclasses.is_dataclass(origin):\n            return self._dataclass_schema(obj, origin)  # pyright: ignore[reportArgumentType]\n        if _typing_extra.is_namedtuple(origin):\n            return self._namedtuple_schema(obj, origin)\n\n        schema = self._generate_schema_from_get_schema_method(origin, obj)\n        if schema is not None:\n            return schema\n\n        if typing_objects.is_typealiastype(origin):\n            return self._type_alias_type_schema(obj)\n        elif is_union_origin(origin):\n            return self._union_schema(obj)\n        elif origin in TUPLE_TYPES:\n            return self._tuple_schema(obj)\n        elif origin in LIST_TYPES:\n            return self._list_schema(self._get_first_arg_or_any(obj))\n        elif origin in SET_TYPES:\n            return self._set_schema(self._get_first_arg_or_any(obj))\n        elif origin in FROZEN_SET_TYPES:\n            return self._frozenset_schema(self._get_first_arg_or_any(obj))\n        elif origin in DICT_TYPES:\n            return self._dict_schema(*self._get_first_two_args_or_any(obj))\n        elif origin in PATH_TYPES:\n            return self._path_schema(origin, self._get_first_arg_or_any(obj))\n        elif origin in DEQUE_TYPES:\n            return self._deque_schema(self._get_first_arg_or_any(obj))\n        elif origin in MAPPING_TYPES:\n            return self._mapping_schema(origin, *self._get_first_two_args_or_any(obj))\n        elif origin in COUNTER_TYPES:\n            return self._mapping_schema(origin, self._get_first_arg_or_any(obj), int)\n        elif is_typeddict(origin):\n            return self._typed_dict_schema(obj, origin)\n        elif origin in TYPE_TYPES:\n            return self._subclass_schema(obj)\n        elif origin in SEQUENCE_TYPES:\n            return self._sequence_schema(self._get_first_arg_or_any(obj))\n        elif origin in ITERABLE_TYPES:\n            return self._iterable_schema(obj)\n        elif origin in PATTERN_TYPES:\n            return self._pattern_schema(obj)\n\n        if self._arbitrary_types:\n            return self._arbitrary_type_schema(origin)\n        return self._unknown_type_schema(obj)",
+      "content_hash": "bb8bba28a68919c9b712fdaa1c5f7b6c04e6928938439dc8f8d7ea0b900d98b1",
+      "result": "`GenerateSchema._match_generic_type` calls `_unknown_type_schema`",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/pydantic/_internal/_generate_schema.py#L1129-L1178",
+      "absence": false
+    },
+    {
+      "id": "E027",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "test_found",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "tests/test_aliases.py",
+      "start": 23,
+      "end": 36,
+      "excerpt": "def test_alias_generator():\n    def to_camel(string: str):\n        return ''.join(x.capitalize() for x in string.split('_'))\n\n    class MyModel(BaseModel):\n        model_config = ConfigDict(alias_generator=to_camel)\n        a: list[str] = None\n        foo_bar: str\n\n    data = {'A': ['foo', 'bar'], 'FooBar': 'foobar'}\n    v = MyModel(**data)\n    assert v.a == ['foo', 'bar']\n    assert v.foo_bar == 'foobar'\n    assert v.model_dump(by_alias=True) == data",
+      "content_hash": "7741e7ce5070d0ec96907200ceed17ce521cf5bab7b9cc5f91559dcb93609c41",
+      "result": "Test `test_alias_generator` calls `model_dump`",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/tests/test_aliases.py#L23-L36",
+      "absence": false
+    },
+    {
+      "id": "E028",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "test_found",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "tests/test_aliases.py",
+      "start": 121,
+      "end": 137,
+      "excerpt": "def test_pop_by_field_name():\n    class Model(BaseModel):\n        model_config = ConfigDict(extra='forbid', validate_by_name=True)\n        last_updated_by: Optional[str] = Field(None, alias='lastUpdatedBy')\n\n    assert Model(lastUpdatedBy='foo').model_dump() == {'last_updated_by': 'foo'}\n    assert Model(last_updated_by='foo').model_dump() == {'last_updated_by': 'foo'}\n    with pytest.raises(ValidationError) as exc_info:\n        Model(lastUpdatedBy='foo', last_updated_by='bar')\n    assert exc_info.value.errors(include_url=False) == [\n        {\n            'input': 'bar',\n            'loc': ('last_updated_by',),\n            'msg': 'Extra inputs are not permitted',\n            'type': 'extra_forbidden',\n        }\n    ]",
+      "content_hash": "58d29bd8136beea82db7e07727685a276ed87b295697488193094f02773d111c",
+      "result": "Test `test_pop_by_field_name` calls `model_dump`",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/tests/test_aliases.py#L121-L137",
+      "absence": false
+    },
+    {
+      "id": "E029",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "doc_excerpt",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "docs/errors/validation_errors.md",
+      "start": 1595,
+      "end": 1595,
+      "excerpt": "This error is raised when an unhashable value is validated against a [`set`][] or a [`frozenset`][]:",
+      "content_hash": "016208e33f6f657d7257d7d9c4f7a99de6bd76ae8f71577fcd5275771e9f27a8",
+      "result": "Documentation in docs/errors/validation_errors.md",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/docs/errors/validation_errors.md#L1595",
+      "absence": false
+    },
+    {
+      "id": "E030",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "doc_excerpt",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "docs/api/standard_library_types.md",
+      "start": 424,
+      "end": 426,
+      "excerpt": "class Model(BaseModel):\n    simple_frozenset: Optional[frozenset] = None\n    frozenset_of_ints: Optional[FrozenSet[int]] = None",
+      "content_hash": "4e3e49d63d54a64ba1c93fcd8d480f922097120e49b489bbf6014b305b3e1e79",
+      "result": "Documentation in docs/api/standard_library_types.md",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/docs/api/standard_library_types.md#L424-L426",
+      "absence": false
+    },
+    {
+      "id": "E031",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "docstring",
+      "tier": "E3",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": "pydantic/main.py",
+      "start": 421,
+      "end": 421,
+      "excerpt": "    def model_dump(",
+      "content_hash": "50d417df750e64c7842c090941078815331179252ad27399298a7557ba585201",
+      "result": "Docstring of `model_dump`: !!! abstract \"Usage Documentation\"\n    [`model_dump`](../concepts/serialization.md#modelmodel_dump)\n\nGenerate a dictionary representation of the model, optionally specifying which fields to include or",
+      "raw": "",
+      "permalink": "https://github.com/pydantic/pydantic/blob/5f033e46c54fea1b59b6894d6527daf49475e690/pydantic/main.py#L421",
+      "absence": false
+    },
+    {
+      "id": "E032",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "sandbox_run",
+      "tier": "E1",
+      "sha": "5f033e46c54fea1b59b6894d6527daf49475e690",
+      "path": null,
+      "start": null,
+      "end": null,
+      "excerpt": null,
+      "content_hash": null,
+      "result": "Both runs raised TypeError: unhashable type: 'dict' (pydantic==2.11.7; python:3.11-slim; reporter snippet 2)",
+      "raw": "{\"package\": \"pydantic\", \"version\": \"2.11.7\", \"image\": \"python:3.11-slim\", \"snippet_index\": 2, \"runs\": [{\"exception\": \"TypeError\", \"message\": \"unhashable type: 'dict'\", \"stdout\": \"values=frozenset({MyDataclass(x='1'), MyDataclass(x='2')})\\nmodel_dump(mode='json')\\n{'values': [{'x': '1'}, {'x': '2'}]}\\nmodel_dump(mode='python')\\n\"}, {\"exception\": \"TypeError\", \"message\": \"unhashable type: 'dict'\", \"stdout\": \"values=frozenset({MyDataclass(x='1'), MyDataclass(x='2')})\\nmodel_dump(mode='json')\\n{'values': [{'x': '1'}, {'x': '2'}]}\\nmodel_dump(mode='python')\\n\"}]}",
+      "permalink": null,
+      "absence": false
+    }
+  ],
+  "missing_info": [],
+  "reply_draft": null,
+  "not_checked": [],
+  "notes": [
+    "Inference is restricted to cached GPT-OSS responses. Cache misses are shown as degraded model stages; no new model calls were made.",
+    "Large repository (~462 MB): only source and documentation files were checked out.",
+    "Sandbox scope: Uses the complete Example Code block, unchanged, and the Python/package versions named in the report."
+  ],
+  "pipeline_version": "21",
+  "models": {
+    "reasoning": "openai/gpt-oss-20b"
+  },
+  "error": null
+}

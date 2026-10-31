@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "panel-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "extension", "run", "preview:panel", "--", "--open", "false"],
+      "port": 5174
+    },
+    {
+      "name": "backend",
+      "runtimeExecutable": "backend/.venv/bin/uvicorn",
+      "runtimeArgs": ["--app-dir", "backend", "app.main:app", "--port", "8787"],
+      "port": 8787
+    }
+  ]
+}

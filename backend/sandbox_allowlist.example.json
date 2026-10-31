@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://github.com/pallets/flask/issues/6177",
+    "package": "Flask",
+    "version": "3.1.2",
+    "python": "3.11",
+    "snippet_index": 0,
+    "notes": "The report describes a local development checkout. This demonstration checks the published Flask 3.1.2 package, not that unpinned checkout. Reproducing the exception does not establish a defect."
+  },
+  {
+    "url": "https://github.com/pydantic/pydantic/issues/12072",
+    "package": "pydantic",
+    "version": "2.11.7",
+    "python": "3.11",
+    "snippet_index": 2,
+    "notes": "Uses the complete Example Code block, unchanged, and the Python/package versions named in the report."
+  }
+]

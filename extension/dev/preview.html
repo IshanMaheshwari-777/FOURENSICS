@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FOURENSICS panel preview</title>
+  <style>
+    body { font: 14px/1.5 system-ui, sans-serif; margin: 0; padding: 24px; background: #f6f8fa; color: #1f2328; }
+    body.dark { background: #0d1117; color: #f0f6fc; }
+    .bar { display: flex; gap: 8px; flex-wrap: wrap; }
+    textarea { width: min(600px, 100%); height: 120px; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <h1>FOURENSICS panel preview</h1>
+  <p id="source" role="status">Showing the bundled mock example.</p>
+  <div class="bar">
+    <button data-state="complete">Complete</button>
+    <button data-state="running">Running</button>
+    <button data-state="error">Backend down</button>
+    <button id="theme">Toggle dark</button>
+    <label>Offline example:
+      <select id="scenario">
+        <option value="" disabled>Choose an offline example</option>
+        <option value="complete" selected>Mixed findings (synthetic)</option>
+        <option value="saved">Saved real PR assessment</option>
+        <option value="partial">Quota blocked (synthetic)</option>
+        <option value="long">Long paths and claims (synthetic)</option>
+        <option value="reproduced">Sandbox result (synthetic)</option>
+        <option value="empty">No claims (synthetic)</option>
+        <option value="feature">Feature request (synthetic)</option>
+      </select>
+    </label>
+  </div>
+  <div class="bar" style="margin-top:8px">
+    <input id="backend-url" size="28" value="http://localhost:8787" aria-label="Backend URL">
+    <input id="live-url" size="60" value="https://github.com/OWASP/OpenCRE/issues/1176" aria-label="Issue or PR URL">
+    <button id="live">Load live assessment</button>
+  </div>
+  <p><label>Inspect a saved real assessment: <input id="saved" type="file" accept="application/json,.json"></label></p>
+  <p>Stand-in for GitHub's comment box (the "Draft a reply" button fills it):</p>
+  <textarea id="new_comment_field" aria-label="Add a comment"></textarea>
+  <script type="module" src="./preview.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FOURENSICS settings</title>
+  <style>
+    body { font: 14px/1.5 system-ui, sans-serif; max-width: 520px; margin: 32px auto; padding: 0 16px; color: #1f2328; }
+    label { display: block; margin: 16px 0 4px; font-weight: 600; }
+    input[type=text] { width: 100%; padding: 6px 8px; font: inherit; border: 1px solid #d0d7de; border-radius: 6px; }
+    .row { display: flex; gap: 8px; align-items: center; margin-top: 12px; }
+    button { padding: 6px 14px; font: inherit; border-radius: 6px; border: 1px solid #1f883d; background: #1f883d; color: #fff; cursor: pointer; }
+    #status { color: #57606a; margin-left: 8px; }
+    p.hint { color: #57606a; margin: 4px 0 0; }
+  </style>
+</head>
+<body>
+  <h1>FOURENSICS</h1>
+  <label for="backend">Backend URL</label>
+  <input id="backend" type="text" placeholder="http://localhost:8787">
+  <p class="hint">Where the analysis backend runs. Other hosts ask for permission when saved.</p>
+  <div class="row"><input id="mock" type="checkbox"><label for="mock" style="margin:0;font-weight:400">Mock mode (show the bundled example result instead of calling the backend)</label></div>
+  <div class="row"><input id="collapsed" type="checkbox"><label for="collapsed" style="margin:0;font-weight:400">Start the panel collapsed</label></div>
+  <div class="row"><button id="save">Save</button><span id="status"></span></div>
+  <script src="options.js"></script>
+</body>
+</html>

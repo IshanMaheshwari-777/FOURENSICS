@@ -1,0 +1,406 @@
+{
+  "bug_with_wrong_explanation": {
+    "assessments": [
+      {
+        "cited": [
+          "code_excerpt:supports",
+          "lookup_sites:supports"
+        ],
+        "claim": "C1",
+        "decided_by": "model",
+        "downgraded": true,
+        "lean": null,
+        "strength": "medium",
+        "technical": "supported",
+        "verification": "not_attempted"
+      },
+      {
+        "cited": [
+          "guards_present:contradicts"
+        ],
+        "claim": "C2",
+        "decided_by": "model",
+        "downgraded": false,
+        "lean": null,
+        "strength": "medium",
+        "technical": "contradicted",
+        "verification": "not_attempted"
+      },
+      {
+        "cited": [],
+        "claim": "C3",
+        "decided_by": "model",
+        "downgraded": true,
+        "lean": "contradicted",
+        "strength": "none",
+        "technical": "inconclusive",
+        "verification": "not_attempted"
+      }
+    ],
+    "blockers": [],
+    "claims": [
+      {
+        "id": "C1",
+        "primary": true,
+        "text": "parse_file() crashes with KeyError: 'col' when the header has an empty column",
+        "type": "behavior"
+      },
+      {
+        "id": "C2",
+        "primary": false,
+        "text": "validate() in csvtool/checks.py does not handle None",
+        "type": "implementation"
+      },
+      {
+        "id": "C3",
+        "primary": false,
+        "text": "The crash is caused by validate() not handling None",
+        "type": "cause"
+      }
+    ],
+    "evidence_kinds": {
+      "callee": 1,
+      "caller": 1,
+      "code_excerpt": 3,
+      "doc_excerpt": 3,
+      "docstring": 2,
+      "error_text_found": 2,
+      "frame_match": 1,
+      "guard_not_found": 1,
+      "guards_present": 2,
+      "literal_in_docs": 1,
+      "literal_match": 2,
+      "lookup_sites": 1,
+      "path_found": 1,
+      "symbol_found": 2,
+      "test_found": 1
+    },
+    "has_reply_draft": false,
+    "missing_info": [],
+    "not_checked": [
+      "The code was not run (static check only)."
+    ],
+    "report_kind": "defect",
+    "snapshot": {
+      "method": "release",
+      "ref_label": "v2.3.1",
+      "reliability": "release-matched"
+    },
+    "stages": [
+      "fetch:ok",
+      "anchors:ok",
+      "snapshot:ok",
+      "missing_info:ok",
+      "index:ok",
+      "reference_checks:ok",
+      "claims:ok",
+      "claim_checks:ok",
+      "reproduction:skipped",
+      "adjudication:ok",
+      "validation:ok"
+    ],
+    "status": "complete",
+    "summary_line": "The main problem is backed by the code, but part of the explanation doesn't match. Review recommended.",
+    "summary_tone": "mixed"
+  },
+  "fabricated_references": {
+    "assessments": [
+      {
+        "cited": [
+          "frame_line_out_of_range:contradicts"
+        ],
+        "claim": "C1",
+        "decided_by": "rule",
+        "downgraded": false,
+        "lean": null,
+        "strength": "high",
+        "technical": "contradicted",
+        "verification": "not_attempted"
+      },
+      {
+        "cited": [
+          "path_absent:contradicts",
+          "symbol_absent:contradicts"
+        ],
+        "claim": "C2",
+        "decided_by": "rule",
+        "downgraded": false,
+        "lean": null,
+        "strength": "high",
+        "technical": "contradicted",
+        "verification": "not_attempted"
+      }
+    ],
+    "blockers": [],
+    "claims": [
+      {
+        "id": "C1",
+        "primary": true,
+        "text": "parse_stream() never closes the file handle",
+        "type": "behavior"
+      },
+      {
+        "id": "C2",
+        "primary": false,
+        "text": "parse_stream() exists in csvtool/stream.py",
+        "type": "existence"
+      }
+    ],
+    "evidence_kinds": {
+      "caller": 2,
+      "code_excerpt": 3,
+      "doc_excerpt": 2,
+      "docstring": 1,
+      "error_text_absent": 1,
+      "frame_line_out_of_range": 1,
+      "path_absent": 1,
+      "symbol_absent": 1,
+      "test_found": 1
+    },
+    "has_reply_draft": true,
+    "missing_info": [
+      "the environment (runtime or language version, and operating system)"
+    ],
+    "not_checked": [
+      "The code was not run (static check only)."
+    ],
+    "report_kind": "defect",
+    "snapshot": {
+      "method": "release",
+      "ref_label": "v2.3.1",
+      "reliability": "release-matched"
+    },
+    "stages": [
+      "fetch:ok",
+      "anchors:ok",
+      "snapshot:ok",
+      "missing_info:ok",
+      "index:ok",
+      "reference_checks:ok",
+      "claims:ok",
+      "claim_checks:ok",
+      "reproduction:skipped",
+      "adjudication:ok",
+      "validation:ok"
+    ],
+    "status": "complete",
+    "summary_line": "The code disagrees with the main claim.",
+    "summary_tone": "contradicted"
+  },
+  "model_unavailable": {
+    "assessments": [
+      {
+        "cited": [
+          "frame_match:context",
+          "guards_present:context",
+          "path_found:context",
+          "symbol_found:context",
+          "symbol_found:context"
+        ],
+        "claim": "C1",
+        "decided_by": "none",
+        "downgraded": false,
+        "lean": null,
+        "strength": "none",
+        "technical": "inconclusive",
+        "verification": "not_attempted"
+      }
+    ],
+    "blockers": [
+      "model_analysis_incomplete",
+      "model_analysis_incomplete"
+    ],
+    "claims": [
+      {
+        "id": "C1",
+        "primary": true,
+        "text": "parse_file crashes with KeyError on an empty column",
+        "type": "behavior"
+      }
+    ],
+    "evidence_kinds": {
+      "callee": 1,
+      "caller": 1,
+      "code_excerpt": 2,
+      "doc_excerpt": 2,
+      "docstring": 2,
+      "error_text_found": 2,
+      "frame_match": 1,
+      "guards_present": 2,
+      "literal_in_docs": 1,
+      "literal_match": 2,
+      "lookup_sites": 1,
+      "path_found": 1,
+      "symbol_found": 2,
+      "test_found": 1
+    },
+    "has_reply_draft": false,
+    "missing_info": [],
+    "not_checked": [
+      "The code was not run (static check only)."
+    ],
+    "report_kind": null,
+    "snapshot": {
+      "method": "release",
+      "ref_label": "v2.3.1",
+      "reliability": "release-matched"
+    },
+    "stages": [
+      "fetch:ok",
+      "anchors:ok",
+      "snapshot:ok",
+      "missing_info:ok",
+      "index:ok",
+      "reference_checks:ok",
+      "claims:degraded",
+      "claim_checks:ok",
+      "reproduction:skipped",
+      "adjudication:degraded",
+      "validation:ok"
+    ],
+    "status": "partial",
+    "summary_line": "Analysis incomplete: model interpretation unavailable. 21 evidence items collected; main claim unverified.",
+    "summary_tone": "neutral"
+  },
+  "pull_request": {
+    "assessments": [
+      {
+        "cited": [
+          "pr_diff_touches_claim:supports"
+        ],
+        "claim": "C1",
+        "decided_by": "model",
+        "downgraded": false,
+        "lean": null,
+        "strength": "medium",
+        "technical": "supported",
+        "verification": "not_attempted"
+      },
+      {
+        "cited": [
+          "pr_tests_changed:supports"
+        ],
+        "claim": "C2",
+        "decided_by": "rule",
+        "downgraded": false,
+        "lean": null,
+        "strength": "high",
+        "technical": "supported",
+        "verification": "not_attempted"
+      }
+    ],
+    "blockers": [],
+    "claims": [
+      {
+        "id": "C1",
+        "primary": true,
+        "text": "Empty header cells no longer raise KeyError in parse_file()",
+        "type": "pr_fix"
+      },
+      {
+        "id": "C2",
+        "primary": false,
+        "text": "Adds a regression test",
+        "type": "pr_test"
+      }
+    ],
+    "evidence_kinds": {
+      "callee": 1,
+      "caller": 1,
+      "code_excerpt": 2,
+      "doc_excerpt": 3,
+      "docstring": 1,
+      "guard_not_found": 1,
+      "guards_present": 1,
+      "lookup_sites": 1,
+      "pr_changed_symbol": 1,
+      "pr_ci_unavailable": 1,
+      "pr_diff": 2,
+      "pr_diff_touches_claim": 1,
+      "pr_tests_changed": 1,
+      "symbol_found": 1,
+      "test_found": 2
+    },
+    "has_reply_draft": false,
+    "missing_info": [],
+    "not_checked": [
+      "PR code was not run; CI results are reported as GitHub shows them."
+    ],
+    "report_kind": "pr",
+    "snapshot": {
+      "method": "pr",
+      "ref_label": "PR #7 head <sha>",
+      "reliability": "exact"
+    },
+    "stages": [
+      "fetch:ok",
+      "anchors:ok",
+      "snapshot:ok",
+      "missing_info:ok",
+      "index:ok",
+      "reference_checks:ok",
+      "claims:ok",
+      "claim_checks:ok",
+      "reproduction:skipped",
+      "adjudication:ok",
+      "validation:ok"
+    ],
+    "status": "complete",
+    "summary_line": "The diff backs the main claim.",
+    "summary_tone": "supported"
+  },
+  "question_not_a_bug": {
+    "assessments": [
+      {
+        "cited": [],
+        "claim": "C1",
+        "decided_by": "model",
+        "downgraded": false,
+        "lean": null,
+        "strength": "none",
+        "technical": "inconclusive",
+        "verification": "not_attempted"
+      }
+    ],
+    "blockers": [],
+    "claims": [
+      {
+        "id": "C1",
+        "primary": true,
+        "text": "User asks how to parse tab-separated files",
+        "type": "behavior"
+      }
+    ],
+    "evidence_kinds": {
+      "doc_excerpt": 1
+    },
+    "has_reply_draft": false,
+    "missing_info": [],
+    "not_checked": [
+      "The code was not run (static check only).",
+      "The code version is approximate (main as of 2025-03-12); the reporter may have used another release."
+    ],
+    "report_kind": "question",
+    "snapshot": {
+      "method": "date",
+      "ref_label": "main as of 2025-03-12",
+      "reliability": "inferred"
+    },
+    "stages": [
+      "fetch:ok",
+      "anchors:ok",
+      "snapshot:ok",
+      "missing_info:ok",
+      "index:ok",
+      "reference_checks:ok",
+      "claims:ok",
+      "claim_checks:ok",
+      "reproduction:skipped",
+      "adjudication:ok",
+      "validation:ok"
+    ],
+    "status": "complete",
+    "summary_line": "Looks like a question, not a bug report.",
+    "summary_tone": "not_defect"
+  }
+}

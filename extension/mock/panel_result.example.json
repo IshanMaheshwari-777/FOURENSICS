@@ -1,0 +1,660 @@
+{
+  "run_id": "example-run",
+  "status": "complete",
+  "target": {
+    "owner": "acme",
+    "repo": "csvtool",
+    "kind": "issue",
+    "number": 42,
+    "url": "https://github.com/acme/csvtool/issues/42"
+  },
+  "report_kind": "defect",
+  "stages": [
+    {
+      "stage": "fetch",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    },
+    {
+      "stage": "anchors",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    },
+    {
+      "stage": "snapshot",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    },
+    {
+      "stage": "missing_info",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    },
+    {
+      "stage": "index",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    },
+    {
+      "stage": "reference_checks",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    },
+    {
+      "stage": "claims",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    },
+    {
+      "stage": "claim_checks",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    },
+    {
+      "stage": "reproduction",
+      "status": "skipped",
+      "reason": "skipped",
+      "ms": 0
+    },
+    {
+      "stage": "adjudication",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    },
+    {
+      "stage": "validation",
+      "status": "ok",
+      "reason": null,
+      "ms": 0
+    }
+  ],
+  "snapshot": {
+    "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+    "method": "release",
+    "reliability": "release-matched",
+    "ref_label": "v2.3.1",
+    "base_sha": null,
+    "head_sha": null
+  },
+  "summary_line": "The main problem is backed by the code, but part of the explanation doesn't match. Review recommended.",
+  "summary_tone": "mixed",
+  "claims": [
+    {
+      "id": "C1",
+      "text": "parse_file() crashes with KeyError: 'col' when the header has an empty column",
+      "type": "behavior",
+      "is_primary": true,
+      "source_span": "`parse_file()` crashes when the CSV header has an empty column",
+      "inferred": false,
+      "anchors": [
+        {
+          "kind": "traceback_frame",
+          "value": "repro.py",
+          "line": 2,
+          "func": "<module>"
+        },
+        {
+          "kind": "traceback_frame",
+          "value": "/usr/lib/python3.11/site-packages/csvtool/parser.py",
+          "line": 20,
+          "func": "parse_file"
+        },
+        {
+          "kind": "error",
+          "value": "KeyError: 'col'",
+          "line": null,
+          "func": null
+        },
+        {
+          "kind": "version",
+          "value": "2.3.1",
+          "line": null,
+          "func": null
+        },
+        {
+          "kind": "symbol",
+          "value": "parse_file",
+          "line": null,
+          "func": null
+        },
+        {
+          "kind": "path",
+          "value": "repro.py",
+          "line": null,
+          "func": null
+        }
+      ],
+      "condition": "header has an empty column",
+      "expected": null,
+      "observed": "KeyError: 'col'"
+    },
+    {
+      "id": "C2",
+      "text": "validate() in csvtool/checks.py does not handle None",
+      "type": "implementation",
+      "is_primary": false,
+      "source_span": "`validate()` in csvtool/checks.py doesn't handle None",
+      "inferred": false,
+      "anchors": [
+        {
+          "kind": "path",
+          "value": "csvtool/checks.py",
+          "line": null,
+          "func": null
+        },
+        {
+          "kind": "symbol",
+          "value": "validate",
+          "line": null,
+          "func": null
+        }
+      ],
+      "condition": "value is None",
+      "expected": null,
+      "observed": null
+    },
+    {
+      "id": "C3",
+      "text": "The crash is caused by validate() not handling None",
+      "type": "cause",
+      "is_primary": false,
+      "source_span": "This is because `validate()` in csvtool/checks.py doesn't handle None",
+      "inferred": false,
+      "anchors": [
+        {
+          "kind": "path",
+          "value": "csvtool/checks.py",
+          "line": null,
+          "func": null
+        },
+        {
+          "kind": "symbol",
+          "value": "validate",
+          "line": null,
+          "func": null
+        }
+      ],
+      "condition": null,
+      "expected": null,
+      "observed": null
+    }
+  ],
+  "assessments": [
+    {
+      "claim_id": "C1",
+      "technical": "supported",
+      "verification": "not_attempted",
+      "evidence_ids": [
+        "E011",
+        "E007"
+      ],
+      "relations": {
+        "E011": "supports",
+        "E007": "supports"
+      },
+      "explanation": "parse_file looks up index[name] with names that include 'col', which is not a key.",
+      "limitations": [
+        "Not executed."
+      ],
+      "strength": "medium",
+      "lean": null,
+      "decided_by": "model",
+      "downgraded_reason": "cited E999, which does not exist",
+      "unconfirmed_reasoning": null
+    },
+    {
+      "claim_id": "C2",
+      "technical": "contradicted",
+      "verification": "not_attempted",
+      "evidence_ids": [
+        "E010"
+      ],
+      "relations": {
+        "E010": "contradicts"
+      },
+      "explanation": "validate() checks for None on line 3.",
+      "limitations": [],
+      "strength": "medium",
+      "lean": null,
+      "decided_by": "model",
+      "downgraded_reason": null,
+      "unconfirmed_reasoning": null
+    },
+    {
+      "claim_id": "C3",
+      "technical": "inconclusive",
+      "verification": "not_attempted",
+      "evidence_ids": [],
+      "relations": {},
+      "explanation": "The evidence found doesn't settle this claim either way.",
+      "limitations": [],
+      "strength": "none",
+      "lean": "contradicted",
+      "decided_by": "model",
+      "downgraded_reason": "no cited evidence contradicts the claim (absence alone does not count)",
+      "unconfirmed_reasoning": "The crash happens before validate() runs."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E001",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "frame_match",
+      "tier": "E2",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/parser.py",
+      "start": 20,
+      "end": 20,
+      "excerpt": "            row[name] = cells[index[name]]",
+      "content_hash": "bb393c144b807b4ad439315beb759e8fe0509b97e584b20a7c45df391fccb990",
+      "result": "Traceback frame csvtool/parser.py:20 matches the code at this version (in `parse_file`)",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/parser.py#L20",
+      "absence": false
+    },
+    {
+      "id": "E002",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "error_text_found",
+      "tier": "E3",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/parser.py",
+      "start": 10,
+      "end": 10,
+      "excerpt": "    \"\"\"Parse CSV text into a list of dicts. Empty header cells are named `col`.\"\"\"",
+      "content_hash": "a4a4b1de2aa4a9da04794885c2c53ea3f1bcd956f213e98b023fd4ee2eeb625b",
+      "result": "The text \"col\" appears in csvtool/parser.py:10",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/parser.py#L10",
+      "absence": false
+    },
+    {
+      "id": "E003",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "error_text_found",
+      "tier": "E3",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/parser.py",
+      "start": 13,
+      "end": 13,
+      "excerpt": "    names = [h or \"col\" for h in header]",
+      "content_hash": "653b6716aed3c96690170f62f8cdc1d3868d79080d818b195dd0c0026cd2a462",
+      "result": "The text \"col\" appears in csvtool/parser.py:13",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/parser.py#L13",
+      "absence": false
+    },
+    {
+      "id": "E004",
+      "claim_ids": [
+        "C2",
+        "C3"
+      ],
+      "kind": "path_found",
+      "tier": "E2",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/checks.py",
+      "start": null,
+      "end": null,
+      "excerpt": null,
+      "content_hash": null,
+      "result": "File csvtool/checks.py exists at this version",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/checks.py",
+      "absence": false
+    },
+    {
+      "id": "E005",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "symbol_found",
+      "tier": "E2",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/parser.py",
+      "start": 9,
+      "end": 24,
+      "excerpt": "def parse_file(text):\n    \"\"\"Parse CSV text into a list of dicts. Empty header cells are named `col`.\"\"\"\n    lines = text.strip().splitlines()\n    header = read_header(lines[0])\n    names = [h or \"col\" for h in header]\n    index = {h: i for i, h in enumerate(header)}\n    rows = []\n    for line in lines[1:]:\n        cells = line.split(\",\")\n        row = {}\n        for name in names:\n            row[name] = cells[index[name]]\n        rows.append(row)\n    for row in rows:\n        validate(row)\n    return rows",
+      "content_hash": "a66c7a6b8f399f6d96a6804cefac203d354a6fffe358358095f750c9d75a9b01",
+      "result": "`parse_file` is defined in csvtool/parser.py at line 9",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/parser.py#L9-L24",
+      "absence": false
+    },
+    {
+      "id": "E006",
+      "claim_ids": [
+        "C2",
+        "C3"
+      ],
+      "kind": "symbol_found",
+      "tier": "E2",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/checks.py",
+      "start": 1,
+      "end": 5,
+      "excerpt": "def validate(value):\n    \"\"\"Return True when value is a parsed row.\"\"\"\n    if value is None:\n        return False\n    return isinstance(value, dict)",
+      "content_hash": "e589921d17e8e3f206283e4570bea6892ef73258210a72e39506b67defea3b6f",
+      "result": "`validate` is defined in csvtool/checks.py at line 1",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/checks.py#L1-L5",
+      "absence": false
+    },
+    {
+      "id": "E007",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E3",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/parser.py",
+      "start": 9,
+      "end": 24,
+      "excerpt": "def parse_file(text):\n    \"\"\"Parse CSV text into a list of dicts. Empty header cells are named `col`.\"\"\"\n    lines = text.strip().splitlines()\n    header = read_header(lines[0])\n    names = [h or \"col\" for h in header]\n    index = {h: i for i, h in enumerate(header)}\n    rows = []\n    for line in lines[1:]:\n        cells = line.split(\",\")\n        row = {}\n        for name in names:\n            row[name] = cells[index[name]]\n        rows.append(row)\n    for row in rows:\n        validate(row)\n    return rows",
+      "content_hash": "a66c7a6b8f399f6d96a6804cefac203d354a6fffe358358095f750c9d75a9b01",
+      "result": "Implementation of `parse_file` (csvtool/parser.py)",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/parser.py#L9-L24",
+      "absence": false
+    },
+    {
+      "id": "E008",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E3",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/checks.py",
+      "start": 1,
+      "end": 5,
+      "excerpt": "def validate(value):\n    \"\"\"Return True when value is a parsed row.\"\"\"\n    if value is None:\n        return False\n    return isinstance(value, dict)",
+      "content_hash": "e589921d17e8e3f206283e4570bea6892ef73258210a72e39506b67defea3b6f",
+      "result": "Implementation of `validate` (csvtool/checks.py)",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/checks.py#L1-L5",
+      "absence": false
+    },
+    {
+      "id": "E009",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "kind": "guards_present",
+      "tier": "E2",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/parser.py",
+      "start": 13,
+      "end": 13,
+      "excerpt": "    names = [h or \"col\" for h in header]",
+      "content_hash": "653b6716aed3c96690170f62f8cdc1d3868d79080d818b195dd0c0026cd2a462",
+      "result": "`parse_file` contains input checks: line 13: fallback with 'or'",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/parser.py#L13",
+      "absence": false
+    },
+    {
+      "id": "E010",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "kind": "guards_present",
+      "tier": "E2",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/checks.py",
+      "start": 3,
+      "end": 5,
+      "excerpt": "    if value is None:\n        return False\n    return isinstance(value, dict)",
+      "content_hash": "5de8f9c810c51cdb9be012f7626b79ff3bf805ce932c23278e2405aaccd17314",
+      "result": "`validate` contains input checks: line 3: None check; line 5: isinstance() check",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/checks.py#L3-L5",
+      "absence": false
+    },
+    {
+      "id": "E011",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "lookup_sites",
+      "tier": "E2",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/parser.py",
+      "start": 12,
+      "end": 20,
+      "excerpt": "    header = read_header(lines[0])\n    names = [h or \"col\" for h in header]\n    index = {h: i for i, h in enumerate(header)}\n    rows = []\n    for line in lines[1:]:\n        cells = line.split(\",\")\n        row = {}\n        for name in names:\n            row[name] = cells[index[name]]",
+      "content_hash": "8df9f7c39b537d19545516ea9d8c2e263ab6e8a703f4ff47d61b4c5c5e651f2d",
+      "result": "`parse_file` does key/index lookups at lines 12, 16, 20",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/parser.py#L12-L20",
+      "absence": false
+    },
+    {
+      "id": "E012",
+      "claim_ids": [
+        "C1",
+        "C3"
+      ],
+      "kind": "callee",
+      "tier": "E3",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/parser.py",
+      "start": 5,
+      "end": 6,
+      "excerpt": "def read_header(line):\n    return [c.strip() for c in line.split(\",\")]",
+      "content_hash": "39e6a333237429a802deb1cbbe6b6352f7cc6f489a93b56e1f7516a9fa44113a",
+      "result": "`parse_file` calls `read_header`",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/parser.py#L5-L6",
+      "absence": false
+    },
+    {
+      "id": "E013",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "kind": "caller",
+      "tier": "E3",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/parser.py",
+      "start": 9,
+      "end": 24,
+      "excerpt": "def parse_file(text):\n    \"\"\"Parse CSV text into a list of dicts. Empty header cells are named `col`.\"\"\"\n    lines = text.strip().splitlines()\n    header = read_header(lines[0])\n    names = [h or \"col\" for h in header]\n    index = {h: i for i, h in enumerate(header)}\n    rows = []\n    for line in lines[1:]:\n        cells = line.split(\",\")\n        row = {}\n        for name in names:\n            row[name] = cells[index[name]]\n        rows.append(row)\n    for row in rows:\n        validate(row)\n    return rows",
+      "content_hash": "a66c7a6b8f399f6d96a6804cefac203d354a6fffe358358095f750c9d75a9b01",
+      "result": "`parse_file` calls `validate`",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/parser.py#L9-L24",
+      "absence": false
+    },
+    {
+      "id": "E014",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "kind": "test_found",
+      "tier": "E3",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "tests/test_parser.py",
+      "start": 4,
+      "end": 6,
+      "excerpt": "def test_parse_basic():\n    rows = parse_file(\"a,b\\n1,2\")\n    assert rows == [{\"a\": \"1\", \"b\": \"2\"}]",
+      "content_hash": "202931e19ad4273ec5409774a2e07bc2cc3c37a148dd7e39f80292acd65ed2e6",
+      "result": "Test `test_parse_basic` calls `parse_file`",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/tests/test_parser.py#L4-L6",
+      "absence": false
+    },
+    {
+      "id": "E015",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "doc_excerpt",
+      "tier": "E3",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "docs/usage.md",
+      "start": 5,
+      "end": 5,
+      "excerpt": "Empty header cells are allowed; they are named `col`.",
+      "content_hash": "40251a553c7c5d9c16861810f7e5c4c953347cd669d626503cc7058285a22e16",
+      "result": "Documentation in docs/usage.md",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/docs/usage.md#L5",
+      "absence": false
+    },
+    {
+      "id": "E016",
+      "claim_ids": [
+        "C1"
+      ],
+      "kind": "doc_excerpt",
+      "tier": "E3",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "docs/usage.md",
+      "start": 3,
+      "end": 3,
+      "excerpt": "Call `parse_file(text)` to parse CSV text into a list of dicts.",
+      "content_hash": "7e4488e265ebce438110e488e4bb94f808cec2049917e4833348431f8e7e8b8b",
+      "result": "Documentation in docs/usage.md",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/docs/usage.md#L3",
+      "absence": false
+    },
+    {
+      "id": "E017",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "kind": "docstring",
+      "tier": "E3",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/parser.py",
+      "start": 9,
+      "end": 9,
+      "excerpt": "def parse_file(text):",
+      "content_hash": "60bc37d9d489ae4aaf3d1a00b4d7b652dde2e4e7595c723cc811c22eafb8269b",
+      "result": "Docstring of `parse_file`: Parse CSV text into a list of dicts. Empty header cells are named `col`.",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/parser.py#L9",
+      "absence": false
+    },
+    {
+      "id": "E018",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "kind": "docstring",
+      "tier": "E3",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/checks.py",
+      "start": 1,
+      "end": 1,
+      "excerpt": "def validate(value):",
+      "content_hash": "366a5a3a6a951f91e126ece1873f5949e89a19026527d6fb6d9accd064ab2cb0",
+      "result": "Docstring of `validate`: Return True when value is a parsed row.",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/checks.py#L1",
+      "absence": false
+    },
+    {
+      "id": "E019",
+      "claim_ids": [
+        "C2"
+      ],
+      "kind": "code_excerpt",
+      "tier": "E4",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/parser.py",
+      "start": 5,
+      "end": 6,
+      "excerpt": "def read_header(line):\n    return [c.strip() for c in line.split(\",\")]",
+      "content_hash": "39e6a333237429a802deb1cbbe6b6352f7cc6f489a93b56e1f7516a9fa44113a",
+      "result": "Implementation of `read_header` (csvtool/parser.py)",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/parser.py#L5-L6",
+      "absence": false
+    },
+    {
+      "id": "E020",
+      "claim_ids": [
+        "C2"
+      ],
+      "kind": "guard_not_found",
+      "tier": "E3",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "csvtool/parser.py",
+      "start": 5,
+      "end": 5,
+      "excerpt": "def read_header(line):",
+      "content_hash": "26b91ed37b8e0fc6a1d84c780bec38eb7efb48b853cdee4da95d4af86704d64e",
+      "result": "No None/empty/length/try-except checks were found inside `read_header`",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/csvtool/parser.py#L5",
+      "absence": true
+    },
+    {
+      "id": "E021",
+      "claim_ids": [
+        "C2"
+      ],
+      "kind": "doc_excerpt",
+      "tier": "E3",
+      "sha": "fcd324c8d1850b517ce07171da9d27a51137bdb9",
+      "path": "README.md",
+      "start": 1,
+      "end": 1,
+      "excerpt": "# csvtool",
+      "content_hash": "5c8d1a9c3f0820fc71545263b36d44ca95872b82b1a0a832ba41d83a394c5885",
+      "result": "Documentation in README.md",
+      "raw": "",
+      "permalink": "https://github.com/acme/csvtool/blob/fcd324c8d1850b517ce07171da9d27a51137bdb9/README.md#L1",
+      "absence": false
+    }
+  ],
+  "missing_info": [],
+  "reply_draft": null,
+  "not_checked": [
+    "The code was not run (static check only)."
+  ],
+  "notes": [
+    "Mock mode: this is a bundled example generated from the offline test fixture, not a real analysis.",
+    "Dropped a claim the model could not tie to the report text: \"Invented claim\""
+  ],
+  "pipeline_version": "7",
+  "models": {
+    "reasoning": "example"
+  },
+  "error": null
+}
