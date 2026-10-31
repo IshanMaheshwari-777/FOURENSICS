@@ -1,12 +1,12 @@
-# ProofLens — Hacktoberfest 2026 Hack Day Sonipat
+# Fourensics — Hacktoberfest 2026 Hack Day Sonipat
 
-> **Status:** This document describes the models we have **selected** and the **intended** architecture for ProofLens. It is a design statement, not a report of completed work. Nothing below should be read as a claim that a model is already integrated, deployed, or benchmarked.
+> **Status:** This document describes the models we have **selected** and the **intended** architecture for Fourensics. It is a design statement, not a report of completed work. Nothing below should be read as a claim that a model is already integrated, deployed, or benchmarked.
 
 ## Project Summary
 
 | Field | Details |
 | --- | --- |
-| **Project name** | ProofLens |
+| **Project name** | Fourensics |
 | **Event** | Hacktoberfest 2026 Hack Day Sonipat |
 | **Selected problem** | Problem 02 – Evidence-Based Open Source Issue and Pull Request Triage |
 | **Team name** | Buy2Get1 |
@@ -18,7 +18,7 @@
 | **Repository URL** | _TODO: add repository URL_ |
 | **Demo / video link** | _TODO: add link, if required by the submission rules_ |
 
-ProofLens helps maintainers triage GitHub issues and pull requests by breaking them into individual technical claims and checking each claim against the repository's actual source code, documentation, and verification results, rather than relying on a language model's opinion alone.
+Fourensics helps maintainers triage GitHub issues and pull requests by breaking them into individual technical claims and checking each claim against the repository's actual source code, documentation, and verification results, rather than relying on a language model's opinion alone.
 
 ## Team
 
@@ -35,7 +35,7 @@ _TODO: Fill in GitHub handles and roles. Add any other information the Hacktober
 
 ## Selected AI Models
 
-ProofLens is designed around three specialized models, each with a single, well-defined responsibility.
+Fourensics is designed around three specialized models, each with a single, well-defined responsibility.
 
 | Role | Model | Deployment |
 | --- | --- | --- |
@@ -119,7 +119,7 @@ Keeping these responsibilities separate lets each component be evaluated, replac
 - **The LLM is not the source of truth.** We do not treat model output as fact.
 - **Verification comes from real artifacts.** Actual source-code inspection, static analysis, test execution, and controlled reproduction provide the verification evidence.
 - **The reasoning model interprets evidence; it does not invent results.** GPT-OSS receives retrieved evidence and real verification outputs and is asked to reason over them, not to guess at outcomes it was never shown.
-- **Uncertainty is part of the output.** When evidence is insufficient, ProofLens must say so instead of forcing a verdict.
+- **Uncertainty is part of the output.** When evidence is insufficient, Fourensics must say so instead of forcing a verdict.
 - **We prioritize evidence quality, reliability, inference efficiency, and explainability** over simply using the largest available model.
 
 ## System Overview
@@ -186,6 +186,6 @@ _TODO: Update this table as components are built. Hardware specifications, laten
 
 ## Licenses
 
-**ProofLens** is released under the **MIT License**.
+**Fourensics** is released under the **MIT License**.
 
 The three selected models are separate third-party works and are not covered by the project license. All three are listed by their providers under the Apache 2.0 license. Please confirm the license terms on each model's official page before redistribution.
