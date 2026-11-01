@@ -68,6 +68,7 @@ def digest(r: PanelResult) -> dict:
                      "ref_label": _HEX.sub("<sha>", r.snapshot.ref_label)},
         "stages": [f"{s.stage}:{s.status}" for s in r.stages],
         "blockers": sorted(b.code for b in r.blockers),
+        "suggested_label": [r.suggested_label.label, r.suggested_label.basis] if r.suggested_label else None,
         "claims": [{"id": c.id, "type": c.type, "primary": c.is_primary, "text": c.text} for c in r.claims],
         "assessments": [{
             "claim": a.claim_id, "technical": a.technical, "verification": a.verification,

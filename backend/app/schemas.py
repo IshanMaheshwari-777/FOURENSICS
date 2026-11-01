@@ -159,6 +159,13 @@ class AnalysisBlocker(BaseModel):
     next_step: str
 
 
+class SuggestedLabel(BaseModel):
+    """A triage hint. basis "evidence": settled by code or execution; "leaning": from report signals only."""
+    label: Literal["confirmed", "invalid", "cannot_reproduce"]
+    basis: Literal["evidence", "leaning"]
+    reasons: list[str] = []
+
+
 class PanelResult(BaseModel):
     run_id: str
     status: RunStatus = "queued"
@@ -172,6 +179,8 @@ class PanelResult(BaseModel):
     assessments: list[ClaimAssessment] = []
     evidence: list[EvidenceItem] = []
     missing_info: list[str] = []
+    report_signals: list[str] = []
+    suggested_label: Optional[SuggestedLabel] = None
     reply_draft: Optional[str] = None
     not_checked: list[str] = []
     notes: list[str] = []

@@ -21,7 +21,7 @@ from ..db import Database
 from ..github.client import GitHubClient, public_repo
 from ..llm.gateway import Gateway
 from ..schemas import AnalysisInput, Anchor, Claim, Mode, PanelResult, Snapshot, StageResult, Target, Verification
-from . import aggregate, missing_info
+from . import aggregate, missing_info, triage
 from .adjudicate import adjudicate
 from .claims import extract_claims, fallback_claims
 from .diagnostics import explain_result
@@ -185,6 +185,7 @@ def analyze(deps: Deps, result: PanelResult, target: Optional[Target] = None,
         with run.stage("missing_info"):
             if not inp.pr:
                 missing = missing_info.check_missing(model_visible_text(inp), anchors)
+                result.report_signals = triage.report_signals(model_visible_text(inp), anchors, missing)
                 result.missing_info = missing_info.human_labels(missing)
                 result.reply_draft = missing_info.reply_draft(missing)
 
@@ -285,6 +286,8 @@ def analyze(deps: Deps, result: PanelResult, target: Optional[Target] = None,
             # The code already confirms the main problem: asking the reporter for more adds work for nobody.
             result.missing_info, result.reply_draft = [], None
         result.summary_line, result.summary_tone = aggregate.summarize(report_kind, claims, result.assessments)
+        result.suggested_label = triage.shown_label(
+            triage.suggest_label(report_kind, claims, result.assessments, result.report_signals))
         result.not_checked = aggregate.not_checked(snap, result.assessments, bool(inp.pr), sandbox_ran)
         bad = [x for x in result.stages if x.status in ("failed", "skipped") and x.stage not in ("reproduction",)]
         result.status = "partial" if bad else "complete"

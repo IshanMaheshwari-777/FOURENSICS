@@ -100,6 +100,10 @@
       "validation:ok"
     ],
     "status": "complete",
+    "suggested_label": [
+      "confirmed",
+      "evidence"
+    ],
     "summary_line": "The main problem is backed by the code, but part of the explanation doesn't match. Review recommended.",
     "summary_tone": "mixed"
   },
@@ -184,6 +188,10 @@
       "validation:ok"
     ],
     "status": "complete",
+    "suggested_label": [
+      "invalid",
+      "evidence"
+    ],
     "summary_line": "The code disagrees with the main claim.",
     "summary_tone": "contradicted"
   },
@@ -259,6 +267,7 @@
       "validation:ok"
     ],
     "status": "partial",
+    "suggested_label": null,
     "summary_line": "Analysis incomplete: model interpretation unavailable. 21 evidence items collected; main claim unverified.",
     "summary_tone": "neutral"
   },
@@ -346,6 +355,7 @@
       "validation:ok"
     ],
     "status": "complete",
+    "suggested_label": null,
     "summary_line": "The diff backs the main claim.",
     "summary_tone": "supported"
   },
@@ -400,6 +410,10 @@
       "validation:ok"
     ],
     "status": "complete",
+    "suggested_label": [
+      "invalid",
+      "evidence"
+    ],
     "summary_line": "Looks like a question, not a bug report.",
     "summary_tone": "not_defect"
   }

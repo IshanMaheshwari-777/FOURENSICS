@@ -11,7 +11,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 BACKEND_DIR = Path(__file__).resolve().parent.parent
 
 # Bump whenever prompts or rules change, so cached results are not reused.
-PIPELINE_VERSION = "29"
+PIPELINE_VERSION = "30"
 
 
 class Settings(BaseSettings):

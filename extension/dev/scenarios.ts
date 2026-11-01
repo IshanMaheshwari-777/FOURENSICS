@@ -13,6 +13,7 @@ export function scenario(name: string): PanelResult {
     r.stages = [{ stage: "retrieval", status: "ok", ms: 10 }, { stage: "adjudication", status: "degraded", ms: 10, reason: "Inference quota unavailable" }];
     r.blockers = [{ code: "model_quota", stage: "adjudication", reason: "The inference service has no remaining free quota for this run.", next_step: "Retry when the provider quota resets, or configure another supported open-weight endpoint. The report itself may already contain enough information." }];
     r.missing_info = [];
+    r.suggested_label = null;
   }
   if (name === "long") {
     r.target = { owner: "public-organization-with-a-long-name", repo: "multi-language-monorepo", kind: "pr", number: 12345, url: "https://github.com/example/monorepo/pull/12345" };
@@ -25,17 +26,20 @@ export function scenario(name: string): PanelResult {
     r.evidence = [{ ...r.evidence[0], id: "E-long", tier: "E3", path: "packages/networking/clients/platform-specific/多言語/" + "long-component-name-".repeat(9) + ".go", result: "The cancellation handler calls `releaseConnection`, whose ownership depends on the surrounding retry path.", excerpt: "// This is synthetic source text for layout testing.\nfunc HandleConnection(ctx context.Context) {\n    // " + "a-long-source-token".repeat(40) + "\n}\n<script>alert('text only')</script>", permalink: "https://github.com/example/monorepo/blob/abc/src/client.go#L12-L20" }];
     r.missing_info = ["Exact commit or release", "A minimal reproduction with the concurrent schedule and expected resource count"];
     r.reply_draft = "Could you share the exact version and a minimal reproduction of the concurrent cancellation?";
+    r.suggested_label = null;
   }
   if (name === "empty") {
     r.summary_line = "No technical claim could be extracted from this report.";
     r.summary_tone = "neutral"; r.claims = []; r.assessments = []; r.evidence = [];
     r.missing_info = ["A description of the observed behavior and the expected result"];
+    r.suggested_label = null;
   }
   if (name === "feature") {
     r.report_kind = "feature_request"; r.summary_tone = "not_defect";
     r.summary_line = "This report requests a new configuration option.";
     r.claims = []; r.assessments = []; r.evidence = [];
     r.not_checked = ["Feature feasibility and product priority were not evaluated."];
+    r.suggested_label = { label: "invalid", basis: "evidence", reasons: ["reads as a feature request, not a defect"] };
   }
   if (name === "reproduced") {
     r.summary_tone = "supported"; r.summary_line = "The reported exception was reproduced in the reviewed sandbox scenario.";
@@ -43,6 +47,7 @@ export function scenario(name: string): PanelResult {
     r.assessments = [{ ...r.assessments[0], verification: "reproduced", evidence_ids: ["E-execution"], relations: { "E-execution": "supports" }, explanation: "The reviewed example raised the reported exception in two isolated runs.", limitations: ["This demonstrates the observation in the tested environment; intent still requires maintainer review."], downgraded_reason: null }];
     r.evidence = [{ ...r.evidence[0], id: "E-execution", tier: "E1", path: null, permalink: null, kind: "reproduction", result: "Synthetic preview: both sandbox runs raised the expected KeyError.", excerpt: "Run 1: KeyError: 'col'\nRun 2: KeyError: 'col'" }];
     r.not_checked = ["Other operating systems and dependency versions were not tested."];
+    r.suggested_label = { label: "confirmed", basis: "evidence", reasons: ["the reported behaviour was reproduced"] };
   }
   return r;
 }

@@ -644,6 +644,17 @@
     }
   ],
   "missing_info": [],
+  "report_signals": [
+    "repro_steps",
+    "expected_vs_actual"
+  ],
+  "suggested_label": {
+    "label": "confirmed",
+    "basis": "evidence",
+    "reasons": [
+      "the code backs the main claim"
+    ]
+  },
   "reply_draft": null,
   "not_checked": [
     "The code was not run (static check only)."
@@ -652,7 +663,7 @@
     "Mock mode: this is a bundled example generated from the offline test fixture, not a real analysis.",
     "Dropped a claim the model could not tie to the report text: \"Invented claim\""
   ],
-  "pipeline_version": "7",
+  "pipeline_version": "30",
   "models": {
     "reasoning": "example"
   },

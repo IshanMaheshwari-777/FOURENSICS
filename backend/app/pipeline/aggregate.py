@@ -93,27 +93,15 @@ def not_checked(snap: Snapshot, assessments: list[ClaimAssessment], is_pr: bool,
 
 
 def eval_label(result: PanelResult, forced: bool = False) -> Optional[EvalLabel]:
-    """Maps a result to the evaluation labels. Used only by the evaluation harness."""
-    if result.report_kind in ("question", "feature", "docs"):
-        return "invalid"
-    by_id = {a.claim_id: a for a in result.assessments}
-    primary = next((c for c in result.claims if c.is_primary), None)
-    if primary is None or primary.id not in by_id:
-        return None
-    a = by_id[primary.id]
-    if a.verification == "reproduced":
-        return "confirmed"
-    if a.technical == "contradicted":
-        return "invalid"
-    if a.verification == "not_reproduced":
-        return "cannot_reproduce"
-    if a.technical == "supported":
-        return "confirmed"
+    """Maps a result to the evaluation labels, using the same suggestion the panel shows.
+
+    Strict mode answers only when code or execution evidence settled it; forced mode also takes leanings."""
+    from .triage import suggest_label
+    s = result.suggested_label or suggest_label(result.report_kind, result.claims, result.assessments,
+                                                result.report_signals)
+    if s is not None and (s.basis == "evidence" or forced):
+        return s.label
     if not forced:
         return None
-    if a.lean == "supported":
-        return "confirmed"
-    if a.lean == "contradicted":
-        return "invalid"
-    # Reports missing the basics are most often closed as not reproducible.
+    # No evidence and no report signals at all (for example a result saved before signals existed).
     return "cannot_reproduce" if len(result.missing_info) >= 3 else "confirmed"
