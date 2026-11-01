@@ -23,7 +23,8 @@ DIST = ROOT / "extension" / "dist"
 OUT = ROOT / "build" / "site"
 ZIP_NAME = "fourensics-extension.zip"
 PAGE_BUDGET_KB = 40
-REQUIRED_IN_ZIP = {"manifest.json", "content.js", "background.js", "options.html", "options.js"}
+REQUIRED_IN_ZIP = {"manifest.json", "content.js", "background.js", "sidepanel.html", "sidepanel.js",
+                   "options.html", "options.js", "icons/icon16.png", "icons/icon128.png"}
 
 
 def fail(msg: str) -> None:

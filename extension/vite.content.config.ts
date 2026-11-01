@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// MV3 content scripts cannot be ES modules, so the content script is one IIFE bundle.
+// MV3 content scripts cannot be ES modules, so the content script is one IIFE bundle (no React; the UI is in the side panel).
 export default defineConfig({
   plugins: [react()],
   publicDir: "public",

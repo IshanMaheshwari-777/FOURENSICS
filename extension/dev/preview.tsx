@@ -2,15 +2,20 @@
 import { createRoot } from "react-dom/client";
 import saved from "../../eval/examples/panel_google_verified_pr.json";
 import { scenario } from "./scenarios";
-import { Panel } from "../src/panel/Panel";
+import { Idle, Panel } from "../src/panel/Panel";
 import { css } from "../src/panel/styles";
 import type { PanelResult } from "../src/types";
 
+// Docked on the right like Chrome's side panel; ?width= tries other panel widths.
 const host = document.createElement("div");
+const panelWidth = Number(new URLSearchParams(location.search).get("width")) || 400;
+host.style.cssText = `position:fixed;top:0;right:0;bottom:0;width:min(${panelWidth}px,100vw);border-left:1px solid rgba(127,127,140,.3);box-shadow:-8px 0 24px rgba(0,0,0,.06);z-index:10`;
+document.body.style.marginRight = `min(${panelWidth}px,100vw)`;
 const shadow = host.attachShadow({ mode: "open" });
 const style = document.createElement("style");
 style.textContent = css;
 const container = document.createElement("div");
+container.style.height = "100%";
 shadow.append(style, container);
 document.body.appendChild(host);
 const root = createRoot(container);
@@ -21,7 +26,7 @@ const running: PanelResult = {
   claims: [], assessments: [], stages: complete.stages.slice(0, 6),
 };
 let dark = false;
-let state: "complete" | "running" | "error" | "live" | "fixture" = "complete";
+let state: "complete" | "running" | "error" | "live" | "fixture" | "idle" = "complete";
 let fixture = complete;
 let live: PanelResult | null = null;
 let errorMessage = "Can't reach the analysis backend. Is it running?";
@@ -63,15 +68,18 @@ async function loadLive() {
 
 function render() {
   document.body.classList.toggle("dark", dark);
+  if (state === "idle") {
+    root.render(<Idle dark={dark} onSettings={() => console.log("settings")} />);
+    return;
+  }
   root.render(
     <Panel
       key={state + (state === "fixture" ? fixture.run_id : live?.run_id ?? "")}
       result={state === "error" ? null : state === "running" ? running : state === "live" ? live : state === "fixture" ? fixture : complete}
       error={state === "error" ? errorMessage : null}
       dark={dark}
-      startCollapsed={false}
       onRefresh={() => render()}
-      onClose={() => root.render(<></>)}
+      onSettings={() => console.log("settings")}
       onVote={(c, v) => console.log("vote", c, v)}
     />,
   );

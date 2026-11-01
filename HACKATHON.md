@@ -6,7 +6,7 @@ FOURENSICS checks the technical claims in public GitHub issues and pull requests
 | --- | --- |
 | Problem | Problem 02: Evidence-Based Open Source Issue and Pull Request Triage |
 | Team | Buy2Get1 — Ishan Maheshwari, Ganga Raghuwanshi, Anuradha Raghuwanshi, Bhawana |
-| Frontend | React + TypeScript; Manifest V3 extension with a Shadow DOM panel |
+| Frontend | React + TypeScript; Manifest V3 extension that shows findings in Chrome's side panel (a 4 KB content script on GitHub reports the page and inserts reply drafts) |
 | Backend | FastAPI + Python; fixed verification pipeline; SQLite; Git snapshot cache |
 | Model integrated | Hosted open-weight `gemma-4-26b-a4b-it` through Google's native API; Gemma 4 31B and optional OpenAI-compatible GPT-OSS 20B also supported |
 | Provider selection | `GOOGLE_API_KEY` selects Gemma automatically; `LLM_PROVIDER` can explicitly select Google or the OpenAI-compatible provider |
@@ -47,7 +47,7 @@ The model performs two bounded tasks: extracting claims and interpreting collect
 | [`sandbox.py`](backend/app/pipeline/sandbox.py) | Restricted Python reproduction |
 | [`gateway.py`](backend/app/llm/gateway.py) | Structured output, caching, pacing, retries, prompt limits |
 | [`google.py`](backend/app/llm/google.py), [`factory.py`](backend/app/llm/factory.py) | Native Google Gemma transport, secret-header authentication and shared provider selection |
-| [`Panel.tsx`](extension/src/panel/Panel.tsx) | Maintainer findings and uncertainty |
+| [`Panel.tsx`](extension/src/panel/Panel.tsx), [`sidepanel.tsx`](extension/src/sidepanel.tsx) | Maintainer findings and uncertainty in the side panel, following the active tab |
 
 ## Security and execution boundaries
 

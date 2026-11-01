@@ -2,25 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FOURENSICS settings</title>
   <style>
-    body { font: 14px/1.5 system-ui, sans-serif; max-width: 520px; margin: 32px auto; padding: 0 16px; color: #1f2328; }
-    label { display: block; margin: 16px 0 4px; font-weight: 600; }
-    input[type=text] { width: 100%; padding: 6px 8px; font: inherit; border: 1px solid #d0d7de; border-radius: 6px; }
-    .row { display: flex; gap: 8px; align-items: center; margin-top: 12px; }
-    button { padding: 6px 14px; font: inherit; border-radius: 6px; border: 1px solid #1f883d; background: #1f883d; color: #fff; cursor: pointer; }
-    #status { color: #57606a; margin-left: 8px; }
-    p.hint { color: #57606a; margin: 4px 0 0; }
+    :root { --bg: #f5f5f5; --card: #fff; --fg: #171717; --muted: #6b6b6b; --line: #e8e8e8; --accent: #171717; --on-accent: #fff; --ok: #15803d; --bad: #c62828; color-scheme: light; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #0b0b0b; --card: #161616; --fg: #f5f5f5; --muted: #a3a3a3; --line: #262626; --accent: #f5f5f5; --on-accent: #0b0b0b; --ok: #4ade80; --bad: #f87171; color-scheme: dark; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.55 "Inter", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
+    main { max-width: 520px; margin: 40px auto; padding: 0 16px; }
+    header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .mark { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 9px; background: var(--accent); color: var(--on-accent); font-weight: 800; }
+    h1 { font-size: 18px; letter-spacing: .06em; margin: 0; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: grid; gap: 14px; }
+    label { font-weight: 600; font-size: 13px; }
+    input[type=text] { width: 100%; margin-top: 6px; padding: 8px 10px; font: inherit; color: inherit; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; }
+    input[type=text]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .hint { color: var(--muted); font-size: 12.5px; margin: 4px 0 0; }
+    .row { display: flex; gap: 10px; align-items: flex-start; }
+    .row input { margin-top: 3px; accent-color: var(--accent); }
+    .row label { font-weight: 500; }
+    .actions { display: flex; align-items: center; gap: 12px; margin-top: 16px; }
+    button { padding: 8px 16px; font: 600 13px/1 inherit; font-family: inherit; border-radius: 9px; border: 0; background: var(--accent); color: var(--on-accent); cursor: pointer; }
+    #status { color: var(--muted); font-size: 13px; }
+    #status.ok { color: var(--ok); } #status.bad { color: var(--bad); }
   </style>
 </head>
 <body>
-  <h1>FOURENSICS</h1>
-  <label for="backend">Backend URL</label>
-  <input id="backend" type="text" placeholder="http://localhost:8787">
-  <p class="hint">Where the analysis backend runs. Other hosts ask for permission when saved.</p>
-  <div class="row"><input id="mock" type="checkbox"><label for="mock" style="margin:0;font-weight:400">Mock mode (show the bundled example result instead of calling the backend)</label></div>
-  <div class="row"><input id="collapsed" type="checkbox"><label for="collapsed" style="margin:0;font-weight:400">Start the panel collapsed</label></div>
-  <div class="row"><button id="save">Save</button><span id="status"></span></div>
+  <main>
+    <header><span class="mark" aria-hidden="true">F</span><h1>FOURENSICS</h1></header>
+    <div class="card">
+      <div>
+        <label for="backend">Backend URL</label>
+        <input id="backend" type="text" placeholder="http://localhost:8787" spellcheck="false">
+        <p class="hint">Where the analysis backend runs. Other hosts ask for permission when you save.</p>
+      </div>
+      <div class="row">
+        <input id="mock" type="checkbox">
+        <div><label for="mock">Mock mode</label><p class="hint">Show the bundled example result instead of calling the backend. Useful for a quick look without setup.</p></div>
+      </div>
+    </div>
+    <div class="actions"><button id="save">Save</button><span id="status" role="status"></span></div>
+  </main>
   <script src="options.js"></script>
 </body>
 </html>
