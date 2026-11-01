@@ -8,10 +8,11 @@ import { join } from "node:path";
 
 const dist = fileURLToPath(new URL("../dist/", import.meta.url));
 
-// Measured when added: content.js ~172 KB, background.js ~21 KB. Budgets leave headroom for
-// features, but catch an accidental heavy dependency or a duplicated bundle.
-const BUDGET_BYTES = { "content.js": 230_000, "background.js": 40_000 };
-const ALLOWED_PERMISSIONS = ["storage"];
+// The content script runs on every GitHub page, so it stays tiny (no React); the UI lives in the
+// side panel bundle. Budgets leave headroom but catch a heavy dependency or a duplicated bundle.
+const BUDGET_BYTES = { "content.js": 20_000, "background.js": 40_000, "sidepanel.js": 240_000 };
+// sidePanel shows the panel beside the page; storage keeps settings and which issue each tab shows.
+const ALLOWED_PERMISSIONS = ["sidePanel", "storage"];
 const ALLOWED_HOSTS = ["http://localhost:8787/*", "http://127.0.0.1:8787/*"];
 
 let passed = 0;
@@ -31,7 +32,7 @@ await check("Manifest V3 with a module service worker", () => {
   assert.equal(manifest.background?.service_worker, "background.js");
 });
 
-await check("only the storage permission is requested", () => {
+await check("only the sidePanel and storage permissions are requested", () => {
   assert.deepEqual([...(manifest.permissions ?? [])].sort(), ALLOWED_PERMISSIONS);
 });
 
@@ -44,6 +45,20 @@ await check("host access is limited to the local backend", () => {
 await check("the content script runs only on github.com", () => {
   const matches = (manifest.content_scripts ?? []).flatMap((c) => c.matches);
   assert.deepEqual(matches, ["https://github.com/*"]);
+});
+
+await check("the side panel, toolbar action and icons point to files that exist", async () => {
+  assert.equal(manifest.side_panel?.default_path, "sidepanel.html");
+  assert.ok(manifest.action, "a toolbar action opens the side panel");
+  const html = await readFile(join(dist, "sidepanel.html"), "utf8");
+  assert.match(html, /src="sidepanel\.js"/);
+  const icons = { ...manifest.icons, ...manifest.action.default_icon };
+  for (const file of new Set(Object.values(icons))) await stat(join(dist, file));
+});
+
+await check("the content script does not ship React", async () => {
+  const code = await readFile(join(dist, "content.js"), "utf8");
+  assert.ok(!/react-dom|__SECRET_INTERNALS|createRoot/.test(code), "UI code belongs in the side panel bundle");
 });
 
 await check("bundles contain no eval or Function constructor", async () => {

@@ -14,7 +14,7 @@ try {
     lib: { entry: join(project, "tests/entry.ts"), formats: ["es"], fileName: () => "panel.mjs" },
     rollupOptions: { external: ["react", "react/jsx-runtime"] },
   }, esbuild: { jsx: "automatic" } });
-  const { Panel, present, safeHref, sourceLocation, scenario } = await import(pathToFileURL(join(dir, "panel.mjs")).href);
+  const { Idle, Panel, present, safeHref, sourceLocation, scenario } = await import(pathToFileURL(join(dir, "panel.mjs")).href);
   const saved = JSON.parse(await readFile(join(project, "../eval/examples/panel_google_verified_pr.json"), "utf8"));
   const render = (result, error = null) => renderToStaticMarkup(React.createElement(Panel, {
     result, error, dark: false, startCollapsed: false, onRefresh() {}, onClose() {}, onVote() {},
@@ -106,6 +106,27 @@ try {
     assert.match(html, /gemma-4-26b-a4b-it/); assert.match(html, /v29/);
     assert.match(html, new RegExp(saved.snapshot.sha));
     assert.match(html, /Source context/);
+  });
+  check("the side panel explains what to do when no issue or PR is open", () => {
+    const html = renderToStaticMarkup(React.createElement(Idle, { dark: true, message: "Reload the GitHub tab." }));
+    assert.match(html, /Open an issue or pull request/); assert.match(html, /Nothing is posted to GitHub/);
+    assert.match(html, /class="root dark"/); assert.match(html, /Reload the GitHub tab/);
+  });
+  check("the suggested label tile shows evidence labels, says None otherwise, and is absent for PRs", () => {
+    assert.match(render(scenario("complete")), /Suggested label.*Confirmed/s);
+    assert.match(render(scenario("feature")), /Suggested label.*Invalid/s);
+    assert.match(render(scenario("partial")), /Suggested label.*None/s);
+    assert.doesNotMatch(render(scenario("long")), /Suggested label/);
+    const leaning = scenario("complete");
+    leaning.suggested_label = { label: "cannot_reproduce", basis: "leaning", reasons: ["intermittent"] };
+    assert.doesNotMatch(render(leaning), /Cannot reproduce/);
+  });
+  check("the panel header offers refresh and settings, not page-overlay controls", () => {
+    const html = renderToStaticMarkup(React.createElement(Panel, {
+      result: scenario("complete"), error: null, dark: false, onRefresh() {}, onVote() {}, onSettings() {},
+    }));
+    assert.match(html, /aria-label="Run analysis again"/); assert.match(html, /aria-label="Settings"/);
+    assert.doesNotMatch(html, /Collapse assessment|Hide assessment on this page/);
   });
   console.log(`${passed} panel checks passed (offline; no model or GitHub calls).`);
 } finally { await rm(dir, { recursive: true, force: true }); }

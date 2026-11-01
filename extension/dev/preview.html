@@ -7,6 +7,7 @@
   <style>
     body { font: 14px/1.5 system-ui, sans-serif; margin: 0; padding: 24px; background: #f6f8fa; color: #1f2328; }
     body.dark { background: #0d1117; color: #f0f6fc; }
+    textarea { box-sizing: border-box; }
     .bar { display: flex; gap: 8px; flex-wrap: wrap; }
     textarea { width: min(600px, 100%); height: 120px; margin-top: 16px; }
   </style>
@@ -18,6 +19,7 @@
     <button data-state="complete">Complete</button>
     <button data-state="running">Running</button>
     <button data-state="error">Backend down</button>
+    <button data-state="idle">No issue open</button>
     <button id="theme">Toggle dark</button>
     <label>Offline example:
       <select id="scenario">

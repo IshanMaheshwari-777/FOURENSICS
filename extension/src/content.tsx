@@ -1,33 +1,26 @@
-// Content script: detects GitHub issue and PR pages, mounts the panel in a Shadow DOM,
-// and polls the backend (through the service worker) until the analysis finishes.
-import { createRoot, type Root } from "react-dom/client";
-import { Panel } from "./panel/Panel";
-import { css } from "./panel/styles";
-import type { PanelResult, Reply, Request, Settings } from "./types";
+// Content script on github.com. The analysis lives in Chrome's side panel; this script only
+//  1. tells the extension which issue or PR the tab shows (GitHub navigates without page loads),
+//  2. inserts a reply draft into the comment box when the panel asks (never submits), and
+//  3. shows a slim launcher tab on issue and PR pages that opens the side panel.
+import { insertReply } from "./panel/reply";
+import type { InsertReply, Reply, Request } from "./types";
 
 const PAGE = /^https:\/\/github\.com\/([^/]+)\/([^/]+)\/(issues|pull)\/(\d+)(?:[/?#]|$)/;
-const POLL_MS = 2000;
-const SLOW_AFTER_MS = 60 * 1000;
-const SLOW_POLL_MS = 5000;
-const MAX_POLL_MS = 15 * 60 * 1000;
-const HOST_ID = "evidence-triage-host";
+const LAUNCHER_ID = "fourensics-launcher";
 
-let root: Root | null = null;
-let host: HTMLElement | null = null;
-let currentKey: string | null = null;
-let generation = 0; // invalidates polling loops when the page changes
-let rerender: (() => void) | null = null; // redraws the current panel, e.g. after a theme switch
-const hidden = new Set<string>();
+function currentPage(): string | null {
+  const m = location.href.match(PAGE);
+  if (!m) return null;
+  const [, owner, repo, kind, number] = m;
+  return `https://github.com/${owner}/${repo}/${kind}/${number}`;
+}
 
 function send<T>(msg: Request): Promise<Reply<T>> {
   return new Promise((resolve) => {
     try {
       chrome.runtime.sendMessage(msg, (resp: Reply<T> | undefined) => {
-        if (chrome.runtime.lastError || !resp) {
-          resolve({ ok: false, error: "The extension was reloaded. Refresh this page." });
-        } else {
-          resolve(resp);
-        }
+        if (chrome.runtime.lastError || !resp) resolve({ ok: false, error: "The extension was reloaded. Refresh this page." });
+        else resolve(resp);
       });
     } catch {
       resolve({ ok: false, error: "The extension was reloaded. Refresh this page." });
@@ -35,148 +28,75 @@ function send<T>(msg: Request): Promise<Reply<T>> {
   });
 }
 
-// Follow what GitHub actually renders: its theme setting can differ from the OS setting.
-function isDark(): boolean {
-  const rgb = getComputedStyle(document.body).backgroundColor.match(/\d+(\.\d+)?/g)?.map(Number);
-  if (rgb && rgb.length >= 3 && (rgb.length < 4 || rgb[3] > 0)) {
-    const [r, g, b] = rgb;
-    return 0.2126 * r + 0.7152 * g + 0.0722 * b < 128;
-  }
-  const mode = document.documentElement.getAttribute("data-color-mode");
-  if (mode === "dark") return true;
-  if (mode === "light") return false;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches;
-}
+const LAUNCHER_CSS = `
+:host { all: initial; }
+button { all: unset; box-sizing: border-box; position: fixed; right: 0; top: 42%; z-index: 2147483000; cursor: pointer;
+  display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 10px 0 7px; border-radius: 10px 0 0 10px;
+  background: #171717; color: #fafafa; box-shadow: 0 6px 20px rgba(0,0,0,.28), inset 0 0 0 1px rgba(255,255,255,.1);
+  font: 600 12.5px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: .02em;
+  transform: translateX(calc(100% - 38px)); transition: transform .18s ease; }
+button:hover, button:focus-visible { transform: translateX(0); }
+button:focus-visible { outline: 2px solid #a3a3a3; outline-offset: 2px; }
+.mark { width: 22px; height: 22px; display: grid; place-items: center; border-radius: 6px; background: #fafafa; color: #171717; font-weight: 800; }
+.hint { position: fixed; right: 12px; top: calc(42% + 44px); z-index: 2147483000; max-width: 240px; padding: 8px 10px; border-radius: 8px;
+  background: #171717; color: #f5f5f5; font: 12.5px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+@media (prefers-reduced-motion: reduce) { button { transition: none; } }
+`;
 
-function pageKey(): { key: string; url: string } | null {
-  const m = location.href.match(PAGE);
-  if (!m) return null;
-  const [, owner, repo, kind, number] = m;
-  const url = `https://github.com/${owner}/${repo}/${kind}/${number}`;
-  return { key: url, url };
-}
-
-function unmount(): void {
-  root?.unmount();
-  host?.remove();
-  root = null;
-  host = null;
-}
-
-function mount(): Root {
-  if (root && host?.isConnected) return root;
-  unmount();
-  host = document.createElement("div");
-  host.id = HOST_ID;
+function showLauncher(show: boolean): void {
+  const existing = document.getElementById(LAUNCHER_ID);
+  if (!show) { existing?.remove(); return; }
+  if (existing?.isConnected) return;
+  const host = document.createElement("div");
+  host.id = LAUNCHER_ID;
   const shadow = host.attachShadow({ mode: "open" });
   const style = document.createElement("style");
-  style.textContent = css;
-  shadow.appendChild(style);
-  const container = document.createElement("div");
-  shadow.appendChild(container);
+  style.textContent = LAUNCHER_CSS;
+  const button = document.createElement("button");
+  button.type = "button";
+  button.title = "Open FOURENSICS";
+  button.setAttribute("aria-label", "Open FOURENSICS side panel");
+  button.innerHTML = `<span class="mark" aria-hidden="true">F</span><span>FOURENSICS</span>`;
+  button.addEventListener("click", async () => {
+    const reply = await send<null>({ type: "open-panel" });
+    if (reply.ok) return;
+    // Older Chrome, or the click was not accepted: point to the toolbar icon instead.
+    const hint = document.createElement("div");
+    hint.className = "hint";
+    hint.setAttribute("role", "status");
+    hint.textContent = reply.error.includes("reloaded")
+      ? reply.error
+      : "Click the FOURENSICS icon in Chrome's toolbar (puzzle-piece menu → pin it) to open the side panel.";
+    shadow.appendChild(hint);
+    setTimeout(() => hint.remove(), 6000);
+  });
+  shadow.append(style, button);
   document.body.appendChild(host);
-  root = createRoot(container);
-  return root;
 }
 
-async function run(url: string, key: string, refresh = false): Promise<void> {
-  const gen = ++generation;
-  const settingsReply = await send<Settings>({ type: "settings" });
-  const startCollapsed = settingsReply.ok ? settingsReply.result.collapsed : false;
-  let result: PanelResult | null = null;
-  let error: string | null = null;
-  let notice: string | null = null;
-
-  const render = () => {
-    if (gen !== generation) return;
-    mount().render(
-      <Panel
-        result={result}
-        error={error}
-        notice={notice}
-        dark={isDark()}
-        startCollapsed={startCollapsed}
-        onRefresh={() => run(url, key, true)}
-        onClose={() => { hidden.add(key); generation++; unmount(); }}
-        onVote={(claimId, vote) => { if (result) void send({ type: "feedback", runId: result.run_id, claimId, vote }); }}
-      />,
-    );
-  };
-
-  rerender = render;
-  render();
-  const first = await send<PanelResult>({ type: "assess", url, refresh });
-  if (!first.ok) {
-    error = first.error;
-    render();
-    return;
-  }
-  result = first.result;
-  render();
-
-  const started = Date.now();
-  let failures = 0;
-  while (gen === generation && result && (result.status === "queued" || result.status === "running")) {
-    const waited = Date.now() - started;
-    if (waited > MAX_POLL_MS) {
-      notice = "Still not finished. Use ↻ to check again later; the analysis keeps running in the background.";
-      render();
-      return;
-    }
-    // A busy or rate-limited model server can take minutes: say so calmly and poll less often.
-    if (waited > SLOW_AFTER_MS) {
-      notice = "Still working. The model server is busy, so this can take a few minutes.";
-    }
-    await new Promise((r) => setTimeout(r, waited > SLOW_AFTER_MS ? SLOW_POLL_MS : POLL_MS));
-    const next: Reply<PanelResult> = await send<PanelResult>({ type: "run", runId: result.run_id });
-    if (!next.ok) {
-      if (++failures >= 3) {  // ride out a backend restart or a brief network blip
-        error = next.error;
-        render();
-        return;
-      }
-      continue;
-    }
-    failures = 0;
-    result = next.result;
-    if (result.status !== "queued" && result.status !== "running") notice = null;
-    render();
-  }
-}
-
+let lastReported: string | null | undefined;
 function check(): void {
-  const page = pageKey();
-  if (!page) {
-    if (currentKey) {
-      currentKey = null;
-      generation++;
-      unmount();
-    }
-    return;
-  }
-  if (page.key === currentKey && host?.isConnected) return;
-  if (hidden.has(page.key)) return;
-  currentKey = page.key;
-  void run(page.url, page.key);
+  const page = currentPage();
+  showLauncher(page !== null);
+  if (page === lastReported) return;
+  lastReported = page;
+  void send({ type: "page", url: page });
 }
+
+chrome.runtime.onMessage.addListener((msg: InsertReply, _sender, sendResponse) => {
+  if (msg?.type !== "insert-reply") return false;
+  insertReply(msg.text).then(sendResponse);
+  return true;
+});
 
 // GitHub navigates without full page loads, so watch for URL changes several ways.
 document.addEventListener("turbo:load", check);
 window.addEventListener("popstate", check);
+window.addEventListener("pageshow", () => { lastReported = undefined; check(); });
+document.addEventListener("visibilitychange", () => { if (!document.hidden) check(); });
 let lastHref = location.href;
 setInterval(() => {
-  if (location.href !== lastHref) {
-    lastHref = location.href;
-    check();
-  } else if (currentKey && !host?.isConnected && !hidden.has(currentKey)) {
-    currentKey = null; // GitHub replaced the body; re-mount
-    check();
-  }
+  if (location.href !== lastHref) { lastHref = location.href; check(); }
+  else if (currentPage() && !document.getElementById(LAUNCHER_ID)) showLauncher(true); // GitHub replaced the body
 }, 1000);
-
-// Redraw when GitHub's theme or the OS theme changes.
-new MutationObserver(() => rerender?.()).observe(document.documentElement, {
-  attributes: true, attributeFilter: ["data-color-mode", "data-light-theme", "data-dark-theme", "class"],
-});
-window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => rerender?.());
 check();

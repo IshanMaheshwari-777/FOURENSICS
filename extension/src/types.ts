@@ -100,8 +100,19 @@ export type Request =
   | { type: "assess"; url: string; refresh?: boolean }
   | { type: "run"; runId: string }
   | { type: "feedback"; runId: string; claimId: string; vote: "yes" | "no" }
-  | { type: "settings" };
+  | { type: "settings" }
+  // From the GitHub content script: which issue or PR this tab shows (null when none).
+  | { type: "page"; url: string | null }
+  // From the content script's launcher: open the side panel for this tab.
+  | { type: "open-panel" }
+  // From the side panel: which issue or PR the given tab shows.
+  | { type: "page-for-tab"; tabId: number };
+
+/** Background → side panel broadcast when a tab's issue or PR changes. */
+export interface PageChanged { type: "page-changed"; tabId: number }
+/** Side panel → content script: put a reply draft into the comment box. */
+export interface InsertReply { type: "insert-reply"; text: string }
 
 export type Reply<T = PanelResult> = { ok: true; result: T } | { ok: false; error: string };
 
-export interface Settings { backendUrl: string; mock: boolean; collapsed: boolean }
+export interface Settings { backendUrl: string; mock: boolean }

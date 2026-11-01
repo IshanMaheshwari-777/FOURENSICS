@@ -7,13 +7,13 @@
 <meta name="description" content="Evidence-based triage for GitHub issues and pull requests: every claim checked against the code, with links to the exact lines.">
 <style>
   :root {
-    --bg: #fbfbfa; --surface: #ffffff; --text: #1d1d1f; --muted: #5f6368; --line: #e3e3e0;
-    --accent: #1f6feb; --accent-text: #ffffff; --code-bg: #f2f2ef; --ok: #1a7f37; --warn: #9a6700; --bad: #c62828;
+    --bg: #fafafa; --surface: #ffffff; --text: #171717; --muted: #6b6b6b; --line: #e8e8e8;
+    --accent: #171717; --accent-text: #ffffff; --code-bg: #f2f2f2; --ok: #1a7f37; --warn: #9a6700; --bad: #c62828;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #111214; --surface: #1a1b1e; --text: #ececec; --muted: #a2a5ab; --line: #2c2e33;
-      --accent: #4c8dff; --accent-text: #0b0c0e; --code-bg: #202226; --ok: #4ac26b; --warn: #d4a72c; --bad: #ff6b6b;
+      --bg: #0b0b0b; --surface: #161616; --text: #f5f5f5; --muted: #a3a3a3; --line: #262626;
+      --accent: #f5f5f5; --accent-text: #0b0b0b; --code-bg: #1b1b1b; --ok: #4ac26b; --warn: #d4a72c; --bad: #ff6b6b;
     }
   }
   * { box-sizing: border-box; }
@@ -27,7 +27,8 @@
   h2 { font-size: 20px; margin: 48px 0 12px; }
   h3 { font-size: 16px; margin: 0 0 4px; }
   p { margin: 0 0 12px; }
-  a { color: var(--accent); }
+  a { color: var(--text); text-decoration-color: var(--muted); text-underline-offset: 2px; }
+  a:hover { text-decoration-color: currentColor; }
   .lead { font-size: 18px; color: var(--muted); max-width: 60ch; }
   .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin: 24px 0 8px; }
   .button {
@@ -70,6 +71,10 @@
     <!-- Update this list in every PR that adds or changes a feature. Mark new items with <span class="new">New</span>. -->
     <ul class="features">
       <li>
+        <h3>Lives in Chrome's side panel <span class="new">New</span></h3>
+        <p>Opens beside the GitHub page, like Chrome's own assistants, and follows whichever issue or pull request tab you're on. Light and dark themes follow your browser.</p>
+      </li>
+      <li>
         <h3>Checks each claim against the code</h3>
         <p>Splits a report into individual claims, each tied to the reporter's exact words, and checks every claim against the repository's source, tests and docs.</p>
       </li>
@@ -86,7 +91,7 @@
         </ul>
       </li>
       <li>
-        <h3>Suggested label <span class="new">New</span></h3>
+        <h3>Suggested label</h3>
         <p>Proposes <em>confirmed</em>, <em>invalid</em> or <em>cannot reproduce</em> with its reasons, but only when the code or a reproduction backs it. Otherwise it says no label is suggested rather than guessing from the report's wording.</p>
       </li>
       <li>
@@ -120,13 +125,13 @@
 
   <section aria-labelledby="use">
     <h2 id="use">Install and use</h2>
-    <p class="note">You need Chrome (or another Chromium browser). The analysis runs on your own machine: macOS or Linux (on Windows, use WSL) with Python 3.11+ and Git.</p>
+    <p class="note">You need Chrome 116 or newer (or another Chromium browser with side panels). The analysis runs on your own machine: macOS or Linux (on Windows, use WSL) with Python 3.11+ and Git.</p>
     <ol>
       <li>
-        <strong>Install the extension.</strong> Download and unzip the file above. Open <code>chrome://extensions</code>, turn on <em>Developer mode</em>, click <em>Load unpacked</em> and select the unzipped folder.
+        <strong>Install the extension.</strong> Download and unzip the file above. Open <code>chrome://extensions</code>, turn on <em>Developer mode</em>, click <em>Load unpacked</em> and select the unzipped folder. Pin FOURENSICS from the puzzle-piece menu so its icon stays in the toolbar.
       </li>
       <li>
-        <strong>Try it without a backend (optional).</strong> Open the extension's <em>Options</em>, tick <em>Mock mode</em>, and open any GitHub issue. The panel shows a bundled example result.
+        <strong>Try it without a backend (optional).</strong> Open the side panel's <em>Settings</em> (gear icon), tick <em>Mock mode</em>, and open any GitHub issue. The panel shows a bundled example result.
       </li>
       <li>
         <strong>Set up the analysis backend.</strong>
@@ -144,7 +149,7 @@ cp backend/.env.example backend/.env</code></pre>
 <pre><code>scripts/dev.sh backend</code></pre>
       </li>
       <li>
-        <strong>Open any public GitHub issue or pull request.</strong> Untick Mock mode if you set it. The panel appears on the right, fills in as checks finish, and links each finding to the code.
+        <strong>Open any public GitHub issue or pull request</strong> and click the FOURENSICS toolbar icon (or the <em>FOURENSICS</em> tab on the page's right edge). Untick Mock mode if you set it. The side panel fills in as checks finish and links each finding to the code.
       </li>
     </ol>
   </section>
