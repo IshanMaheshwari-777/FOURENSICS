@@ -323,13 +323,6 @@ scripts/                 dev helper, secret scan, site builder, preflight
 - Anuradha Raghuwanshi
 - Bhawana
 
-## Blog
-
-As an optional part of the event, the team wrote a blog post about AI for the **MLH x DEV Writing Challenge**. It is separate from FOURENSICS.
-
-<!-- Replace this line with the published dev.to post URL, e.g. https://dev.to/<username>/<post-slug> -->
-- **Read it:** link coming soon (the post is being published on dev.to).
-
 ## AI disclosure
 
 FOURENSICS was built with AI coding agents, as the hackathon requires us to disclose:
