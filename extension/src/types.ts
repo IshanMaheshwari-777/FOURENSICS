@@ -81,6 +81,10 @@ export interface PanelResult {
   assessments: ClaimAssessment[];
   evidence: EvidenceItem[];
   missing_info: string[];
+  /** Report wording signals (codes); used by evaluation, not shown. */
+  report_signals?: string[];
+  /** Triage label, present only when code or execution evidence backs it (basis "evidence"). */
+  suggested_label?: { label: "confirmed" | "invalid" | "cannot_reproduce"; basis: "evidence" | "leaning"; reasons: string[] } | null;
   reply_draft?: string | null;
   not_checked: string[];
   notes: string[];

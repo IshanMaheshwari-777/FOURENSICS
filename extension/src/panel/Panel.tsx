@@ -20,6 +20,7 @@ const VERIFICATION = {
 const RELIABILITY = {
   exact: "Exact snapshot", "release-matched": "Release matched", inferred: "Approximate snapshot", unknown: "Version match unknown",
 };
+const LABEL_NAMES = { confirmed: "Confirmed", invalid: "Invalid", cannot_reproduce: "Cannot reproduce" };
 const TIERS = {
   E1: ["Execution evidence", "An observation from an execution check; read its scope and result."],
   E2: ["Measured source fact", "A deterministic source check. A matching file or symbol alone does not prove behavior."],
@@ -131,6 +132,10 @@ export function Panel(props: {
   const stateLabel = { running: "In progress", partial: "Incomplete", complete: "Finished", error: "Failed" }[view.state];
   const evidence = new Map((result?.evidence ?? []).map((e) => [e.id, e]));
   const snap = result?.snapshot;
+  // Evidence-backed labels only; results from before pipeline 30 never had a label, so show nothing for them.
+  const label = result?.suggested_label?.basis === "evidence" ? result.suggested_label : null;
+  const labelled = !!result && result.report_kind !== "pr" && result.target?.kind !== "pr"
+    && Number(result.pipeline_version) >= 30;
   const targetHref = safeHref(result?.target?.url);
   const targetLabel = result?.target ? `${result.target.owner}/${result.target.repo} · ${result.target.kind === "pr" ? "PR" : "Issue"} #${result.target.number}` : null;
   const claims = view.claims.filter((c) => filter === "all" || view.outcome(c) === filter);
@@ -162,6 +167,11 @@ export function Panel(props: {
         {result && !running && <dl className="scope-grid">
           <div><dt>Code version</dt><dd>{snap?.sha ? snap.ref_label || snap.sha.slice(0, 7) : "Unknown"}</dd><dd className="note">{RELIABILITY[snap?.reliability ?? "unknown"]}</dd></div>
           <div><dt>Execution</dt><dd>{view.execution}</dd></div>
+          {labelled && <div className="suggested-label"><dt>Suggested label</dt>
+            {label
+              ? <><dd>{LABEL_NAMES[label.label]}</dd>{!!label.reasons.length && <dd className="note"><Text value={label.reasons.join("; ")} /></dd>}</>
+              : <><dd>None</dd><dd className="note">The evidence doesn't settle it; no label is guessed from wording alone.</dd></>}
+          </div>}
         </dl>}
       </section>
       {view.state === "partial" && <section className="attention" aria-label="Incomplete analysis">

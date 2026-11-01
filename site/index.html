@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FOURENSICS</title>
+<meta name="description" content="Evidence-based triage for GitHub issues and pull requests: every claim checked against the code, with links to the exact lines.">
+<style>
+  :root {
+    --bg: #fbfbfa; --surface: #ffffff; --text: #1d1d1f; --muted: #5f6368; --line: #e3e3e0;
+    --accent: #1f6feb; --accent-text: #ffffff; --code-bg: #f2f2ef; --ok: #1a7f37; --warn: #9a6700; --bad: #c62828;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111214; --surface: #1a1b1e; --text: #ececec; --muted: #a2a5ab; --line: #2c2e33;
+      --accent: #4c8dff; --accent-text: #0b0c0e; --code-bg: #202226; --ok: #4ac26b; --warn: #d4a72c; --bad: #ff6b6b;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 56px 16px 40px; }
+  h1 { font-size: 32px; line-height: 1.2; letter-spacing: 0.04em; margin: 0 0 12px; }
+  h2 { font-size: 20px; margin: 48px 0 12px; }
+  h3 { font-size: 16px; margin: 0 0 4px; }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); }
+  .lead { font-size: 18px; color: var(--muted); max-width: 60ch; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin: 24px 0 8px; }
+  .button {
+    display: inline-block; background: var(--accent); color: var(--accent-text); text-decoration: none;
+    font-weight: 600; padding: 12px 20px; border-radius: 8px;
+  }
+  .button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .meta { font-size: 13px; color: var(--muted); }
+  ul.features { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  ul.features li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  ul.features p { margin: 0; color: var(--muted); font-size: 15px; }
+  .new { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ok); margin-left: 6px; }
+  ol { padding-left: 22px; margin: 0; }
+  ol > li { margin: 0 0 14px; padding-left: 4px; }
+  ol.flow > li { margin-bottom: 8px; }
+  code { font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--code-bg); border-radius: 4px; padding: 1px 5px; }
+  pre { background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; overflow-x: auto; margin: 8px 0 0; }
+  pre code { background: none; padding: 0; }
+  .verdicts { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 0; padding: 0; list-style: none; }
+  .verdicts li { font-size: 13px; border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; background: var(--surface); }
+  .ok { color: var(--ok); } .warn { color: var(--warn); } .bad { color: var(--bad); }
+  .note { font-size: 14px; color: var(--muted); }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+  footer p { margin: 0 0 6px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>FOURENSICS</h1>
+    <p class="lead">Evidence-based triage for GitHub issues and pull requests. A panel on the issue page shows what the code, at the version the reporter used, says about each claim, with links to the exact lines.</p>
+    <div class="actions">
+      <a class="button" href="fourensics-extension.zip" download>Download the Chrome extension</a>
+      <span class="meta">Extension {{version}} · pipeline {{pipeline}} · {{zip_kb}} KB<br>Built from <code>{{commit}}</code> on {{built}}</span>
+    </div>
+  </header>
+
+  <section aria-labelledby="features">
+    <h2 id="features">What it does</h2>
+    <!-- Update this list in every PR that adds or changes a feature. Mark new items with <span class="new">New</span>. -->
+    <ul class="features">
+      <li>
+        <h3>Checks each claim against the code</h3>
+        <p>Splits a report into individual claims, each tied to the reporter's exact words, and checks every claim against the repository's source, tests and docs.</p>
+      </li>
+      <li>
+        <h3>The right version of the code</h3>
+        <p>Uses the commit, release or branch the reporter names, otherwise the code as it was when the report was written. Later fixes can't leak into the answer.</p>
+      </li>
+      <li>
+        <h3>Evidence you can click</h3>
+        <p>Every finding links to the exact lines at that commit. Each claim gets two separate results:</p>
+        <ul class="verdicts" aria-label="Possible results">
+          <li class="ok">supported</li><li class="bad">contradicted</li><li>inconclusive</li>
+          <li>reproduced</li><li>not reproduced</li><li>not attempted</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Suggested label <span class="new">New</span></h3>
+        <p>Proposes <em>confirmed</em>, <em>invalid</em> or <em>cannot reproduce</em> with its reasons, but only when the code or a reproduction backs it. Otherwise it says no label is suggested rather than guessing from the report's wording.</p>
+      </li>
+      <li>
+        <h3>Pull requests too</h3>
+        <p>Compares the description with the diff, the changed tests and CI status. PR code is never run.</p>
+      </li>
+      <li>
+        <h3>What's missing, and a reply draft</h3>
+        <p>Lists the details a report lacks (version, steps, error output, environment) and drafts a polite reply into the comment box. It never posts anything itself.</p>
+      </li>
+      <li>
+        <h3>Honest about uncertainty</h3>
+        <p>Not finding something is never treated as proof a claim is false, and unverified results say so. Any language works; Python gets the deepest checks.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="how">
+    <h2 id="how">How it works</h2>
+    <p>A fixed pipeline, not a free-running agent. The model (Gemma 4 26B by default) only extracts claims and reads collected evidence; it never runs commands.</p>
+    <ol class="flow">
+      <li>Read the issue or PR. Labels and maintainer comments are kept from the model.</li>
+      <li>Pick the code version and check it out.</li>
+      <li>Extract claims, files, symbols, errors and stack traces from the report.</li>
+      <li>Run deterministic checks: does the code exist, where does the error come from, do the stack frames match, what tests and docs say.</li>
+      <li>Record every observation as evidence with a hash and a permalink.</li>
+      <li>The model interprets that evidence; rule-based checks then downgrade any verdict the evidence doesn't support.</li>
+      <li>The panel shows the result, usually within a minute.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="use">
+    <h2 id="use">Install and use</h2>
+    <p class="note">You need Chrome (or another Chromium browser). The analysis runs on your own machine: macOS or Linux (on Windows, use WSL) with Python 3.11+ and Git.</p>
+    <ol>
+      <li>
+        <strong>Install the extension.</strong> Download and unzip the file above. Open <code>chrome://extensions</code>, turn on <em>Developer mode</em>, click <em>Load unpacked</em> and select the unzipped folder.
+      </li>
+      <li>
+        <strong>Try it without a backend (optional).</strong> Open the extension's <em>Options</em>, tick <em>Mock mode</em>, and open any GitHub issue. The panel shows a bundled example result.
+      </li>
+      <li>
+        <strong>Set up the analysis backend.</strong>
+<pre><code>git clone https://github.com/IshanMaheshwari-777/FOURENSICS.git
+cd FOURENSICS
+python3 -m venv backend/.venv
+backend/.venv/bin/pip install -e backend
+cp backend/.env.example backend/.env</code></pre>
+      </li>
+      <li>
+        <strong>Add your keys</strong> to <code>backend/.env</code>: a free Google AI Studio key as <code>GOOGLE_API_KEY</code>, and (recommended, to avoid GitHub's rate limits) a read-only <code>GITHUB_TOKEN</code>.
+      </li>
+      <li>
+        <strong>Start the backend.</strong> It listens on <code>http://localhost:8787</code>, the extension's default.
+<pre><code>scripts/dev.sh backend</code></pre>
+      </li>
+      <li>
+        <strong>Open any public GitHub issue or pull request.</strong> Untick Mock mode if you set it. The panel appears on the right, fills in as checks finish, and links each finding to the code.
+      </li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="limits">
+    <h2 id="limits">Good to know</h2>
+    <ul>
+      <li>Read-only: it never comments, labels, or writes to a repository.</li>
+      <li>Public repositories only. Keys stay in your local <code>.env</code>.</li>
+      <li>Static checks can't settle everything: hardware, timing and environment-specific problems often stay inconclusive.</li>
+      <li>Results support a maintainer's judgement; they don't replace it.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p><a href="https://github.com/IshanMaheshwari-777/FOURENSICS">Source on GitHub</a> · MIT License</p>
+    <p>Team Buy2Get1: Ishan Maheshwari, Ganga Raghuwanshi, Anuradha Raghuwanshi, Bhawana · Hacktoberfest 2026 Hack Day Sonipat</p>
+    <p>Built with AI coding agents: Claude Code (Claude Opus 5.5) and OpenAI Codex.</p>
+  </footer>
+</main>
+</body>
+</html>

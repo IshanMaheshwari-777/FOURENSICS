@@ -7,6 +7,7 @@
 #                            extension typecheck, panel tests, build, bundle/manifest budgets
 #   scripts/dev.sh backend   start the API on http://localhost:8787
 #   scripts/dev.sh ext       build the extension into extension/dist (load it unpacked in Chrome)
+#   scripts/dev.sh site     build the download page and extension zip into build/site
 #   scripts/dev.sh smee URL  forward GitHub App webhooks from a smee.io channel to the local API
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -33,6 +34,7 @@ case "${1:-}" in
     step "panel tests";            (cd extension && npm test --silent)
     step "extension build";        (cd extension && npm run --silent build >/dev/null && echo "built extension/dist")
     step "bundle + manifest";      (cd extension && npm run --silent check:bundle)
+    step "download site";          python3 scripts/build_site.py --no-build
     printf '\nAll checks passed.\n'
     ;;
   backend)
@@ -40,6 +42,9 @@ case "${1:-}" in
     ;;
   ext)
     cd extension && npm run build && echo "Load extension/dist via chrome://extensions > Developer mode > Load unpacked"
+    ;;
+  site)
+    python3 scripts/build_site.py && echo "Open build/site/index.html"
     ;;
   smee)
     [ -n "${2:-}" ] || { echo "usage: scripts/dev.sh smee https://smee.io/<channel>"; exit 1; }

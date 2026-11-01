@@ -45,6 +45,7 @@ code { font: .91em/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 h2 { font-size: 20px; font-weight: 650; line-height: 1.35; letter-spacing: -.02em; }
 .dot { width: 15px; height: 15px; border-radius: 50%; flex: none; display: inline-grid; place-items: center; font-size: 10px; font-weight: 750; color: var(--bg); line-height: 1; }
 .dot.ok { background: var(--ok); } .dot.bad { background: var(--bad); } .dot.warn { background: var(--warn); } .dot.neu { background: var(--muted); }
+.scope-grid .suggested-label { grid-column: 1 / -1; }
 .scope-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding-top: 12px; margin-top: 2px; border-top: 1px solid var(--line); font-size: 12px; }
 dt, .field-label { color: var(--muted); font-size: 11px; } .scope-grid dd:not(.note) { font-weight: 550; margin-top: 2px; }
 .mockbar { margin: 14px 20px 0; padding: 8px 10px; border-radius: 6px; font-size: 12px; color: var(--warn); background: color-mix(in srgb, var(--warn) 8%, var(--bg)); border: 1px solid color-mix(in srgb, var(--warn) 35%, var(--line)); }

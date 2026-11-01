@@ -52,3 +52,6 @@ jobs:
       - run: npm run build
       # Bundle-size budgets and least-privilege manifest.
       - run: npm run check:bundle
+      # The download page stays one self-contained page that matches its zip.
+      - run: python3 scripts/build_site.py --no-build
+        working-directory: .

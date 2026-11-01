@@ -83,7 +83,9 @@ The [dev report](eval/examples/report_dev.md) covers nine exploratory runs: stri
 
 The daily 200,000-token limit stopped further inference. Per the team's decision, completion switched to cached results. The [held-out report](eval/examples/report_test.md) explicitly records that all 20 test questions remain unrun. Daily-quota detection now stops further live retries in the gateway; cached responses remain usable.
 
-Final local validation (`scripts/dev.sh check`): secret scan, **199 backend tests passed** (2 opt-in Docker tests skipped), 13 panel checks, extension typecheck/build, and 7 bundle/manifest checks. An earlier run with Docker enabled is recorded in the [validation record](eval/examples/validation.json).
+Pipeline 30 adds a suggested triage label (`confirmed`, `invalid`, `cannot_reproduce`) to each issue result, shown only when code or execution evidence backs it; otherwise the panel says no label is suggested. Wording-based signals (hardware-dependent, intermittent, third-party, unsupported setup) are used only for forced-choice evaluation. On 20 held-out closed issues from 7 repositories never used for tuning, forced choice matched 5/20 labels with both the old and new rules, below the 8/20 of always guessing the most common label; strict mode answered 3 and matched 1. Label prediction from static evidence remains weak, which is why leanings are not shown to maintainers.
+
+Final local validation (`scripts/dev.sh check`): secret scan, **225 backend tests passed** (2 opt-in Docker tests skipped), 13 panel checks, extension typecheck/build, 7 bundle/manifest checks, and the download-site check. An earlier run with Docker enabled is recorded in the [validation record](eval/examples/validation.json).
 
 The API distinguishes incomplete model analysis from insufficient report information using `blockers` (stage, code, reason, next step). Degraded stages return `partial`; deterministic verdicts remain intact. Saved reports receive the same diagnostic explanation on read, without rerunning inference or rewriting their historical pipeline version. Model discovery being reachable does not establish available quota: health exposes inference availability separately.
 
@@ -96,6 +98,8 @@ Pipelines 26–29 make bounded text retrieval deterministic across process resta
 ## CI
 
 The [CI workflow](.github/workflows/ci.yml) defines backend tests and extension typecheck/build jobs, with read-only permissions and no model keys. Normal tests use local fixtures and a fake model; Docker tests are opt-in.
+
+The [site workflow](.github/workflows/pages.yml) publishes a one-page download site ([`site/index.html`](site/index.html)) with the packaged extension to GitHub Pages on every push to `main`. [`scripts/build_site.py`](scripts/build_site.py) stamps the extension version, pipeline version and commit onto the page and checks that it stays a single self-contained page matching its zip.
 
 ## Team understanding and limits
 
