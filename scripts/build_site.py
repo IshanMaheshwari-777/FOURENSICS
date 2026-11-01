@@ -3,7 +3,7 @@
     python3 scripts/build_site.py            # builds the extension first
     python3 scripts/build_site.py --no-build # reuse an existing extension/dist
 
-The page is a template: {{version}}, {{pipeline}}, {{commit}}, {{built}} and {{zip_kb}} are filled
+The page is a template: {{version}}, {{pipeline}}, {{commit}}, {{built}}, {{zip_kb}} and {{project_kb}} are filled
 in here, so the published page always describes the zip next to it. Then the site is checked.
 """
 from __future__ import annotations
@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DIST = ROOT / "extension" / "dist"
 OUT = ROOT / "build" / "site"
 ZIP_NAME = "fourensics-extension.zip"
+PROJECT_ZIP = "fourensics-project.zip"
 PAGE_BUDGET_KB = 40
 REQUIRED_IN_ZIP = {"manifest.json", "content.js", "background.js", "sidepanel.html", "sidepanel.js",
                    "options.html", "options.js", "icons/icon16.png", "icons/icon128.png"}
@@ -58,6 +59,11 @@ def build() -> Path:
             if f.is_file() and f.name != ".DS_Store":
                 z.write(f, f.relative_to(DIST).as_posix())
 
+    # The whole project (backend, extension source, eval, docs) as tracked in git, so the
+    # download contains everything needed to run the analysis backend, not just the built extension.
+    subprocess.run(["git", "archive", "--format=zip", "--prefix=FOURENSICS/", "-o", str(OUT / PROJECT_ZIP), "HEAD"],
+                   cwd=ROOT, check=True)
+
     manifest = json.loads((DIST / "manifest.json").read_text())
     pipeline = re.search(r'PIPELINE_VERSION = "([^"]+)"', (ROOT / "backend/app/config.py").read_text())
     values = {
@@ -66,6 +72,7 @@ def build() -> Path:
         "commit": commit(),
         "built": datetime.now(timezone.utc).strftime("%-d %b %Y"),
         "zip_kb": str(round(zpath.stat().st_size / 1024)),
+        "project_kb": str(round((OUT / PROJECT_ZIP).stat().st_size / 1024)),
     }
     page = (ROOT / "site" / "index.html").read_text()
     for key, value in values.items():
@@ -77,8 +84,8 @@ def build() -> Path:
 def check(out: Path) -> None:
     """The site stays one self-contained page that matches its zip."""
     files = sorted(p.relative_to(out).as_posix() for p in out.rglob("*") if p.is_file())
-    if files != ["fourensics-extension.zip", "index.html"]:
-        fail(f"the site must be exactly one page and the zip, found {files}")
+    if files != [ZIP_NAME, PROJECT_ZIP, "index.html"]:
+        fail(f"the site must be exactly one page and the two zips, found {files}")
     page = (out / "index.html").read_text()
     if "{{" in page or "}}" in page:
         fail("unfilled template value left in the page")
@@ -97,7 +104,14 @@ def check(out: Path) -> None:
         manifest = json.loads(z.read("manifest.json"))
     if f"Extension {manifest['version']} " not in page:
         fail("the page's version does not match the zip's manifest")
-    print(f"✓ site: one page ({len(page.encode()) // 1024} KB) and {ZIP_NAME} (extension {manifest['version']}) in {out.relative_to(ROOT)}")
+    with zipfile.ZipFile(out / PROJECT_ZIP) as z:
+        names = set(z.namelist())
+        required = {f"FOURENSICS/{n}" for n in ("README.md", "backend/pyproject.toml", "backend/app/main.py",
+                                                 "extension/package.json", "extension/src/background.ts",
+                                                 "scripts/dev.sh")}
+        if required - names:
+            fail(f"project zip is missing {sorted(required - names)}")
+    print(f"✓ site: one page ({len(page.encode()) // 1024} KB) and {ZIP_NAME} + {PROJECT_ZIP} (extension {manifest['version']}) in {out.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

@@ -106,7 +106,7 @@ flowchart LR
 
 **Option A: download** (easiest)
 
-1. Download `fourensics-extension.zip` from https://ishanmaheshwari-777.github.io/FOURENSICS/ and unzip it.
+1. Download `fourensics-extension.zip` from https://ishanmaheshwari-777.github.io/FOURENSICS/ and unzip it. (The same page also offers `fourensics-project.zip`, the full project source including the backend.)
 2. Open `chrome://extensions`, turn on **Developer mode**, click **Load unpacked** and select the unzipped folder.
 3. Pin **FOURENSICS** from the puzzle-piece menu so its icon stays in the toolbar.
 
